@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+/* Estilos de balanceo de texto */
+.header-content-box,
+.header-compact-title,
+.footer,
+.section-title,
+.subsection-title {
+    text-wrap: balance;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      :root {
+        /* Colores Principales del Diseño (Acentos y Degradados) */
+        /* ======================================================= */
+        --color-principal: #00beff; /* Cian Brillante para acentos, bordes y el inicio del degradado principal */
+        --color-secundario: #1e50cd; /* Azul Medio, parte final del degradado de acento */
+
+        /* Fondos Oscuros de la Interfaz */
+        /* ======================================================= */
+        --fondo-oscuro-claro: #002a52; /* Fondo de secciones y contenido */
+        --fondo-oscuro-fuerte: #001a33; /* Fondo del encabezado (header) y pie de página (footer) */
+        /* ======================================================= */
+        --fondo-oscuro-medio: #003366; /* Fondo de encabezados y cajas de contenido */
+        --fondo-borde-claro: #004080; /* Bordes ligeros y color de fondo al hacer hover en encabezados */
+        --fondo-sombra-azul-header: #0050a0; /* ¡NUEVO! Sombra en el header */
+
+        /* Colores de Texto y Fondo General del Body */
+        /* ======================================================= */
+        --texto-blanco-1: #ffffff; /* Blanco puro para títulos y texto en fondo muy oscuro */
+        --texto-claro-2: #e6e6e6; /* Texto principal y claro */
+        --texto-medio-3: #cccccc; /* Texto de contenido de item (un poco más tenue) */
+
+        /* ======================================================= */
+        --fondo-body-inicio: #99e5ff; /* Color de inicio del degradado de fondo del body */
+        --fondo-body-fin: #a5b9eb; /* Color de final del degradado de fondo del body */
+
+        /* Colores de Acento Específicos (YouTube, Búsqueda) */
+        /* ======================================================= */
+        --rojo-youtube-claro: #e60000;
+        --rojo-youtube-fuerte: #a30000;
+        --timestamp-youtube: #ffcccc;
+        --fondo-resaltado: #00c339; /* Verde para el fondo del texto buscado */
+
+        /* Bases RGB para Transparencias (RGBA) */
+        /* ======================================================= */
+        --sombra-rgb: 0, 0, 0; /* Negro puro: Usado para sombras generales y profundidad */
+        --acento-rgb: 0, 190, 255; /* Cian Brillante: Usado para brillos y sombras de acento */
+        --rojo-rgb: 230, 0, 0; /* Rojo Puro: Usado para sombras de enlaces de YouTube */
+        /* ======================================================= */
+        --gradient-principal: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--fondo-body-inicio) 0%, var(--fondo-body-fin) 100%);
+        line-height: 1.2;
+        scroll-behavior: smooth;
+      }
+
+      strong#tituloDiplomado {
+        font-weight: 900;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      @keyframes slideDownSutil {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header.animacion-inicial {
+        animation: slideDownSutil 0.4s ease-out 1;
+        animation-fill-mode: forwards;
+        will-change: transform, opacity;
+      }
+
+      .header {
+        position: relative;
+        width: 100%;
+        z-index: 1000;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--fondo-oscuro-fuerte) 0%, var(--fondo-oscuro-claro) 100%);
+        box-shadow: 0 5px 15px rgba(var(--sombra-rgb), 0.5);
+        text-align: center;
+        will-change: transform;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-text-box {
+        display: grid;
+        gap: 10px;
+        word-break: break-word;
+        margin: 0 15px;
+      }
+
+      .header.compact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+      }
+
+      .header-spacer {
+        display: none;
+        transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header.compact + .header-spacer {
+        display: block;
+      }
+
+      .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .header.compact .header-top {
+        display: none;
+      }
+
+      .logo {
+        width: 140px;
+        height: auto;
+        margin: 0 15px;
+        transition: all 0.3s ease;
+        vertical-align: middle;
+      }
+
+      .header.compact .logo {
+        width: 90px;
+        margin: 0 10px;
+      }
+
+      .header .logo.compact-logo {
+        display: none;
+      }
+
+      .header.compact .logo.compact-logo {
+        display: block;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        color: var(--texto-blanco-1);
+        font-weight: 900;
+      }
+
+      .header.compact h1 {
+        font-size: 1rem;
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        color: var(--texto-blanco-1);
+        font-weight: 700;
+      }
+
+      .header-content-box {
+        background: var(--gradient-principal);
+        border-radius: 12px;
+        padding: 20px 20px;
+        box-shadow: 0 8px 20px rgba(var(--acento-rgb), 0.6);
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        opacity: 1;
+        transform: translateY(0);
+        will-change: transform;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .header.compact .header-content-box {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border: 0;
+        transform: translateY(-10px);
+      }
+
+      .header-content-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(var(--acento-rgb), 0.8);
+      }
+
+      .header-bottom-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .header-second-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .header.compact .header-bottom-row {
+        flex-grow: 1;
+      }
+
+      .logo-and-title {
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .header.compact .logo-and-title {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .header.compact .header-bottom-row .logo-and-title {
+        will-change: transform;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        width: 100%;
+        background: var(--gradient-principal);
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(var(--acento-rgb), 0.4);
+        gap: 10px;
+      }
+
+      .header.compact .header-bottom-row .logo-and-title:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(var(--acento-rgb), 0.5);
+      }
+
+      .header-compact-title {
+        display: none;
+        color: var(--texto-blanco-1);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 10px;
+        white-space: normal;
+      }
+
+      .header.compact .header-compact-title {
+        display: block;
+      }
+
+      .search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--fondo-oscuro-medio);
+        border: 2px solid var(--fondo-borde-claro);
+        border-radius: 30px;
+        box-shadow: 0 4px 10px rgba(var(--sombra-rgb), 0.25);
+        will-change: border-color, background-color;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      }
+
+      .search-bar:focus-within {
+        border-color: var(--fondo-sombra-azul-header);
+        background-color: var(--fondo-borde-claro);
+      }
+
+      .clear-search {
+        cursor: pointer;
+        color: var(--texto-claro-2);
+        padding: 5px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1;
+        display: none;
+        transition: color 0.2s ease;
+        transform: scale(1.5);
+      }
+
+      .clear-search:hover {
+        color: var(--texto-blanco-1);
+      }
+
+      .search-bar input {
+        flex-grow: 1;
+        padding: 10px 18px;
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--texto-claro-2);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        min-width: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .header.compact .search-bar input {
+        padding: 10px 20px;
+      }
+
+      .search-actions {
+        display: flex;
+        align-items: center;
+      }
+
+      .action-button {
+        background: var(--gradient-principal);
+        border: none;
+        color: var(--texto-blanco-1);
+        padding: 8px 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        will-change: transform;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(var(--acento-rgb), 0.4);
+        max-width: 150px;
+        white-space: normal;
+      }
+
+      .action-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(var(--acento-rgb), 0.5);
+      }
+
+      .search-bar .action-button {
+        margin: 5px;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      @keyframes fadeInUpContent {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .mind-map {
+        transition: margin-top 0.4s ease;
+        margin: 50px 0;
+      }
+
+      .mind-map.animacion-contenido {
+        animation: fadeInUpContent 0.4s ease-out 1 forwards;
+        animation-delay: 0.2s;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      .section {
+        margin-bottom: 20px;
+        background-color: var(--fondo-oscuro-claro);
+        border-radius: 12px;
+        border: 2px solid var(--fondo-oscuro-medio);
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(var(--sombra-rgb), 0.25);
+        transition: border-color 0.3s ease;
+      }
+
+      .section-header {
+        padding: 20px;
+        background-color: var(--fondo-oscuro-medio);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        will-change: background-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--texto-claro-2);
+        margin-right: 10px;
+      }
+
+      .section-number {
+        background: var(--gradient-principal);
+        color: var(--texto-blanco-1);
+        padding: 5px 12px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 15px;
+      }
+
+      .toggle-icon {
+        font-size: 1.2rem;
+        color: var(--texto-claro-2);
+        will-change: transform;
+        transition: transform 0.3s ease;
+      }
+
+      .section.active > .section-header .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .section-content {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in;
+      }
+
+      .section.active .section-content {
+        max-height: fit-content;
+        padding-bottom: 10px;
+        opacity: 1;
+      }
+
+      .subsection {
+        margin: 15px;
+        background-color: var(--fondo-oscuro-medio);
+        border-radius: 12px;
+        border: 2px solid var(--fondo-borde-claro);
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+      }
+
+      .subsection:hover {
+        border-color: var(--fondo-sombra-azul-header);
+      }
+
+      .subsection:hover .subsection-header {
+        background-color: var(--fondo-sombra-azul-header);
+      }
+
+      .section:hover {
+        border-color: var(--fondo-borde-claro);
+      }
+
+      .section:hover .section-header {
+        background-color: var(--fondo-borde-claro);
+      }
+
+      .subsection-header {
+        padding: 15px;
+        background-color: var(--fondo-borde-claro);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        will-change: background-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .subsection-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--texto-claro-2);
+        margin-right: 10px;
+      }
+
+      .subsection-number {
+        background: var(--gradient-principal);
+        color: var(--texto-blanco-1);
+        padding: 4px 10px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 12px;
+      }
+
+      .subsection-content {
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--fondo-oscuro-claro);
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in;
+      }
+
+      .subsection.active .subsection-content {
+        max-height: fit-content;
+        padding: 15px;
+        opacity: 1;
+      }
+
+      .subsection.active .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .content-item {
+        margin-bottom: 10px;
+        padding: 15px;
+        background-color: var(--fondo-oscuro-medio);
+        border-radius: 12px;
+        border-left: 4px solid var(--color-principal);
+        box-shadow: 0 1px 5px rgba(var(--sombra-rgb), 0.25);
+      }
+
+      .content-text {
+        color: var(--texto-medio-3);
+        margin-bottom: 5px;
+        line-height: 1.4;
+        font-size: 1rem;
+        font-weight: 500;
+        position: relative;
+        padding-left: 15px;
+      }
+
+      .content-text::before {
+        content: "•";
+        color: var(--color-principal);
+        font-weight: 700;
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+      }
+
+      .youtube-link {
+        display: inline-block;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, var(--rojo-youtube-claro) 0%, var(--rojo-youtube-fuerte) 100%);
+        color: var(--texto-blanco-1);
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1rem;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        box-shadow: 0 2px 5px rgba(var(--rojo-rgb), 0.4);
+        will-change: transform;
+      }
+
+      .youtube-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 7.5px rgba(var(--rojo-rgb), 0.5);
+        will-change: transform;
+      }
+
+      .timestamp {
+        color: var(--timestamp-youtube);
+        font-size: 0.85rem;
+        margin-left: 10px;
+        font-weight: 400;
+      }
+
+      .highlight {
+        background-color: var(--fondo-resaltado);
+        color: var(--texto-blanco-1);
+        font-weight: 700;
+        padding: 4px;
+        border-radius: 6px;
+      }
+
+      .footer {
+        padding: 30px;
+        background: linear-gradient(135deg, var(--fondo-oscuro-fuerte) 0%, var(--fondo-oscuro-claro) 100%);
+        border-top: 1px solid var(--fondo-oscuro-medio);
+        text-align: center;
+        box-shadow: 0 -2px 10px rgba(var(--sombra-rgb), 0.25);
+      }
+
+      .footer-text {
+        color: var(--texto-claro-2);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .footer-logo {
+        width: 140px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .header-top {
+          flex-direction: column;
+        }
+
+        .logo {
+          margin: 0;
+        }
+
+        .header-text-box {
+          margin: 0;
+        }
+
+        .header h1 {
+          font-size: 1.5rem;
+        }
+
+        .header p {
+          font-size: 1rem;
+        }
+
+        .header.compact .header-bottom-row .logo-and-title {
+          gap: 5px;
+        }
+        .logo,
+        .footer-logo {
+          width: 105px;
+        }
+
+        .header.compact .header-bottom-row {
+          flex-direction: column;
+        }
+
+        .header.compact .header-compact-title {
+          margin: 0 5px;
+          font-size: 0.8rem;
+        }
+
+        .header.compact .logo.compact-logo {
+          width: 65px;
+          margin: 5px;
+        }
+
+        .action-button,
+        .search-bar input,
+        .clear-search {
+          font-size: 0.9rem;
+        }
+
+        .section-header {
+          padding: 15px;
+        }
+
+        .header.compact .controls {
+          flex-direction: row;
+        }
+
+        .section-title {
+          font-size: 1.1rem;
+        }
+
+        .subsection-title {
+          font-size: 1rem;
+        }
+        .section-number,
+        .subsection-number {
+          font-size: 13px;
+        }
+
+        .content-text {
+          font-size: 0.9rem;
+        }
+
+        .youtube-link {
+          font-size: 0.8rem;
+        }
+
+        .timestamp {
+          font-size: 0.75rem;
+        }
+
+        .header.compact .action-button {
+          padding: 6px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header animacion-inicial">
+      <div class="header-content-box">
+        <div class="header-top">
+          <a href="https://www.edumin.pe/" target="_blank">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="logo" />
+          </a>
+          <div class="header-text-box">
+  <h1>
+    <div>DIPLOMADO DE ALTA ESPECIALIZACIÓN EN</div>
+    <strong id="tituloDiplomado" style="display: block;"></strong>
+  </h1>
+  <p id="tituloPrincipal"></p>
+</div>
+        </div>
+      </div>
+
+      <div class="header-bottom-row">
+        <div class="logo-and-title">
+          <a href="https://www.edumin.pe/" target="_blank">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="logo compact-logo" />
+          </a>
+          <span class="header-compact-title" id="tituloCompacto"></span>
+        </div>
+        <div class="header-second-row">
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar en el resumen interactivo…" autocomplete="off" />
+            <div class="search-actions">
+              <span class="clear-search" onclick="clearSearch()">&times;</span>
+              <button class="action-button" onclick="searchContent()">Buscar</button>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="action-button" onclick="expandAll()">Mostrar todo</button>
+            <button class="action-button" onclick="collapseAll()">Colapsar todo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-spacer"></div>
+
+    <div class="container">
+      <div class="mind-map animacion-contenido" id="mindMap">
+        <div class="section" data-section="1">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">1</span>
+              <span class="section-title">Introducción a la clase y objetivos del módulo</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.1</span>
+                  <span class="subsection-title">Presentación inicial de la clase número 15 y bienvenida a estudiantes</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se da la bienvenida a la clase número 15 del diplomado de derecho minero y se solicita disposición y atención por parte de los asistentes.</div>
+                  <div class="content-text">Se indica la presencia de la profesora Andrea y se instruye sobre el uso del chat y la función para levantar la mano para preguntas.</div>
+                  <div class="content-text">Se confirma que la sesión continuará con el segundo módulo del curso y que se abordará con mayor profundidad el tema de las concesiones mineras.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=234" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:03:54)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.2</span>
+                  <span class="subsection-title">Alcance del tema y plan de trabajo para la sesión actual y siguiente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se explica que el tema de concesiones es extenso y que se tratará en la sesión de hoy y en la siguiente para cubrir legislación, requisitos y gestión estratégica.</div>
+                  <div class="content-text">Se solicita atención de los participantes y se abre a dudas durante la clase.</div>
+                  <div class="content-text">Se anticipan temas: definiciones, naturaleza de las concesiones, tipos de concesiones, requisitos, documentación, permisos, estudio de impacto ambiental, obligaciones y sanciones.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=270" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:04:30)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.3</span>
+                  <span class="subsection-title">Recursos docentes y dinámica de la clase</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se anuncia la proyección de materiales, incluyendo un vídeo breve para dinamizar la exposición y repasar conceptos vistos en clases anteriores.</div>
+                  <div class="content-text">Se comunica que parte de la clase será un repaso de la sesión anterior y que se profundizará en aspectos técnicos y procedimentales.</div>
+                  <div class="content-text">Se posiciona la gestión estratégica como elemento clave para la administración del derecho concesionario y cumplimiento normativo.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=383" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:06:23)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="2">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">2</span>
+              <span class="section-title">Concepto y naturaleza de la concesión minera</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.1</span>
+                  <span class="subsection-title">Definición de concesión minera y su relación con actividades mineras</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La concesión minera es un derecho exclusivo que el Estado otorga a una persona natural o jurídica para explorar o explotar recursos minerales tras cumplir requisitos legales.</div>
+                  <div class="content-text">Este derecho está ligado al subsuelo y no anula derechos de propiedad superficial que existan sobre el territorio.</div>
+                  <div class="content-text">Se recalca que el título de concesión no autoriza, por sí mismo, el inicio de actividades de exploración o explotación; se requieren autorizaciones adicionales.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=690" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:11:30)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.2</span>
+                  <span class="subsection-title">Procedimiento básico para la solicitud y otorgamiento de la concesión</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El proceso inicia con la presentación de un petitorio que incluye datos personales, número de petitorio, tipo de sustancia a extraer y coordenadas precisas de la ubicación.</div>
+                  <div class="content-text">Se requiere la firma de un compromiso previo de respeto al medio ambiente y a la población del área de influencia, así como el pago de tasas por trámite y vigencia.</div>
+                  <div class="content-text">El Instituto Geológico, Ingemmet (INEMET/INEMED mencionado), evalúa la solicitud en plazos breves, verifica ausencia de superposición y procede a la publicación pública para oposición.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=777" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:12:57)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.3</span>
+                  <span class="subsection-title">Titularidad, inscripción e implicaciones del título concesionario</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Una vez cumplidas las etapas, se otorga el derecho y se inscribe el título en el Registro Público correspondiente (SUNARP/SUNP según contexto).</div>
+                  <div class="content-text">El concesionario que extrae minerales se convierte en propietario de los minerales extraídos, sujeto a obligaciones tributarias y regulatorias.</div>
+                  <div class="content-text">Las concesiones son regulares, continuas y por tiempo indeterminado salvo extinción por causas legales como caducidad por incumplimiento de obligaciones.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=914" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:15:14)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="3">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">3</span>
+              <span class="section-title">Derechos, obligaciones y gestión estratégica del titular concesionario</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.1</span>
+                  <span class="subsection-title">Derechos del concesionario y obligaciones fundamentales a cumplir</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El concesionario adquiere derechos de exploración y/o explotación exclusivos sobre el área concedida, con el deber de administrar y explotar el recurso.</div>
+                  <div class="content-text">Obligaciones esenciales: pago del derecho de vigencia y presentación de la declaración anual consolidada; incumplimiento puede llevar a la caducidad del derecho.</div>
+                  <div class="content-text">Otras obligaciones incluyen la explotación efectiva (no mantener concesión sin actividad) y el cumplimiento de la normativa ambiental comprometida en la solicitud.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=420" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:07:00)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.2</span>
+                  <span class="subsection-title">Gestión estratégica, cumplimiento normativo y aprovechamiento eficiente de recursos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La gestión estratégica comprende la planificación para evitar caducidad, asegurar cumplimiento regulatorio y gestionar los recursos de manera eficiente.</div>
+                  <div class="content-text">El titular debe coordinar permisos, estudios ambientales y las relaciones con comunidades para viabilizar la etapa operativa.</div>
+                  <div class="content-text">Se destaca la necesidad de demostrar cumplimiento en materia ambiental mediante documentación y licencias previas al inicio de actividades.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=559" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:09:19)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.3</span>
+                  <span class="subsection-title">Procedimientos administrativos y posibilidades de impugnación por terceros afectados</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El proceso de concesión incluye publicación que abre un derecho de oposición por parte de personas que consideren afectados sus derechos; dichas oposiciones se resuelven por la autoridad competente.</div>
+                  <div class="content-text">Las resoluciones administrativas son recurribles y susceptibles de recursos en sede de contencioso administrativo para control jurisdiccional.</div>
+                  <div class="content-text">La participación de la población y negociación con titulares posteriores al otorgamiento se regula también mediante mecanismos como la servidumbre minera en caso de ausencia de acuerdo.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=994" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:16:34)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="4">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">4</span>
+              <span class="section-title">Tipos de concesiones y actividades mineras reguladas</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.1</span>
+                  <span class="subsection-title">Actividades mineras clasificadas y su relación con el régimen de concesiones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se repasan cinco actividades: exploración, explotación, concesión de beneficio, concesión de labor general y concesión de transporte, diferenciando cuáles requieren concesión y cuáles no.</div>
+                  <div class="content-text">Actividades como cateo y prospección no ingresan al régimen de concesión pero están sujetas a fiscalización por autoridades ambientales y laborales.</div>
+                  <div class="content-text">La concesión minera como categoría engloba tanto la exploración como la explotación; las otras actividades poseen títulos propios.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=1282" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:21:22)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.2</span>
+                  <span class="subsection-title">Concesión minera: exploración y explotación, y su diferencia esencial</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Exploración: investigación y estudios para determinar mineralización y valor económico del yacimiento potencial.</div>
+                  <div class="content-text">Explotación: actividad de extracción efectiva del mineral del yacimiento y apropiación del recurso una vez en superficie.</div>
+                  <div class="content-text">Las concesiones para estas actividades son otorgadas por autoridades nacionales o regionales según la escala (gran minería ante entidad nacional; pequeña/artesanal ante gobierno regional).</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=1599" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:26:39)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.3</span>
+                  <span class="subsection-title">Concesiones de beneficio, labor general y transporte: finalidades y autorizaciones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Concesión de beneficio: autoriza procesos físicos, químicos o físicoquímicos para separar y concentrar el mineral valioso del material extraído, permitiendo la construcción y funcionamiento de plantas de beneficio.</div>
+                  <div class="content-text">Concesión de labor general: autoriza servicios auxiliares de minería como ventilación, desagüe, isaje o extracción, prestados a una o más concesiones; puede implicar aprovechamiento de aguas con minerales utilizables salvo pacto contrario.</div>
+                  <div class="content-text">Concesión de transporte: autoriza el traslado de minerales entre instalaciones o mercados (mencionada en lista inicial, su regulación se integra con las demás concesiones).</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=2216" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:36:56)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="5">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">5</span>
+              <span class="section-title">Regulación, fiscalización, impactos ambientales y sanciones</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.1</span>
+                  <span class="subsection-title">Autoridades competentes según tipo de minería y etapas de control</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">INEMET/INEMED (Instituto Geológico-Minerometalúrgico referido) y Direcciones Regionales de Minería son responsables del otorgamiento según si se trata de gran minería o minería pequeña/artesanal.</div>
+                  <div class="content-text">Organismos de fiscalización ambiental como OEFA (Organismo de Evaluación y Fiscalización Ambiental) y la Autoridad Nacional del Agua participan en supervisión de cumplimiento ambiental y manejo del recurso hídrico.</div>
+                  <div class="content-text">La inscripción del título y registros públicos están a cargo de entidades registrales nacionales, y la fiscalización laboral en minería involucra también autoridades competentes del sector.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=1709" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:28:29)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.2</span>
+                  <span class="subsection-title">Estudios ambientales, impactos, medidas de mitigación y requisitos para funcionamiento</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Para la autorización de actividades de exploración o explotación se requieren estudios de impacto ambiental que incluyan aspectos de impacto social y mecanismos de participación comunitaria.</div>
+                  <div class="content-text">La concesión de beneficio exige diversas autorizaciones de construcción y funcionamiento por riesgo industrial, seguridad y control ambiental, con múltiples requisitos técnicos y documentos.</div>
+                  <div class="content-text">Los requisitos ambientales implican la implementación de sistemas de tratamiento de aguas, control de emisiones, y controles que eviten la contaminación de fuentes hídricas y afectación de comunidades.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=1040" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:17:20)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.3</span>
+                  <span class="subsection-title">Minería ilegal, sanciones penales y críticas sobre la severidad de las penas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Explotar minerales sin autorización configura el delito de minería ilegal, sancionado penalmente por causación o riesgo de daño ambiental o a la salud.</div>
+                  <div class="content-text">La pena establecida es de 4 a 8 años de prisión, crítica por ser considerada poco disuasiva y por la facilidad de conmutación a multa en algunos casos.</div>
+                  <div class="content-text">La actividad ilegal conlleva impactos sociales adicionales como explotación laboral infantil, proliferación de actividades ilícitas y mayor dificultad de control por parte del Estado.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=1813" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:30:13)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="6">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">6</span>
+              <span class="section-title">Operativa técnica en minería: procesos, riesgos y medidas de control</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.1</span>
+                  <span class="subsection-title">Procesos de beneficio y etapas técnicas de concentración y refinación</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La concesión de beneficio permite procesos de preparación mecánica, metalurgia y refinación para agregar valor al mineral bruto mediante reducción de tamaño, clasificación, lavado, concentración y purificación.</div>
+                  <div class="content-text">Las plantas de beneficio requieren autorizaciones por el riesgo asociado a fuego, altas temperaturas y procesos químicos; su ubicación debe evitar zonas urbanohabitables.</div>
+                  <div class="content-text">Tras la construcción autorizada, se solicita la autorización de funcionamiento para que autoridades inspeccionen cumplimiento de obras y requisitos técnicos y ambientales.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=2236" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:37:16)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.2</span>
+                  <span class="subsection-title">Labor general: ventilación, desagüe, isaje y control de riesgos subterráneos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Ventilación: sistemas para introducir aire fresco y extraer aire viciado en galerías profundas, mediante soluciones naturales, ventiladores y conductos, garantizando condiciones respirables y control de temperatura.</div>
+                  <div class="content-text">Desagüe: sistemas de bombas, zanjas y galerías para remover agua intrusiva en excavaciones y prevenir inundaciones; tratamiento y control del agua extraída son críticos para evitar contaminación a comunidades.</div>
+                  <div class="content-text">Isaje: levantamiento, movimiento y posicionamiento de cargas pesadas mediante equipos de elevación para movilizar toneladas de mineral entre niveles y áreas de procesamiento.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=2716" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:45:16)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.3</span>
+                  <span class="subsection-title">Gestión del agua, tratamiento y responsabilidades frente a comunidades</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">En minería mediana y grande se implementan plantas de tratamiento de aguas con procesos como ósmosis y sedimentación para devolver agua a cauces en condiciones similares a las previas a la actividad.</div>
+                  <div class="content-text">En minería artesanal o informal la falta de tecnología provoca vertidos directos que contaminan ríos y afectan subsistencia de comunidades, lo que aumenta la fiscalización y sanciones por parte de autoridades.</div>
+                  <div class="content-text">Las decisiones económicas de algunas empresas (preferir pagar multas en vez de invertir en tratamiento) agravan el problema, subrayando la importancia de responsabilidad social empresarial y controles efectivos por autoridades.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=3002" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:50:02)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="7">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">7</span>
+              <span class="section-title">Relación con comunidades, publicación, oposición y aspectos prácticos del otorgamiento</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.1</span>
+                  <span class="subsection-title">Publicación del petitorio, derecho de oposición y participación ciudadana en el proceso</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Tras la presentación del petitorio se exige la publicación de intenciones en periódicos locales por 30 días para informar a la población y abrir un plazo de oposición.</div>
+                  <div class="content-text">Cualquier persona que considere vulnerados sus derechos puede presentar oposición fundamentada con pruebas ante la autoridad competente, que la resolverá en sede administrativa con posibilidad de apelación.</div>
+                  <div class="content-text">La publicación es un mecanismo que conecta el proceso administrativo con la necesidad de negociación y consulta con comunidades afectadas por la futura actividad minera.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=811" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:13:31)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.2</span>
+                  <span class="subsection-title">Negociación con propietarios y servidumbre minera como mecanismo alternativo</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Una vez otorgada la concesión, la población propietaria del terreno debe negociar con el concesionario condiciones de acceso y uso; si no hay acuerdo, el concesionario puede recurrir a la servidumbre minera.</div>
+                  <div class="content-text">La servidumbre minera permite el uso de la superficie para la actividad, pero está regulada y su ejercicio implica obligaciones de compensación y mitigación.</div>
+                  <div class="content-text">La participación comunitaria e impactos sociales forman parte integral de la gestión estratégica y cumplimiento del concesionario para viabilizar la explotación.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=970" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:16:10)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.3</span>
+                  <span class="subsection-title">Fiscalización posterior al otorgamiento y recurso administrativo y judicial</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La autoridad administrativa responsable emite resoluciones que pueden ser revisadas en sede de contencioso administrativo ante el Poder Judicial para cautelar la legalidad de decisiones.</div>
+                  <div class="content-text">La fiscalización posterior incluye controles ambientales, laborales y tributarios; incumplimientos pueden derivar en sanciones administrativas, caducidad o responsabilidades penales.</div>
+                  <div class="content-text">Se enfatiza la existencia de múltiples procedimientos y recursos que forman parte del sistema de control del otorgamiento y ejercicio de concesiones mineras.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=1156" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:19:16)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="8">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">8</span>
+              <span class="section-title">Cierre de la sesión y pausa para descanso antes de continuar</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.1</span>
+                  <span class="subsection-title">Resumen de lo visto y preparación para la continuación de temas en la siguiente parte</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se recapitula que se han visto definiciones, tipos de concesiones, procedimiento de petición, roles de autoridades y aspectos técnicos y ambientales asociados.</div>
+                  <div class="content-text">Se advierte que la exposición continuará tras un break de cinco minutos para retomar con mayor profundidad requisitos, documentación, permisos y régimen sancionador.</div>
+                  <div class="content-text">Se anuncia la pausa y se invita a los alumnos a prepararse para la siguiente parte de la clase donde se abordarán detalles procedimentales y obligaciones concretas del titular.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=3593" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:59:53)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="9">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">9</span>
+              <span class="section-title">Introducción a la concesión minera y transporte minero</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.1</span>
+                  <span class="subsection-title">Definición general de concesión minera y alcance legal</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La concesión minera otorga el derecho a explotar económicamente un yacimiento según su calidad, cantidad y condiciones, incluyendo exploración, explotación, beneficio, labores y transporte.</div>
+                  <div class="content-text">Es un acto administrativo emitido por la autoridad competente (INGEMMET o dirección regional de minas) y puede ser recurrible ante órganos superiores.</div>
+                  <div class="content-text">El título confiere un derecho real sobre la superficie y la exclusividad del aprovechamiento, con posibilidad de transferencia según formas legales establecidas.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=3942" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:05:42)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.2</span>
+                  <span class="subsection-title">Transporte minero: sistemas y regulación por su peligrosidad</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El transporte minero comprende sistemas para trasladar minerales, usualmente fajas transportadoras, tuberías y carriles, que requieren aprobación del Ministerio de Transportes y opinión del Consejo de Minería.</div>
+                  <div class="content-text">Debido al transporte de grandes toneladas y riesgos asociados, existe fiscalización constante y normas de seguridad estrictas.</div>
+                  <div class="content-text">La concesión de transporte permite instalar y operar sistemas masivos entre minas, puertos, plantas de beneficio o refinerías, autorizándose construcción y funcionamiento mediante acto administrativo.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=4002" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:06:42)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.3</span>
+                  <span class="subsection-title">Entidades responsables y naturaleza administrativa del otorgamiento</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La Dirección General de Minería (DIGEMIN/INGEMMET) o el gobierno regional evalúan técnicamente y legalmente las solicitudes y expiden la resolución autorizatoria.</div>
+                  <div class="content-text">Los actos que otorgan concesiones son actos administrativos susceptibles de apelación, revisión por el Consejo de Minería y por tribunales administrativos especializados.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=4101" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:08:21)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="10">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">10</span>
+              <span class="section-title">Derechos, partes accesorias y obligaciones ambientales de la concesión</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.1</span>
+                  <span class="subsection-title">Propiedad sobre minerales extraídos y alcance del título concesional</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Al obtener la concesión, el titular se convierte en propietario de los minerales extraídos del área otorgada y posee un derecho real sobre la superficie y límites concedidos.</div>
+                  <div class="content-text">El aprovechamiento se efectúa a título exclusivo para la persona titular, con las limitaciones y requisitos legales correspondientes.</div>
+                  <div class="content-text">Los actos administrativos que crean estos derechos pueden ser impugnados y escalados por vías administrativas y judiciales.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=4525" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:15:25)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.2</span>
+                  <span class="subsection-title">Partes accesorias: desmontes, relaves y escoriales como responsabilidad del concesionario</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los desmontes y desechos generados por la actividad minera son parte accesoria de la concesión, por lo tanto pertenecen y son responsabilidad del concesionario.</div>
+                  <div class="content-text">Los relaves, residuos de procesos de beneficio que emplean grandes cantidades de agua, son parte accesoria y deben ser gestionados por el titular conforme a la normativa.</div>
+                  <div class="content-text">Los escoriales, desechos de refinería donde se utiliza fuego predominantemente, también son parte accesoria y presentan alta peligrosidad; la empresa responde por su manejo y disposición.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=4590" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:16:30)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.3</span>
+                  <span class="subsection-title">Prohibiciones de otorgamiento según uso del suelo y protección ambiental</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">No se pueden otorgar concesiones mineras en áreas agrícolas de uso rústico, donde existan pastos naturales o en áreas naturales protegidas.</div>
+                  <div class="content-text">El procedimiento exige documentación orientada a la protección ambiental y la fiscalización de impactos por la actividad minera.</div>
+                  <div class="content-text">Existen normas y reglamentos diversos (Ley General de Minería, reglamentos ambientales y de seguridad) que regulan el manejo de desechos y la prevención de contaminación.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=4833" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:20:33)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="11">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">11</span>
+              <span class="section-title">Normativa aplicable y especialización profesional en derecho minero</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.1</span>
+                  <span class="subsection-title">Leyes y reglamentos fundamentales para el estudio y práctica minera</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Ley General de Minería (por ejemplo Ley 26 615 y otras normas madre) y sus reglamentos sobre procedimientos mineros y títulos son lecturas esenciales.</div>
+                  <div class="content-text">Reglamentos sobre garantías y promoción de la inversión, protección y gestión ambiental para actividades mineras y seguridad y salud ocupacional en minería son normas clave.</div>
+                  <div class="content-text">Existen leyes específicas como la ley de catastro minero, la ley que regula concesiones mineras, y la ley de formalización de la pequeña minería y minería artesanal.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=4964" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:22:44)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.2</span>
+                  <span class="subsection-title">Necesidad de especialización profesional y límites del abogado generalista</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El derecho minero es un campo complejo y especializado donde los abogados suelen dividirse en áreas (minero, laboral, penal, civil) debido a la amplitud normativa.</div>
+                  <div class="content-text">La formación del abogado minero implica conocer numerosas normas específicas y procedimientos técnicos que no son abordables por un generalista.</div>
+                  <div class="content-text">La regulación incluye disposiciones técnicas y administrativas que requieren expertos y peritos para la correcta formulación de solicitudes y defensa de derechos.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=5020" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:23:40)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.3</span>
+                  <span class="subsection-title">Reglamentos y organismos encargados de seguridad y salud</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El reglamento de seguridad y salud ocupacional en minería establece obligaciones para la protección de los trabajadores en contextos de alta peligrosidad.</div>
+                  <div class="content-text">SUNAFIL (autoridad de fiscalización laboral) cuenta con inspectores especializados en minería para supervisar seguridad y salud ocupacional.</div>
+                  <div class="content-text">La normativa de seguridad y salud es distinta a la de otros sectores (por ejemplo centros comerciales) y exige medidas y personal especializado.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=5114" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:25:14)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" data-section="12">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">12</span>
+              <span class="section-title">Procedimiento administrativo para formular el petitorio minero y requisitos iniciales</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.1</span>
+                  <span class="subsection-title">Inicio por solicitud (petitorio minero) y verificación previa de disponibilidad</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El procedimiento de concesión minera siempre se inicia por solicitud del interesado, llamada petitorio minero, y no de oficio por el Estado.</div>
+                  <div class="content-text">Antes de presentar el petitorio es obligatorio verificar en INGEMMET/INGEMED si el área está disponible, evitando superposiciones y pérdida de tiempo y recursos.</div>
+                  <div class="content-text">La verificación incluye consulta de cartas nacionales en escala 1:100,000 en sistema WGS84 y uso de coordenadas UTM obtenidas en campo con GPS para ubicar cuadrículas de 1 km por lado (100 ha).</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=5262" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:27:42)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.2</span>
+                  <span class="subsection-title">Sistema de cuadrículas mineras y transición de coordenadas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La ley que oficializa el sistema de cuadrículas mineras usa coordenadas UTM WGS84 y cuadrículas de 1 km (100 ha) como extensión mínima para petitorios.</div>
+                  <div class="content-text">El catastro minero nacional migró del sistema PESAT 56 al WGS84, reasignando coordenadas sin modificar la ubicación física de concesiones existentes.</div>
+                  <div class="content-text">El procedimiento técnico implica identificar vértices en campo, obtener coordenadas UTM y plasmarlas en la carta nacional para el formulario de petitorio.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=5376" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:29:36)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.3</span>
+                  <span class="subsection-title">Contenido y llenado del formulario de petitorio minero</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El formulario del petitorio debe llenarse con letra imprenta, sin enmendaduras, e incluye nombre del petitorio, tipo de sustancia (metálica o no metálica), datos del área solicitada, extensión en hectáreas y coordenadas UTM empezando por vértice superior derecho en sentido horario.</div>
+                  <div class="content-text">La extensión mínima es 100 hectáreas (una cuadrícula) y máxima 1,000 hectáreas (diez cuadrículas); se debe consignar la carta nacional y la zona (Perú en zonas 17, 18 o 19).</div>
+                  <div class="content-text">Se recomienda verificar previamente disponibilidad en módulo de atención técnica para evitar ingresar petitorios superpuestos o fuera de zonas permitidas.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=5519" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:31:59)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="13">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">13</span>
+              <span class="section-title">Requisitos documentarios, representación y peligros de errores administrativos</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.1</span>
+                  <span class="subsection-title">Requisitos formales y pagos iniciales para presentar el petitorio</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Documentos básicos: solicitud en formato petitorio, datos del peticionario (persona natural o jurídica), declaración jurada de compromiso, recibos originales de pago del derecho de trámite y derecho de vigencia, copia de DNI o carné de extranjería.</div>
+                  <div class="content-text">Para pequeños productores o minería artesanal se requieren constancias específicas y declaraciones juradas de bienes en el primer petitorio.</div>
+                  <div class="content-text">El formulario también exige plano de ubicación referencial con perímetros, ubicación de viviendas, vías, líneas de alta y baja tensión, áreas agrícolas o de vocación agrícola.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=6079" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:41:19)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.2</span>
+                  <span class="subsection-title">Datos del apoderado, apoderado cambiable y consecuencias de no informar cambios</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Cuando la solicitud es presentada por persona jurídica, se debe indicar un apoderado que reciba notificaciones y responda en el procedimiento administrativo.</div>
+                  <div class="content-text">Es fundamental actualizar la autoridad sobre cambios de apoderado para evitar pérdida de notificaciones y riesgos de abandono procesal que pueden resultar en pérdida de la concesión.</div>
+                  <div class="content-text">Ejemplos de casos donde un apoderado desaparecido provocó que el titular perdiera información y la concesión fue asignada a terceros por abandono.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=6314" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:45:14)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.3</span>
+                  <span class="subsection-title">Anexos, pagos y presentación en mesa de partes</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El petitorio se presenta en mesa de partes de INGEMMET o la entidad regional correspondiente, acompañado de anexos, recibos de pago por trámite y licencias, y certificados que correspondan.</div>
+                  <div class="content-text">Tras la presentación, se asigna un número de expediente o código único de petitorios de concesión minera que permite seguimiento del trámite.</div>
+                  <div class="content-text">El código incluye identificación de gobierno regional, correlativo y año; su conservación es clave para consultas y diligencias posteriores.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=6527" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:48:47)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="14">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">14</span>
+              <span class="section-title">Evaluación técnica, publicaciones, plazos y etapas posteriores en el trámite</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.1</span>
+                  <span class="subsection-title">Evaluación inicial por la dirección de concesiones y posibles pronunciamientos formales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La dirección de concesiones evalúa formalmente el petitorio a través de una unidad técnica y emite un informe técnico inicial que puede indicar procedencia o no procedencia del petitorio.</div>
+                  <div class="content-text">Los pronunciamientos iniciales son formales: área mal formulada, área libre para proceder, superposición con otros derechos, o impedimentos por áreas naturales protegidas o zonas arqueológicas.</div>
+                  <div class="content-text">Si se detectan errores formales, algunos pueden subsanarse mediante presentación de documentos rectificatorios; otros impedimentos son insubsanables.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=6542" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:49:02)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.2</span>
+                  <span class="subsection-title">Publicaciones y posibilidad de oposiciones por terceros</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Tras los primeros informes, el petitorio debe ser publicado para conocimiento público, permitiendo que terceros presenten oposiciones si lo consideran procedente.</div>
+                  <div class="content-text">Las publicaciones pretenden notificar a la comunidad y partes interesadas sobre el inicio del trámite y permitir la identificación de controversias o conflictos de superposición.</div>
+                  <div class="content-text">Si existen oposiciones, se activa otro trámite administrativo específico; si no las hay, se avanza a informes técnicos y legales que conducen a la concesión.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=6706" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:51:46)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.3</span>
+                  <span class="subsection-title">Plazos, notificaciones y realidad práctica de cumplimiento de tiempos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La normativa establece plazos (por ejemplo 7 días hábiles) para actuaciones como la realización de verificaciones por parte del gobierno regional o la emisión de notificaciones.</div>
+                  <div class="content-text">En la práctica, retrasos son comunes debido a la carga de trabajo y el volumen de expedientes; aunque existen sanciones teóricas por incumplimiento, en la práctica rara vez se aplican.</div>
+                  <div class="content-text">Es indispensable resguardar el número de expediente para solicitar información, hacer seguimiento y evitar pérdida por desatención administrativa.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=6945" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:55:45)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="15">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">15</span>
+              <span class="section-title">Consideraciones finales sobre complejidad técnica y continuidad del procedimiento</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">15.1</span>
+                  <span class="subsection-title">Complejidad técnica del proceso y necesidad de profesionales especializados</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los documentos y trámites son técnicos y requieren peritos y profesionales con experiencia en coordenadas UTM, planos, y requisitos específicos del sector minero.</div>
+                  <div class="content-text">Errores en coordenadas, formulación de perímetros o representación pueden provocar pérdidas económicas y administrativas importantes.</div>
+                  <div class="content-text">La normativa y procedimientos constituyen un conjunto extenso que exige lectura y comprensión detallada para quienes desean gestionar concesiones mineras.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7171" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:59:31)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">15.2</span>
+                  <span class="subsection-title">Importancia de la verificación previa y del seguimiento constante del expediente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Verificar disponibilidad en INGEMMET antes de presentar el petitorio evita trámites innecesarios y costes por áreas ya concesionadas o protegidas.</div>
+                  <div class="content-text">Conservar y monitorear el código único de petitorio permite solicitudes de información, seguimiento y respuesta a requerimientos de subsanación.</div>
+                  <div class="content-text">La actuación diligente del peticionario y la correcta administración del expediente son determinantes para el éxito en la obtención de la concesión.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=5679" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:34:39)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="16">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">16</span>
+              <span class="section-title">Plazos y respetos en el trámite administrativo</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.1</span>
+                  <span class="subsection-title">Importancia de respetar los plazos establecidos por la administración</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El administrado debe cumplir estrictamente los plazos que se le exigen, pues el incumplimiento puede derivar en la declaración de abandono del proceso y efectos nocivos administrativos.</div>
+                  <div class="content-text">La entidad administrativa puede demorarse más allá de sus plazos, pero esto no exonera al administrado del cumplimiento de sus propios plazos ni de sus obligaciones formales.</div>
+                  <div class="content-text">Cuando la administración otorga plazos para subsanar, el silencio o la inacción del administrado genera riesgos procesales y consecuencias adversas.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7200" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:00:00)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.2</span>
+                  <span class="subsection-title">Publicación y notificación del petitorio tras la revisión inicial</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Tras la revisión del petitorio, si cumple los requisitos formales, se notifica y se ordena la publicación en los diarios de mayor circulación a cargo del gobierno regional.</div>
+                  <div class="content-text">El solicitante dispone de 30 días hábiles para realizar las publicaciones requeridas, según la notificación administrativa correspondiente.</div>
+                  <div class="content-text">El objetivo de la publicación es respetar el derecho de publicación en derecho administrativo y hacer del conocimiento público la intención de iniciar la actividad minera.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7255" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:00:55)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.3</span>
+                  <span class="subsection-title">Presentación de pruebas de publicación y revisión de oposiciones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El solicitante tiene 60 días calendarios para presentar las páginas enteras y originales de dos diarios donde consten las publicaciones, para verificar autenticidad y fechas.</div>
+                  <div class="content-text">El gobierno regional o el INEMET recibe las publicaciones y revisa si existen oposiciones dentro de los plazos legales establecidos.</div>
+                  <div class="content-text">Si no medían oposiciones en el plazo correspondiente, la autoridad procede con los informes para el otorgamiento de la concesión minera.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7285" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:01:25)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="17">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">17</span>
+              <span class="section-title">Otorgamiento del título, inscripción registral y recursos</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.1</span>
+                  <span class="subsection-title">Emisión de la resolución y publicación de concesiones otorgadas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El presidente del organismo competente (Ingemet o gobierno regional) otorga el título de concesión minera mediante resolución administrativa.</div>
+                  <div class="content-text">La resolución que otorga la concesión es notificada al peticionario para su conocimiento formal.</div>
+                  <div class="content-text">El organismo publicará en el diario oficial El Peruano la relación de concesiones otorgadas dentro de los primeros quince días del mes siguiente.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7398" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:03:18)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.2</span>
+                  <span class="subsection-title">Plazo para interponer recurso y efectos registrales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Si durante los quince días siguientes a la publicación no se interpone recurso de revisión, la concesión adquiere firmeza y eficacia administrativa.</div>
+                  <div class="content-text">El titular de la concesión debe inscribir su derecho en la SUNARP en el Registro Minero para que el derecho sea oponible frente a terceros.</div>
+                  <div class="content-text">La SUNARP permite consultar quién es titular de una concesión mediante el Registro Minero, donde constan las inscripciones y detalles registrales.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7422" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:03:42)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.3</span>
+                  <span class="subsection-title">Consecuencias de la falta de recursos y la firmeza de la concesión</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La ausencia de recurso dentro del plazo legal consolida la concesión y habilita al titular a continuar con los trámites y autorizaciones subsecuentes.</div>
+                  <div class="content-text">La notificación y publicación constituyen actos esenciales para la consumación del procedimiento administrativo y el inicio de obligaciones posteriores.</div>
+                  <div class="content-text">La inscripción registral en SUNARP es paso obligatorio para la publicidad y seguridad jurídica del derecho minero.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7422" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:03:42)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="18">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">18</span>
+              <span class="section-title">Tipos de resoluciones administrativas y efectos procesales</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.1</span>
+                  <span class="subsection-title">Figura de la inadmisibilidad y su subsanación posible</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Una resolución de inadmisibilidad indica defectos formales que pueden ser subsanados por el solicitante tras la notificación correspondiente.</div>
+                  <div class="content-text">La notificación de inadmisible debe considerarse una oportunidad para corregir y presentar la documentación faltante.</div>
+                  <div class="content-text">La subsanación evita la pérdida o el rechazo definitivo del petitorio cuando los requisitos puedan cumplirse en plazo.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7477" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:04:37)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.2</span>
+                  <span class="subsection-title">Cancelación, rechazo y nulidad: causas y diferencias</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La cancelación ocurre cuando se solicita un área ya otorgada; en este caso la petición no puede continuar y se cancela el expediente.</div>
+                  <div class="content-text">El rechazo se da cuando falta un requisito de procedibilidad no subsanable, por ejemplo solicitar una concesión en un área de reserva natural o protección, impedimento insalvable.</div>
+                  <div class="content-text">La nulidad se relaciona con la inhabilitación del titular para peticionar, por ejemplo por condenas previas relacionadas con minería; impide la continuación del trámite.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7501" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:05:01)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.3</span>
+                  <span class="subsection-title">Declaración de abandono, renuncia y caducidad de derechos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El abandono es declarado por la administración cuando el solicitante no responde a notificaciones o no subsana, y se publica el área como de libre disponibilidad.</div>
+                  <div class="content-text">La renuncia o desistimiento es la voluntad expresa del solicitante de retirar su petición, comunicada formalmente a la entidad competente.</div>
+                  <div class="content-text">La caducidad se produce, por ejemplo, por falta de pago del derecho de vigencia durante dos años, ocasionando la extinción de los derechos mineros.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7590" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:06:30)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="19">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">19</span>
+              <span class="section-title">Libre disponibilidad, publicaciones periódicas y efectos en la oferta de concesiones</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">19.1</span>
+                  <span class="subsection-title">Declaración de libre denunciabilidad y su finalidad</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La declaración de libre denunciabilidad significa que el área vuelve a estar disponible para que cualquier persona natural o jurídica apta pueda denunciar (solicitar) la concesión.</div>
+                  <div class="content-text">Este mecanismo permite reactivar la oferta de áreas mineras que han quedado sin concesión por causas administrativas o de abandono.</div>
+                  <div class="content-text">La publicación de estas áreas se realiza en el diario oficial El Peruano para efectos de publicidad y convocatoria pública.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7667" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:07:47)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">19.2</span>
+                  <span class="subsection-title">Calendario de publicaciones y comportamiento del mercado de concesiones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Las personas interesadas en concesiones de libre disponibilidad identifican patrones en la publicación: suelen aparecer en marzo, junio y septiembre, facilitando la búsqueda de nuevas oportunidades.</div>
+                  <div class="content-text">La publicación periódica permite a los interesados planificar demandas y presentar solicitudes en ventanas temporales conocidas.</div>
+                  <div class="content-text">La publicidad oficial es esencial para garantizar transparencia en la asignación y adjudicación de concesiones mineras.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7725" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:08:45)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">19.3</span>
+                  <span class="subsection-title">Destino final de áreas y posibilidad de nueva solicitud</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Al declararse de libre disponibilidad, el área queda abierta a nuevos solicitantes que no estén impedidos legalmente de peticionar.</div>
+                  <div class="content-text">La condición de libre disponibilidad implica que el derecho anterior se extingue o queda sin efecto, abriendo la posibilidad de obtener una nueva concesión.</div>
+                  <div class="content-text">La gestión pública debe garantizar que estas áreas sean publicadas y accesibles para candidatos interesados conforme a la normativa vigente.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7733" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:08:53)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="20">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">20</span>
+              <span class="section-title">Requisitos y autorizaciones para exploración y explotación minera</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">20.1</span>
+                  <span class="subsection-title">Documentos exigidos para iniciar actividades de exploración o explotación</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Para obtener permisos de exploración o explotación se requiere, entre otros, la certificación ambiental que respalde el estudio de impacto y medidas de mitigación.</div>
+                  <div class="content-text">Se exige un informe preliminar para determinar la existencia de pueblos indígenas o comunidades en el área de la concesión y sus implicancias legales.</div>
+                  <div class="content-text">Es obligatoria la autorización para la utilización de sustancias o minerales existentes y la presentación de certificados o planes arqueológicos pertinentes.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7777" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:09:37)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">20.2</span>
+                  <span class="subsection-title">Certificación ambiental y estudio ambiental como requisito central</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La certificación ambiental es probablemente el trámite más complejo y esencial, pues requiere un estudio ambiental que identifique impactos y medidas de prevención.</div>
+                  <div class="content-text">El estudio debe incluir un procedimiento de rehabilitación que detalle cómo el concesionario devolverá la zona al Estado rehabilitada al término de actividades.</div>
+                  <div class="content-text">Estos estudios y la certificación deben presentarse ante el Ministerio de Energía y Minas, sin los cuales no se pueden iniciar actividades mineras.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7884" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:11:24)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">20.3</span>
+                  <span class="subsection-title">Autorización de terreno y permisos operativos adicionales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se requiere la autorización del terreno y permisos específicos para realizar actividades de exploración y explotación en la concesión otorgada.</div>
+                  <div class="content-text">Es necesario presentar certificados de inexistencia de restos arqueológicos o, en su defecto, planes de monitoreo arqueológico para proteger el patrimonio cultural.</div>
+                  <div class="content-text">La obtención de todas estas autorizaciones administrativas es previa y condicionante para empezar la actividad minera efectiva.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7858" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:10:58)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="21">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">21</span>
+              <span class="section-title">Cierre de la sesión y siguientes pasos formativos</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">21.1</span>
+                  <span class="subsection-title">Continuación temática y próximos contenidos anunciados</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La clase se interrumpe con la promesa de continuar en la siguiente sesión explicando cómo solicitar concesión de exploración, explotación o de subsuelo.</div>
+                  <div class="content-text">El docente indica que se avanzaron casi cincuenta diapositivas y que la profundización en autorizaciones seguirá en la próxima clase.</div>
+                  <div class="content-text">Se menciona que se mostrará qué documentos y requisitos específicos se deben presentar según el tipo de concesión que se solicite.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7947" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:12:27)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">21.2</span>
+                  <span class="subsection-title">Información administrativa final y cierre de la sesión</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se anuncian la compartición de la grabación de la sesión y el enlace para la asistencia en el chat, además de los números de contacto para consultas sobre el diplomado.</div>
+                  <div class="content-text">El moderador y los participantes se saludan, agradecen la clase y se da por concluida la sesión con indicaciones de contacto para dudas administrativas.</div>
+                  <div class="content-text">Se recuerda la disponibilidad de materiales y el compromiso de continuar las explicaciones en la siguiente clase.</div>
+                  <a href="https://www.youtube.com/watch?v=VwCFmcufhq4&start=7961" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:12:41)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="https://www.edumin.pe/" target="_blank">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="footer-logo" />
+      </a>
+      <p class="footer-text">
+  <span style="display: block; font-weight: bold;">Contenido desarrollado por EDUMIN - Centro de Capacitación Especializado en Minería, Industria y Negocios</span>
+  <span style="display: block; font-style: italic;">Material exclusivo para estudiantes de EDUMIN</span>
+  <a href="https://www.edumin.pe/" target="_blank" style="color: var(--color-principal); text-decoration: none; display: block;">https://www.edumin.pe/</a>
+</p>
+    </div>
+
+    <script>
+      const TITULO_DIPLOMADO = "derecho MINERo".toUpperCase();
+      const TITULO_CLASE = "CLASE 15: CONCESIONES MINERAS: LEGISLACIÓN, REQUISITOS Y GESTIÓN ESTRATÉGICA - 1RA PARTE".toUpperCase();
+
+      const elementoDiplomado = document.getElementById("tituloDiplomado");
+      if (elementoDiplomado) {
+        elementoDiplomado.innerText = TITULO_DIPLOMADO;
+      }
+
+      document.title = TITULO_CLASE;
+      const tituloPrincipal = document.getElementById("tituloPrincipal");
+      if (tituloPrincipal) {
+        tituloPrincipal.innerText = TITULO_CLASE;
+      }
+
+      const tituloCompacto = document.getElementById("tituloCompacto");
+      if (tituloCompacto) {
+        tituloCompacto.innerText = TITULO_CLASE;
+      }
+
+      function toggleSection(element) {
+        const section = element.closest(".section");
+        const wasActive = section.classList.contains("active");
+
+        section.classList.toggle("active");
+
+        if (wasActive) {
+          const subsections = section.querySelectorAll(".subsection");
+          subsections.forEach((subsection) => {
+            subsection.classList.remove("active");
+          });
+        }
+      }
+
+      function toggleSubsection(element) {
+        const subsection = element.closest(".subsection");
+        subsection.classList.toggle("active");
+      }
+
+      function expandAll() {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.add("active");
+        });
+
+        const subsections = document.querySelectorAll(".subsection");
+        subsections.forEach((subsection) => {
+          subsection.classList.add("active");
+        });
+      }
+
+      function collapseAll() {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        const subsections = document.querySelectorAll(".subsection");
+        subsections.forEach((subsection) => {
+          subsection.classList.remove("active");
+        });
+      }
+
+      function debounce(func, delay) {
+        let timeout;
+        return function (...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, delay);
+        };
+      }
+
+      function clearSearch() {
+        const searchInput = document.getElementById("searchInput");
+        const clearBtn = document.querySelector(".search-actions .clear-search");
+        searchInput.value = "";
+        clearBtn.style.display = "none";
+        searchContent();
+        searchInput.focus();
+      }
+
+      const createDiacriticInsensitiveRegex = (term) => {
+        const charMap = {
+          a: "[aáAÁ]",
+          e: "[eéEÉ]",
+          i: "[iíIÍ]",
+          o: "[oóOÓ]",
+          u: "[uúUÚ]",
+        };
+
+        const regexString = term
+          .split("")
+          .map((char) => {
+            const lowerChar = char.toLowerCase();
+            return charMap[lowerChar] || char;
+          })
+          .join("");
+
+        return new RegExp(`(${regexString})`, "gi");
+      };
+
+      function searchContent() {
+        const inputElement = document.getElementById("searchInput");
+        const searchTerm = inputElement.value.trim();
+
+        const searchableElements = document.querySelectorAll(".content-text, .section-title, .subsection-title");
+        let found = false;
+        let firstMatchElement = null;
+
+        document.querySelectorAll(".section.active").forEach((el) => el.classList.remove("active"));
+        document.querySelectorAll(".subsection.active").forEach((el) => el.classList.remove("active"));
+        searchableElements.forEach((element) => {
+          element.innerHTML = element.getAttribute("data-original-text") || element.textContent;
+        });
+
+        if (searchTerm.length < 3) {
+          return;
+        }
+
+        const searchRegex = createDiacriticInsensitiveRegex(searchTerm);
+
+        searchableElements.forEach((element) => {
+          const originalText = element.getAttribute("data-original-text") || element.textContent;
+
+          if (searchRegex.test(originalText)) {
+            found = true;
+
+            element.innerHTML = originalText.replace(searchRegex, `<span class="highlight">$1</span>`);
+
+            const subsection = element.closest(".subsection");
+            if (subsection) {
+              subsection.classList.add("active");
+              subsection.closest(".section")?.classList.add("active");
+            } else if (element.classList.contains("section-title")) {
+              element.closest(".section")?.classList.add("active");
+            }
+
+            if (!firstMatchElement) {
+              firstMatchElement = element;
+            }
+          }
+        });
+
+        if (firstMatchElement) {
+          requestAnimationFrame(() => {
+            firstMatchElement.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          });
+        } else if (searchTerm.length >= 3) {
+          alert("No se encontraron resultados para: " + searchTerm);
+        }
+      }
+
+      const debouncedSearch = debounce(searchContent, 300);
+
+      document.getElementById("searchInput").addEventListener("input", function () {
+        const clearBtn = document.querySelector(".search-actions .clear-search");
+        clearBtn.style.display = this.value.length > 0 ? "block" : "none";
+        debouncedSearch();
+      });
+
+      document.getElementById("searchInput").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          clearTimeout(this._timeoutId);
+          searchContent();
+        }
+      });
+
+      // --- Lógica del Header Compacto ---
+      const header = document.querySelector(".header");
+      const headerSpacer = document.querySelector(".header-spacer");
+      let initialHeaderHeight = 0; // Altura del header original
+      let compactHeaderHeight = 0; // Altura del header en modo compacto
+      let scrollTriggerPoint = 0; // Punto de scroll para activar el cambio
+
+      function handleHeaderState() {
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollY > scrollTriggerPoint) {
+          if (!header.classList.contains("compact")) {
+            header.classList.add("compact");
+            headerSpacer.style.height = `${initialHeaderHeight}px`;
+          }
+        } else {
+          if (header.classList.contains("compact")) {
+            header.classList.remove("compact");
+            headerSpacer.style.height = "0px";
+          }
+        }
+      }
+
+      function initializeHeader() {
+        initialHeaderHeight = header.offsetHeight;
+        const headerClone = header.cloneNode(true);
+        headerClone.classList.add("compact");
+        headerClone.style.visibility = "hidden";
+        headerClone.style.position = "absolute";
+        document.body.appendChild(headerClone);
+        compactHeaderHeight = headerClone.offsetHeight;
+        document.body.removeChild(headerClone);
+
+        scrollTriggerPoint = initialHeaderHeight - compactHeaderHeight;
+      }
+
+      document.addEventListener("DOMContentLoaded", initializeHeader);
+      window.addEventListener("scroll", handleHeaderState);
+      window.addEventListener("resize", debounce(initializeHeader, 200));
+    </script>
+  </body>
+</html>

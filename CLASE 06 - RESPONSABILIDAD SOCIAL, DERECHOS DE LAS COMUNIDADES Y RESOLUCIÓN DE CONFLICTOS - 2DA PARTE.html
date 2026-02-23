@@ -1,0 +1,2402 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+/* Estilos de balanceo de texto */
+.header-content-box,
+.header-compact-title,
+.footer,
+.section-title,
+.subsection-title {
+    text-wrap: balance;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      :root {
+        /* Colores Principales del Diseño (Acentos y Degradados) */
+        /* ======================================================= */
+        --color-principal: #00beff; /* Cian Brillante para acentos, bordes y el inicio del degradado principal */
+        --color-secundario: #1e50cd; /* Azul Medio, parte final del degradado de acento */
+
+        /* Fondos Oscuros de la Interfaz */
+        /* ======================================================= */
+        --fondo-oscuro-claro: #002a52; /* Fondo de secciones y contenido */
+        --fondo-oscuro-fuerte: #001a33; /* Fondo del encabezado (header) y pie de página (footer) */
+        /* ======================================================= */
+        --fondo-oscuro-medio: #003366; /* Fondo de encabezados y cajas de contenido */
+        --fondo-borde-claro: #004080; /* Bordes ligeros y color de fondo al hacer hover en encabezados */
+        --fondo-sombra-azul-header: #0050a0; /* ¡NUEVO! Sombra en el header */
+
+        /* Colores de Texto y Fondo General del Body */
+        /* ======================================================= */
+        --texto-blanco-1: #ffffff; /* Blanco puro para títulos y texto en fondo muy oscuro */
+        --texto-claro-2: #e6e6e6; /* Texto principal y claro */
+        --texto-medio-3: #cccccc; /* Texto de contenido de item (un poco más tenue) */
+
+        /* ======================================================= */
+        --fondo-body-inicio: #99e5ff; /* Color de inicio del degradado de fondo del body */
+        --fondo-body-fin: #a5b9eb; /* Color de final del degradado de fondo del body */
+
+        /* Colores de Acento Específicos (YouTube, Búsqueda) */
+        /* ======================================================= */
+        --rojo-youtube-claro: #e60000;
+        --rojo-youtube-fuerte: #a30000;
+        --timestamp-youtube: #ffcccc;
+        --fondo-resaltado: #00c339; /* Verde para el fondo del texto buscado */
+
+        /* Bases RGB para Transparencias (RGBA) */
+        /* ======================================================= */
+        --sombra-rgb: 0, 0, 0; /* Negro puro: Usado para sombras generales y profundidad */
+        --acento-rgb: 0, 190, 255; /* Cian Brillante: Usado para brillos y sombras de acento */
+        --rojo-rgb: 230, 0, 0; /* Rojo Puro: Usado para sombras de enlaces de YouTube */
+        /* ======================================================= */
+        --gradient-principal: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--fondo-body-inicio) 0%, var(--fondo-body-fin) 100%);
+        line-height: 1.2;
+        scroll-behavior: smooth;
+      }
+
+      strong#tituloDiplomado {
+        font-weight: 900;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      @keyframes slideDownSutil {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header.animacion-inicial {
+        animation: slideDownSutil 0.4s ease-out 1;
+        animation-fill-mode: forwards;
+        will-change: transform, opacity;
+      }
+
+      .header {
+        position: relative;
+        width: 100%;
+        z-index: 1000;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--fondo-oscuro-fuerte) 0%, var(--fondo-oscuro-claro) 100%);
+        box-shadow: 0 5px 15px rgba(var(--sombra-rgb), 0.5);
+        text-align: center;
+        will-change: transform;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-text-box {
+        display: grid;
+        gap: 10px;
+        word-break: break-word;
+        margin: 0 15px;
+      }
+
+      .header.compact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+      }
+
+      .header-spacer {
+        display: none;
+        transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header.compact + .header-spacer {
+        display: block;
+      }
+
+      .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .header.compact .header-top {
+        display: none;
+      }
+
+      .logo {
+        width: 140px;
+        height: auto;
+        margin: 0 15px;
+        transition: all 0.3s ease;
+        vertical-align: middle;
+      }
+
+      .header.compact .logo {
+        width: 90px;
+        margin: 0 10px;
+      }
+
+      .header .logo.compact-logo {
+        display: none;
+      }
+
+      .header.compact .logo.compact-logo {
+        display: block;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        color: var(--texto-blanco-1);
+        font-weight: 900;
+      }
+
+      .header.compact h1 {
+        font-size: 1rem;
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        color: var(--texto-blanco-1);
+        font-weight: 700;
+      }
+
+      .header-content-box {
+        background: var(--gradient-principal);
+        border-radius: 12px;
+        padding: 20px 20px;
+        box-shadow: 0 8px 20px rgba(var(--acento-rgb), 0.6);
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        opacity: 1;
+        transform: translateY(0);
+        will-change: transform;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .header.compact .header-content-box {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border: 0;
+        transform: translateY(-10px);
+      }
+
+      .header-content-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(var(--acento-rgb), 0.8);
+      }
+
+      .header-bottom-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .header-second-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .header.compact .header-bottom-row {
+        flex-grow: 1;
+      }
+
+      .logo-and-title {
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .header.compact .logo-and-title {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .header.compact .header-bottom-row .logo-and-title {
+        will-change: transform;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        width: 100%;
+        background: var(--gradient-principal);
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(var(--acento-rgb), 0.4);
+        gap: 10px;
+      }
+
+      .header.compact .header-bottom-row .logo-and-title:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(var(--acento-rgb), 0.5);
+      }
+
+      .header-compact-title {
+        display: none;
+        color: var(--texto-blanco-1);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 10px;
+        white-space: normal;
+      }
+
+      .header.compact .header-compact-title {
+        display: block;
+      }
+
+      .search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--fondo-oscuro-medio);
+        border: 2px solid var(--fondo-borde-claro);
+        border-radius: 30px;
+        box-shadow: 0 4px 10px rgba(var(--sombra-rgb), 0.25);
+        will-change: border-color, background-color;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      }
+
+      .search-bar:focus-within {
+        border-color: var(--fondo-sombra-azul-header);
+        background-color: var(--fondo-borde-claro);
+      }
+
+      .clear-search {
+        cursor: pointer;
+        color: var(--texto-claro-2);
+        padding: 5px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1;
+        display: none;
+        transition: color 0.2s ease;
+        transform: scale(1.5);
+      }
+
+      .clear-search:hover {
+        color: var(--texto-blanco-1);
+      }
+
+      .search-bar input {
+        flex-grow: 1;
+        padding: 10px 18px;
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--texto-claro-2);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        min-width: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .header.compact .search-bar input {
+        padding: 10px 20px;
+      }
+
+      .search-actions {
+        display: flex;
+        align-items: center;
+      }
+
+      .action-button {
+        background: var(--gradient-principal);
+        border: none;
+        color: var(--texto-blanco-1);
+        padding: 8px 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        will-change: transform;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(var(--acento-rgb), 0.4);
+        max-width: 150px;
+        white-space: normal;
+      }
+
+      .action-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(var(--acento-rgb), 0.5);
+      }
+
+      .search-bar .action-button {
+        margin: 5px;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      @keyframes fadeInUpContent {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .mind-map {
+        transition: margin-top 0.4s ease;
+        margin: 50px 0;
+      }
+
+      .mind-map.animacion-contenido {
+        animation: fadeInUpContent 0.4s ease-out 1 forwards;
+        animation-delay: 0.2s;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      .section {
+        margin-bottom: 20px;
+        background-color: var(--fondo-oscuro-claro);
+        border-radius: 12px;
+        border: 2px solid var(--fondo-oscuro-medio);
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(var(--sombra-rgb), 0.25);
+        transition: border-color 0.3s ease;
+      }
+
+      .section-header {
+        padding: 20px;
+        background-color: var(--fondo-oscuro-medio);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        will-change: background-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--texto-claro-2);
+        margin-right: 10px;
+      }
+
+      .section-number {
+        background: var(--gradient-principal);
+        color: var(--texto-blanco-1);
+        padding: 5px 12px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 15px;
+      }
+
+      .toggle-icon {
+        font-size: 1.2rem;
+        color: var(--texto-claro-2);
+        will-change: transform;
+        transition: transform 0.3s ease;
+      }
+
+      .section.active > .section-header .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .section-content {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in;
+      }
+
+      .section.active .section-content {
+        max-height: fit-content;
+        padding-bottom: 10px;
+        opacity: 1;
+      }
+
+      .subsection {
+        margin: 15px;
+        background-color: var(--fondo-oscuro-medio);
+        border-radius: 12px;
+        border: 2px solid var(--fondo-borde-claro);
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+      }
+
+      .subsection:hover {
+        border-color: var(--fondo-sombra-azul-header);
+      }
+
+      .subsection:hover .subsection-header {
+        background-color: var(--fondo-sombra-azul-header);
+      }
+
+      .section:hover {
+        border-color: var(--fondo-borde-claro);
+      }
+
+      .section:hover .section-header {
+        background-color: var(--fondo-borde-claro);
+      }
+
+      .subsection-header {
+        padding: 15px;
+        background-color: var(--fondo-borde-claro);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        will-change: background-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .subsection-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--texto-claro-2);
+        margin-right: 10px;
+      }
+
+      .subsection-number {
+        background: var(--gradient-principal);
+        color: var(--texto-blanco-1);
+        padding: 4px 10px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 12px;
+      }
+
+      .subsection-content {
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--fondo-oscuro-claro);
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in;
+      }
+
+      .subsection.active .subsection-content {
+        max-height: fit-content;
+        padding: 15px;
+        opacity: 1;
+      }
+
+      .subsection.active .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .content-item {
+        margin-bottom: 10px;
+        padding: 15px;
+        background-color: var(--fondo-oscuro-medio);
+        border-radius: 12px;
+        border-left: 4px solid var(--color-principal);
+        box-shadow: 0 1px 5px rgba(var(--sombra-rgb), 0.25);
+      }
+
+      .content-text {
+        color: var(--texto-medio-3);
+        margin-bottom: 5px;
+        line-height: 1.4;
+        font-size: 1rem;
+        font-weight: 500;
+        position: relative;
+        padding-left: 15px;
+      }
+
+      .content-text::before {
+        content: "•";
+        color: var(--color-principal);
+        font-weight: 700;
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+      }
+
+      .youtube-link {
+        display: inline-block;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, var(--rojo-youtube-claro) 0%, var(--rojo-youtube-fuerte) 100%);
+        color: var(--texto-blanco-1);
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1rem;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        box-shadow: 0 2px 5px rgba(var(--rojo-rgb), 0.4);
+        will-change: transform;
+      }
+
+      .youtube-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 7.5px rgba(var(--rojo-rgb), 0.5);
+        will-change: transform;
+      }
+
+      .timestamp {
+        color: var(--timestamp-youtube);
+        font-size: 0.85rem;
+        margin-left: 10px;
+        font-weight: 400;
+      }
+
+      .highlight {
+        background-color: var(--fondo-resaltado);
+        color: var(--texto-blanco-1);
+        font-weight: 700;
+        padding: 4px;
+        border-radius: 6px;
+      }
+
+      .footer {
+        padding: 30px;
+        background: linear-gradient(135deg, var(--fondo-oscuro-fuerte) 0%, var(--fondo-oscuro-claro) 100%);
+        border-top: 1px solid var(--fondo-oscuro-medio);
+        text-align: center;
+        box-shadow: 0 -2px 10px rgba(var(--sombra-rgb), 0.25);
+      }
+
+      .footer-text {
+        color: var(--texto-claro-2);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .footer-logo {
+        width: 140px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .header-top {
+          flex-direction: column;
+        }
+
+        .logo {
+          margin: 0;
+        }
+
+        .header-text-box {
+          margin: 0;
+        }
+
+        .header h1 {
+          font-size: 1.5rem;
+        }
+
+        .header p {
+          font-size: 1rem;
+        }
+
+        .header.compact .header-bottom-row .logo-and-title {
+          gap: 5px;
+        }
+        .logo,
+        .footer-logo {
+          width: 105px;
+        }
+
+        .header.compact .header-bottom-row {
+          flex-direction: column;
+        }
+
+        .header.compact .header-compact-title {
+          margin: 0 5px;
+          font-size: 0.8rem;
+        }
+
+        .header.compact .logo.compact-logo {
+          width: 65px;
+          margin: 5px;
+        }
+
+        .action-button,
+        .search-bar input,
+        .clear-search {
+          font-size: 0.9rem;
+        }
+
+        .section-header {
+          padding: 15px;
+        }
+
+        .header.compact .controls {
+          flex-direction: row;
+        }
+
+        .section-title {
+          font-size: 1.1rem;
+        }
+
+        .subsection-title {
+          font-size: 1rem;
+        }
+        .section-number,
+        .subsection-number {
+          font-size: 13px;
+        }
+
+        .content-text {
+          font-size: 0.9rem;
+        }
+
+        .youtube-link {
+          font-size: 0.8rem;
+        }
+
+        .timestamp {
+          font-size: 0.75rem;
+        }
+
+        .header.compact .action-button {
+          padding: 6px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header animacion-inicial">
+      <div class="header-content-box">
+        <div class="header-top">
+          <a href="https://www.edumin.pe/" target="_blank">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="logo" />
+          </a>
+          <div class="header-text-box">
+  <h1>
+    <div>DIPLOMADO DE ALTA ESPECIALIZACIÓN EN</div>
+    <strong id="tituloDiplomado" style="display: block;"></strong>
+  </h1>
+  <p id="tituloPrincipal"></p>
+</div>
+        </div>
+      </div>
+
+      <div class="header-bottom-row">
+        <div class="logo-and-title">
+          <a href="https://www.edumin.pe/" target="_blank">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="logo compact-logo" />
+          </a>
+          <span class="header-compact-title" id="tituloCompacto"></span>
+        </div>
+        <div class="header-second-row">
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar en el resumen interactivo…" autocomplete="off" />
+            <div class="search-actions">
+              <span class="clear-search" onclick="clearSearch()">&times;</span>
+              <button class="action-button" onclick="searchContent()">Buscar</button>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="action-button" onclick="expandAll()">Mostrar todo</button>
+            <button class="action-button" onclick="collapseAll()">Colapsar todo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-spacer"></div>
+
+    <div class="container">
+      <div class="mind-map animacion-contenido" id="mindMap">
+        <div class="section" data-section="1">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">1</span>
+              <span class="section-title">Introducción y apertura de la clase</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.1</span>
+                  <span class="subsection-title">Presentación del curso, duración y logística de la sesión</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El profesor y la monitora académico se presentan indicando que la sesión corresponde a la clase número cinco del diplomado en alta especialización en derecho minero.</div>
+                  <div class="content-text">Se recuerda la duración de la clase hasta las 21:40 y un break a las 20:30 por cinco minutos, y la invitación a plantear dudas por micrófono o chat.</div>
+                  <div class="content-text">Se menciona que las diapositivas y materiales están listos para ser compartidos y revisados durante la clase.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=869" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:14:29)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.2</span>
+                  <span class="subsection-title">Objetivo de la clase y temas pendientes del módulo anterior</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Explicación de que se continuará con el tema cuatro, completando lo pendiente sobre responsabilidades en proyectos mineros y ambientales.</div>
+                  <div class="content-text">Se anticipa que lo que falta del tema es poco pero requiere profundización para consolidar nociones ya vistas.</div>
+                  <div class="content-text">Se anuncia que posteriormente se abordarán los tipos de permisos ambientales y la evaluación de impacto ambiental.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=933" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:15:33)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.3</span>
+                  <span class="subsection-title">Enfoque amplio del concepto de medio ambiente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se explica que el medio ambiente debe entenderse de forma amplia, no solo árboles o ríos, sino como el conjunto que posibilita la vida y el desenvolvimiento humano.</div>
+                  <div class="content-text">Se advierte contra una visión reducida del medio ambiente y se insta a considerarlo como contenido jurídico amplio que no se cierra a una sola situación.</div>
+                  <div class="content-text">Se recalca la importancia de una interpretación amplia para aplicar correctamente responsabilidades jurídicas.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=973" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:16:13)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="2">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">2</span>
+              <span class="section-title">Responsabilidad penal y delitos ambientales en el código penal</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.1</span>
+                  <span class="subsection-title">Tipos de delitos ambientales regulados en el código penal</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se menciona el delito de minería ilegal como ejemplo principal donde la desfiguración del medio ambiente configura delito penal.</div>
+                  <div class="content-text">El código penal, en el título trece del libro segundo, incluye delitos como contaminación y delitos contra recursos naturales.</div>
+                  <div class="content-text">Otros tipos penales ambientales citados incluyen información falsa sobre recursos, medidas cautelares, y reglas sobre exclusión o reducción de pena.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1041" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:17:21)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.2</span>
+                  <span class="subsection-title">Ejemplos de conductas penadas en materia ambiental y recursos naturales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se penaliza el incumplimiento en manejo de residuos sólidos, relevante para plantas mineras y su obligación de tratamiento de residuos.</div>
+                  <div class="content-text">Se tipifican el tráfico ilegal de residuos peligrosos, extracción ilegal de especies acuáticas, depredación de flora y tráfico de productos forestales maderables.</div>
+                  <div class="content-text">Se incluye el tráfico ilegal de fauna y flora silvestre protegida, tala y daño ilegal a bosques, y tráfico ilegal de recursos genéticos.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1145" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:19:05)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.3</span>
+                  <span class="subsection-title">Requisitos procesales para una acusación penal y papel de la fiscalía</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Para que exista responsabilidad penal debe probarse que el hecho encaja perfectamente en un tipo penal tipificado en el código.</div>
+                  <div class="content-text">La fiscalía es la encargada de recolectar pruebas y abrir la investigación que conduzca a un procedimiento penal ante un juez.</div>
+                  <div class="content-text">Se enfatiza que la configuración del delito depende de prueba y de encaje en la tipificación legal, no de meras conjeturas.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1331" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:22:11)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="3">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">3</span>
+              <span class="section-title">Distinción entre responsabilidad penal, administrativa y civil</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.1</span>
+                  <span class="subsection-title">Concepto general y cuándo aplica cada tipo de responsabilidad</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se explica que las acciones humanas pueden acarrear responsabilidad penal, administrativa y/o civil según el hecho concreto.</div>
+                  <div class="content-text">La naturaleza del hecho determina qué responsabilidad se imputa: delito tipificado para penal, incumplimientos normativos para administrativa, y daños para civil.</div>
+                  <div class="content-text">Se subraya la necesidad de estudiar el caso específico para determinar cuál o cuáles responsabilidades concurren.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1415" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:23:35)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.2</span>
+                  <span class="subsection-title">Responsabilidad civil: objetivos y elementos necesarios</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La responsabilidad civil busca que el responsable repare los daños ocasionados, imponiendo consecuencias sobre su patrimonio.</div>
+                  <div class="content-text">En el Perú, para imputar responsabilidad civil extracontractual deben configurarse elementos: daño, conducta antijurídica, factor de atribución, nexo causal y aspecto subjetivo u objetivo.</div>
+                  <div class="content-text">La reparación puede ser pecuniaria (indemnización) o medidas de recomposición para restablecer la situación previa al daño ambiental.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1500" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:25:00)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.3</span>
+                  <span class="subsection-title">Diferencias prácticas entre sanciones administrativas y efectos civiles o penales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Las multas y sanciones administrativas buscan sancionar conductas administrativas y son impuestas por entidades administrativas, no por el Poder Judicial.</div>
+                  <div class="content-text">La reparación del daño material por parte de la administración es distinta de la indemnización por daños y perjuicios que pueden reclamar particulares afectados en sede civil.</div>
+                  <div class="content-text">Se dan ejemplos comparativos como SUNAFIL en materia laboral donde la multa es para el Estado y no para la persona afectada, ilustrando la distinción entre sanción administrativa y reparación individual.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3138" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:52:18)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="4">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">4</span>
+              <span class="section-title">Elementos de la responsabilidad civil aplicada al daño ambiental</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.1</span>
+                  <span class="subsection-title">Definición y requisitos del daño ambiental para responsabilidad civil</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El daño debe ser real y existente, no hipotético ni remoto, para configurar responsabilidad civil en materia ambiental.</div>
+                  <div class="content-text">En materia ambiental, el daño se denomina menoscabo ambiental y debe calificarse como tal conforme a normativa y pruebas.</div>
+                  <div class="content-text">Sin daño comprobado o sin otros elementos necesarios, no puede imputarse responsabilidad civil.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1672" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:27:52)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.2</span>
+                  <span class="subsection-title">Factor de atribución: elementos objetivos y subjetivos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El factor de atribución objetivo se relaciona con bienes o actividades riesgosas o peligrosas que, por su naturaleza, pueden causar daño al medio ambiente.</div>
+                  <div class="content-text">El factor de atribución subjetivo se refiere a culpa o dolo del causante cuando no existe actividad o bien inherentemente riesgoso, y debe probarse negligencia o intención.</div>
+                  <div class="content-text">Identificar al responsable puede involucrar a personas naturales o jurídicas; la prueba debe determinar quién causó el daño para atribuir responsabilidad.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1794" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:29:54)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.3</span>
+                  <span class="subsection-title">Nexo causal y antijuridicidad en la responsabilidad civil ambiental</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El nexo causal exige demostrar que la conducta del causante produjo efectivamente el daño ambiental.</div>
+                  <div class="content-text">La antijuridicidad implica que la conducta vaya contra norma establecida; su necesidad en responsabilidad civil es objeto de debate doctrinal pero se considera en algunos casos.</div>
+                  <div class="content-text">Si falta alguno de los elementos (daño, nexo, antijuridicidad, factor de atribución) no puede imputarse responsabilidad civil.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1858" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:30:58)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="5">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">5</span>
+              <span class="section-title">Casos prácticos y discusión doctrinal sobre minería ilegal y desfiguración del paisaje</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.1</span>
+                  <span class="subsection-title">Caso de casación sobre minería ilegal y desfiguración del paisaje</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se revisa un caso de casación donde la Corte Suprema consideró que la desfiguración del paisaje por desviar un riachuelo constituía delito de minería ilegal.</div>
+                  <div class="content-text">En el caso la persona extrajo mineral sin permiso pero luego lo devolvió; el delito se configuró por la desfiguración del paisaje al desviar el riachuelo y arrojar desmontes.</div>
+                  <div class="content-text">El caso es controvertido porque algunos sostienen que la simple extracción y devolución no ameritaría penalización, mientras que la desfiguración del paisaje sí implica delito según la corte.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=2295" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:38:15)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.2</span>
+                  <span class="subsection-title">Debate sobre la reparación versus castigo y la posibilidad de remediación administrativa</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se plantea la discusión sobre si la remediación (reponer paisaje, sembrar árboles) podría ser suficiente para solucionar la conducta, frente a la postura penal que castiga la desfiguración.</div>
+                  <div class="content-text">El profesor advierte que no siempre la restitución física del entorno exime de responsabilidad penal, y que permitirlo podría abrir puertas a soluciones insuficientes para daños ambientales.</div>
+                  <div class="content-text">Se reflexiona sobre la subjetividad en decisiones judiciales y cómo conveniencias o interpretaciones pueden influir en sentencias en materia ambiental.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=2497" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:41:37)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.3</span>
+                  <span class="subsection-title">Controversias sobre la interpretación y aplicación de la norma penal ambiental</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se reconoce que la jurisprudencia puede dividirse y que habrá opiniones a favor y en contra de sentencias que extienden la tipificación delictiva a conductas como la desfiguración.</div>
+                  <div class="content-text">Se menciona que la aplicación de la ley no siempre es neutra y puede verse influida por factores extralegales, generando sentencias discutibles.</div>
+                  <div class="content-text">Se exhorta a los estudiantes a analizar críticamente la aplicación normativa y a reconocer la variabilidad en resoluciones judiciales.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=2589" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:43:09)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="6">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">6</span>
+              <span class="section-title">Obligaciones de reparación, destino de la indemnización y normativa aplicable</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.1</span>
+                  <span class="subsection-title">Finalidad de la reparación y el restablecimiento del ambiente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La Ley General del Ambiente establece que la consecuencia de la responsabilidad civil extracontractual es la reparación del daño ambiental y la búsqueda del restablecimiento del estado anterior.</div>
+                  <div class="content-text">Si no es posible restituir totalmente, las medidas deben orientarse a la recomposición o mejoramiento más cercano a la situación previa.</div>
+                  <div class="content-text">La indemnización tiene carácter patrimonial y su objetivo es financiar acciones que compensen los intereses afectados y contribuyan a los objetivos constitucionales sobre ambiente y recursos naturales.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=2720" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:45:20)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.2</span>
+                  <span class="subsection-title">Destinatario de la indemnización y uso de los recursos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La reparación económica corresponde al Estado, que recibirá los montos y los invertirá en la reposición o reparación del medio ambiente afectado.</div>
+                  <div class="content-text">Se aclara que la población local no recibe directamente la indemnización como un bono; el dinero es para acciones de reparación ambiental, no para reparto a habitantes.</div>
+                  <div class="content-text">Se advierte sobre confusiones comunes entre estudiantes y profesionales respecto al destino y finalidad de los recursos por indemnización ambiental.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=2805" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:46:45)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.3</span>
+                  <span class="subsection-title">Tipos de medidas reparatorias y priorización en la inversión de la indemnización</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Las medidas pueden incluir reposición total, recomposición parcial o acciones de mejoramiento de componentes afectados según la viabilidad técnica y económica.</div>
+                  <div class="content-text">La prioridad es reducir efectos negativos a largo plazo y cumplir con los objetivos constitucionales sobre la protección ambiental.</div>
+                  <div class="content-text">La administración estatal decide y ejecuta las medidas con los recursos de la indemnización según el plan técnico y legal correspondiente.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=2814" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:46:54)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="7">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">7</span>
+              <span class="section-title">Responsabilidad administrativa, sanciones y procedimientos sancionadores en materia ambiental</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.1</span>
+                  <span class="subsection-title">Naturaleza y finalidad de la responsabilidad administrativa y sanciones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La responsabilidad administrativa busca sancionar conductas mediante sanciones pecuniarias y otras medidas para incentivar el cumplimiento de la normativa.</div>
+                  <div class="content-text">Las multas son la sanción administrativa más conocida, pero existen otras como cierre temporal o definitivo de centros de trabajo según gravedad.</div>
+                  <div class="content-text">Las sanciones administrativas son impuestas por entes administrativos competentes, no por el Poder Judicial, y obedecen al ordenamiento legal de la administración pública.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3418" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:56:58)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.2</span>
+                  <span class="subsection-title">Entes fiscalizadores en materia ambiental y ejemplos de procedimientos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se menciona a SUNAFIL como ejemplo en materia laboral y se alude a SENACE, SERNANP, o entidades análogas para materia ambiental (sin enumerar todas) que fiscalizan y sancionan.</div>
+                  <div class="content-text">Sinermink (SinerMink / SENRMINK según contexto) realiza inspecciones en el sector minero y puede iniciar procedimientos sancionadores administrativos por incumplimientos ambientales.</div>
+                  <div class="content-text">El procedimiento administrativo sancionador evalúa pruebas, determina la imposición o no de multas y si procede la reducción o aumento de sanciones según elementos probatorios.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3473" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:57:53)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.3</span>
+                  <span class="subsection-title">Procedimiento administrativo sancionador: inicio, desarrollo y cierre</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El procedimiento sancionador tiene etapas claras: inicio por inspección o denuncia, investigación y valorización de pruebas, eventual propuesta de sanción y resolución administrativa.</div>
+                  <div class="content-text">No todos los procedimientos son rutinarios; algunos pueden ampliarse según complejidad del caso, pruebas adicionales o recursos administrativos interpuestos por las partes.</div>
+                  <div class="content-text">El resultado puede implicar multas, cierres, medidas correctivas u otras sanciones administrativas; su ejecución y control corresponden a la entidad administrativa competente.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3522" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:58:42)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="8">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">8</span>
+              <span class="section-title">Aplicación práctica y recomendaciones para el análisis de casos en materia minera y ambiental</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.1</span>
+                  <span class="subsection-title">Importancia de estudiar cada caso y evitar confundir responsabilidades</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se insiste que no se puede generalizar: cada caso requiere análisis específico para determinar si concurren responsabilidad civil, administrativa, penal o una combinación de ellas.</div>
+                  <div class="content-text">Es necesario distinguir fines y efectos de cada tipo de responsabilidad y no asumir que la existencia de una excluye a las otras.</div>
+                  <div class="content-text">Se recomienda conocer la Ley General del Ambiente y normativa sectorial para identificar correctamente consecuencias jurídicas y procedimientos aplicables.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3359" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:55:59)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.2</span>
+                  <span class="subsection-title">Relevancia de la prueba y del encaje normativo en cada tipo de responsabilidad</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Para responsabilidad penal se requiere encaje en tipo penal y prueba suficiente recolectada por fiscalía; para la civil se necesita demostrar daño, nexo causal y factor de atribución; para la administrativa, prueba de incumplimiento normativo.</div>
+                  <div class="content-text">La recolección y valoración de pruebas es crucial y condiciona la posibilidad de aperturar procedimientos y alcanzar sanciones o reparaciones.</div>
+                  <div class="content-text">Se advierte que faltas en la cadena probatoria impiden imputaciones y sentencias, por lo que la investigación técnica y pericial en materia ambiental es determinante.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=1331" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:22:11)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.3</span>
+                  <span class="subsection-title">Preparación para exámenes y atención a detalles normativos y prácticos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se recuerda a los estudiantes la importancia de entender quién recibe las indemnizaciones, qué persiguen las sanciones y qué rol tienen las instituciones fiscalizadoras.</div>
+                  <div class="content-text">Se recomienda estudiar el procedimiento administrativo sancionador y los elementos del daño ambiental para responder correctamente a situaciones de examen.</div>
+                  <div class="content-text">Se aconseja prestar atención a los matices entre reparación administrativa, indemnización estatal y pretensiones de particulares afectados.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3368" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:56:08)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="9">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">9</span>
+              <span class="section-title">Autoridades, fiscalización y sanciones administrativas en actividades mineras</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.1</span>
+                  <span class="subsection-title">Naturaleza y límites de la potestad sancionadora de autoridades ambientales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Las autoridades ambientales pueden realizar labores de fiscalización y aplicar sanciones siempre que exista una norma que tipifique la conducta como sancionable.</div>
+                  <div class="content-text">No se puede imponer multa por hechos que no estén previstos en la normativa o reglamento aplicable; la conducta debe encajar en la tipificación legal.</div>
+                  <div class="content-text">Ejemplo comparativo: reglamento de la Ley General de Inspecciones Laborales exige conducta tipificada para sancionar a una empresa.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3602" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:00:02)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.2</span>
+                  <span class="subsection-title">Entidades involucradas en la fiscalización ambiental y minera</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Osmine (Osinerming) revisa instalaciones mineras y emite requerimientos relacionados con seguridad y estudios de riesgo.</div>
+                  <div class="content-text">Autoridad Regional del Medio Ambiente (ARMA) actúa a nivel regional con competencias administrativas y sancionadoras propias.</div>
+                  <div class="content-text">Otras entidades del Estado (ANA, DIGESA, SERFOR, DG C y G) intervienen según la materia específica que corresponda.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3607" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:00:07)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.3</span>
+                  <span class="subsection-title">Tipos de sanciones y requisitos procedimentales para imponerlas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Las normas indican el tipo y cuantía de las sanciones y las conductas multables.</div>
+                  <div class="content-text">La imposición de sanciones exige procedimiento administrativo fundado en la normativa vigente.</div>
+                  <div class="content-text">La falta de regulación expresa sobre una conducta impide la sanción administrativa por ella.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3617" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:00:17)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="10">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">10</span>
+              <span class="section-title">Concepto, alcance y trámite de la certificación ambiental global o Integra Ambiente</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.1</span>
+                  <span class="subsection-title">Definición, carácter opcional y comparación con estudios de impacto</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La certificación ambiental global (o Integra Ambiente) es un procedimiento administrativo único más general que el EIA detallado y engloba múltiples autorizaciones.</div>
+                  <div class="content-text">Actualmente es opcional para los proyectos, mientras que el estudio de impacto ambiental detallado sigue siendo requisito básico para iniciar actividades extractivas.</div>
+                  <div class="content-text">Algunas empresas optan por la certificación por ser más integral y eficiente en la obtención de permisos.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3683" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:01:23)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.2</span>
+                  <span class="subsection-title">Contenido del procedimiento integral y entidades que aportan títulos habilitantes</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El procedimiento evalúa y aprueba estudios de impacto ambiental detallados y obtiene hasta catorce opiniones técnicas y títulos habilitantes según el proyecto.</div>
+                  <div class="content-text">Intervienen diversas entidades: Autoridad Nacional del Agua (ANA), DIGESA, SERFOR, OSINERMING, Dirección General de Capitanías y Guardacostas (DICAPI), entre otras.</div>
+                  <div class="content-text">Los títulos habilitantes incluyen acreditaciones sobre disponibilidad hídrica, autorizaciones de vertimiento, autorizaciones de desbosque y estudios de riesgo, según corresponda.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=3766" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:02:46)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.3</span>
+                  <span class="subsection-title">Plazos, etapas y obligatoriedad prevista del procedimiento</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La certificación es aprobada por SENACE y su duración estimada para obtención aproximada es de dos años, variando según la complejidad del proyecto.</div>
+                  <div class="content-text">Etapas: clasificación ambiental, recepción, plan de participación ciudadana, permisos de patrimonio, línea base ambiental, levantamiento de observaciones y resolución directoral.</div>
+                  <div class="content-text">Plazo legal de SENACE para resolver: 150 días hábiles prorrogables 30 días hábiles justificadamente; en la práctica administrativos incumplen plazos frecuentemente si el administrado no reclama.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=4109" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:08:29)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="11">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">11</span>
+              <span class="section-title">Entidades colaboradoras, competencias específicas y exclusiones del Integra Ambiente</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.1</span>
+                  <span class="subsection-title">Participación y competencias de las entidades sectoriales en la certificación</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">SENACE dirige y aprueba la certificación ambiental global, coordinando con entidades sectoriales que emitirán autorizaciones vinculantes según su competencia.</div>
+                  <div class="content-text">ANA: acreditación de disponibilidad hídrica, autorizaciones de aprovechamiento de obras hidráulicas y autorizaciones de vertimiento y reuso de aguas residuales.</div>
+                  <div class="content-text">DIGESA: autorizaciones sanitarias para sistemas de tratamiento y disposición final de aguas residuales y otras opiniones técnicas en salud ambiental.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=4761" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:19:21)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.2</span>
+                  <span class="subsection-title">Otras entidades con funciones específicas y su papel en casos geográficos particulares</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">SERFOR: autorizaciones para desbosque y manejo de flora y fauna silvestre cuando proceda.</div>
+                  <div class="content-text">OSINERMING: estudios de riesgo y planes de contingencia relacionados con actividades mineras.</div>
+                  <div class="content-text">DICAPI (Capitanías y Guardacostas): derechos de uso de áreas acuáticas si la concesión minera se ubica en áreas costeras o marinas; su intervención depende de la competencia geográfica.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=4895" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:21:35)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.3</span>
+                  <span class="subsection-title">Exclusiones, límites del alcance y necesidad de permisos adicionales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La certificación integra varios permisos pero no todos; puede ser necesario tramitar autorizaciones adicionales fuera del procedimiento (por ejemplo, Ministerio de Cultura para patrimonio arqueológico).</div>
+                  <div class="content-text">El inicio de construcción u operación una vez expedida la certificación depende de la obtención de todos los permisos sectoriales complementarios necesarios.</div>
+                  <div class="content-text">La configuración del catálogo de entidades participantes puede modificarse y ampliarse según la necesidad del proyecto o cambios normativos.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=5000" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:23:20)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="12">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">12</span>
+              <span class="section-title">Requisitos legales, aplicabilidad sectorial y cobertura temporal de transferencias</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.1</span>
+                  <span class="subsection-title">Marco legal de la certificación y sectores inicialmente transferidos a SENACE</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La ley 30327 regula el concepto, permisos incluidos y entidades que intervienen en la certificación ambiental global.</div>
+                  <div class="content-text">Inicialmente, SENACE es competente para sectores como minería, electricidad e hidrocarburos, con otras transferencias previstas por cronograma del Ejecutivo.</div>
+                  <div class="content-text">A marzo de 2016 el alcance y transferencia de sectores a SENACE estaba en proceso y se esperaba su regulación completa mediante reglamento.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=4761" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:19:21)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.2</span>
+                  <span class="subsection-title">Criterios de elegibilidad para solicitar la certificación ambiental global</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Solo los titulares de proyectos de inversión clasificados como categoría 3, que requieren EIA detallado y cuyos sectores estén transferidos al SENACE, pueden solicitar la certificación.</div>
+                  <div class="content-text">No todos los proyectos o actividades están obligados actualmente a tramitar la certificación; su exigibilidad puede ampliarse progresivamente.</div>
+                  <div class="content-text">La certificación aplica a actividades extractivas que impliquen riesgo ambiental: minería, hidrocarburos, explotación forestal u otros recursos naturales.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=5299" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:28:19)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.3</span>
+                  <span class="subsection-title">Coordinación interinstitucional, gobiernos regionales y municipalidades como aliados</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">SENACE puede coordinar con gobiernos regionales y municipales pese a que estas autoridades no emiten las opiniones vinculantes en el marco de Integra Ambiente.</div>
+                  <div class="content-text">ARMA (Autoridad Regional de Medio Ambiente) en cada región puede participar como aliado, facilitar recepción de solicitudes o emitir opiniones relevantes en proyectos regionales.</div>
+                  <div class="content-text">SENACE implementó planes de acercamiento con gobiernos regionales y municipalidades en regiones con iniciativas que requerirán certificación ambiental global.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=5567" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:32:47)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" data-section="13">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">13</span>
+              <span class="section-title">Casos jurisprudenciales y ejemplos prácticos sobre minería ilegal y concesiones</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.1</span>
+                  <span class="subsection-title">Casación sobre configuración del delito de minería ilegal y desfiguración del medio ambiente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Casación 0464-2016 (Pasco): la Corte Suprema determinó que para configurar el delito de minería ilegal no es necesario un daño efectivo económico, basta la puesta en peligro del ambiente o la desfiguración del paisaje.</div>
+                  <div class="content-text">Hechos del caso: desvío de un riachuelo por una persona que instaló maquinaria y extrajo mineral, provocando desmonte y alteración del paisaje, lo que la Sala entendió como desfiguración ambiental.</div>
+                  <div class="content-text">La sentencia genera debate doctrinal sobre si basta la extracción sin venta o lucro para tipificar delito penal ambiental; la resolución protege el medio ambiente independiente de la comercialización.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=6030" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:40:30)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.2</span>
+                  <span class="subsection-title">Casación sobre devolución de pagos por impedimento comunitario y fuerza mayor</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Casación 1716-2016: una empresa minera solicitó la devolución de pagos por mantenimiento de concesión alegando impedimento por oposición de una comunidad campesina.</div>
+                  <div class="content-text">Administración y Corte sostuvieron que la oposición comunitaria no constituye caso fortuito ni fuerza mayor que obligue a devolución de lo pagado para mantener el derecho de concesión.</div>
+                  <div class="content-text">La decisión fue confirmatoria en sede administrativa y judicial, y plantea discusión sobre situaciones que autorizarían devolución o indemnización por imposibilidad de operar.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=6303" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:45:03)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.3</span>
+                  <span class="subsection-title">Otros casos relevantes y temas pendientes para estudio práctico</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Existen decisiones diversas en cortes superiores y en instancias como el Tribunal Constitucional que pueden resolver casos de forma contraria a la casación, mostrando diversidad jurisprudencial.</div>
+                  <div class="content-text">Se anunciaron próximos casos sobre Sunafil y OSINERMING para analizar aspectos administrativos y sancionadores en minería y seguridad.</div>
+                  <div class="content-text">La clase enfatiza la importancia de estudiar casos completos (casaciones, sentencias) y no solo resúmenes para comprender la aplicación práctica del derecho minero y ambiental.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=6620" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:50:20)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="14">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">14</span>
+              <span class="section-title">Procedimientos administrativos, plazos reales y prácticas en la administración pública</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.1</span>
+                  <span class="subsection-title">Plazos legales versus cumplimiento real en entidades públicas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Plazos legales existen pero en la práctica muchas entidades no los cumplen si el administrado no reclama formalmente.</div>
+                  <div class="content-text">El administrado debe interponer escritos y reclamaciones para exigir cumplimiento de plazos; de lo contrario, los expedientes pueden retrasarse sin consecuencias inmediatas.</div>
+                  <div class="content-text">Ejemplos de entidades donde ocurre: SENACE, Sunafil, otras oficinas administrativas que aplican procedimientos distintos al poder judicial.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=5411" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:30:11)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.2</span>
+                  <span class="subsection-title">Diferencias entre procedimientos administrativos y judiciales en materia laboral y sancionadora</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Sunafil y otras entidades administrativas funcionan con reglas y consecuencias distintas al poder judicial; faltas como inasistencia a comparecencias administrativas tienen sanciones distintas.</div>
+                  <div class="content-text">No existe la misma flexibilidad de reprogramación que en materia judicial; la ausencia injustificada puede acarrear multas o sanciones.</div>
+                  <div class="content-text">Es importante conocer la normativa específica de cada entidad y el TUPA para identificar trámites, requisitos, costos y plazos.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=6705" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:51:45)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.3</span>
+                  <span class="subsection-title">Uso del TUPA y fuentes oficiales para conocer trámites y requisitos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El Texto Único de Procedimientos Administrativos (TUPA) de cada entidad detalla trámites, plazos y tasas, y es la fuente primaria para saber ante qué entidad se realiza un trámite.</div>
+                  <div class="content-text">Muchas entidades publican su TUPA actualizado en página web, permitiendo descargar información sin necesidad de desplazamiento físico.</div>
+                  <div class="content-text">Recomendación práctica: revisar el TUPA y la normativa vigente para conocer documentos, plazos y el procedimiento correcto antes de iniciar trámites administrativos.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=4253" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:10:53)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="15">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">15</span>
+              <span class="section-title">Tratados internacionales, normativa comparada y consideraciones finales sobre aplicación normativa</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">15.1</span>
+                  <span class="subsection-title">Naturaleza y alcance de los tratados internacionales relativos a minería y medio ambiente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los tratados internacionales suscritos por el Estado regulan obligaciones entre países o mediante organismos internacionales, aplicables solo a los países firmantes.</div>
+                  <div class="content-text">Ejemplos: convenios de la OIT tienen repercusiones en derecho laboral; tratados ambientales internacionales regulan protección y obligaciones que el país debe cumplir.</div>
+                  <div class="content-text">La incorporación de tratados a la normativa nacional varía y su cumplimiento depende de la adhesión y de la forma de incorporación al ordenamiento interno.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=6943" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:55:43)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">15.2</span>
+                  <span class="subsection-title">Ejemplo ilustrativo: convenios de la OIT y su relación con normativa nacional</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La OIT puede exigir ciertas políticas, por ejemplo un seguro de desempleo; el Perú alegó que el sistema de Compensación por Tiempo de Servicios (CTS) cumple funciones similares.</div>
+                  <div class="content-text">Debate jurídico: la CTS fue discutida como sueldo diferido y no idéntica a un seguro de desempleo, mostrando cómo la interpretación nacional adapta compromisos internacionales.</div>
+                  <div class="content-text">Comentarios de estudiantes: discusión sobre la naturaleza jurídica de la CTS y su caracterización frente a obligaciones internacionales.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7021" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:57:01)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">15.3</span>
+                  <span class="subsection-title">Cierre y próximos temas pendientes en la materia</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Quedan por comentar temas de arbitraje en minería, casos de Sunafil y OSINERMING, y más sentencias relevantes que ilustran la aplicación práctica del derecho minero y ambiental.</div>
+                  <div class="content-text">Se recomienda estudiar casos completos y revisar la normativa aplicable (leyes, reglamentos, TUPA y sentencias) para comprender plenamente la materia.</div>
+                  <div class="content-text">Próximas clases abordarán arbitraje minero, roles de organismos reguladores y análisis detallado de casos judiciales seleccionados.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=6943" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:55:43)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="16">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">16</span>
+              <span class="section-title">Contexto sobre la CTS y su distinción con un seguro de desempleo</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.1</span>
+                  <span class="subsection-title">Ejemplo práctico que demuestra por qué la CTS no es un seguro de desempleo</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Presentación del caso hipotético: un trabajador renuncia en la empresa A y recibe la liquidación y el íntegro de su CTS, para luego incorporarse inmediatamente a la empresa B.</div>
+                  <div class="content-text">Señalamiento de que, pese a que el trabajador recibe la CTS, no hay desempleo efectivo porque se incorpora a otro empleo en corto plazo.</div>
+                  <div class="content-text">Conclusión práctica: el pago de la CTS no cumple la finalidad de sostener al trabajador durante un periodo sin empleo como lo haría un seguro de desempleo.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7209" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:00:09)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.2</span>
+                  <span class="subsection-title">Características de la CTS frente a las de un seguro de desempleo</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La CTS es presentada como un dinero ahorrado del propio trabajador que se entrega al momento de la terminación de la relación laboral, no un desembolso periódico de terceros.</div>
+                  <div class="content-text">Diferencia clave: un seguro de desempleo desembolsaría recursos no propios de forma periódica hasta la reinserción laboral; la CTS se entrega en bloque y es dinero del trabajador.</div>
+                  <div class="content-text">Observación sobre la libertad de uso: la CTS se entrega sin control estricto del gasto por parte del empleador, pero sigue siendo un activo del trabajador y no una prestación similar a un seguro.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7246" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:00:46)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.3</span>
+                  <span class="subsection-title">Posición del Perú ante la OIT y la realidad normativa</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El Estado peruano, frente a la OIT, afirma que la CTS cumple como seguro de desempleo, postura cuestionada por la OIT.</div>
+                  <div class="content-text">La OIT determina que la CTS no cumple las características de un seguro de desempleo, y por tanto, Perú carece de un seguro de desempleo efectivo.</div>
+                  <div class="content-text">Consideración sobre la fuerza de los tratados: aunque el país suscriba tratados, la aplicación efectiva puede ser limitada por decisiones internas y falta de cumplimiento.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7273" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:01:13)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="17">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">17</span>
+              <span class="section-title">Papel de la minería en la economía peruana y la necesidad de tratados internacionales</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.1</span>
+                  <span class="subsection-title">Importancia económica de la minería en el Perú y su peso en el PBI y exportaciones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La minería es un sector dominante que moviliza empleo, traslado de personal, ingenieros y comercio de minerales.</div>
+                  <div class="content-text">Indicador económico: la minería representa aproximadamente el 8,5% del producto interno bruto del país.</div>
+                  <div class="content-text">Exportaciones: los minerales constituyen el 63.9% de las exportaciones totales, destacando cobre y oro como productos principales por valor.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7386" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:03:06)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.2</span>
+                  <span class="subsection-title">Inversiones y presencia de empresas mineras internacionales en las últimas dos décadas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">En los últimos 20 años ha habido importantes inversiones en exploración y desarrollo minero en el Perú.</div>
+                  <div class="content-text">Mayor presencia de grandes mineras internacionales que siguen procedimientos legales como concesiones mineras y pago de derechos.</div>
+                  <div class="content-text">Resultado: incremento de actividades mineras y posicionamiento del Perú como productor mundial de minerales.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7431" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:03:51)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.3</span>
+                  <span class="subsection-title">Motivación para suscribir tratados internacionales en el sector minero</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los tratados aumentan la atractividad para inversionistas al ofrecer facilidades, seguridad jurídica y transparencia legislativa.</div>
+                  <div class="content-text">La existencia de tratados y normas claras incentiva la inversión extranjera al reducir incertidumbre y costos regulatorios.</div>
+                  <div class="content-text">Mención específica: los tratados buscan facilitar la entrada de capitales, tecnología y personal especializado al sector minero.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7504" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:05:04)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="18">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">18</span>
+              <span class="section-title">Convenios internacionales y su influencia en aranceles, comercio y competitividad minera</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.1</span>
+                  <span class="subsection-title">Acuerdos sobre aranceles como factor decisivo para la inversión minera</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los aranceles afectan el costo de extraer y exportar minerales; por ello, son punto clave en acuerdos comerciales y concesiones.</div>
+                  <div class="content-text">Las empresas evalúan la conveniencia de invertir en un país según la carga arancelaria y otros costos asociados a la operación.</div>
+                  <div class="content-text">Relevancia: la desgravación arancelaria es un componente central para la atracción de inversión extranjera en minería.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7740" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:09:00)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.2</span>
+                  <span class="subsection-title">Efectos de la desgravación arancelaria en competitividad y acceso a insumos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los tratados reducen costos de importación de bienes de capital, maquinarias y materiales necesarios para la actividad minera.</div>
+                  <div class="content-text">Mejora de la competitividad por reducción de precios de insumos y equipos importados.</div>
+                  <div class="content-text">Consideración: las empresas buscan evitar barreras que aumenten costes y compliquen su operación, incluida la burocracia y trámites.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7862" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:11:02)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.3</span>
+                  <span class="subsection-title">Facilidades aduaneras y plazos que favorecen el comercio minero internacional</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los capítulos aduaneros en tratados incluyen reducción de plazos y establecimiento de tiempos máximos para atención de resoluciones y preferencias arancelarias.</div>
+                  <div class="content-text">Mejora en eficiencia logística y reducción de costos tanto en importaciones como en exportaciones.</div>
+                  <div class="content-text">Impacto directo en la competitividad del sector minero al agilizar despacho y trámites aduaneros.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8354" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:19:14)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="19">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">19</span>
+              <span class="section-title">Realidad laboral peruana: informalidad, precariedad y fiscalización laboral</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">19.1</span>
+                  <span class="subsection-title">Prevalencia de la informalidad y condiciones laborales en el país</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Entre el 70 y 80% del empleo en el Perú es informal o precario, sin contratación en planilla ni acceso a beneficios laborales.</div>
+                  <div class="content-text">Diferencia conceptual: muchas personas consideran que "tienen trabajo" cuando realizan labores, pero legalmente puede no existir relación de dependencia.</div>
+                  <div class="content-text">El trabajador con contrato y planilla es la excepción; la informalidad es la norma en gran parte de la economía peruana.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7920" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:12:00)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">19.2</span>
+                  <span class="subsection-title">Desnaturalización de vínculos laborales y problemas ante SUNAFIL</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Casos frecuentes de simulación de servicios, uso indebido de recibos por honorarios y tercerización que ocultan verdaderas relaciones laborales.</div>
+                  <div class="content-text">SUNAFIL recibe múltiples denuncias y casos relativos a la desnaturalización de roles y la falta de formalización.</div>
+                  <div class="content-text">Ejemplo comentado: situaciones en el sector salud donde relaciones laborales fueron clasificadas incorrectamente y supervisadas por autoridades.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8087" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:14:47)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">19.3</span>
+                  <span class="subsection-title">Resistencia empresarial frente a medidas como un seguro de desempleo y visión del empleador</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Hipótesis sobre la implementación de un seguro de desempleo pagado por empleadores: la reacción empresarial sería de rechazo por aumento de costos.</div>
+                  <div class="content-text">Visión empresarial explicada: el empresario busca reducir costos y riesgos para maximizar ganancias; pagar prestaciones adicionales no es atractivo.</div>
+                  <div class="content-text">Alternativa planteada: si el Estado financia un seguro de desempleo la aceptación podría variar, pero imponer costo a empleadores sería impopular.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=7609" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:06:49)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="20">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">20</span>
+              <span class="section-title">Impacto de tratados en temas ambientales, seguridad jurídica y salud laboral en minería</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">20.1</span>
+                  <span class="subsection-title">Tratados internacionales que imponen exigencias ambientales al sector minero</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los compromisos ambientales internacionales requieren adecuación de la legislación nacional a parámetros internacionales.</div>
+                  <div class="content-text">Ejemplos de exigencias: medición de calidad del aire, límites de contaminación del agua y cumplimiento de estándares ambientales.</div>
+                  <div class="content-text">Plazos de adaptación: los tratados suelen proporcionar plazos para que la industria minera ajuste sus procesos y cumpla requisitos.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8313" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:18:33)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">20.2</span>
+                  <span class="subsection-title">Seguridad jurídica como incentivo para la inversión minera extranjera</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La existencia de tratados ofrece garantía y predictibilidad legal que atrae inversores internacionales.</div>
+                  <div class="content-text">La seguridad jurídica incluye normas claras sobre concesiones, derechos, pagos y procedimientos administrativos.</div>
+                  <div class="content-text">Relación con la normativa interna: las normas nacionales deben armonizar con compromisos internacionales suscritos por el Estado.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8135" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:15:35)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">20.3</span>
+                  <span class="subsection-title">Regulación de seguridad y salud ocupacional por exigencia de tratados como la OIT</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La OIT exige que los países miembros cuenten con autoridades que vigilen los derechos laborales y la seguridad y salud en el trabajo.</div>
+                  <div class="content-text">En el Perú la entidad encargada es SUNAFIL, adscrita al Ministerio de Trabajo, que inspecciona y vela por derechos de trabajadores mineros.</div>
+                  <div class="content-text">La normativa exige medidas preventivas y controles para proteger la salud y seguridad de los trabajadores en ambientes mineros.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8161" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:16:01)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="21">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">21</span>
+              <span class="section-title">Tratados sobre servicios, reconocimiento profesional y contratación de personal extranjero en minería</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">21.1</span>
+                  <span class="subsection-title">Capítulos de servicios que facilitan movilidad y reconocimiento de profesionales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Los tratados incluyen medidas sobre independencia de centros reguladores, flujo libre de profesionales y reconocimiento de títulos extranjeros.</div>
+                  <div class="content-text">Objetivo: facilitar que especialistas extranjeros, como ingenieros ambientales o mineros, puedan trabajar legalmente en Perú.</div>
+                  <div class="content-text">Requisito: reconocimiento de títulos por entidades nacionales como SUNEDU para habilitar el ejercicio profesional.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8496" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:21:36)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">21.2</span>
+                  <span class="subsection-title">Requisitos y limitaciones para la contratación de trabajadores extranjeros en minería</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Contratar personal extranjero no es automático; existe normativa que regula porcentajes y condiciones según la plantilla nacional.</div>
+                  <div class="content-text">Si no se cumple la normativa sobre cupos o regularización migratoria, la empresa puede ser sancionada y multada.</div>
+                  <div class="content-text">Procedimiento: deben tramitarse permisos y regularizar la situación del trabajador extranjero antes de su incorporación formal.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8621" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:23:41)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">21.3</span>
+                  <span class="subsection-title">Caso ilustrativo de traslado de personal internacional y trámites necesarios</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Relato de un caso comentado en clase donde una minera traslada un trabajador desde Chile y dudan si basta firmar un contrato para que trabaje.</div>
+                  <div class="content-text">Aclaración: el trabajador necesita cumplir requisitos legales, reconocimiento de título y permisos de trabajo para laborar en Perú.</div>
+                  <div class="content-text">Consecuencia: la contratación sin regularizar puede generar infracciones; no es correcto asumir que el contrato es suficiente para iniciar labores.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8587" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:23:07)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="22">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">22</span>
+              <span class="section-title">Instituciones, cumplimiento y casos a revisar en próximas sesiones</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">22.1</span>
+                  <span class="subsection-title">Rol de SUNAFIL y exigencias de convenios internacionales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">SUNAFIL como entidad encargada de inspeccionar y garantizar derechos laborales, derivado de compromisos internacionales como la OIT.</div>
+                  <div class="content-text">Funciones incluyen vigilancia de condiciones laborales, seguridad y salud en el trabajo y aplicación de sanciones cuando proceda.</div>
+                  <div class="content-text">Importancia de la existencia institucional para hacer efectivos los derechos de los trabajadores del sector minero.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8161" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:16:01)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">22.2</span>
+                  <span class="subsection-title">Materias y casos que se analizarán en la próxima clase después del receso</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Anuncio de que se revisarán cuatro casos prácticos en la siguiente sesión, programada después del receso alrededor de las 09:10.</div>
+                  <div class="content-text">Invitación a los alumnos para prepararse y participar en el análisis de los expedientes y situaciones prácticas.</div>
+                  <div class="content-text">Indicaciones logísticas finales sobre la grabación de la clase y el enlace compartido en el chat para descarga de la sesión.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8708" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:25:08)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">22.3</span>
+                  <span class="subsection-title">Mensajes finales, disponibilidad y agradecimientos al cierre de la sesión</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Mensaje del monitor académico agradeciendo al profesor y a los alumnos por su asistencia y participación.</div>
+                  <div class="content-text">Información práctica: enlace de la grabación será entregado en el chat y los alumnos pueden enviar dudas o consultas posteriores.</div>
+                  <div class="content-text">Cierre de la clase con recordatorio de revisión de casos y continuidad del curso en la siguiente sesión.</div>
+                  <a href="https://www.youtube.com/watch?v=WyYhb6zvGnk&start=8734" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:25:34)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="https://www.edumin.pe/" target="_blank">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="footer-logo" />
+      </a>
+      <p class="footer-text">
+  <span style="display: block; font-weight: bold;">Contenido desarrollado por EDUMIN - Centro de Capacitación Especializado en Minería, Industria y Negocios</span>
+  <span style="display: block; font-style: italic;">Material exclusivo para estudiantes de EDUMIN</span>
+  <a href="https://www.edumin.pe/" target="_blank" style="color: var(--color-principal); text-decoration: none; display: block;">https://www.edumin.pe/</a>
+</p>
+    </div>
+
+    <script>
+      const TITULO_DIPLOMADO = "DERECHO MINERO".toUpperCase();
+      const TITULO_CLASE = "CLASE 06: RESPONSABILIDAD SOCIAL, DERECHOS DE LAS COMUNIDADES Y RESOLUCIÓN DE CONFLICTOS - 2DA PARTE".toUpperCase();
+
+      const elementoDiplomado = document.getElementById("tituloDiplomado");
+      if (elementoDiplomado) {
+        elementoDiplomado.innerText = TITULO_DIPLOMADO;
+      }
+
+      document.title = TITULO_CLASE;
+      const tituloPrincipal = document.getElementById("tituloPrincipal");
+      if (tituloPrincipal) {
+        tituloPrincipal.innerText = TITULO_CLASE;
+      }
+
+      const tituloCompacto = document.getElementById("tituloCompacto");
+      if (tituloCompacto) {
+        tituloCompacto.innerText = TITULO_CLASE;
+      }
+
+      function toggleSection(element) {
+        const section = element.closest(".section");
+        const wasActive = section.classList.contains("active");
+
+        section.classList.toggle("active");
+
+        if (wasActive) {
+          const subsections = section.querySelectorAll(".subsection");
+          subsections.forEach((subsection) => {
+            subsection.classList.remove("active");
+          });
+        }
+      }
+
+      function toggleSubsection(element) {
+        const subsection = element.closest(".subsection");
+        subsection.classList.toggle("active");
+      }
+
+      function expandAll() {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.add("active");
+        });
+
+        const subsections = document.querySelectorAll(".subsection");
+        subsections.forEach((subsection) => {
+          subsection.classList.add("active");
+        });
+      }
+
+      function collapseAll() {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        const subsections = document.querySelectorAll(".subsection");
+        subsections.forEach((subsection) => {
+          subsection.classList.remove("active");
+        });
+      }
+
+      function debounce(func, delay) {
+        let timeout;
+        return function (...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, delay);
+        };
+      }
+
+      function clearSearch() {
+        const searchInput = document.getElementById("searchInput");
+        const clearBtn = document.querySelector(".search-actions .clear-search");
+        searchInput.value = "";
+        clearBtn.style.display = "none";
+        searchContent();
+        searchInput.focus();
+      }
+
+      const createDiacriticInsensitiveRegex = (term) => {
+        const charMap = {
+          a: "[aáAÁ]",
+          e: "[eéEÉ]",
+          i: "[iíIÍ]",
+          o: "[oóOÓ]",
+          u: "[uúUÚ]",
+        };
+
+        const regexString = term
+          .split("")
+          .map((char) => {
+            const lowerChar = char.toLowerCase();
+            return charMap[lowerChar] || char;
+          })
+          .join("");
+
+        return new RegExp(`(${regexString})`, "gi");
+      };
+
+      function searchContent() {
+        const inputElement = document.getElementById("searchInput");
+        const searchTerm = inputElement.value.trim();
+
+        const searchableElements = document.querySelectorAll(".content-text, .section-title, .subsection-title");
+        let found = false;
+        let firstMatchElement = null;
+
+        document.querySelectorAll(".section.active").forEach((el) => el.classList.remove("active"));
+        document.querySelectorAll(".subsection.active").forEach((el) => el.classList.remove("active"));
+        searchableElements.forEach((element) => {
+          element.innerHTML = element.getAttribute("data-original-text") || element.textContent;
+        });
+
+        if (searchTerm.length < 3) {
+          return;
+        }
+
+        const searchRegex = createDiacriticInsensitiveRegex(searchTerm);
+
+        searchableElements.forEach((element) => {
+          const originalText = element.getAttribute("data-original-text") || element.textContent;
+
+          if (searchRegex.test(originalText)) {
+            found = true;
+
+            element.innerHTML = originalText.replace(searchRegex, `<span class="highlight">$1</span>`);
+
+            const subsection = element.closest(".subsection");
+            if (subsection) {
+              subsection.classList.add("active");
+              subsection.closest(".section")?.classList.add("active");
+            } else if (element.classList.contains("section-title")) {
+              element.closest(".section")?.classList.add("active");
+            }
+
+            if (!firstMatchElement) {
+              firstMatchElement = element;
+            }
+          }
+        });
+
+        if (firstMatchElement) {
+          requestAnimationFrame(() => {
+            firstMatchElement.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          });
+        } else if (searchTerm.length >= 3) {
+          alert("No se encontraron resultados para: " + searchTerm);
+        }
+      }
+
+      const debouncedSearch = debounce(searchContent, 300);
+
+      document.getElementById("searchInput").addEventListener("input", function () {
+        const clearBtn = document.querySelector(".search-actions .clear-search");
+        clearBtn.style.display = this.value.length > 0 ? "block" : "none";
+        debouncedSearch();
+      });
+
+      document.getElementById("searchInput").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          clearTimeout(this._timeoutId);
+          searchContent();
+        }
+      });
+
+      // --- Lógica del Header Compacto ---
+      const header = document.querySelector(".header");
+      const headerSpacer = document.querySelector(".header-spacer");
+      let initialHeaderHeight = 0; // Altura del header original
+      let compactHeaderHeight = 0; // Altura del header en modo compacto
+      let scrollTriggerPoint = 0; // Punto de scroll para activar el cambio
+
+      function handleHeaderState() {
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollY > scrollTriggerPoint) {
+          if (!header.classList.contains("compact")) {
+            header.classList.add("compact");
+            headerSpacer.style.height = `${initialHeaderHeight}px`;
+          }
+        } else {
+          if (header.classList.contains("compact")) {
+            header.classList.remove("compact");
+            headerSpacer.style.height = "0px";
+          }
+        }
+      }
+
+      function initializeHeader() {
+        initialHeaderHeight = header.offsetHeight;
+        const headerClone = header.cloneNode(true);
+        headerClone.classList.add("compact");
+        headerClone.style.visibility = "hidden";
+        headerClone.style.position = "absolute";
+        document.body.appendChild(headerClone);
+        compactHeaderHeight = headerClone.offsetHeight;
+        document.body.removeChild(headerClone);
+
+        scrollTriggerPoint = initialHeaderHeight - compactHeaderHeight;
+      }
+
+      document.addEventListener("DOMContentLoaded", initializeHeader);
+      window.addEventListener("scroll", handleHeaderState);
+      window.addEventListener("resize", debounce(initializeHeader, 200));
+    </script>
+  </body>
+</html>

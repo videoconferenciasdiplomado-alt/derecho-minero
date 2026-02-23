@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+/* Estilos de balanceo de texto */
+.header-content-box,
+.header-compact-title,
+.footer,
+.section-title,
+.subsection-title {
+    text-wrap: balance;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      :root {
+        /* Colores Principales del Diseño (Acentos y Degradados) */
+        /* ======================================================= */
+        --color-principal: #00beff; /* Cian Brillante para acentos, bordes y el inicio del degradado principal */
+        --color-secundario: #1e50cd; /* Azul Medio, parte final del degradado de acento */
+
+        /* Fondos Oscuros de la Interfaz */
+        /* ======================================================= */
+        --fondo-oscuro-claro: #002a52; /* Fondo de secciones y contenido */
+        --fondo-oscuro-fuerte: #001a33; /* Fondo del encabezado (header) y pie de página (footer) */
+        /* ======================================================= */
+        --fondo-oscuro-medio: #003366; /* Fondo de encabezados y cajas de contenido */
+        --fondo-borde-claro: #004080; /* Bordes ligeros y color de fondo al hacer hover en encabezados */
+        --fondo-sombra-azul-header: #0050a0; /* ¡NUEVO! Sombra en el header */
+
+        /* Colores de Texto y Fondo General del Body */
+        /* ======================================================= */
+        --texto-blanco-1: #ffffff; /* Blanco puro para títulos y texto en fondo muy oscuro */
+        --texto-claro-2: #e6e6e6; /* Texto principal y claro */
+        --texto-medio-3: #cccccc; /* Texto de contenido de item (un poco más tenue) */
+
+        /* ======================================================= */
+        --fondo-body-inicio: #99e5ff; /* Color de inicio del degradado de fondo del body */
+        --fondo-body-fin: #a5b9eb; /* Color de final del degradado de fondo del body */
+
+        /* Colores de Acento Específicos (YouTube, Búsqueda) */
+        /* ======================================================= */
+        --rojo-youtube-claro: #e60000;
+        --rojo-youtube-fuerte: #a30000;
+        --timestamp-youtube: #ffcccc;
+        --fondo-resaltado: #00c339; /* Verde para el fondo del texto buscado */
+
+        /* Bases RGB para Transparencias (RGBA) */
+        /* ======================================================= */
+        --sombra-rgb: 0, 0, 0; /* Negro puro: Usado para sombras generales y profundidad */
+        --acento-rgb: 0, 190, 255; /* Cian Brillante: Usado para brillos y sombras de acento */
+        --rojo-rgb: 230, 0, 0; /* Rojo Puro: Usado para sombras de enlaces de YouTube */
+        /* ======================================================= */
+        --gradient-principal: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--fondo-body-inicio) 0%, var(--fondo-body-fin) 100%);
+        line-height: 1.2;
+        scroll-behavior: smooth;
+      }
+
+      strong#tituloDiplomado {
+        font-weight: 900;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      @keyframes slideDownSutil {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header.animacion-inicial {
+        animation: slideDownSutil 0.4s ease-out 1;
+        animation-fill-mode: forwards;
+        will-change: transform, opacity;
+      }
+
+      .header {
+        position: relative;
+        width: 100%;
+        z-index: 1000;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--fondo-oscuro-fuerte) 0%, var(--fondo-oscuro-claro) 100%);
+        box-shadow: 0 5px 15px rgba(var(--sombra-rgb), 0.5);
+        text-align: center;
+        will-change: transform;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-text-box {
+        display: grid;
+        gap: 10px;
+        word-break: break-word;
+        margin: 0 15px;
+      }
+
+      .header.compact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+      }
+
+      .header-spacer {
+        display: none;
+        transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header.compact + .header-spacer {
+        display: block;
+      }
+
+      .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .header.compact .header-top {
+        display: none;
+      }
+
+      .logo {
+        width: 140px;
+        height: auto;
+        margin: 0 15px;
+        transition: all 0.3s ease;
+        vertical-align: middle;
+      }
+
+      .header.compact .logo {
+        width: 90px;
+        margin: 0 10px;
+      }
+
+      .header .logo.compact-logo {
+        display: none;
+      }
+
+      .header.compact .logo.compact-logo {
+        display: block;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        color: var(--texto-blanco-1);
+        font-weight: 900;
+      }
+
+      .header.compact h1 {
+        font-size: 1rem;
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        color: var(--texto-blanco-1);
+        font-weight: 700;
+      }
+
+      .header-content-box {
+        background: var(--gradient-principal);
+        border-radius: 12px;
+        padding: 20px 20px;
+        box-shadow: 0 8px 20px rgba(var(--acento-rgb), 0.6);
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        opacity: 1;
+        transform: translateY(0);
+        will-change: transform;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .header.compact .header-content-box {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border: 0;
+        transform: translateY(-10px);
+      }
+
+      .header-content-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(var(--acento-rgb), 0.8);
+      }
+
+      .header-bottom-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .header-second-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .header.compact .header-bottom-row {
+        flex-grow: 1;
+      }
+
+      .logo-and-title {
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .header.compact .logo-and-title {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .header.compact .header-bottom-row .logo-and-title {
+        will-change: transform;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        width: 100%;
+        background: var(--gradient-principal);
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(var(--acento-rgb), 0.4);
+        gap: 10px;
+      }
+
+      .header.compact .header-bottom-row .logo-and-title:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(var(--acento-rgb), 0.5);
+      }
+
+      .header-compact-title {
+        display: none;
+        color: var(--texto-blanco-1);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 10px;
+        white-space: normal;
+      }
+
+      .header.compact .header-compact-title {
+        display: block;
+      }
+
+      .search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--fondo-oscuro-medio);
+        border: 2px solid var(--fondo-borde-claro);
+        border-radius: 30px;
+        box-shadow: 0 4px 10px rgba(var(--sombra-rgb), 0.25);
+        will-change: border-color, background-color;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      }
+
+      .search-bar:focus-within {
+        border-color: var(--fondo-sombra-azul-header);
+        background-color: var(--fondo-borde-claro);
+      }
+
+      .clear-search {
+        cursor: pointer;
+        color: var(--texto-claro-2);
+        padding: 5px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1;
+        display: none;
+        transition: color 0.2s ease;
+        transform: scale(1.5);
+      }
+
+      .clear-search:hover {
+        color: var(--texto-blanco-1);
+      }
+
+      .search-bar input {
+        flex-grow: 1;
+        padding: 10px 18px;
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--texto-claro-2);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        min-width: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .header.compact .search-bar input {
+        padding: 10px 20px;
+      }
+
+      .search-actions {
+        display: flex;
+        align-items: center;
+      }
+
+      .action-button {
+        background: var(--gradient-principal);
+        border: none;
+        color: var(--texto-blanco-1);
+        padding: 8px 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        will-change: transform;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(var(--acento-rgb), 0.4);
+        max-width: 150px;
+        white-space: normal;
+      }
+
+      .action-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(var(--acento-rgb), 0.5);
+      }
+
+      .search-bar .action-button {
+        margin: 5px;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      @keyframes fadeInUpContent {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .mind-map {
+        transition: margin-top 0.4s ease;
+        margin: 50px 0;
+      }
+
+      .mind-map.animacion-contenido {
+        animation: fadeInUpContent 0.4s ease-out 1 forwards;
+        animation-delay: 0.2s;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      .section {
+        margin-bottom: 20px;
+        background-color: var(--fondo-oscuro-claro);
+        border-radius: 12px;
+        border: 2px solid var(--fondo-oscuro-medio);
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(var(--sombra-rgb), 0.25);
+        transition: border-color 0.3s ease;
+      }
+
+      .section-header {
+        padding: 20px;
+        background-color: var(--fondo-oscuro-medio);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        will-change: background-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--texto-claro-2);
+        margin-right: 10px;
+      }
+
+      .section-number {
+        background: var(--gradient-principal);
+        color: var(--texto-blanco-1);
+        padding: 5px 12px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 15px;
+      }
+
+      .toggle-icon {
+        font-size: 1.2rem;
+        color: var(--texto-claro-2);
+        will-change: transform;
+        transition: transform 0.3s ease;
+      }
+
+      .section.active > .section-header .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .section-content {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in;
+      }
+
+      .section.active .section-content {
+        max-height: fit-content;
+        padding-bottom: 10px;
+        opacity: 1;
+      }
+
+      .subsection {
+        margin: 15px;
+        background-color: var(--fondo-oscuro-medio);
+        border-radius: 12px;
+        border: 2px solid var(--fondo-borde-claro);
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+      }
+
+      .subsection:hover {
+        border-color: var(--fondo-sombra-azul-header);
+      }
+
+      .subsection:hover .subsection-header {
+        background-color: var(--fondo-sombra-azul-header);
+      }
+
+      .section:hover {
+        border-color: var(--fondo-borde-claro);
+      }
+
+      .section:hover .section-header {
+        background-color: var(--fondo-borde-claro);
+      }
+
+      .subsection-header {
+        padding: 15px;
+        background-color: var(--fondo-borde-claro);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        will-change: background-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .subsection-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--texto-claro-2);
+        margin-right: 10px;
+      }
+
+      .subsection-number {
+        background: var(--gradient-principal);
+        color: var(--texto-blanco-1);
+        padding: 4px 10px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 12px;
+      }
+
+      .subsection-content {
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--fondo-oscuro-claro);
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in;
+      }
+
+      .subsection.active .subsection-content {
+        max-height: fit-content;
+        padding: 15px;
+        opacity: 1;
+      }
+
+      .subsection.active .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .content-item {
+        margin-bottom: 10px;
+        padding: 15px;
+        background-color: var(--fondo-oscuro-medio);
+        border-radius: 12px;
+        border-left: 4px solid var(--color-principal);
+        box-shadow: 0 1px 5px rgba(var(--sombra-rgb), 0.25);
+      }
+
+      .content-text {
+        color: var(--texto-medio-3);
+        margin-bottom: 5px;
+        line-height: 1.4;
+        font-size: 1rem;
+        font-weight: 500;
+        position: relative;
+        padding-left: 15px;
+      }
+
+      .content-text::before {
+        content: "•";
+        color: var(--color-principal);
+        font-weight: 700;
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+      }
+
+      .youtube-link {
+        display: inline-block;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, var(--rojo-youtube-claro) 0%, var(--rojo-youtube-fuerte) 100%);
+        color: var(--texto-blanco-1);
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1rem;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        box-shadow: 0 2px 5px rgba(var(--rojo-rgb), 0.4);
+        will-change: transform;
+      }
+
+      .youtube-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 7.5px rgba(var(--rojo-rgb), 0.5);
+        will-change: transform;
+      }
+
+      .timestamp {
+        color: var(--timestamp-youtube);
+        font-size: 0.85rem;
+        margin-left: 10px;
+        font-weight: 400;
+      }
+
+      .highlight {
+        background-color: var(--fondo-resaltado);
+        color: var(--texto-blanco-1);
+        font-weight: 700;
+        padding: 4px;
+        border-radius: 6px;
+      }
+
+      .footer {
+        padding: 30px;
+        background: linear-gradient(135deg, var(--fondo-oscuro-fuerte) 0%, var(--fondo-oscuro-claro) 100%);
+        border-top: 1px solid var(--fondo-oscuro-medio);
+        text-align: center;
+        box-shadow: 0 -2px 10px rgba(var(--sombra-rgb), 0.25);
+      }
+
+      .footer-text {
+        color: var(--texto-claro-2);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .footer-logo {
+        width: 140px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .header-top {
+          flex-direction: column;
+        }
+
+        .logo {
+          margin: 0;
+        }
+
+        .header-text-box {
+          margin: 0;
+        }
+
+        .header h1 {
+          font-size: 1.5rem;
+        }
+
+        .header p {
+          font-size: 1rem;
+        }
+
+        .header.compact .header-bottom-row .logo-and-title {
+          gap: 5px;
+        }
+        .logo,
+        .footer-logo {
+          width: 105px;
+        }
+
+        .header.compact .header-bottom-row {
+          flex-direction: column;
+        }
+
+        .header.compact .header-compact-title {
+          margin: 0 5px;
+          font-size: 0.8rem;
+        }
+
+        .header.compact .logo.compact-logo {
+          width: 65px;
+          margin: 5px;
+        }
+
+        .action-button,
+        .search-bar input,
+        .clear-search {
+          font-size: 0.9rem;
+        }
+
+        .section-header {
+          padding: 15px;
+        }
+
+        .header.compact .controls {
+          flex-direction: row;
+        }
+
+        .section-title {
+          font-size: 1.1rem;
+        }
+
+        .subsection-title {
+          font-size: 1rem;
+        }
+        .section-number,
+        .subsection-number {
+          font-size: 13px;
+        }
+
+        .content-text {
+          font-size: 0.9rem;
+        }
+
+        .youtube-link {
+          font-size: 0.8rem;
+        }
+
+        .timestamp {
+          font-size: 0.75rem;
+        }
+
+        .header.compact .action-button {
+          padding: 6px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header animacion-inicial">
+      <div class="header-content-box">
+        <div class="header-top">
+          <a href="https://www.edumin.pe/" target="_blank">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="logo" />
+          </a>
+          <div class="header-text-box">
+  <h1>
+    <div>DIPLOMADO DE ALTA ESPECIALIZACIÓN EN</div>
+    <strong id="tituloDiplomado" style="display: block;"></strong>
+  </h1>
+  <p id="tituloPrincipal"></p>
+</div>
+        </div>
+      </div>
+
+      <div class="header-bottom-row">
+        <div class="logo-and-title">
+          <a href="https://www.edumin.pe/" target="_blank">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="logo compact-logo" />
+          </a>
+          <span class="header-compact-title" id="tituloCompacto"></span>
+        </div>
+        <div class="header-second-row">
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar en el resumen interactivo…" autocomplete="off" />
+            <div class="search-actions">
+              <span class="clear-search" onclick="clearSearch()">&times;</span>
+              <button class="action-button" onclick="searchContent()">Buscar</button>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="action-button" onclick="expandAll()">Mostrar todo</button>
+            <button class="action-button" onclick="collapseAll()">Colapsar todo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-spacer"></div>
+
+    <div class="container">
+      <div class="mind-map animacion-contenido" id="mindMap">
+        <div class="section" data-section="1">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">1</span>
+              <span class="section-title">Introducción a la clase y objetivos principales</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.1</span>
+                  <span class="subsection-title">Presentación del docente, logística de la clase y temas a abordar</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Inicio de la clase número ocho del diplomado en derecho minero con indicaciones sobre preguntas y participación de los asistentes.</div>
+                  <div class="content-text">Anuncio de los temas a tratar: conflictos sociales y ambientales, instrumentos de gestión ambiental y normativa nacional vinculada.</div>
+                  <div class="content-text">Plan de la sesión: primera parte sobre conflictos y normativa ambiental; segunda parte, tras el receso, sobre seguridad y salud en el trabajo con normativa específica para minería.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=263" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:04:23)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.2</span>
+                  <span class="subsection-title">Importancia de la normativa en capacitación y consecuencias legales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">En minería las capacitaciones tienen requisitos específicos de horas, formato y contenidos recogidos en anexos legales, no pueden impartirse arbitrariamente.</div>
+                  <div class="content-text">Documentos de capacitación que no cumplan formatos o duración son inválidos y pueden ser exigidos por la autoridad en casos de accidente laboral.</div>
+                  <div class="content-text">Incumplimientos pueden derivar en sanciones administrativas y posibles responsabilidades penales dependiendo del caso.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=353" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:05:53)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.3</span>
+                  <span class="subsection-title">Estructura del tratamiento del conflicto y alcance del contenido</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Enfoque teórico didáctico sobre conflictos sociales y ambientales; se revisarán instrumentos de gestión y casos prácticos.</div>
+                  <div class="content-text">Se explicará el carácter general de la normativa y cómo ésta articula roles de Estado, empresas y comunidades.</div>
+                  <div class="content-text">Se enfatiza que la normativa ofrece lineamientos pero en la práctica pueden no ser totalmente observados durante conflictos en desarrollo.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=525" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:08:45)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="2">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">2</span>
+              <span class="section-title">Definición, características y tipología de los conflictos socioambientales</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.1</span>
+                  <span class="subsection-title">Concepto y actores involucrados en conflictos socioambientales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Definición: proceso complejo donde sectores de la sociedad, el Estado y empresas perciben intereses socioambientales contradictorios que pueden derivar en violencia.</div>
+                  <div class="content-text">Actores: empresas (por ejemplo mineras), gobiernos locales y regionales, poblaciones locales, instituciones públicas vinculadas al medio ambiente.</div>
+                  <div class="content-text">Componentes: político, económico, social, cultural y relacionados con manejo de impactos ambientales.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=544" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:09:04)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.2</span>
+                  <span class="subsection-title">Situaciones que configuran un conflicto socioambiental y ejemplos típicos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Posibles situaciones: afectación o potencial afectación de recursos naturales como agua, aire, suelos, flora y fauna por actividades extractivas.</div>
+                  <div class="content-text">Riesgos de contaminación de cuencas hidrográficas, pasivos ambientales y contaminación por actividad extractiva.</div>
+                  <div class="content-text">Cuestionamientos sobre procesos de certificación ambiental y fiscalización que generan desconfianza social y reclamos.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=912" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:15:12)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.3</span>
+                  <span class="subsection-title">Tipología de conflictos según la Defensoría del Pueblo y criterios de calificación</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Tipos destacados: conflicto comunal por acceso a recursos y límites territoriales entre comunidades.</div>
+                  <div class="content-text">Conflicto socioambiental: dinámica centrada en control, uso y acceso al ambiente y sus recursos, frecuentemente vinculado al componente económico.</div>
+                  <div class="content-text">Otros tipos: conflictos electorales, laborales, culturales y asuntos de gobierno local, regional o nacional que pueden combinarse en un solo conflicto.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=2707" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:45:07)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="3">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">3</span>
+              <span class="section-title">Enfoques y principios mínimos para la gestión de conflictos socioambientales</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.1</span>
+                  <span class="subsection-title">Enfoque de Derechos Humanos en la gestión de conflictos socioambientales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Principio: los actores involucrados son personas con derechos que deben ejercerse sin discriminación, conforme a lineamientos y protocolos del Estado.</div>
+                  <div class="content-text">Ejemplo: exposición a metales pesados por actividades extractivas es materia de diálogo dentro de procesos socioambientales.</div>
+                  <div class="content-text">Importancia de garantizar derechos fundamentales durante manifestaciones, huelgas y reclamos sociales para preservar garantías constitucionales.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=1369" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:22:49)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.2</span>
+                  <span class="subsection-title">Enfoque territorial y su aplicación en procesos de diálogo y gestión</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Enfoque territorial: reconoce características y particularidades del territorio para impulsar desarrollo y gestionar conflictos desde cuencas hidrográficas u otras demarcaciones.</div>
+                  <div class="content-text">Plantea una mirada multidimensional que integra desarrollo humano, social, institucional, ambiental y económico en la planificación estatal.</div>
+                  <div class="content-text">Permite transformar conflictos en oportunidades de desarrollo considerando idiosincrasia, autoridades locales y contextos geográficos diferenciados.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=1694" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:28:14)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.3</span>
+                  <span class="subsection-title">Enfoque transformativo, interculturalidad y género para soluciones sostenibles</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Enfoque transformativo: busca que los procesos de cambio mejoren relaciones entre sociedad, Estado y empresas, evitando agravios y promoviendo soluciones constructivas.</div>
+                  <div class="content-text">Interculturalidad: reconoce diversidad cultural y formas distintas de entender recursos naturales, importancia de participación del Ministerio de Cultura en mediaciones.</div>
+                  <div class="content-text">Enfoque de género: visibiliza roles, asimetrías y desigualdades entre hombres y mujeres, promoviendo participación igualitaria y medidas que superen desigualdades estructurales.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=1835" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:30:35)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="4">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">4</span>
+              <span class="section-title">Instrumentos, procedimientos y modalidades de intervención institucional</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.1</span>
+                  <span class="subsection-title">Protocolo de actuación defensorial y principios de prevención</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La Defensoría del Pueblo emitió el protocolo de actuación en conflictos sociales como conjunto de recomendaciones y lineamientos para intervención institucional.</div>
+                  <div class="content-text">Principio rector: la prevención es clave para evitar que manifestaciones y conflictos escalen; identificar conflictos en etapas tempranas permite acciones preventivas.</div>
+                  <div class="content-text">Contenido del protocolo: principios de intervención, fases del conflicto, tipos de conflicto, modalidades de intervención y relación con medios de comunicación.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=2465" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:41:05)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.2</span>
+                  <span class="subsection-title">Modalidades de intervención defensorial: prevención, intervención, acciones legales y humanitarias</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Supervisión preventiva: obtener información, esclarecer hechos, identificar autoridades competentes y permitir curso racional de solución antes de agravamiento.</div>
+                  <div class="content-text">Intervención defensorial: facilitar comprensión del problema e instalar mecanismos de diálogo privilegiando soluciones surgidas entre las partes dentro del marco legal.</div>
+                  <div class="content-text">Acciones legales y humanitarias: cuando el conflicto ya se ha desarrollado pueden activarse medidas judiciales o de emergencia para proteger derechos y atender afectados.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=2866" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:47:46)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.3</span>
+                  <span class="subsection-title">Herramientas prácticas: mesas de diálogo, mediación y monitoreo de alertas tempranas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Mesa de diálogo: método ampliamente utilizado que convoca a representantes estatales, organizaciones sociales y empresas para negociar acuerdos.</div>
+                  <div class="content-text">Mediación: método alternativo que identifica intereses de las partes, propone soluciones y fortalece capacidades comunicativas y de reflexión.</div>
+                  <div class="content-text">Monitoreo y redes de alerta temprana: iniciativas del Ministerio del Ambiente para identificar potenciales conflictos y coordinar planes preventivos de trabajo con unidades territoriales.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=3057" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:50:57)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="5">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">5</span>
+              <span class="section-title">Retos prácticos, limitaciones de la normativa y transición hacia seguridad y salud en el trabajo</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.1</span>
+                  <span class="subsection-title">Limitaciones de la normativa y realidad en la aplicación de protocolos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Normas y protocolos muchas veces son meramente enunciativos y no siempre se aplican íntegramente durante conflictos en curso.</div>
+                  <div class="content-text">La normativa puede funcionar como “un saludo a la bandera” cuando no existen recursos, voluntad política o capacidad técnica para su implementación efectiva.</div>
+                  <div class="content-text">En la práctica, la solución de conflictos suele requerir reiteradas reuniones, tiempo y negociaciones prolongadas más allá de lo normado.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=3137" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:52:17)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.2</span>
+                  <span class="subsection-title">Importancia de la preparación y calidad de representación para negociar eficazmente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La capacidad de negociación y la preparación de los representantes empresariales y comunitarios son determinantes para alcanzar acuerdos duraderos.</div>
+                  <div class="content-text">Desinformación, expectativas irreales o asesoría inadecuada pueden prolongar conflictos y dificultar soluciones constructivas.</div>
+                  <div class="content-text">Es esencial identificar claramente intereses y prioridades de las partes para ordenar demandas y avanzar en acuerdos concretos y legales.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=1896" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:31:36)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.3</span>
+                  <span class="subsection-title">Transición hacia seguridad y salud en el trabajo: relación con la prevención de conflictos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Prevención de conflictos se articula con medidas de seguridad y salud en el trabajo que reducen riesgos laborales y ocupacionales en minería.</div>
+                  <div class="content-text">Temas pendientes para la siguiente parte de la clase: normativa general de seguridad y salud laboral y normativa específica para minería, incluidos formatos de capacitación y obligaciones de las empresas.</div>
+                  <div class="content-text">Conexión práctica: un manejo adecuado de SST (seguridad y salud en el trabajo) puede disminuir reclamos laborales y socioambientales vinculados a condiciones de trabajo y salud ocupacional.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=3240" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:54:00)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="6">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">6</span>
+              <span class="section-title">Introducción al diálogo y su importancia en la solución de conflictos laborales</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.1</span>
+                  <span class="subsection-title">Definición y función del diálogo en contextos laborales y legales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El diálogo no debe ser una imposición por una de las partes, sino un medio para buscar soluciones y evitar confrontaciones que dificulten la resolución.</div>
+                  <div class="content-text">Escuchar y negociar son componentes esenciales del diálogo para alcanzar acuerdos y prevenir que el conflicto se agrave.</div>
+                  <div class="content-text">Muchas personas confunden conceptos legales básicos (por ejemplo, posesión versus propiedad), lo que muestra la necesidad de explicar y educar sobre términos en el diálogo.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=3614" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:00:14)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.2</span>
+                  <span class="subsection-title">Elementos del diálogo efectivo en conflictos laborales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Saber negociar incluye saber esperar, escuchar y ayudar a la otra parte sin prejuzgar su legitimidad o intenciones.</div>
+                  <div class="content-text">La desconfianza hacia quien facilita el diálogo (por ejemplo, por trabajar para la empresa) puede entorpecer el proceso y requiere manejo cuidadoso.</div>
+                  <div class="content-text">El diálogo debe orientarse a construir un buen comienzo para la solución y no a imponer soluciones unilaterales.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=3628" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:00:28)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.3</span>
+                  <span class="subsection-title">Transición hacia el tema central de la clase sobre seguridad y salud en el trabajo</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se anuncia el receso y la continuación del tema central: seguridad y salud en el trabajo, con especial interés en el sector minero.</div>
+                  <div class="content-text">Se anticipa una exposición sobre normativa general y normativa especial para minería, con ejemplos prácticos para comprensión.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=3712" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:01:52)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="7">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">7</span>
+              <span class="section-title">Marco general de la normativa de seguridad y salud en el trabajo y su principio de prevención</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.1</span>
+                  <span class="subsection-title">Normativa general y normas sectoriales especiales aplicables al país</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Existe una ley general de seguridad y salud en el trabajo (Ley 29 783) aplicable a todos los sectores salvo norma especial que regule un sector concreto.</div>
+                  <div class="content-text">Sectores como minería, construcción, pesca, hidrocarburos, electricidad, agricultura, salud y educación cuentan con normativas especiales por riesgo de sus actividades.</div>
+                  <div class="content-text">La normativa especial se aplica de manera prioritaria y la ley general se aplica de forma supletoria cuando la norma especial no cubre una situación.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=4069" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:07:49)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.2</span>
+                  <span class="subsection-title">Sistema de gestión en seguridad y salud laboral y componentes habituales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Un sistema de gestión es un conjunto de pasos que la empresa implementa para proteger la vida y salud de sus trabajadores.</div>
+                  <div class="content-text">Componentes habituales incluyen capacitación, mapa de riesgos, planificación de seguridad y entrega de equipos de protección personal (EPP).</div>
+                  <div class="content-text">Entidades como el Ministerio de Energía y Minas y OSINERMING supervisan el cumplimiento en el sector minero.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=4101" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:08:21)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.3</span>
+                  <span class="subsection-title">Principio de prevención y la cultura de prevención como eje normativo</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El principio central de la normativa es la prevención, orientando todas las acciones para evitar accidentes y daños a trabajadores.</div>
+                  <div class="content-text">Actividades como entrega de EPP, estudios de salud y capacitaciones buscan prevenir incidentes laborales.</div>
+                  <div class="content-text">La normativa surge también de convenios internacionales que obligan al país a mantener marcos protectores para los trabajadores.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=4220" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:10:20)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="8">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">8</span>
+              <span class="section-title">Principios rectores, roles de actores y obligaciones en seguridad y salud en el trabajo</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.1</span>
+                  <span class="subsection-title">Principios jurídicos: primacía de la realidad, información y capacitación, cooperación y protección</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Primacía de la realidad: prevalece lo constatado en la práctica sobre documentación contradicha por la realidad observada.</div>
+                  <div class="content-text">Información y capacitación: la ley exige capacitaciones mínimas (al menos cuatro al año) relacionadas con las labores específicas de los trabajadores y dentro de la jornada laboral.</div>
+                  <div class="content-text">Cooperación: participación del Estado, empleadores y trabajadores en prevención; sindicatos y comités colaboran en identificación de riesgos y elaboración de políticas.</div>
+                  <div class="content-text">Protección: derecho de los trabajadores a condiciones de trabajo dignas que garanticen salud física, mental y social de forma continua.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=4689" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:18:09)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.2</span>
+                  <span class="subsection-title">Obligaciones del empleador y participación activa de trabajadores y Estado</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El empleador está obligado a entregar EPP, realizar capacitaciones y cumplir con políticas preventivas establecidas por la ley.</div>
+                  <div class="content-text">Los trabajadores y sindicatos deben participar en capacitaciones y en la identificación de peligros y elaboración de medidas preventivas.</div>
+                  <div class="content-text">El Estado, a través de organismos como SUNAFIL, fiscaliza y controla el cumplimiento de las normas de seguridad y salud en el trabajo.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=4438" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:13:58)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.3</span>
+                  <span class="subsection-title">Consecuencias de incumplimiento y casos prácticos de falta de prevención</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Incumplimientos pueden generar sanciones administrativas, apertura de investigaciones, intervención de fiscalía y responsabilidades penales y civiles.</div>
+                  <div class="content-text">Ejemplos prácticos: falta de arnés en trabajos en altura, negligencia en notificación de accidentes y prácticas intracentro que impiden la actuación inspectiva.</div>
+                  <div class="content-text">La comunicación oportuna del accidente es obligatoria el mismo día para permitir actuaciones inspectivas efectivas por parte de SUNAFIL.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5180" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:26:20)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="9">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">9</span>
+              <span class="section-title">Reglamentación sectorial y aplicación supletoria de la ley general en actividades mineras</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.1</span>
+                  <span class="subsection-title">Reglamentos sectoriales y ejemplos de normativas especiales por actividad</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El decreto supremo 042-2016 (Energía y Minas) regula seguridad y salud en minería con desarrollos específicos sobre capacitación y comités de seguridad en minería.</div>
+                  <div class="content-text">Otros sectores con normativa especial incluyen construcción, industrias, hidrocarburos, transporte, electricidad, pesca, agricultura, salud y educación.</div>
+                  <div class="content-text">Las normas especiales se justifican por mayor riesgo inherente en las labores y por eso exigen medidas adaptadas.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5451" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:30:51)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.2</span>
+                  <span class="subsection-title">Relación entre ley general, reglamentos y reglamentos sectoriales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Todas las leyes cuentan con reglamentos que precisan procedimientos y obligaciones; la ley general y la ley sectorial cuentan con su reglamento respectivo.</div>
+                  <div class="content-text">En el reglamento se encuentran disposiciones sobre comités de seguridad y salud, capacitación, y requisitos administrativos concatenados con la ley.</div>
+                  <div class="content-text">La norma general establece mínimos que pueden ser mejorados por empleadores para elevar estándares de prevención.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5551" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:32:31)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">9.3</span>
+                  <span class="subsection-title">Aplicación práctica de la normativa minera y diferencias con la normativa genérica</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La normativa minera contiene especificaciones sobre capacitaciones, integración de comités y medidas de control distintas a las generales.</div>
+                  <div class="content-text">Cuando la normativa especial no regula un asunto en particular, la ley general se aplica de forma supletoria para cubrir vacíos normativos.</div>
+                  <div class="content-text">Ejemplos prácticos: planificación de seguridad minera, mapas de riesgo específicos y exigencias por OSINERMING y Ministerio.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5467" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:31:07)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="10">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">10</span>
+              <span class="section-title">Sistema de inspecciones laborales: origen, evolución institucional y funciones de SUNAFIL</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.1</span>
+                  <span class="subsection-title">Historia y proceso de regionalización y creación de SUNAFIL como ente inspector</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">En los años noventa existía la oficina de inspecciones del Ministerio de Trabajo, con sedes regionales que realizaban inspecciones locales.</div>
+                  <div class="content-text">Con la regionalización surgieron gerencias regionales de trabajo; posteriormente se creó SUNAFIL para centralizar y profesionalizar la inspección laboral.</div>
+                  <div class="content-text">La transición fue progresiva hasta 2022, momento en que SUNAFIL absorbió las oficinas de inspección regionales y centralizó las funciones de supervisión.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5605" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:33:25)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.2</span>
+                  <span class="subsection-title">Ámbitos de competencia y roles compartidos entre gerencias regionales y SUNAFIL en su evolución</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Inicialmente SUNAFIL y las gerencias compartían atribuciones: SUNAFIL inspeccionaba grandes empresas y gerencias a micro y pequeñas empresas.</div>
+                  <div class="content-text">Con el tiempo SUNAFIL incorporó a los inspectores regionales y hoy es la entidad encargada de la supervisión de derechos laborales y seguridad y salud en todo el país.</div>
+                  <div class="content-text">Actualmente las gerencias regionales ya no cuentan con oficina de inspección; las denuncias consignadas allí son derivadas a SUNAFIL.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5798" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:36:38)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">10.3</span>
+                  <span class="subsection-title">Importancia de la actualización sobre competencia inspectiva para administrados y abogados</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se enfatiza la necesidad de estar actualizado respecto a la desaparición de oficinas de inspección en las gerencias regionales.</div>
+                  <div class="content-text">Usuarios desactualizados pueden confundir el lugar para presentar denuncias o la autoridad competente para las inspecciones.</div>
+                  <div class="content-text">SUNAFIL se erige como la autoridad única de inspección laboral en el territorio nacional en la actualidad.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5994" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:39:54)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="11">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">11</span>
+              <span class="section-title">Procedimiento inspectivo de SUNAFIL: inicio, orden de inspección, actuaciones y comparecencias</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.1</span>
+                  <span class="subsection-title">Formas de inicio de una inspección: denuncia y de oficio, y requisitos de la denuncia</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Una inspección puede iniciarse por denuncia de trabajador, familiar, tercero, o por oficio cuando SUNAFIL programa intervenciones según calendario o riesgos.</div>
+                  <div class="content-text">Las denuncias pueden ser anónimas si el denunciante sigue trabajando en la empresa; si ya no trabaja, la identidad debe ser revelada para sustentar la investigación.</div>
+                  <div class="content-text">Las denuncias se realizan mayoritariamente por internet mediante aplicativo, con exigencia de datos como RUC, dirección y descripción clara de la materia a inspeccionar.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=6141" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:42:21)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.2</span>
+                  <span class="subsection-title">Orden de inspección: contenido, emisión y plazo para iniciar actuaciones inspectivas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La orden de inspección traduce la denuncia en términos jurídicos: empresa, lugar, materias a investigar, inspector asignado y plazo.</div>
+                  <div class="content-text">El coordinador de inspectores recibe las denuncias, programa inspecciones de oficio y emite la orden de inspección tras precisar los hechos.</div>
+                  <div class="content-text">Una vez emitida la orden, el inspector debe iniciar actuaciones en un plazo máximo de diez días hábiles, salvo materias que requieren intervención inmediata como accidentes, despidos arbitrarios o cierre del centro.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=6378" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:46:18)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.3</span>
+                  <span class="subsection-title">Actuaciones inspectivas: tipos, plazos máximos y herramientas de requerimiento</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Las actuaciones inspectivas incluyen recolectar documentos, consultas en bases de datos, visitas a centros de trabajo, citaciones y requerimientos por medios electrónicos.</div>
+                  <div class="content-text">El plazo general de investigación no debe exceder de 30 días hábiles, con excepción de muerte por accidente laboral cuyo plazo máximo es de 10 días hábiles.</div>
+                  <div class="content-text">El inspector puede requerir información por casilla electrónica, correo o medios tecnológicos; las visitas in situ y la comparecencia del sujeto inspeccionado son parte del proceso.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=6764" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:52:44)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">11.4</span>
+                  <span class="subsection-title">Comparecencias, virtualidad, precisión documental y consecuencias por inasistencia</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Las comparecencias pueden ser presenciales o virtuales; la orden debe precisar día, hora y documentación requerida con fechas concretas para evitar nulidades.</div>
+                  <div class="content-text">El Inspector debe ser preciso sobre periodos y trabajadores sobre los que solicita documentos; falta de precisión puede provocar la caída del expediente.</div>
+                  <div class="content-text">Existe tolerancia de diez minutos para comparecencias; inasistencias pueden generar multas por infracción administrativa, salvo justificantes aceptables y debidamente acreditados.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7023" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:57:03)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="12">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">12</span>
+              <span class="section-title">Recomendaciones prácticas y consideraciones finales sobre inspecciones y cumplimiento normativo</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.1</span>
+                  <span class="subsection-title">Relevancia de documentación precisa y cumplimiento de obligaciones para evitar sanciones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La ley establece normas mínimas de prevención que empleadores no pueden reducir; mejorar estándares es permitido y recomendable.</div>
+                  <div class="content-text">Incumplimientos en prevención conllevan a sanciones administrativas, activación de seguros, investigaciones y posibles responsabilidades penales y civiles.</div>
+                  <div class="content-text">La comunicación inmediata de accidentes es obligatoria para permitir la actuación inspectiva y la recolección de pruebas.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5219" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:26:59)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.2</span>
+                  <span class="subsection-title">Funcionamiento práctico de SUNAFIL: órdenes de orientación y alcance de las inspecciones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">SUNAFIL también emite órdenes de orientación que consisten en charlas informativas sobre derechos laborales o seguridad y salud, con firma de recepción por los asistentes.</div>
+                  <div class="content-text">Las inspecciones pueden ser de sorpresa y no requieren aviso previo a la empresa para preservar la efectividad de la constatación de hechos.</div>
+                  <div class="content-text">La actuación inspectiva incluye tanto actos presenciales como indagaciones documentales y tecnológicas; todas cuentan como actuaciones válidas en el procedimiento.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=6696" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:51:36)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">12.3</span>
+                  <span class="subsection-title">Consecuencias prácticas de no colaborar con la inspección y medidas preventivas recomendadas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">No comunicar un accidente o no colaborar con la inspección agrava la situación por acumulación de sanciones y pérdida de posibilidades de defensa.</div>
+                  <div class="content-text">Es preferible cumplir con capacitación, entrega de EPP y registros adecuados para minimizar riesgos, costos y litigios posteriores.</div>
+                  <div class="content-text">Ante una orden de inspección, atender con precisión la documentación solicitada y comparecer puntualmente para evitar multas y nulidades procesales.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=5302" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:28:22)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="13">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">13</span>
+              <span class="section-title">Solicitudes de reprogramación y poderes simples en citaciones</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.1</span>
+                  <span class="subsection-title">Posibilidad de solicitar cambio de fecha de citación y requisitos para justificar la solicitud</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se puede solicitar anticipadamente el cambio de fecha presentando una justificación que explique por qué no se puede asistir en la fecha indicada.</div>
+                  <div class="content-text">La justificación debe ser sólida para que no se considere que simplemente se evadió la comparecencia sin motivo válido.</div>
+                  <div class="content-text">Si la justificación no es suficiente, la solicitud de cambio puede ser denegada y mantenerse la obligación de asistir.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7208" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:00:08)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.2</span>
+                  <span class="subsection-title">Alternativa del otorgamiento de poder simple a una tercera persona como solución habitual</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El inspector suele indicar que el interesado puede otorgar un poder simple a una tercera persona para que lo represente en la comparecencia.</div>
+                  <div class="content-text">El poder simple se acepta en la mayoría de casos salvo que la naturaleza del acto exija la presencia personal por disposición expresa.</div>
+                  <div class="content-text">La posibilidad de otorgar poder simple es la vía más usada y recomendada si no se puede asistir personalmente.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7260" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:01:00)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">13.3</span>
+                  <span class="subsection-title">Casos excepcionales que justifican la reprogramación sin poder simple válido</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Situaciones de riesgo sanitario comprobadas (por ejemplo diagnóstico de COVID con prueba) se aceptaron durante la pandemia para reprogramar citas.</div>
+                  <div class="content-text">Accidentes o incapacidades súbitas (accidente de tránsito, hospitalización o cirugía programada) se consideran motivos válidos para reprogramar.</div>
+                  <div class="content-text">La reprogramación se concede en situaciones muy especiales y requiere la presentación de documentación que acredite la causa.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7321" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:02:01)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="14">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">14</span>
+              <span class="section-title">Puntualidad, constancia de asistencia y consecuencias por inasistencia</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.1</span>
+                  <span class="subsection-title">Tolerancia de tiempo en citaciones físicas y virtuales y cómo se registra la demora</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se establece una tolerancia breve; si la persona llega diez o once minutos tarde puede considerarse inasistencia según el inspector.</div>
+                  <div class="content-text">Aunque el inspector puede decidir recibir tarde, dejará constancia en la oficialía sobre la hora de llegada y podrá considerarlo como inasistencia.</div>
+                  <div class="content-text">La constancia del inspector es el registro oficial que puede derivar en sanciones por no cumplir la hora indicada.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7412" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:03:32)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.2</span>
+                  <span class="subsection-title">Procedimiento cuando la persona espera pero no es atendida a la hora señalada</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Si el administrado se presenta puntualmente y no es atendido por retrasos internos, se debe dejar constancia de presencia en la comparecencia.</div>
+                  <div class="content-text">La oficina puede registrar que la persona asistió aunque el inspector haya llegado tarde, permitiendo reprogramación si fue imposible atender en el momento.</div>
+                  <div class="content-text">Se recomienda solicitar la constancia de asistencia cuando se deba ausentar con límite de tiempo por otros compromisos procesales.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7445" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:04:05)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">14.3</span>
+                  <span class="subsection-title">Riesgo de ser sancionado por no localizar la comparecencia o llegar tarde significativamente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Hay casos en los que la persona llegó pero no encontró la oficina o se demoró en localizar la comparecencia, lo que configura inasistencia.</div>
+                  <div class="content-text">La inasistencia por estos motivos puede dar lugar a multa si no se presenta justificación sólida.</div>
+                  <div class="content-text">Es responsabilidad del administrado conocer y respetar la ubicación y hora exacta de la citación para evitar sanciones.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7297" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:01:37)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="15">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">15</span>
+              <span class="section-title">Funcionamiento de expedientes virtuales y dificultades en su actualización</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">15.1</span>
+                  <span class="subsection-title">Desfase entre estado virtual y avance real del expediente y causas comunes</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La consulta virtual de expedientes puede mostrar que un expediente no avanzó cuando en la realidad sí ha progresado.</div>
+                  <div class="content-text">Los retrasos en la actualización suelen deberse a que muchos inspectores tienen dificultades con la gestión virtual de expedientes.</div>
+                  <div class="content-text">La falta de un encargado dedicado a mantener actualizado el sistema contribuye al desfase entre lo virtual y lo real.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7584" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:06:24)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">15.2</span>
+                  <span class="subsection-title">Consecuencias de no encontrar información actualizada en la plataforma virtual</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El administrado no puede verificar el estado real del expediente sin acudir físicamente si la plataforma no está actualizada.</div>
+                  <div class="content-text">Esto obliga a las empresas a desplazarse o comunicarse para confirmar avances que no aparecen en la consulta en línea.</div>
+                  <div class="content-text">La carencia de actualización genera incertidumbre sobre plazos y etapas del procedimiento.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7646" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:07:26)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">15.3</span>
+                  <span class="subsection-title">Necesidad de mejoras administrativas y transparencia en la gestión de expedientes</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se sugiere la implementación de personal o responsables que mantengan al día la información virtual de los expedientes.</div>
+                  <div class="content-text">La transparencia en el registro evita malentendidos y facilita el seguimiento por parte de empleadores y representantes.</div>
+                  <div class="content-text">Mientras no se implemente al 100% la gestión virtual adecuada, persisten los problemas de consulta y control.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7636" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:07:16)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="16">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">16</span>
+              <span class="section-title">Facultades del inspector y cierre de actuaciones inspectivas</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.1</span>
+                  <span class="subsection-title">Medidas que puede adoptar el inspector para garantizar cumplimiento de la ley</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El inspector puede emitir medidas de advertencia y requerimientos para subsanar incumplimientos detectados durante la actuación.</div>
+                  <div class="content-text">Puede ordenar la paralización o prohibición inmediata de trabajos cuando exista un riesgo grave e inminente para la seguridad y salud.</div>
+                  <div class="content-text">Está facultado para ordenar el cierre temporal de un área o unidad económica cuando haya habido un accidente mortal por inobservancia de condiciones de seguridad.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7687" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:08:07)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.2</span>
+                  <span class="subsection-title">Finalización de actuaciones cuando no se detectan infracciones o se subsanan oportunamente</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Si no se incurrió en infracción o el empleador subsana a tiempo, el inspector emite un informe y el expediente se archiva.</div>
+                  <div class="content-text">El informe resume las actuaciones realizadas, describiendo cómo y cuándo se subsanaron las observaciones.</div>
+                  <div class="content-text">El archivo del expediente implica que no procede el procedimiento sancionador en esa actuación.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7724" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:08:44)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">16.3</span>
+                  <span class="subsection-title">Procedimiento cuando se detectan infracciones y el acta de infracción</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Si hay infracciones no subsanables o que no se corrigen, se expide un acta de infracción y se inicia de oficio el procedimiento sancionador.</div>
+                  <div class="content-text">El acta contiene el resumen de las actuaciones, las fechas y las infracciones detectadas, así como la multa propuesta por el inspector.</div>
+                  <div class="content-text">La multa propuesta por el inspector es un planteamiento que deberá evaluarse en el procedimiento sancionador por la autoridad competente.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7731" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:08:51)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="17">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">17</span>
+              <span class="section-title">Naturaleza, trámite y formalidades del procedimiento sancionador</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.1</span>
+                  <span class="subsection-title">Inicio del procedimiento sancionador y papel del instructor tras el acta de infracción</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El procedimiento sancionador se inicia únicamente cuando existe un acta de infracción emitida por el inspector.</div>
+                  <div class="content-text">El inspector entrega el acta al instructor, quien verifica el cumplimiento de las formalidades legales antes de aperturar el procedimiento sancionador.</div>
+                  <div class="content-text">Solo tras la etapa de instrucción se determinará si la multa procede, se modifica o se archiva el expediente.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7847" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:10:47)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.2</span>
+                  <span class="subsection-title">Etapa de instrucción y evaluación de la legalidad y el cálculo de la multa propuesta</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Durante la instrucción se analiza si la referencia legal y el cálculo de la multa están bien fundamentados por el inspector.</div>
+                  <div class="content-text">La empresa no puede pagar la multa inmediatamente tras la notificación del acta, pues todavía no es una sanción firme.</div>
+                  <div class="content-text">La instrucción puede concluir con la confirmación, reducción o eliminación de la multa según las investigaciones y defensa.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7898" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:11:38)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">17.3</span>
+                  <span class="subsection-title">Importancia de las formalidades en el acta de infracción y efecto de omisiones formales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Existen infracciones consideradas insubsanables por ley, como la muerte de un trabajador o el trabajo infantil, que deben ser declaradas como tales en el acta.</div>
+                  <div class="content-text">El inspector tiene la obligación de señalar expresamente cuando una infracción es insubsanable; de lo contrario, el expediente puede ser declarado nulo o archivado.</div>
+                  <div class="content-text">Las omisiones formales en la elaboración del acta o en el procedimiento pueden acarrear la apertura de responsabilidad administrativa al inspector y el archivo del expediente.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=7952" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:12:32)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="18">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">18</span>
+              <span class="section-title">Observaciones sobre prácticas administrativas y cierre de la sesión formativa</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.1</span>
+                  <span class="subsection-title">Transparencia sobre errores administrativos y responsabilidad de las partes</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se reconoce que, ocasionalmente, hay errores en los expedientes y que algunas entidades del Estado conocen los errores pero no los corrigen hasta que el administrado lo denuncia.</div>
+                  <div class="content-text">El administrado debe presentar un escrito para que se reconozca el error; de lo contrario, el expediente puede continuar pese a la irregularidad.</div>
+                  <div class="content-text">Si el expediente está mal trabajado, la responsabilidad administrativa recae también en el inspector que omitió formalidades.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=8030" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:13:50)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.2</span>
+                  <span class="subsection-title">Anuncio de continuación formativa sobre seguridad, minería y procedimiento sancionador</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se anuncia que en la próxima sesión se profundizará en seguridad y salud en el trabajo, con énfasis en minería y la segunda parte sobre inspecciones laborales.</div>
+                  <div class="content-text">También se tratarán casos prácticos de Sunafil y el desarrollo del procedimiento sancionador en detalle.</div>
+                  <div class="content-text">Se invita a los participantes a plantear dudas sobre los diplomados y seguridad en general mediante los canales indicados.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=8093" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:14:53)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">18.3</span>
+                  <span class="subsection-title">Cierre de la sesión, asistencia y despedida</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El monitor académico informa que compartirá el enlace de la asistencia por el chat y recuerda los canales de contacto para dudas sobre diplomados.</div>
+                  <div class="content-text">Se agradece la participación y se despide la sesión con salutaciones finales y la entrega de información de contacto en pantalla.</div>
+                  <div class="content-text">La sesión concluye con agradecimientos y la indicación de próximos pasos administrativos.</div>
+                  <a href="https://www.youtube.com/watch?v=fmqyH4C9DwE&start=8115" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(02:15:15)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="https://www.edumin.pe/" target="_blank">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="footer-logo" />
+      </a>
+      <p class="footer-text">
+  <span style="display: block; font-weight: bold;">Contenido desarrollado por EDUMIN - Centro de Capacitación Especializado en Minería, Industria y Negocios</span>
+  <span style="display: block; font-style: italic;">Material exclusivo para estudiantes de EDUMIN</span>
+  <a href="https://www.edumin.pe/" target="_blank" style="color: var(--color-principal); text-decoration: none; display: block;">https://www.edumin.pe/</a>
+</p>
+    </div>
+
+    <script>
+      const TITULO_DIPLOMADO = "DERECHO MINERO".toUpperCase();
+      const TITULO_CLASE = "CLASE 08: LEGISLACIÓN EN SEGURIDAD MINERA: NORMATIVAS Y SISTEMAS DE GESTIÓN AVANZADOS - 2DA PARTE".toUpperCase();
+
+      const elementoDiplomado = document.getElementById("tituloDiplomado");
+      if (elementoDiplomado) {
+        elementoDiplomado.innerText = TITULO_DIPLOMADO;
+      }
+
+      document.title = TITULO_CLASE;
+      const tituloPrincipal = document.getElementById("tituloPrincipal");
+      if (tituloPrincipal) {
+        tituloPrincipal.innerText = TITULO_CLASE;
+      }
+
+      const tituloCompacto = document.getElementById("tituloCompacto");
+      if (tituloCompacto) {
+        tituloCompacto.innerText = TITULO_CLASE;
+      }
+
+      function toggleSection(element) {
+        const section = element.closest(".section");
+        const wasActive = section.classList.contains("active");
+
+        section.classList.toggle("active");
+
+        if (wasActive) {
+          const subsections = section.querySelectorAll(".subsection");
+          subsections.forEach((subsection) => {
+            subsection.classList.remove("active");
+          });
+        }
+      }
+
+      function toggleSubsection(element) {
+        const subsection = element.closest(".subsection");
+        subsection.classList.toggle("active");
+      }
+
+      function expandAll() {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.add("active");
+        });
+
+        const subsections = document.querySelectorAll(".subsection");
+        subsections.forEach((subsection) => {
+          subsection.classList.add("active");
+        });
+      }
+
+      function collapseAll() {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        const subsections = document.querySelectorAll(".subsection");
+        subsections.forEach((subsection) => {
+          subsection.classList.remove("active");
+        });
+      }
+
+      function debounce(func, delay) {
+        let timeout;
+        return function (...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, delay);
+        };
+      }
+
+      function clearSearch() {
+        const searchInput = document.getElementById("searchInput");
+        const clearBtn = document.querySelector(".search-actions .clear-search");
+        searchInput.value = "";
+        clearBtn.style.display = "none";
+        searchContent();
+        searchInput.focus();
+      }
+
+      const createDiacriticInsensitiveRegex = (term) => {
+        const charMap = {
+          a: "[aáAÁ]",
+          e: "[eéEÉ]",
+          i: "[iíIÍ]",
+          o: "[oóOÓ]",
+          u: "[uúUÚ]",
+        };
+
+        const regexString = term
+          .split("")
+          .map((char) => {
+            const lowerChar = char.toLowerCase();
+            return charMap[lowerChar] || char;
+          })
+          .join("");
+
+        return new RegExp(`(${regexString})`, "gi");
+      };
+
+      function searchContent() {
+        const inputElement = document.getElementById("searchInput");
+        const searchTerm = inputElement.value.trim();
+
+        const searchableElements = document.querySelectorAll(".content-text, .section-title, .subsection-title");
+        let found = false;
+        let firstMatchElement = null;
+
+        document.querySelectorAll(".section.active").forEach((el) => el.classList.remove("active"));
+        document.querySelectorAll(".subsection.active").forEach((el) => el.classList.remove("active"));
+        searchableElements.forEach((element) => {
+          element.innerHTML = element.getAttribute("data-original-text") || element.textContent;
+        });
+
+        if (searchTerm.length < 3) {
+          return;
+        }
+
+        const searchRegex = createDiacriticInsensitiveRegex(searchTerm);
+
+        searchableElements.forEach((element) => {
+          const originalText = element.getAttribute("data-original-text") || element.textContent;
+
+          if (searchRegex.test(originalText)) {
+            found = true;
+
+            element.innerHTML = originalText.replace(searchRegex, `<span class="highlight">$1</span>`);
+
+            const subsection = element.closest(".subsection");
+            if (subsection) {
+              subsection.classList.add("active");
+              subsection.closest(".section")?.classList.add("active");
+            } else if (element.classList.contains("section-title")) {
+              element.closest(".section")?.classList.add("active");
+            }
+
+            if (!firstMatchElement) {
+              firstMatchElement = element;
+            }
+          }
+        });
+
+        if (firstMatchElement) {
+          requestAnimationFrame(() => {
+            firstMatchElement.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          });
+        } else if (searchTerm.length >= 3) {
+          alert("No se encontraron resultados para: " + searchTerm);
+        }
+      }
+
+      const debouncedSearch = debounce(searchContent, 300);
+
+      document.getElementById("searchInput").addEventListener("input", function () {
+        const clearBtn = document.querySelector(".search-actions .clear-search");
+        clearBtn.style.display = this.value.length > 0 ? "block" : "none";
+        debouncedSearch();
+      });
+
+      document.getElementById("searchInput").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          clearTimeout(this._timeoutId);
+          searchContent();
+        }
+      });
+
+      // --- Lógica del Header Compacto ---
+      const header = document.querySelector(".header");
+      const headerSpacer = document.querySelector(".header-spacer");
+      let initialHeaderHeight = 0; // Altura del header original
+      let compactHeaderHeight = 0; // Altura del header en modo compacto
+      let scrollTriggerPoint = 0; // Punto de scroll para activar el cambio
+
+      function handleHeaderState() {
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollY > scrollTriggerPoint) {
+          if (!header.classList.contains("compact")) {
+            header.classList.add("compact");
+            headerSpacer.style.height = `${initialHeaderHeight}px`;
+          }
+        } else {
+          if (header.classList.contains("compact")) {
+            header.classList.remove("compact");
+            headerSpacer.style.height = "0px";
+          }
+        }
+      }
+
+      function initializeHeader() {
+        initialHeaderHeight = header.offsetHeight;
+        const headerClone = header.cloneNode(true);
+        headerClone.classList.add("compact");
+        headerClone.style.visibility = "hidden";
+        headerClone.style.position = "absolute";
+        document.body.appendChild(headerClone);
+        compactHeaderHeight = headerClone.offsetHeight;
+        document.body.removeChild(headerClone);
+
+        scrollTriggerPoint = initialHeaderHeight - compactHeaderHeight;
+      }
+
+      document.addEventListener("DOMContentLoaded", initializeHeader);
+      window.addEventListener("scroll", handleHeaderState);
+      window.addEventListener("resize", debounce(initializeHeader, 200));
+    </script>
+  </body>
+</html>
