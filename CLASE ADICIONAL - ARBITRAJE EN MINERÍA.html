@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      :root {
+        /* Colores Principales del Diseño (Acentos y Degradados) */
+        /* ======================================================= */
+        --color-principal: #00beff; /* Cian Brillante para acentos, bordes y el inicio del degradado principal */
+        --color-secundario: #1e50cd; /* Azul Medio, parte final del degradado de acento */
+
+        /* Fondos Oscuros de la Interfaz */
+        /* ======================================================= */
+        --fondo-oscuro-claro: #002a52; /* Fondo de secciones y contenido */
+        --fondo-oscuro-fuerte: #001a33; /* Fondo del encabezado (header) y pie de página (footer) */
+        /* ======================================================= */
+        --fondo-oscuro-medio: #003366; /* Fondo de encabezados y cajas de contenido */
+        --fondo-borde-claro: #004080; /* Bordes ligeros y color de fondo al hacer hover en encabezados */
+        --fondo-sombra-azul-header: #0050a0; /* ¡NUEVO! Sombra en el header */
+
+        /* Colores de Texto y Fondo General del Body */
+        /* ======================================================= */
+        --texto-blanco-1: #ffffff; /* Blanco puro para títulos y texto en fondo muy oscuro */
+        --texto-claro-2: #e6e6e6; /* Texto principal y claro */
+        --texto-medio-3: #cccccc; /* Texto de contenido de item (un poco más tenue) */
+
+        /* ======================================================= */
+        --fondo-body-inicio: #99e5ff; /* Color de inicio del degradado de fondo del body */
+        --fondo-body-fin: #a5b9eb; /* Color de final del degradado de fondo del body */
+
+        /* Colores de Acento Específicos (YouTube, Búsqueda) */
+        /* ======================================================= */
+        --rojo-youtube-claro: #e60000;
+        --rojo-youtube-fuerte: #a30000;
+        --timestamp-youtube: #ffcccc;
+        --fondo-resaltado: #00c339; /* Verde para el fondo del texto buscado */
+
+        /* Bases RGB para Transparencias (RGBA) */
+        /* ======================================================= */
+        --sombra-rgb: 0, 0, 0; /* Negro puro: Usado para sombras generales y profundidad */
+        --acento-rgb: 0, 190, 255; /* Cian Brillante: Usado para brillos y sombras de acento */
+        --rojo-rgb: 230, 0, 0; /* Rojo Puro: Usado para sombras de enlaces de YouTube */
+        /* ======================================================= */
+        --gradient-principal: linear-gradient(135deg, var(--color-principal) 0%, var(--color-secundario) 100%);
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--fondo-body-inicio) 0%, var(--fondo-body-fin) 100%);
+        line-height: 1.2;
+        scroll-behavior: smooth;
+      }
+
+      strong#tituloDiplomado {
+        font-weight: 900;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      @keyframes slideDownSutil {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header.animacion-inicial {
+        animation: slideDownSutil 0.4s ease-out 1;
+        animation-fill-mode: forwards;
+        will-change: transform, opacity;
+      }
+
+      .header {
+        position: relative;
+        width: 100%;
+        z-index: 1000;
+        padding: 20px;
+        background: linear-gradient(135deg, var(--fondo-oscuro-fuerte) 0%, var(--fondo-oscuro-claro) 100%);
+        box-shadow: 0 5px 15px rgba(var(--sombra-rgb), 0.5);
+        text-align: center;
+        will-change: transform;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header-text-box {
+        display: grid;
+        gap: 10px;
+        word-break: break-word;
+        margin: 0 15px;
+      }
+
+      .header.compact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+      }
+
+      .header-spacer {
+        display: none;
+        transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .header.compact + .header-spacer {
+        display: block;
+      }
+
+      .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .header.compact .header-top {
+        display: none;
+      }
+
+      .logo {
+        width: 140px;
+        height: auto;
+        margin: 0 15px;
+        transition: all 0.3s ease;
+        vertical-align: middle;
+      }
+
+      .header.compact .logo {
+        width: 90px;
+        margin: 0 10px;
+      }
+
+      .header .logo.compact-logo {
+        display: none;
+      }
+
+      .header.compact .logo.compact-logo {
+        display: block;
+      }
+
+      .header h1 {
+        font-size: 2rem;
+        color: var(--texto-blanco-1);
+        font-weight: 900;
+      }
+
+      .header.compact h1 {
+        font-size: 1rem;
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        color: var(--texto-blanco-1);
+        font-weight: 700;
+      }
+
+      .header-content-box {
+        background: var(--gradient-principal);
+        border-radius: 12px;
+        padding: 20px 20px;
+        box-shadow: 0 8px 20px rgba(var(--acento-rgb), 0.6);
+        overflow: hidden;
+        margin-bottom: 15px;
+
+        opacity: 1;
+        transform: translateY(0);
+        will-change: transform;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .header.compact .header-content-box {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border: 0;
+        transform: translateY(-10px);
+      }
+
+      .header-content-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(var(--acento-rgb), 0.8);
+      }
+
+      .header-bottom-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .header-second-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .header.compact .header-bottom-row {
+        flex-grow: 1;
+      }
+
+      .logo-and-title {
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+
+      .header.compact .logo-and-title {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .header.compact .header-bottom-row .logo-and-title {
+        will-change: transform;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        width: 100%;
+        background: var(--gradient-principal);
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 4px 10px rgba(var(--acento-rgb), 0.4);
+        gap: 10px;
+      }
+
+      .header.compact .header-bottom-row .logo-and-title:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(var(--acento-rgb), 0.5);
+      }
+
+      .header-compact-title {
+        display: none;
+        color: var(--texto-blanco-1);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 10px;
+        white-space: normal;
+      }
+
+      .header.compact .header-compact-title {
+        display: block;
+      }
+
+      .search-bar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--fondo-oscuro-medio);
+        border: 2px solid var(--fondo-borde-claro);
+        border-radius: 30px;
+        box-shadow: 0 4px 10px rgba(var(--sombra-rgb), 0.25);
+        will-change: border-color, background-color;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      }
+
+      .search-bar:focus-within {
+        border-color: var(--fondo-sombra-azul-header);
+        background-color: var(--fondo-borde-claro);
+      }
+
+      .clear-search {
+        cursor: pointer;
+        color: var(--texto-claro-2);
+        padding: 5px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1;
+        display: none;
+        transition: color 0.2s ease;
+        transform: scale(1.5);
+      }
+
+      .clear-search:hover {
+        color: var(--texto-blanco-1);
+      }
+
+      .search-bar input {
+        flex-grow: 1;
+        padding: 10px 18px;
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--texto-claro-2);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        min-width: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .header.compact .search-bar input {
+        padding: 10px 20px;
+      }
+
+      .search-actions {
+        display: flex;
+        align-items: center;
+      }
+
+      .action-button {
+        background: var(--gradient-principal);
+        border: none;
+        color: var(--texto-blanco-1);
+        padding: 8px 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        will-change: transform;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(var(--acento-rgb), 0.4);
+        max-width: 150px;
+        white-space: normal;
+      }
+
+      .action-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(var(--acento-rgb), 0.5);
+      }
+
+      .search-bar .action-button {
+        margin: 5px;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      @keyframes fadeInUpContent {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .mind-map {
+        transition: margin-top 0.4s ease;
+        margin: 50px 0;
+      }
+
+      .mind-map.animacion-contenido {
+        animation: fadeInUpContent 0.4s ease-out 1 forwards;
+        animation-delay: 0.2s;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      .section {
+        margin-bottom: 20px;
+        background-color: var(--fondo-oscuro-claro);
+        border-radius: 12px;
+        border: 2px solid var(--fondo-oscuro-medio);
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(var(--sombra-rgb), 0.25);
+        transition: border-color 0.3s ease;
+      }
+
+      .section-header {
+        padding: 20px;
+        background-color: var(--fondo-oscuro-medio);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        will-change: background-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--texto-claro-2);
+        margin-right: 10px;
+      }
+
+      .section-number {
+        background: var(--gradient-principal);
+        color: var(--texto-blanco-1);
+        padding: 5px 12px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 15px;
+      }
+
+      .toggle-icon {
+        font-size: 1.2rem;
+        color: var(--texto-claro-2);
+        will-change: transform;
+        transition: transform 0.3s ease;
+      }
+
+      .section.active > .section-header .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .section-content {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in;
+      }
+
+      .section.active .section-content {
+        max-height: fit-content;
+        padding-bottom: 10px;
+        opacity: 1;
+      }
+
+      .subsection {
+        margin: 15px;
+        background-color: var(--fondo-oscuro-medio);
+        border-radius: 12px;
+        border: 2px solid var(--fondo-borde-claro);
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+      }
+
+      .subsection:hover {
+        border-color: var(--fondo-sombra-azul-header);
+      }
+
+      .subsection:hover .subsection-header {
+        background-color: var(--fondo-sombra-azul-header);
+      }
+
+      .section:hover {
+        border-color: var(--fondo-borde-claro);
+      }
+
+      .section:hover .section-header {
+        background-color: var(--fondo-borde-claro);
+      }
+
+      .subsection-header {
+        padding: 15px;
+        background-color: var(--fondo-borde-claro);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        will-change: background-color;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .subsection-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--texto-claro-2);
+        margin-right: 10px;
+      }
+
+      .subsection-number {
+        background: var(--gradient-principal);
+        color: var(--texto-blanco-1);
+        padding: 4px 10px;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 700;
+        margin-right: 12px;
+      }
+
+      .subsection-content {
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--fondo-oscuro-claro);
+        opacity: 0;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease-in;
+      }
+
+      .subsection.active .subsection-content {
+        max-height: fit-content;
+        padding: 15px;
+        opacity: 1;
+      }
+
+      .subsection.active .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      .content-item {
+        margin-bottom: 10px;
+        padding: 15px;
+        background-color: var(--fondo-oscuro-medio);
+        border-radius: 12px;
+        border-left: 4px solid var(--color-principal);
+        box-shadow: 0 1px 5px rgba(var(--sombra-rgb), 0.25);
+      }
+
+      .content-text {
+        color: var(--texto-medio-3);
+        margin-bottom: 5px;
+        line-height: 1.4;
+        font-size: 1rem;
+        font-weight: 500;
+        position: relative;
+        padding-left: 15px;
+      }
+
+      .content-text::before {
+        content: "•";
+        color: var(--color-principal);
+        font-weight: 700;
+        display: inline-block;
+        position: absolute;
+        left: 0px;
+      }
+
+      .youtube-link {
+        display: inline-block;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, var(--rojo-youtube-claro) 0%, var(--rojo-youtube-fuerte) 100%);
+        color: var(--texto-blanco-1);
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1rem;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        box-shadow: 0 2px 5px rgba(var(--rojo-rgb), 0.4);
+        will-change: transform;
+      }
+
+      .youtube-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 3px 7.5px rgba(var(--rojo-rgb), 0.5);
+        will-change: transform;
+      }
+
+      .timestamp {
+        color: var(--timestamp-youtube);
+        font-size: 0.85rem;
+        margin-left: 10px;
+        font-weight: 400;
+      }
+
+      .highlight {
+        background-color: var(--fondo-resaltado);
+        color: var(--texto-blanco-1);
+        font-weight: 700;
+        padding: 4px;
+        border-radius: 6px;
+      }
+
+      .footer {
+        padding: 30px;
+        background: linear-gradient(135deg, var(--fondo-oscuro-fuerte) 0%, var(--fondo-oscuro-claro) 100%);
+        border-top: 1px solid var(--fondo-oscuro-medio);
+        text-align: center;
+        box-shadow: 0 -2px 10px rgba(var(--sombra-rgb), 0.25);
+      }
+
+      .footer-text {
+        color: var(--texto-claro-2);
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .footer-logo {
+        width: 140px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .header-top {
+          flex-direction: column;
+        }
+
+        .logo {
+          margin: 0;
+        }
+
+        .header-text-box {
+          margin: 0;
+        }
+
+        .header h1 {
+          font-size: 1.5rem;
+        }
+
+        .header p {
+          font-size: 1rem;
+        }
+
+        .header.compact .header-bottom-row .logo-and-title {
+          gap: 5px;
+        }
+        .logo,
+        .footer-logo {
+          width: 105px;
+        }
+
+        .header.compact .header-bottom-row {
+          flex-direction: column;
+        }
+
+        .header.compact .header-compact-title {
+          margin: 0 5px;
+          font-size: 0.8rem;
+        }
+
+        .header.compact .logo.compact-logo {
+          width: 65px;
+          margin: 5px;
+        }
+
+        .action-button,
+        .search-bar input,
+        .clear-search {
+          font-size: 0.9rem;
+        }
+
+        .section-header {
+          padding: 15px;
+        }
+
+        .header.compact .controls {
+          flex-direction: row;
+        }
+
+        .section-title {
+          font-size: 1.1rem;
+        }
+
+        .subsection-title {
+          font-size: 1rem;
+        }
+        .section-number,
+        .subsection-number {
+          font-size: 13px;
+        }
+
+        .content-text {
+          font-size: 0.9rem;
+        }
+
+        .youtube-link {
+          font-size: 0.8rem;
+        }
+
+        .timestamp {
+          font-size: 0.75rem;
+        }
+
+        .header.compact .action-button {
+          padding: 6px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header animacion-inicial">
+      <div class="header-content-box">
+        <div class="header-top">
+          <a href="https://www.edumin.pe/" target="_blank">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="logo" />
+          </a>
+          <div class="header-text-box">
+            <h1>
+              DIPLOMADO DE ALTA ESPECIALIZACIÓN EN<br />
+              <strong id="tituloDiplomado"></strong>
+            </h1>
+            <p id="tituloPrincipal"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-bottom-row">
+        <div class="logo-and-title">
+          <a href="https://www.edumin.pe/" target="_blank">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="logo compact-logo" />
+          </a>
+          <span class="header-compact-title" id="tituloCompacto"></span>
+        </div>
+        <div class="header-second-row">
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar en el resumen interactivo…" autocomplete="off" />
+            <div class="search-actions">
+              <span class="clear-search" onclick="clearSearch()">&times;</span>
+              <button class="action-button" onclick="searchContent()">Buscar</button>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="action-button" onclick="expandAll()">Mostrar todo</button>
+            <button class="action-button" onclick="collapseAll()">Colapsar todo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-spacer"></div>
+
+    <div class="container">
+      <div class="mind-map animacion-contenido" id="mindMap">
+        <div class="section" data-section="1">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">1</span>
+              <span class="section-title">Introducción a la clase adicional y objetivos</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.1</span>
+                  <span class="subsection-title">Apertura, presentación del profesor y propósitos de la sesión</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Saludo inicial a los participantes y mención de que la clase es adicional al diplomado regular, con énfasis en completar contenidos pendientes.</div>
+                  <div class="content-text">Indicación sobre la duración aproximada de la sesión y la disponibilidad para responder preguntas durante la misma.</div>
+                  <div class="content-text">Objetivo de profundizar en arbitraje en minería y complementar temas vistos, evitando explicaciones incompletas.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=236" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:03:56)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.2</span>
+                  <span class="subsection-title">Metodología y entrega de materiales de apoyo</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Anuncio de envío de las diapositivas y resoluciones antiguas de Sunafil como modelos para revisión y casos archivados.</div>
+                  <div class="content-text">Aclaración sobre casos prácticos que se compartirán para análisis y consulta por los participantes interesados.</div>
+                  <div class="content-text">Invitación a realizar preguntas para enriquecer la discusión sobre arbitraje y otros temas del curso.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=357" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:05:57)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">1.3</span>
+                  <span class="subsection-title">Contexto general del arbitraje en inversiones internacionales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Explicación básica del arbitraje como mecanismo preferido en controversias internacionales vinculadas a inversiones, incluyendo el sector minero.</div>
+                  <div class="content-text">Razonamiento para evitar someter controversias al Poder Judicial local y buscar organismos neutrales que garanticen transparencia.</div>
+                  <div class="content-text">Mención de centros de arbitraje internacionales relevantes, como el CIADI (ICSID) en Washington y otros centros en Nueva York.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=405" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:06:45)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="2">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">2</span>
+              <span class="section-title">Arbitraje internacional y su aplicación al sector minero peruano</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.1</span>
+                  <span class="subsection-title">Justificación del arbitraje en conflictos entre empresas e Estado peruano</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Descripción del proceso previo al arbitraje donde se agotan otras vías y se busca resolución directa entre las partes antes de acudir a un tribunal arbitral internacional.</div>
+                  <div class="content-text">Indicaciones de que el arbitraje internacional busca fundamentalmente una compensación económica por incumplimientos o daños a inversiones.</div>
+                  <div class="content-text">Ejemplo práctico del caso Lupaca (UPACagol) donde la empresa solicitó intervención estatal previa y luego acudió a arbitraje internacional.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=593" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:09:53)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.2</span>
+                  <span class="subsection-title">Alegatos comunes en arbitrajes de inversión contra el Estado peruano</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Identificación de los alegatos más frecuentes: trato desigual por parte del Estado frente a otras inversiones y falta de deber de protección a la inversión.</div>
+                  <div class="content-text">Relación de estos alegatos con la existencia de tratados de libre comercio que protegen inversiones extranjeras y regulan mecanismos de solución de controversias.</div>
+                  <div class="content-text">Aclaración de que las concesiones mineras, siendo títulos y derechos reales no contractuales, pueden generar controversia internacional a través de instrumentos internacionales.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=716" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:11:56)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">2.3</span>
+                  <span class="subsection-title">Estadísticas y consecuencias para la imagen del país</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Datos sobre la relevancia del Perú en arbitrajes ante el CIADI/ICSID hasta finales de 2024, situándolo entre los países sudamericanos con mayor número de casos.</div>
+                  <div class="content-text">Consecuencias económicas para el Estado cuando pierde: pago de indemnizaciones cuantiosas en divisas.</div>
+                  <div class="content-text">Impacto reputacional internacional que afecta la percepción de riesgo para futuros inversionistas y fluidez de inversiones en el país.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=863" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:14:23)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="3">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">3</span>
+              <span class="section-title">Marco normativo peruano sobre arbitraje y procedimientos aplicables</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.1</span>
+                  <span class="subsection-title">Decreto Legislativo 1071 y su alcance en arbitrajes nacionales e internacionales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Presentación del decreto legislativo que regula el arbitraje en Perú y su respeto a disposiciones de tratados internacionales y leyes especiales.</div>
+                  <div class="content-text">Observación de que la norma contempla la posibilidad de que el Estado pueda ser parte en arbitrajes internacionales en contratos con nacionales o extranjeros.</div>
+                  <div class="content-text">Referencia al artículo 1 que reconoce la preeminencia de tratados internacionales sobre la ley interna en materia arbitral.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=1036" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:17:16)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.2</span>
+                  <span class="subsection-title">Definición y criterios de carácter internacional del arbitraje según la ley peruana</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Explicación de los supuestos que configuran un arbitraje internacional: domicilios en estados diferentes, lugar del convenio arbitral situado fuera del estado de las partes, o lugar de cumplimiento de obligaciones situado fuera del territorio nacional.</div>
+                  <div class="content-text">Mención del artículo 4 que permite que el arbitraje del Estado peruano se desarrolle dentro o fuera del país en controversias derivadas de contratos.</div>
+                  <div class="content-text">Notas sobre la aplicación del artículo 5 y demás disposiciones que regulan aspectos específicos de arbitrajes internacionales.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=1164" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:19:24)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">3.3</span>
+                  <span class="subsection-title">Procedimiento de reconocimiento y ejecución de laudos arbitrales en Perú</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Indicación de que la ley peruana contempla el reconocimiento del laudo arbitral extranjero y su ejecución mediante trámite no contencioso y sin intervención del Ministerio Público.</div>
+                  <div class="content-text">Plazos procesales señalados por la norma: traslado de 20 días para la parte afectada y señalamiento de vista dentro de los 20 días siguientes, con procedimiento ágil orientado a la ejecución del título.</div>
+                  <div class="content-text">Precisiones sobre la autoridad judicial competente para la ejecución del laudo reconocido, pudiendo ser juez comercial o administrativo según el artículo correspondiente.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=1509" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:25:09)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="4">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">4</span>
+              <span class="section-title">Contratos y figuras contractuales en derecho minero peruano</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.1</span>
+                  <span class="subsection-title">Naturaleza de la concesión minera y su relación con el arbitraje internacional</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Recordatorio de que la concesión minera es un título y un derecho real y no un contrato, factor que genera dudas sobre cómo se accede al arbitraje internacional.</div>
+                  <div class="content-text">Explicación de cómo la existencia de tratados de libre comercio y la alegación de violaciones a estándares internacionales permiten que empresas demanden al Estado aun sin un contrato tradicional.</div>
+                  <div class="content-text">Ejemplos prácticos de alegaciones que derivan en arbitrajes, como la negativa estatal a proteger la inversión o trato desventajoso comparativo.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=1747" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:29:07)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.2</span>
+                  <span class="subsection-title">Contrato de opción en minería: concepto y limitaciones temporales</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Definición del contrato de opción como acuerdo preparatorio o promesa de contratar destinado a condicionar la celebración de un contrato definitivo en el futuro.</div>
+                  <div class="content-text">Regulación específica en la Ley General de Minería: máximo legal de duración del contrato de opción de cinco años desde su suscripción, aunque las partes pueden pactar plazos menores.</div>
+                  <div class="content-text">Elementos esenciales que debe contener el contrato de opción: identificación de la concesión, ubicación, hectáreas, título de la concesión y precio pactado para el contrato futuro.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=2217" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:36:57)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.3</span>
+                  <span class="subsection-title">Contrato de riesgo compartido (Joint Venture) y su regulación práctica</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Concepto de joint venture como acuerdo asociativo para compartir aportes, riesgos y beneficios en actividades mineras, sin constituir una fusión ni crear una nueva persona jurídica.</div>
+                  <div class="content-text">Naturaleza no nominada formalmente en el derecho peruano, pero reconocida en la Ley General de Minería como contrato de riesgo compartido en el artículo que permite estas modalidades.</div>
+                  <div class="content-text">Características: aportes en bienes, servicios o conocimientos; participación en resultados según lo convenido; posibilidad de que una de las partes sea titular de la actividad minera mínima.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=2455" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:40:55)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">4.4</span>
+                  <span class="subsection-title">Hipoteca minera: definición, limitaciones y desuso práctico</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Descripción de la hipoteca minera como garantía real que grava la concesión minera para respaldar obligaciones presentes, futuras o eventuales frente a entidades financieras.</div>
+                  <div class="content-text">Restricciones legales: imposibilidad de hipotecar bienes futuros o solicitudes de concesión en trámite, atendiendo al artículo 1106 del Código Civil que prohíbe hipotecas sobre bienes futuros.</div>
+                  <div class="content-text">Razones del práctico abandono de la figura: baja disposición de los bancos para gestionar concesiones como activos recuperables, falta de mercado para la transferencia efectiva de concesiones hipotecadas y complejidad legal por la naturaleza de derecho real no propietario.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=2931" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:48:51)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="5">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">5</span>
+              <span class="section-title">Sociedades, registros y herramientas prácticas para consultas mineras</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.1</span>
+                  <span class="subsection-title">Requisitos societarios y registrales para sociedades mineras</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Necesidad de constituir sociedades con inscripción en registros públicos para operar legalmente en el sector minero.</div>
+                  <div class="content-text">Mención de que las sociedades mineras deben cumplir formalidades registrales pero que el tratamiento difiere según tipo de minería, sin mayor complejidad contractual en el nivel tratado.</div>
+                  <div class="content-text">Notas sobre diferencias con minería pequeña y artesanal, que requieren regulación y tratamiento distinto.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3240" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:54:00)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.2</span>
+                  <span class="subsection-title">Geocmin: herramienta del Ministerio de Energía y Minas para consultar concesiones</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Presentación del Geocmin como mapa interactivo desarrollado por INGEMMET y el Ministerio de Energía y Minas para consulta pública de concesiones mineras.</div>
+                  <div class="content-text">Funcionalidades principales: visualización de concesiones por ubicación, estado (titulado, en trámite), información del titular, hectáreas, pagos de derechos y vigencia del título.</div>
+                  <div class="content-text">Ejemplos en clase mostrando búsquedas en la provincia de Camaná, con detalles de concesiones tituladas, fechas de otorgamiento, titulares y estado de pago de derechos de vigencia.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3291" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:54:51)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">5.3</span>
+                  <span class="subsection-title">Uso práctico del Geocmin y observaciones sobre datos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Explicación de cómo acceder a la hoja resumen expedida por INGEMMET con datos de titulación, tipo de mineral, vigencia y pagos anuales del derecho de concesión.</div>
+                  <div class="content-text">Observación de la actualización continua de la plataforma y la utilidad para identificar áreas libres de concesión o concesiones con deuda por falta de pago del derecho de vigencia.</div>
+                  <div class="content-text">Recomendación de emplear Geocmin como herramienta complementaria para abogados e ingenieros al analizar situaciones reales de títulos mineros y planeamiento de inversiones.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3395" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(00:56:35)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="6">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">6</span>
+              <span class="section-title">Uso y consulta del mapa geocmin para seguimiento de concesiones</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.1</span>
+                  <span class="subsection-title">Explicación de cómo consultar el mapa geocmin y qué información proporciona</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El mapa geocmin permite identificar visualmente las concesiones en el territorio y ver cuáles áreas están o no concesionadas en tiempo real.</div>
+                  <div class="content-text">A través de la plataforma se puede observar la situación actualizada de cada concesión, incluyendo su existencia y cobertura territorial.</div>
+                  <div class="content-text">La consulta es pública y no está restringida únicamente a ingenieros u operadores especializados, por lo que cualquier interesado puede acceder y revisarlo.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3601" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:00:01)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.2</span>
+                  <span class="subsection-title">Indicadores de vigencia y riesgo de pérdida de concesiones en el sistema</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El sistema muestra si las concesiones están al día o presentan incumplimiento en pagos, lo cual indica riesgo de perder la concesión por morosidad.</div>
+                  <div class="content-text">Si una concesión no ha realizado pagos durante dos años consecutivos, el registro permite identificar que probablemente perderá la concesión.</div>
+                  <div class="content-text">Con esta información se puede anticipar qué áreas podrían desocuparse y quedar disponibles a futuro para nuevas solicitudes.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3615" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:00:15)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.3</span>
+                  <span class="subsection-title">Distinción entre concesiones registradas y actividad minera observable</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">La comparación entre la cartografía de concesiones y la observación de actividades en campo permite identificar posibles focos de minería fuera de concesiones registradas.</div>
+                  <div class="content-text">Si se observa actividad minera en un área que no figura como concesionada en geocmin, ello sugiere la presencia de minería ilegal.</div>
+                  <div class="content-text">La detección requiere revisar la correspondencia entre lo que indica el mapa y la actividad real, considerando limitaciones de la plataforma frente a actividad no registrada.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3651" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:00:51)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">6.4</span>
+                  <span class="subsection-title">Acceso público y posibilidades de uso por no especialistas</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">No es necesario efectuar pagos previos al INECMEC ni realizar trámites especiales para acceder al mapa; la herramienta está disponible para uso general.</div>
+                  <div class="content-text">Cualquier persona puede dedicar tiempo a chequear zonas específicas, identificar dónde hay o no concesiones y analizar la situación administrativa de cada una.</div>
+                  <div class="content-text">Esta accesibilidad facilita que interesados sin formación técnica puedan informarse sobre disponibilidad territorial y problemas administrativos asociados.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3663" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:01:03)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="7">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">7</span>
+              <span class="section-title">Tipos de minería ilegal y supuestos detectables mediante el registro</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.1</span>
+                  <span class="subsection-title">Minería ilegal por actividad en áreas no concesionadas según geocmin</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Si se observa actividad minera en parcelas que no aparecen en el sistema como concesionadas, se concluye que dicha actividad corresponde a minería ilegal.</div>
+                  <div class="content-text">Esta forma de ilegalidad se detecta mediante la superposición de cartografía oficial y observación de campo o imágenes que muestren labores mineras.</div>
+                  <div class="content-text">Identificar estos casos es útil para formular denuncias o intervenciones reguladoras con base en la evidencia cartográfica y visual.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3694" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:01:34)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.2</span>
+                  <span class="subsection-title">Minería ilegal dentro de concesiones por falta de permisos de explotación</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Puede existir minería ilegal aun cuando el área esté concesionada si el titular no ha gestionado los permisos necesarios para extracción y actividades mineras.</div>
+                  <div class="content-text">Iniciar excavaciones o uso de maquinaria sin los permisos ambientales, de explotación o de otra índole configura delito por minería ilegal a pesar de tener título de concesión.</div>
+                  <div class="content-text">La plataforma no necesariamente muestra permisos sectoriales adicionales, por lo que la comprobación de permisos requiere revisar registros administrativos complementarios.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3708" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:01:48)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.3</span>
+                  <span class="subsection-title">Implicaciones legales y administrativas de la minería sin permisos</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Realizar labores extractivas sin la tramitación correspondiente constituye una conducta que puede ser sancionada penal y administrativamente como minería ilegal.</div>
+                  <div class="content-text">Detectar estos incumplimientos implica identificar no sólo la presencia de actividad, sino la ausencia de autorizaciones ambientales, de seguridad u otras exigidas por norma.</div>
+                  <div class="content-text">Los usuarios pueden usar la información del registro para orientar denuncias o consultas a las autoridades competentes sobre posibles irregularidades.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3721" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:02:01)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">7.4</span>
+                  <span class="subsection-title">Limitaciones de la detección y necesidad de verificación complementaria</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Aunque la cartografía y los registros administrativos son herramientas clave, no siempre permiten determinar todas las formas de minería ilegal sin verificación de campo.</div>
+                  <div class="content-text">Casos complejos requieren cotejo con otros registros, permisos y evidencia física para confirmar si la actividad constituye infracción o está debidamente autorizada.</div>
+                  <div class="content-text">El uso responsable de la información implica entender que el sistema es una fuente inicial de verificación, no la única prueba concluyente.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3727" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:02:07)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" data-section="8">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div style="display: flex; align-items: center">
+              <span class="section-number">8</span>
+              <span class="section-title">Detalles sobre el examen del diplomado y cierre de la sesión</span>
+            </div>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.1</span>
+                  <span class="subsection-title">Formato y tipo de preguntas del examen final del diplomado</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El examen es completamente de respuestas múltiples, con cuatro alternativas por pregunta que deberán marcarse en cada ítem.</div>
+                  <div class="content-text">Algunas preguntas serán teóricas y básicas, verificando conocimientos vistos en clase para quienes han asistido con regularidad.</div>
+                  <div class="content-text">Otras preguntas incluirán uno o dos casos prácticos donde se plantea una situación y se debe elegir la mejor opción a aplicar según la normativa o criterio enseñado.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3733" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:02:13)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.2</span>
+                  <span class="subsection-title">Agradecimientos, asistencia y canal de consultas posteriores al cierre del diplomado</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El profesor agradece la asistencia de los participantes y reconoce que la presencia no era obligatoria para todos, valorando la participación de asistentes como Macarena.</div>
+                  <div class="content-text">Se recuerda a los estudiantes que pueden enviar dudas al diplomado y que la administración o el equipo docente les enviará respuestas a las consultas enviadas.</div>
+                  <div class="content-text">El canal institucional recibirá las preguntas y permitirá que el profesor o la secretaría remitan respuestas o documentación de interés a los alumnos.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3759" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:02:39)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.3</span>
+                  <span class="subsection-title">Envío de resoluciones, materiales y documentación complementaria</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">El profesor se compromete a enviar a la secretaría las resoluciones de multas de Sunafil para que la administración las remita a los participantes interesados.</div>
+                  <div class="content-text">Estas resoluciones pueden ser útiles para que los asistentes lean, impriman y conozcan en detalle las causales de sanciones, así como estrategias para afrontarlas.</div>
+                  <div class="content-text">La documentación complementaria servirá de apoyo práctico en caso de que en el futuro los estudiantes enfrenten situaciones relacionadas con sanciones laborales o inspecciones.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3812" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:03:32)</span> </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="subsection">
+              <div class="subsection-header" onclick="toggleSubsection(this)">
+                <div style="display: flex; align-items: center">
+                  <span class="subsection-number">8.4</span>
+                  <span class="subsection-title">Cierre administrativo de la sesión y recordatorios finales del diplomado</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+              </div>
+              <div class="subsection-content">
+                <div class="content-item">
+                  <div class="content-text">Se indica que la sesión será compartida por el grupo y que, por tratarse de una clase adicional, no habrá formulario de asistencia ese día.</div>
+                  <div class="content-text">Se reitera que para cualquier duda sobre los diplomados o temas generales pueden comunicarse con los números que aparecen en pantalla para recibir información.</div>
+                  <div class="content-text">Finalmente, se agradece nuevamente a los participantes, se les desea buenas noches y se concluye formalmente la sesión del diplomado.</div>
+                  <a href="https://www.youtube.com/watch?v=NzR8kDGF_ds&start=3843" class="youtube-link" target="_blank"> Ver en YouTube <span class="timestamp">(01:04:03)</span> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="https://www.edumin.pe/" target="_blank">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO%20BLANCO%20CANVA-mIKMypQ452RzmXVMUadb6mnvPaejXD.png" alt="EDUMIN Logo" class="footer-logo" />
+      </a>
+      <p class="footer-text">
+        <b>Contenido desarrollado por EDUMIN - Centro de Capacitación Especializado en Minería, Industria y Negocios</b><br />
+        <i>Material exclusivo para estudiantes de EDUMIN</i><br />
+        <a href="https://www.edumin.pe/" target="_blank" style="color: var(--color-principal); text-decoration: none">https://www.edumin.pe/</a>
+      </p>
+    </div>
+
+    <script>
+      const TITULO_DIPLOMADO = "DERECHO MINERO".toUpperCase();
+      const TITULO_CLASE = "CLASE ADICIONAL: ARBITRAJE EN MINERÍA".toUpperCase();
+
+      const elementoDiplomado = document.getElementById("tituloDiplomado");
+      if (elementoDiplomado) {
+        elementoDiplomado.innerText = TITULO_DIPLOMADO;
+      }
+
+      document.title = TITULO_CLASE;
+      const tituloPrincipal = document.getElementById("tituloPrincipal");
+      if (tituloPrincipal) {
+        tituloPrincipal.innerText = TITULO_CLASE;
+      }
+
+      const tituloCompacto = document.getElementById("tituloCompacto");
+      if (tituloCompacto) {
+        tituloCompacto.innerText = TITULO_CLASE;
+      }
+
+      function toggleSection(element) {
+        const section = element.closest(".section");
+        const wasActive = section.classList.contains("active");
+
+        section.classList.toggle("active");
+
+        if (wasActive) {
+          const subsections = section.querySelectorAll(".subsection");
+          subsections.forEach((subsection) => {
+            subsection.classList.remove("active");
+          });
+        }
+      }
+
+      function toggleSubsection(element) {
+        const subsection = element.closest(".subsection");
+        subsection.classList.toggle("active");
+      }
+
+      function expandAll() {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.add("active");
+        });
+
+        const subsections = document.querySelectorAll(".subsection");
+        subsections.forEach((subsection) => {
+          subsection.classList.add("active");
+        });
+      }
+
+      function collapseAll() {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+
+        const subsections = document.querySelectorAll(".subsection");
+        subsections.forEach((subsection) => {
+          subsection.classList.remove("active");
+        });
+      }
+
+      function debounce(func, delay) {
+        let timeout;
+        return function (...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func.apply(this, args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, delay);
+        };
+      }
+
+      function clearSearch() {
+        const searchInput = document.getElementById("searchInput");
+        const clearBtn = document.querySelector(".search-actions .clear-search");
+        searchInput.value = "";
+        clearBtn.style.display = "none";
+        searchContent();
+        searchInput.focus();
+      }
+
+      const createDiacriticInsensitiveRegex = (term) => {
+        const charMap = {
+          a: "[aáAÁ]",
+          e: "[eéEÉ]",
+          i: "[iíIÍ]",
+          o: "[oóOÓ]",
+          u: "[uúUÚ]",
+        };
+
+        const regexString = term
+          .split("")
+          .map((char) => {
+            const lowerChar = char.toLowerCase();
+            return charMap[lowerChar] || char;
+          })
+          .join("");
+
+        return new RegExp(`(${regexString})`, "gi");
+      };
+
+      function searchContent() {
+        const inputElement = document.getElementById("searchInput");
+        const searchTerm = inputElement.value.trim();
+
+        const searchableElements = document.querySelectorAll(".content-text, .section-title, .subsection-title");
+        let found = false;
+        let firstMatchElement = null;
+
+        document.querySelectorAll(".section.active").forEach((el) => el.classList.remove("active"));
+        document.querySelectorAll(".subsection.active").forEach((el) => el.classList.remove("active"));
+        searchableElements.forEach((element) => {
+          element.innerHTML = element.getAttribute("data-original-text") || element.textContent;
+        });
+
+        if (searchTerm.length < 3) {
+          return;
+        }
+
+        const searchRegex = createDiacriticInsensitiveRegex(searchTerm);
+
+        searchableElements.forEach((element) => {
+          const originalText = element.getAttribute("data-original-text") || element.textContent;
+
+          if (searchRegex.test(originalText)) {
+            found = true;
+
+            element.innerHTML = originalText.replace(searchRegex, `<span class="highlight">$1</span>`);
+
+            const subsection = element.closest(".subsection");
+            if (subsection) {
+              subsection.classList.add("active");
+              subsection.closest(".section")?.classList.add("active");
+            } else if (element.classList.contains("section-title")) {
+              element.closest(".section")?.classList.add("active");
+            }
+
+            if (!firstMatchElement) {
+              firstMatchElement = element;
+            }
+          }
+        });
+
+        if (firstMatchElement) {
+          requestAnimationFrame(() => {
+            firstMatchElement.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          });
+        } else if (searchTerm.length >= 3) {
+          alert("No se encontraron resultados para: " + searchTerm);
+        }
+      }
+
+      const debouncedSearch = debounce(searchContent, 300);
+
+      document.getElementById("searchInput").addEventListener("input", function () {
+        const clearBtn = document.querySelector(".search-actions .clear-search");
+        clearBtn.style.display = this.value.length > 0 ? "block" : "none";
+        debouncedSearch();
+      });
+
+      document.getElementById("searchInput").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          clearTimeout(this._timeoutId);
+          searchContent();
+        }
+      });
+
+      // --- Lógica del Header Compacto ---
+      const header = document.querySelector(".header");
+      const headerSpacer = document.querySelector(".header-spacer");
+      let initialHeaderHeight = 0; // Altura del header original
+      let compactHeaderHeight = 0; // Altura del header en modo compacto
+      let scrollTriggerPoint = 0; // Punto de scroll para activar el cambio
+
+      function handleHeaderState() {
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollY > scrollTriggerPoint) {
+          if (!header.classList.contains("compact")) {
+            header.classList.add("compact");
+            headerSpacer.style.height = `${initialHeaderHeight}px`;
+          }
+        } else {
+          if (header.classList.contains("compact")) {
+            header.classList.remove("compact");
+            headerSpacer.style.height = "0px";
+          }
+        }
+      }
+
+      function initializeHeader() {
+        initialHeaderHeight = header.offsetHeight;
+        const headerClone = header.cloneNode(true);
+        headerClone.classList.add("compact");
+        headerClone.style.visibility = "hidden";
+        headerClone.style.position = "absolute";
+        document.body.appendChild(headerClone);
+        compactHeaderHeight = headerClone.offsetHeight;
+        document.body.removeChild(headerClone);
+
+        scrollTriggerPoint = initialHeaderHeight - compactHeaderHeight;
+      }
+
+      document.addEventListener("DOMContentLoaded", initializeHeader);
+      window.addEventListener("scroll", handleHeaderState);
+      window.addEventListener("resize", debounce(initializeHeader, 200));
+    </script>
+  </body>
+</html>
