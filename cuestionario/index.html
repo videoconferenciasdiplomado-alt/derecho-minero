@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulador de Evaluación</title>
+    <title>Cuestionario interactivo EDUMIN</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -199,14 +199,14 @@
 
       // ==========================================
       // CAMBIA AQUÍ EL NOMBRE DE TU ARCHIVO JSON:
-// 1. Leemos los parámetros de la URL
-const urlParams = new URLSearchParams(window.location.search);
+      // 1. Leemos los parámetros de la URL
+      const urlParams = new URLSearchParams(window.location.search);
 
-// 2. Buscamos el parámetro "tema". Si no pones nada en el link, abrirá el primero por defecto
-const nombreTema = urlParams.get('tema') || '3-4 Minería Cuestionario';
+      // 2. Buscamos el parámetro "tema". Si no pones nada en el link, abrirá el primero por defecto
+      const nombreTema = urlParams.get("tema") || "3-4 Minería Cuestionario";
 
-// 3. Le agregamos la extensión .json de forma automática
-const ARCHIVO_JSON = `${nombreTema}.json`;      // ==========================================
+      // 3. Le agregamos la extensión .json de forma automática
+      const ARCHIVO_JSON = `${nombreTema}.json`; // ==========================================
 
       window.addEventListener("DOMContentLoaded", async () => {
         try {
