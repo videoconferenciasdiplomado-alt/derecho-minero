@@ -199,8 +199,14 @@
 
       // ==========================================
       // CAMBIA AQUÍ EL NOMBRE DE TU ARCHIVO JSON:
-      const ARCHIVO_JSON = "Minería Cuestionario (2).json";
-      // ==========================================
+// 1. Leemos los parámetros de la URL
+const urlParams = new URLSearchParams(window.location.search);
+
+// 2. Buscamos el parámetro "tema". Si no pones nada en el link, abrirá el primero por defecto
+const nombreTema = urlParams.get('tema') || '3-4 Minería Cuestionario';
+
+// 3. Le agregamos la extensión .json de forma automática
+const ARCHIVO_JSON = `${nombreTema}.json`;      // ==========================================
 
       window.addEventListener("DOMContentLoaded", async () => {
         try {
