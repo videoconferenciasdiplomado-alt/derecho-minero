@@ -1,0 +1,528 @@
+{
+  "quiz": [
+    {
+      "question": "¿Cuál es el cambio de paradigma fundamental que ha experimentado el derecho minero peruano desde los años 80 hasta la actualidad?",
+      "answerOptions": [
+        {
+          "text": "La transición de un modelo puramente industrial hacia uno de sostenibilidad total.",
+          "isCorrect": true,
+          "rationale": "El texto enfatiza que la minería pasó de no tener reglas claras en los 80 a convertir lo ambiental en el eje que rige absolutamente todo hoy en día."
+        },
+        {
+          "text": "El enfoque exclusivo en la eficiencia técnica para maximizar la rentabilidad económica.",
+          "isCorrect": false,
+          "rationale": "Aunque la eficiencia técnica es necesaria, el material aclara que ya no es suficiente por sí sola sin un rigor ambiental impecable."
+        },
+        {
+          "text": "La eliminación de la soberanía estatal sobre los recursos para favorecer la inversión extranjera.",
+          "isCorrect": false,
+          "rationale": "El material afirma explícitamente que toda la estructura del derecho minero nace de la soberanía inalienable del Estado."
+        },
+        {
+          "text": "La priorización de la presión social como único imperativo legal para las empresas.",
+          "isCorrect": false,
+          "rationale": "El texto menciona que la sostenibilidad ya no es solo presión social, sino un imperativo legal estrictamente obligatorio."
+        }
+      ],
+      "hint": "Considera el nuevo rol que juegan las regulaciones ambientales frente a la antigua forma de extraer minerales."
+    },
+    {
+      "question": "Según la interpretación del Tribunal Constitucional sobre el artículo 2, inciso 22 de la Constitución de 1993, ¿cuáles son las dos 'caras' del derecho al ambiente?",
+      "answerOptions": [
+        {
+          "text": "El derecho al disfrute y la obligación de conservación.",
+          "isCorrect": true,
+          "rationale": "El Tribunal define que todos tenemos la libertad de interactuar con la naturaleza pero también el deber absoluto de evitar daños irreversibles."
+        },
+        {
+          "text": "El derecho a la explotación económica y el deber de pagar impuestos.",
+          "isCorrect": false,
+          "rationale": "Esta opción se enfoca en aspectos tributarios y económicos que no corresponden a la definición de la 'Constitución ecológica'."
+        },
+        {
+          "text": "La soberanía del Estado y la propiedad privada de los recursos.",
+          "isCorrect": false,
+          "rationale": "Los recursos naturales son de la nación y no propiedad privada, y esta distinción no es la 'doble cara' del derecho ambiental mencionado."
+        },
+        {
+          "text": "El acceso a la información ambiental y la participación ciudadana.",
+          "isCorrect": false,
+          "rationale": "Aunque son derechos ambientales, el texto se enfoca específicamente en el binomio disfrute-conservación según el Tribunal Constitucional."
+        }
+      ],
+      "hint": "Se refiere a una dualidad entre el beneficio individual y la responsabilidad colectiva con la naturaleza."
+    },
+    {
+      "question": "¿Qué establece el artículo 66 de la Constitución Política del Perú respecto a los recursos naturales?",
+      "answerOptions": [
+        {
+          "text": "Los recursos son patrimonio de la nación y el Estado es soberano en su aprovechamiento.",
+          "isCorrect": true,
+          "rationale": "Este artículo fundamenta que el Estado tiene el mando sobre cómo se usan los recursos que pertenecen a toda la nación."
+        },
+        {
+          "text": "La Amazonía debe ser protegida de cualquier tipo de desarrollo industrial.",
+          "isCorrect": false,
+          "rationale": "La protección de la Amazonía está ligada al artículo 69, el cual promueve su desarrollo sostenible, no su prohibición total."
+        },
+        {
+          "text": "El Estado tiene la obligación de fijar multas preventivas contra la contaminación.",
+          "isCorrect": false,
+          "rationale": "Si bien el Estado fiscaliza, el artículo 66 se centra en la titularidad y soberanía sobre los recursos naturales."
+        },
+        {
+          "text": "Los ciudadanos pueden disponer libremente de los minerales que encuentren en su propiedad.",
+          "isCorrect": false,
+          "rationale": "El texto aclara que el Estado es quien manda sobre el uso de los recursos, independientemente de la propiedad superficial."
+        }
+      ],
+      "hint": "Este artículo define quién es el dueño originario de la riqueza del subsuelo."
+    },
+    {
+      "question": "En la 'triple dimensión' del derecho ambiental, ¿qué función cumple cuando actúa como un 'derecho subjetivo'?",
+      "answerOptions": [
+        {
+          "text": "Otorga el poder legal para presentar acciones de amparo ante vulneraciones ambientales.",
+          "isCorrect": true,
+          "rationale": "Como derecho subjetivo, permite que los ciudadanos acudan a un juez para proteger su derecho individual a un ambiente sano."
+        },
+        {
+          "text": "Sirve como un faro que ilumina y condiciona todas las leyes del país.",
+          "isCorrect": false,
+          "rationale": "Esta descripción corresponde a la dimensión de 'principio rector', no a la de derecho subjetivo."
+        },
+        {
+          "text": "Establece reglas técnicas estrictas que las empresas deben acatar sin excepción.",
+          "isCorrect": false,
+          "rationale": "Esta función describe la dimensión de 'deber de cumplimiento' u obligación legal."
+        },
+        {
+          "text": "Permite al Estado expropiar tierras para la conservación de la biodiversidad.",
+          "isCorrect": false,
+          "rationale": "El concepto de derecho subjetivo se refiere a la facultad del individuo para exigir la protección de su derecho, no a facultades de expropiación."
+        }
+      ],
+      "hint": "Relaciónalo con la capacidad de una persona para defender legalmente su entorno ante un tribunal."
+    },
+    {
+      "question": "¿Cuál es el rol especializado del Ministerio del Ambiente (MINAM) dentro del engranaje institucional minero?",
+      "answerOptions": [
+        {
+          "text": "Aprobar los estándares de calidad ambiental que determinan la viabilidad técnica de una mina.",
+          "isCorrect": true,
+          "rationale": "El MINAM dicta las políticas y aprueba los estándares técnicos (ECA y LMP) que definen si un proyecto puede operar."
+        },
+        {
+          "text": "Otorgar directamente los títulos de concesión minera a los inversionistas.",
+          "isCorrect": false,
+          "rationale": "El trámite del petitorio y el otorgamiento de títulos se realiza ante el INGEMMET o gobiernos regionales, no ante el MINAM."
+        },
+        {
+          "text": "Sustituir la opinión de la Autoridad Nacional del Agua en casos de conflicto.",
+          "isCorrect": false,
+          "rationale": "Las entidades como la ANA son independientes y sus opiniones técnicas son vinculantes por sí mismas."
+        },
+        {
+          "text": "Gestionar el catastro minero y el sistema de coordenadas UTM.",
+          "isCorrect": false,
+          "rationale": "La gestión del catastro y las coordenadas es una función técnica del INGEMMET, no del Ministerio del Ambiente."
+        }
+      ],
+      "hint": "Piensa en quién establece las reglas del juego técnico para proteger el ecosistema a nivel nacional."
+    },
+    {
+      "question": "Si una empresa minera recibe una opinión técnica negativa de la Autoridad Nacional del Agua (ANA) durante el proceso de permisos, ¿cuál es la consecuencia?",
+      "answerOptions": [
+        {
+          "text": "El proyecto pierde su viabilidad legal, ya que estas opiniones son vinculantes.",
+          "isCorrect": true,
+          "rationale": "El texto explica que si una sola de las entidades independientes (como la ANA) da un informe negativo, el proyecto se detiene."
+        },
+        {
+          "text": "El Ministerio de Energía y Minas puede ignorar la opinión si el proyecto es de interés nacional.",
+          "isCorrect": false,
+          "rationale": "El material señala que hoy no basta con el permiso del MINEM y que las opiniones de otras entidades son vinculantes."
+        },
+        {
+          "text": "La empresa puede solicitar que el Ministerio de Cultura valide el uso del agua en su lugar.",
+          "isCorrect": false,
+          "rationale": "Cada entidad tiene una competencia específica (Cultura para arqueología, ANA para agua) que no es transferible."
+        },
+        {
+          "text": "Se impone una multa automática de $22,000$ dólares antes de continuar el trámite.",
+          "isCorrect": false,
+          "rationale": "La cifra de $22,000$ dólares corresponde a un caso de transferencia de propiedad, no a una tasa por opinión negativa de la ANA."
+        }
+      ],
+      "hint": "Recuerda el peso que tienen las instituciones independientes en la aprobación de un proyecto minero."
+    },
+    {
+      "question": "¿Por qué las inspecciones 'sorpresa' del OEFA son consideradas críticas en la fiscalización minera?",
+      "answerOptions": [
+        {
+          "text": "Evitan que las empresas oculten problemas operativos que solo ocurren temporalmente.",
+          "isCorrect": true,
+          "rationale": "Al llegar sin previo aviso, el Estado asegura que las empresas cumplan las reglas todos los días y no solo cuando esperan una visita."
+        },
+        {
+          "text": "Permiten al Estado recaudar multas de forma más rápida para financiar el MINAM.",
+          "isCorrect": false,
+          "rationale": "El objetivo de la fiscalización es el cumplimiento ambiental, no la recaudación inmediata de fondos para el ministerio."
+        },
+        {
+          "text": "Son la única forma legal de recolectar muestras de agua en la Amazonía.",
+          "isCorrect": false,
+          "rationale": "Aunque se recolectan muestras, la naturaleza de la inspección sorpresa busca garantizar el cumplimiento continuo de las normas."
+        },
+        {
+          "text": "Garantizan que el plan de cierre de minas se ejecute antes de iniciar la extracción.",
+          "isCorrect": false,
+          "rationale": "El plan de cierre se garantiza financieramente al inicio, pero la ejecución ocurre al final de la vida útil de la mina."
+        }
+      ],
+      "hint": "Considera la diferencia entre portarse bien cuando te vigilan y portarse bien siempre."
+    },
+    {
+      "question": "En el caso de la Compañía Minera Colpa, ¿qué factor jurídico fue determinante para que la sanción fuera ratificada?",
+      "answerOptions": [
+        {
+          "text": "La incapacidad de la empresa para presentar pruebas técnicas que desmintieran el acta de inspección.",
+          "isCorrect": true,
+          "rationale": "En derecho minero, las excusas verbales no sirven; se requiere evidencia técnica sólida para rebatir los hallazgos de un inspector."
+        },
+        {
+          "text": "El hecho de que la multa ascendiera exactamente a $60,039$ soles sin posibilidad de apelación.",
+          "isCorrect": false,
+          "rationale": "El monto es un dato del caso, pero el factor determinante fue la deficiente estrategia de defensa basada en argumentos verbales."
+        },
+        {
+          "text": "La falta de un contrato de Joint Venture para compartir la responsabilidad de los derrames.",
+          "isCorrect": false,
+          "rationale": "El Joint Venture es un vehículo financiero para compartir riesgos, pero no exime a la empresa operadora de sus fallas ambientales."
+        },
+        {
+          "text": "La aplicación de normas difusas que permitieron una interpretación subjetiva del daño.",
+          "isCorrect": false,
+          "rationale": "El texto menciona que el Estado debe respetar la tipicidad, por lo que las normas no pueden ser difusas ni subjetivas."
+        }
+      ],
+      "hint": "Reflexiona sobre lo que se necesita para contradecir un documento oficial de un inspector en este sector."
+    },
+    {
+      "question": "¿Qué garantiza el principio de 'tipicidad' en el marco de la fiscalización ambiental?",
+      "answerOptions": [
+        {
+          "text": "Que la autoridad solo puede sancionar conductas que encajen exactamente en lo descrito por la ley.",
+          "isCorrect": true,
+          "rationale": "La tipicidad impide sanciones basadas en suposiciones vagas, exigiendo que la infracción coincida milimétricamente con la norma."
+        },
+        {
+          "text": "Que todas las minas de un mismo tipo deben recibir la misma sanción económica.",
+          "isCorrect": false,
+          "rationale": "La tipicidad se refiere a la descripción legal de la conducta prohibida, no a la igualdad de montos de multas entre empresas."
+        },
+        {
+          "text": "Que la empresa tiene el derecho de tipificar sus propios estándares de calidad.",
+          "isCorrect": false,
+          "rationale": "Es el Estado, a través de sus entidades, quien define y tipifica las normas y estándares, no la empresa privada."
+        },
+        {
+          "text": "Que las multas deben ser calculadas en base al tipo de mineral extraído.",
+          "isCorrect": false,
+          "rationale": "El cálculo de multas depende de la gravedad de la infracción tipificada, no necesariamente del tipo de mineral."
+        }
+      ],
+      "hint": "Es una garantía legal que evita la arbitrariedad de la autoridad al momento de castigar una falta."
+    },
+    {
+      "question": "Desde el punto de vista legal, ¿cómo se define la relación entre una concesión minera y la propiedad del suelo superficial?",
+      "answerOptions": [
+        {
+          "text": "Son bienes inmuebles distintos; la concesión es un polígono subterráneo independiente del terreno superficial.",
+          "isCorrect": true,
+          "rationale": "La ley peruana separa el subsuelo del suelo, permitiendo que la concesión se hipoteque o venda sin afectar al dueño de la superficie."
+        },
+        {
+          "text": "La concesión otorga automáticamente la propiedad de toda la montaña y las tierras colindantes.",
+          "isCorrect": false,
+          "rationale": "Este es un mito común que el material desmiente; la concesión no te hace dueño del terreno que pisas."
+        },
+        {
+          "text": "El dueño del suelo es siempre el dueño legítimo de los minerales que se encuentren debajo.",
+          "isCorrect": false,
+          "rationale": "La soberanía sobre los recursos es del Estado, y la concesión es un derecho administrativo de aprovechamiento separado."
+        },
+        {
+          "text": "Solo se puede obtener una concesión si el solicitante ya es dueño del terreno agrícola superior.",
+          "isCorrect": false,
+          "rationale": "No es necesario ser dueño de la superficie para solicitar un petitorio minero sobre el subsuelo."
+        }
+      ],
+      "hint": "Imagina un volumen geométrico en 3D que flota bajo tierra sin tocar la superficie."
+    },
+    {
+      "question": "¿Qué tipo de concesión se requiere específicamente para operar sistemas de transporte masivo como fajas transportadoras o ferrocarriles mineros?",
+      "answerOptions": [
+        {
+          "text": "Concesión de transporte minero.",
+          "isCorrect": true,
+          "rationale": "La ley clasifica cada etapa; los sistemas masivos de transporte de mineral operan bajo esta modalidad específica."
+        },
+        {
+          "text": "Concesión de beneficio.",
+          "isCorrect": false,
+          "rationale": "La concesión de beneficio se aplica a plantas químicas o físicas para purificar y procesar el mineral."
+        },
+        {
+          "text": "Concesión de labor general.",
+          "isCorrect": false,
+          "rationale": "Esta concesión se utiliza para servicios auxiliares como ventilación, desagüe o túneles de acceso."
+        },
+        {
+          "text": "Concesión de exploración técnica.",
+          "isCorrect": false,
+          "rationale": "El transporte masivo es una fase operativa distinta de la exploración inicial del yacimiento."
+        }
+      ],
+      "hint": "La ley divide las operaciones por su función productiva específica."
+    },
+    {
+      "question": "¿Cuál es el costo actual del derecho de trámite para iniciar un petitorio minero en Perú?",
+      "answerOptions": [
+        {
+          "text": "$246$ soles con $90$ céntimos.",
+          "isCorrect": true,
+          "rationale": "Este es el pago inicial exacto mencionado como el punto de partida financiero para arrancar la maquinaria burocrática."
+        },
+        {
+          "text": "$60,039$ soles.",
+          "isCorrect": false,
+          "rationale": "Esta cifra corresponde a la multa impuesta a la Minera Colpa por infracciones ambientales, no a un derecho de trámite."
+        },
+        {
+          "text": "$1$ UIT por hectárea.",
+          "isCorrect": false,
+          "rationale": "Esta es la métrica para el pago de la penalidad por falta de producción mínima a partir del décimo año."
+        },
+        {
+          "text": "$22,000$ dólares.",
+          "isCorrect": false,
+          "rationale": "Este monto fue el justiprecio impago en el caso judicial de la Minera Don Eliseo."
+        }
+      ],
+      "hint": "Es una cifra pequeña que representa el primer 'clic' financiero del proceso administrativo."
+    },
+    {
+      "question": "Respecto al Plan de Cierre de Minas, ¿cuál es una obligación crítica para el titular desde la etapa del petitorio?",
+      "answerOptions": [
+        {
+          "text": "Contar con un respaldo financiero garantizado para la remediación desde el día uno.",
+          "isCorrect": true,
+          "rationale": "El texto aclara que la remediación no es un problema del futuro; el financiamiento debe estar asegurado desde que se solicita la concesión."
+        },
+        {
+          "text": "Haber completado el cierre de la mina antes de recibir el título de concesión.",
+          "isCorrect": false,
+          "rationale": "El cierre ocurre al final de la vida de la mina; lo que se exige al inicio es el plan y su garantía económica."
+        },
+        {
+          "text": "Pagar el $100\\%$ del costo de cierre en efectivo al Ministerio del Ambiente.",
+          "isCorrect": false,
+          "rationale": "Se requiere una garantía o respaldo financiero, pero no necesariamente el pago total en efectivo al inicio."
+        },
+        {
+          "text": "Delegar la responsabilidad del cierre a los gobiernos regionales mediante un contrato de sesión.",
+          "isCorrect": false,
+          "rationale": "La responsabilidad del cierre es del titular del derecho minero y no puede ser transferida al Estado de forma gratuita."
+        }
+      ],
+      "hint": "Tiene que ver con la seguridad económica de que los daños serán reparados aunque la empresa desaparezca."
+    },
+    {
+      "question": "¿Qué concepto económico funciona como el 'ancla' fundamental para cualquier transferencia o financiamiento de un derecho minero?",
+      "answerOptions": [
+        {
+          "text": "El justiprecio.",
+          "isCorrect": true,
+          "rationale": "El justiprecio es la valoración justa de mercado y sirve de base para negociar contratos, préstamos bancarios y transferencias."
+        },
+        {
+          "text": "El derecho de vigencia.",
+          "isCorrect": false,
+          "rationale": "El derecho de vigencia es un pago anual de mantenimiento al Estado, no el valor de mercado para transacciones privadas."
+        },
+        {
+          "text": "La producción mínima.",
+          "isCorrect": false,
+          "rationale": "Es una obligación de trabajo impuesta por el Estado, no una medida de valoración del activo en el libre mercado."
+        },
+        {
+          "text": "La cláusula de arbitraje.",
+          "isCorrect": false,
+          "rationale": "El arbitraje es un mecanismo de resolución de conflictos, no un valor económico o precio del derecho."
+        }
+      ],
+      "hint": "Es el valor monetario que refleja lo que realmente vale el yacimiento en el mercado."
+    },
+    {
+      "question": "En el caso de la Minera Don Eliseo, ¿por qué la SUNARP rechazó la anulación unilateral del contrato solicitada por la sociedad conyugal?",
+      "answerOptions": [
+        {
+          "text": "Porque existía un pacto arbitral que blindaba el contrato frente a decisiones unilaterales.",
+          "isCorrect": true,
+          "rationale": "La cláusula de arbitraje actúa como un escudo definitivo que impide resolver el contrato por cuenta propia ante un incumplimiento."
+        },
+        {
+          "text": "Porque la deuda de $22,000$ dólares era considerada insuficiente para anular un trato.",
+          "isCorrect": false,
+          "rationale": "El monto no fue el motivo legal; la razón fue el mecanismo procesal (arbitraje) pactado previamente por las partes."
+        },
+        {
+          "text": "Porque el derecho de vigencia no había sido pagado por la empresa receptora.",
+          "isCorrect": false,
+          "rationale": "El caso trataba sobre un incumplimiento del justiprecio en un contrato privado, no sobre deberes con el Estado."
+        },
+        {
+          "text": "Porque los contratos mineros son irrevocables por ley una vez inscritos.",
+          "isCorrect": false,
+          "rationale": "Los contratos pueden resolverse, pero deben seguir los canales legales pactados, como el arbitraje mencionado en el caso."
+        }
+      ],
+      "hint": "Busca el mecanismo de resolución de conflictos que suele incluirse en grandes inversiones mineras."
+    },
+    {
+      "question": "¿Cuál es la consecuencia directa de no pagar el derecho de vigencia durante dos años consecutivos?",
+      "answerOptions": [
+        {
+          "text": "La caducidad automática de la concesión y la pérdida del derecho.",
+          "isCorrect": true,
+          "rationale": "El mantenimiento anual es ineludible; el incumplimiento por dos años seguidos extingue el derecho minero por ley."
+        },
+        {
+          "text": "Una multa ascendente a $1 \\text{ UIT}$ por cada hectárea de la concesión.",
+          "isCorrect": false,
+          "rationale": "El monto de $1 \\text{ UIT}$ por hectárea corresponde a la penalidad por falta de producción, no al derecho de vigencia."
+        },
+        {
+          "text": "La obligación de pasar a un proceso de formalización bajo el REINFO.",
+          "isCorrect": false,
+          "rationale": "El REINFO es un proceso de formalización para mineros informales, no una sanción por falta de pago de vigencia."
+        },
+        {
+          "text": "La prohibición de realizar inspecciones sorpresa por parte del OEFA.",
+          "isCorrect": false,
+          "rationale": "La falta de pago extingue el derecho, pero no limita las facultades de fiscalización del Estado sobre el área."
+        }
+      ],
+      "hint": "Es la sanción más drástica para un titular que 'olvida' sus deberes de mantenimiento."
+    },
+    {
+      "question": "¿Qué mensaje busca enviar el Estado peruano al exigir una 'producción mínima' a partir del décimo año de la concesión?",
+      "answerOptions": [
+        {
+          "text": "Evitar que los recursos de la nación sean acaparados por especuladores que no los trabajan.",
+          "isCorrect": true,
+          "rationale": "La ley exige demostrar con hechos físicos que se está generando riqueza y empleo, no solo manteniendo el título."
+        },
+        {
+          "text": "Asegurar que el mineral sea vendido exclusivamente a empresas estatales.",
+          "isCorrect": false,
+          "rationale": "El mercado minero es libre; la producción mínima busca actividad económica, no controlar a quién se le vende."
+        },
+        {
+          "text": "Garantizar que el plan de cierre de minas tenga fondos suficientes.",
+          "isCorrect": false,
+          "rationale": "El plan de cierre se garantiza de forma independiente y no está vinculado directamente a la métrica de producción mínima."
+        },
+        {
+          "text": "Fomentar que las empresas mineras se conviertan en dueñas del suelo superficial.",
+          "isCorrect": false,
+          "rationale": "La producción mínima no tiene relación con la adquisición de la propiedad superficial, la cual permanece separada."
+        }
+      ],
+      "hint": "Tiene que ver con la diferencia entre tener un activo para invertir y tenerlo solo para 'guardarlo debajo del colchón'."
+    },
+    {
+      "question": "En el resumen final de la clase, ¿cuál de estos se menciona como un desafío que golpea la seguridad jurídica y espanta inversiones?",
+      "answerOptions": [
+        {
+          "text": "Las tensiones políticas y debates legislativos en torno a la formalización (como el REINFO).",
+          "isCorrect": true,
+          "rationale": "La incertidumbre generada por estos debates políticos es señalada como un golpe a la estabilidad del sector."
+        },
+        {
+          "text": "La excesiva digitalización de los trámites ante el INGEMMET.",
+          "isCorrect": false,
+          "rationale": "El texto describe el procedimiento digital como 'ágil' y moderno, no como un obstáculo para la inversión."
+        },
+        {
+          "text": "La obligación de pagar $246.90$ soles por cada petitorio.",
+          "isCorrect": false,
+          "rationale": "Este es un costo administrativo estándar y no representa un desafío a la seguridad jurídica del país."
+        },
+        {
+          "text": "El uso de coordenadas UTM para definir los polígonos subterráneos.",
+          "isCorrect": false,
+          "rationale": "Las coordenadas UTM brindan precisión y claridad técnica al catastro, fortaleciendo la seguridad jurídica."
+        }
+      ],
+      "hint": "Se refiere a procesos de legalización de minería informal que generan debate en el Congreso."
+    },
+    {
+      "question": "¿Por qué se afirma que el titular minero debe ser un 'gestor integral de derechos'?",
+      "answerOptions": [
+        {
+          "text": "Porque el derecho minero exige una gestión técnica, económica y ambiental constante para no desvanecerse.",
+          "isCorrect": true,
+          "rationale": "Mantener una concesión no es un acto estático; requiere pagos, producción y cumplimiento ambiental riguroso."
+        },
+        {
+          "text": "Porque debe administrar simultáneamente la propiedad del subsuelo y la superficie agrícola.",
+          "isCorrect": false,
+          "rationale": "El material enfatiza que son ámbitos separados; el titular minero gestiona el derecho de aprovechamiento, no necesariamente el suelo."
+        },
+        {
+          "text": "Porque tiene la obligación de actuar como juez en los conflictos entre sus trabajadores y el Estado.",
+          "isCorrect": false,
+          "rationale": "El titular es un sujeto regulado por la autoridad, no tiene funciones jurisdiccionales o judiciales."
+        },
+        {
+          "text": "Porque es el único responsable de dictar las políticas ambientales en su zona de influencia.",
+          "isCorrect": false,
+          "rationale": "Las políticas ambientales son dictadas por el Estado (MINAM), y la empresa debe simplemente acatarlas."
+        }
+      ],
+      "hint": "Considera que el derecho minero es administrativo y depende del cumplimiento de múltiples condiciones."
+    },
+    {
+      "question": "De acuerdo a la estructura legal presentada, ¿cuál es el objetivo del artículo 69 de la Constitución?",
+      "answerOptions": [
+        {
+          "text": "Promover el desarrollo de la Amazonía de forma estrictamente sostenible.",
+          "isCorrect": true,
+          "rationale": "Este artículo pone una 'lupa' especial en la región amazónica para equilibrar crecimiento económico y preservación."
+        },
+        {
+          "text": "Establecer el monto de las multas por derrames en bocaminas.",
+          "isCorrect": false,
+          "rationale": "Las multas y sanciones son parte de la regulación administrativa del OEFA, no están detalladas en el texto constitucional."
+        },
+        {
+          "text": "Obligar a las empresas a realizar inspecciones sorpresa en sus propias instalaciones.",
+          "isCorrect": false,
+          "rationale": "La inspección sorpresa es una facultad del Estado (OEFA), no una obligación de autogestión de la empresa bajo el art. 69."
+        },
+        {
+          "text": "Definir las coordenadas UTM para las concesiones de transporte minero.",
+          "isCorrect": false,
+          "rationale": "El sistema de coordenadas es una herramienta técnica del catastro, no un principio de rango constitucional sobre la Amazonía."
+        }
+      ],
+      "hint": "Este artículo se enfoca en una región geográfica específica y su protección especial."
+    }
+  ],
+  "topics": {
+    "covered": ["Marco Constitucional del Derecho Ambiental Peruano", "Institucionalidad y Fiscalización Ambiental en Minería", "Naturaleza y Clasificación de la Concesión Minera", "Obligaciones Contractuales y Seguridad Jurídica", "Procedimientos Administrativos y Catastro Minero"],
+    "followUp": ["Jurisprudencia del Tribunal Constitucional en Materia Ecológica", "Procedimientos de Sanción y el Rol del OEFA", "Estructuración de Contratos de Joint Venture y Sesión Minera", "Sostenibilidad y Desarrollo en la Amazonía Peruana", "Impacto de la Formalización Minera (REINFO) en la Inversión"]
+  }
+}
