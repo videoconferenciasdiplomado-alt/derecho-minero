@@ -1,0 +1,527 @@
+{
+  "nombre_curso": "DERECHO MINERO",
+  "numero_clase": 1,
+  "nombre_clase": "Regulación de Concesiones, Régimen Contractual y Marco Ambiental",
+  "quiz": [
+    {
+      "question": "¿Cuál es el cambio fundamental en la regulación del sector minero mencionado respecto a las décadas de los 80 y 90?",
+      "answerOptions": [
+        {
+          "text": "La transición de un enfoque puramente industrial a uno fusionado con la sostenibilidad.",
+          "isCorrect": true,
+          "rationale": "El texto enfatiza que la legislación laxa del pasado ha sido reemplazada por el derecho ambiental como eje rector de toda la actividad."
+        },
+        {
+          "text": "La priorización de la eficiencia técnica sobre cualquier normativa de carácter ambiental.",
+          "isCorrect": false,
+          "rationale": "El material indica lo contrario, señalando que la viabilidad depende de la armonía entre técnica y rigor ambiental."
+        },
+        {
+          "text": "El traspaso de la soberanía de los recursos naturales del Estado a las empresas privadas.",
+          "isCorrect": false,
+          "rationale": "El texto reafirma que la soberanía del Estado sobre los recursos es un principio inalienable e indiscutible."
+        },
+        {
+          "text": "La eliminación de los procedimientos administrativos para agilizar la inversión extranjera.",
+          "isCorrect": false,
+          "rationale": "Se menciona que la arquitectura de fiscalización y los procedimientos son ahora más rigurosos y complejos."
+        }
+      ],
+      "hint": "Reflexiona sobre cómo ha evolucionado la relación entre la industria y el entorno natural."
+    },
+    {
+      "question": "Según el artículo 2, inciso 22 de la Constitución Política de 1993, ¿cuáles son las dos dimensiones del derecho ambiental?",
+      "answerOptions": [
+        {
+          "text": "El derecho al disfrute y la obligación de conservación.",
+          "isCorrect": true,
+          "rationale": "La jurisprudencia divide este derecho en la facultad de convivir con el entorno y el deber activo de mantener los ecosistemas."
+        },
+        {
+          "text": "El derecho a la explotación y la obligación de remediación posterior.",
+          "isCorrect": false,
+          "rationale": "Esta visión se limita a la actividad económica, mientras que la Constitución se enfoca en el equilibrio ecosistémico y el deber de conservación."
+        },
+        {
+          "text": "La libertad de empresa y el derecho a la consulta previa.",
+          "isCorrect": false,
+          "rationale": "Aunque son conceptos relevantes en el sector, no son las dos dimensiones específicas que el texto atribuye al artículo 2, inciso 22."
+        },
+        {
+          "text": "El patrimonio de la nación y la soberanía del Estado.",
+          "isCorrect": false,
+          "rationale": "Estos conceptos se relacionan con el artículo 66 y la propiedad de los recursos, no directamente con las dimensiones del derecho ambiental individual."
+        }
+      ],
+      "hint": "Considera que una dimensión es una facultad de goce y la otra es una responsabilidad hacia el futuro."
+    },
+    {
+      "question": "¿Qué establece el artículo 66 de la Constitución peruana respecto a los recursos naturales?",
+      "answerOptions": [
+        {
+          "text": "Que son patrimonio exclusivo de la nación y el Estado es el soberano absoluto.",
+          "isCorrect": true,
+          "rationale": "Este artículo define la titularidad del Estado sobre los recursos, actuando como dueño y guardián."
+        },
+        {
+          "text": "Que la Amazonía debe tener un desarrollo sostenible bajo mandato directo.",
+          "isCorrect": false,
+          "rationale": "Esta disposición específica corresponde al artículo 69 de la Constitución, no al 66."
+        },
+        {
+          "text": "Que el Estado debe conservar la diversidad biológica de manera prioritaria.",
+          "isCorrect": false,
+          "rationale": "Dicha obligación está estipulada en el artículo 68 del marco constitucional."
+        },
+        {
+          "text": "Que el Ministerio del Ambiente es el único ente con capacidad de legislar sobre ellos.",
+          "isCorrect": false,
+          "rationale": "La Constitución define la naturaleza jurídica del recurso, no las funciones administrativas específicas del MINAM."
+        }
+      ],
+      "hint": "Este artículo define quién es el dueño originario de las riquezas del subsuelo."
+    },
+    {
+      "question": "Dentro del concepto de 'Constitución Ecológica', ¿qué permite el nivel que actúa como 'derecho subjetivo'?",
+      "answerOptions": [
+        {
+          "text": "Exigir protección en los tribunales mediante herramientas como el proceso de amparo.",
+          "isCorrect": true,
+          "rationale": "Como derecho subjetivo, otorga a los ciudadanos la facultad de frenar operaciones que amenacen el ecosistema legalmente."
+        },
+        {
+          "text": "Definir las políticas nacionales que el aparato estatal debe cumplir.",
+          "isCorrect": false,
+          "rationale": "Esto se asocia más con el nivel de principio rector que guía al Estado, no con la facultad individual de accionar judicialmente."
+        },
+        {
+          "text": "Establecer los estándares de calidad ambiental (ECA) para las empresas.",
+          "isCorrect": false,
+          "rationale": "Los ECA son funciones técnicas administrativas del MINAM, no una definición del derecho subjetivo constitucional."
+        },
+        {
+          "text": "Garantizar que el Ministerio de Energía y Minas otorgue concesiones sin demora.",
+          "isCorrect": false,
+          "rationale": "El derecho subjetivo en la Constitución Ecológica se enfoca en la protección ambiental, no en la celeridad de trámites extractivos."
+        }
+      ],
+      "hint": "Se refiere a la capacidad de un ciudadano para activar el sistema judicial frente a una amenaza ambiental."
+    },
+    {
+      "question": "¿Cuál es la función de los Estándares de Calidad Ambiental (ECA) en la regulación peruana?",
+      "answerOptions": [
+        {
+          "text": "Actuar como límites milimétricos que ninguna operación puede cruzar legalmente.",
+          "isCorrect": true,
+          "rationale": "El texto los describe como la raya exacta necesaria para que una operación pueda encender sus motores legalmente."
+        },
+        {
+          "text": "Servir como guías sugeridas de buena conducta para las empresas mineras.",
+          "isCorrect": false,
+          "rationale": "No son sugerencias, sino requisitos de cumplimiento obligatorio para la viabilidad legal de cualquier proyecto."
+        },
+        {
+          "text": "Definir el monto de las multas que la OEFA debe imponer ante un derrame.",
+          "isCorrect": false,
+          "rationale": "Los ECA miden la calidad del entorno, mientras que las multas se basan en la gravedad de la infracción y la tipicidad."
+        },
+        {
+          "text": "Sustituir la necesidad de obtener opiniones técnicas de otros ministerios.",
+          "isCorrect": false,
+          "rationale": "Cumplir con los ECA es obligatorio, pero no reemplaza la evaluación interministerial de entidades como ANA o Cultura."
+        }
+      ],
+      "hint": "Piensa en ellos como los parámetros técnicos que definen si un ambiente es saludable o no."
+    },
+    {
+      "question": "¿Qué entidad es la encargada de revisar los recursos hídricos en el proceso de aprobación de un proyecto?",
+      "answerOptions": [
+        {
+          "text": "La Autoridad Nacional del Agua (ANA).",
+          "isCorrect": true,
+          "rationale": "La ANA participa en la danza de pesos y contrapesos técnicos analizando específicamente el impacto en el agua."
+        },
+        {
+          "text": "El Ministerio de Cultura.",
+          "isCorrect": false,
+          "rationale": "Esta entidad se encarga de evaluar riesgos para los restos arqueológicos, no los recursos hídricos."
+        },
+        {
+          "text": "La Sunafil.",
+          "isCorrect": false,
+          "rationale": "Sunafil se especializa en la fiscalización del ámbito laboral, no en temas de recursos naturales hídricos."
+        },
+        {
+          "text": "El INGEMMET.",
+          "isCorrect": false,
+          "rationale": "INGEMMET recibe el petitorio minero pero no es la autoridad técnica encargada específicamente del agua."
+        }
+      ],
+      "hint": "Sus siglas coinciden con el nombre propio femenino más común."
+    },
+    {
+      "question": "¿Por qué se considera que las inspecciones inopinadas son el método de fiscalización más efectivo?",
+      "answerOptions": [
+        {
+          "text": "Evitan que las empresas maquillen sus operaciones para aparentar cumplimiento.",
+          "isCorrect": true,
+          "rationale": "Al no haber aviso previo, se asegura que el cumplimiento sea diario y no solo un 'teatro' para el auditor."
+        },
+        {
+          "text": "Permiten que las empresas tengan tiempo de preparar su defensa técnica.",
+          "isCorrect": false,
+          "rationale": "Al contrario, las visitas inopinadas buscan capturar la realidad operativa sin preparaciones previas de la empresa."
+        },
+        {
+          "text": "Reducen los costos administrativos para el organismo fiscalizador (OEFA).",
+          "isCorrect": false,
+          "rationale": "La efectividad mencionada no es económica, sino operativa para asegurar la veracidad de la situación ambiental."
+        },
+        {
+          "text": "Garantizan que el Ministerio de Energía y Minas otorgue el título más rápido.",
+          "isCorrect": false,
+          "rationale": "La fiscalización ocurre para controlar el derecho ya otorgado o en proceso, no para acelerar la burocracia del título."
+        }
+      ],
+      "hint": "Tiene que ver con el factor sorpresa y la honestidad de las condiciones de campo."
+    },
+    {
+      "question": "En el caso de la Minera Colpa, ¿por qué fue sancionada con una multa de $60,039$ soles?",
+      "answerOptions": [
+        {
+          "text": "Por falta de medidas contra derrames y una remediación deficiente de suelos.",
+          "isCorrect": true,
+          "rationale": "Las autoridades detectaron omisiones operativas graves en la contención de la planta y desastre en la limpieza de bocaminas."
+        },
+        {
+          "text": "Por no haber pagado a tiempo el derecho de vigencia anual.",
+          "isCorrect": false,
+          "rationale": "El impago de vigencia causa la caducidad del derecho, no necesariamente una multa por omisión operativa ambiental de ese tipo."
+        },
+        {
+          "text": "Por iniciar operaciones sin contar con un título de concesión minera.",
+          "isCorrect": false,
+          "rationale": "El caso se centra en faltas durante la operación (contención y remediación), asumiendo que ya existía una actividad establecida."
+        },
+        {
+          "text": "Por negarse a recibir a los inspectores de la Sunafil.",
+          "isCorrect": false,
+          "rationale": "Aunque Sunafil fiscaliza, la multa mencionada fue por temas estrictamente ambientales y operativos en planta."
+        }
+      ],
+      "hint": "Se relaciona con el manejo de sustancias en la planta y el estado de las bocaminas."
+    },
+    {
+      "question": "¿Qué lección sobre la 'carga de la prueba' se extrae del fallo contra la minera Colpa?",
+      "answerOptions": [
+        {
+          "text": "Los alegatos verbales no sirven si no están respaldados por evidencia técnica dura.",
+          "isCorrect": true,
+          "rationale": "La defensa fue desestimada porque solo presentaron palabras en lugar de datos de laboratorio o pruebas tangibles."
+        },
+        {
+          "text": "El Estado es quien debe probar que la empresa contaminó en todos los casos.",
+          "isCorrect": false,
+          "rationale": "En el derecho administrativo, la empresa tiene la obligación de presentar pruebas para refutar lo hallado en el acta de inspección."
+        },
+        {
+          "text": "Cualquier error en el acta de inspección anula automáticamente la multa.",
+          "isCorrect": false,
+          "rationale": "Si bien existen garantías, la carga de la prueba exige que el administrado demuestre activamente su cumplimiento frente al acta."
+        },
+        {
+          "text": "La tipicidad es más importante que la evidencia física recolectada en campo.",
+          "isCorrect": false,
+          "rationale": "La tipicidad y la prueba son conceptos distintos; sin evidencia técnica, la empresa no puede desvirtuar los hechos constatados."
+        }
+      ],
+      "hint": "Tiene que ver con la insuficiencia de las promesas o palabras frente a los datos científicos."
+    },
+    {
+      "question": "¿En qué consiste el principio de tipicidad en el derecho sancionador minero?",
+      "answerOptions": [
+        {
+          "text": "La infracción detectada debe encajar de forma exacta y milimétrica en la descripción de la norma.",
+          "isCorrect": true,
+          "rationale": "El texto lo compara con un rompecabezas donde la falta debe calzar a la perfección con la letra de la ley para ser sancionable."
+        },
+        {
+          "text": "Cualquier daño ambiental, aunque no esté normado, es pasible de sanción inmediata.",
+          "isCorrect": false,
+          "rationale": "El principio de tipicidad prohíbe sancionar conductas que no estén previamente y exactamente descritas en la ley."
+        },
+        {
+          "text": "El Estado puede interpretar libremente las normas para proteger el ecosistema.",
+          "isCorrect": false,
+          "rationale": "La tipicidad limita la arbitrariedad del Estado, exigiendo claridad y falta de ambigüedad en la acusación."
+        },
+        {
+          "text": "Las multas deben ser proporcionales a las ganancias anuales de la empresa.",
+          "isCorrect": false,
+          "rationale": "Eso se refiere al principio de proporcionalidad, no a la tipicidad, que trata sobre la clasificación de la falta."
+        }
+      ],
+      "hint": "Imagina que la norma es un molde y la conducta debe caber perfectamente en él."
+    },
+    {
+      "question": "Desde el punto de vista jurídico, ¿cuál es la relación entre el título de concesión y el suelo (superficie)?",
+      "answerOptions": [
+        {
+          "text": "Son dos dominios independientes; la concesión no otorga propiedad sobre la tierra.",
+          "isCorrect": true,
+          "rationale": "La concesión es un derecho administrativo sobre el subsuelo, mientras que la propiedad del suelo corre por un carril distinto."
+        },
+        {
+          "text": "El título de concesión otorga automáticamente la propiedad del predio superficial.",
+          "isCorrect": false,
+          "rationale": "Este es un error común; el derecho minero solo faculta la extracción, no la propiedad del terreno físico superficial."
+        },
+        {
+          "text": "La propiedad del suelo es superior jerárquicamente a la concesión minera.",
+          "isCorrect": false,
+          "rationale": "Ambos son derechos que coexisten en esferas jurídicas distintas y el minero debe gestionar el acceso a la superficie."
+        },
+        {
+          "text": "El Estado expropia el suelo apenas se otorga el petitorio minero.",
+          "isCorrect": false,
+          "rationale": "No existe tal expropiación automática; son regímenes de propiedad y administración separados."
+        }
+      ],
+      "hint": "Tener permiso para lo que hay debajo no significa ser dueño de lo que pisamos."
+    },
+    {
+      "question": "De acuerdo con el Decreto Supremo $014-92-EM$, ¿cómo se define geométricamente la concesión minera?",
+      "answerOptions": [
+        {
+          "text": "Como un sólido de profundidad indefinida limitado por planos verticales.",
+          "isCorrect": true,
+          "rationale": "Legalmente se proyecta hacia abajo como un polígono con vértices referidos a coordenadas UTM."
+        },
+        {
+          "text": "Como una superficie plana medida exclusivamente en hectáreas superficiales.",
+          "isCorrect": false,
+          "rationale": "La concesión minera tiene una naturaleza tridimensional que se extiende hacia el subsuelo, no es solo plana."
+        },
+        {
+          "text": "Como un círculo de influencia que parte desde la bocamina principal.",
+          "isCorrect": false,
+          "rationale": "La ley establece que debe ser un polígono definido por coordenadas UTM, no una forma circular."
+        },
+        {
+          "text": "Como un área de exploración que termina donde se encuentra el primer acuífero.",
+          "isCorrect": false,
+          "rationale": "La profundidad es legalmente indefinida y no está limitada por factores geológicos como los acuíferos."
+        }
+      ],
+      "hint": "Piensa en un bloque que se proyecta hacia el centro de la Tierra."
+    },
+    {
+      "question": "¿Cuál de las siguientes categorías de concesión permite la purificación y refinación de minerales?",
+      "answerOptions": [
+        {
+          "text": "Concesión de Beneficio.",
+          "isCorrect": true,
+          "rationale": "Esta categoría abarca procesos físicos o químicos para extraer, purificar y refinar los minerales."
+        },
+        {
+          "text": "Concesión de Labor General.",
+          "isCorrect": false,
+          "rationale": "Dicha concesión se limita a servicios auxiliares como ventilación o desagüe entre distintas concesiones."
+        },
+        {
+          "text": "Concesión de Transporte Minero.",
+          "isCorrect": false,
+          "rationale": "Esta se enfoca en sistemas de transporte masivo como fajas o vías férreas, no en el procesamiento del mineral."
+        },
+        {
+          "text": "Petitorio Minero.",
+          "isCorrect": false,
+          "rationale": "El petitorio es el trámite inicial para obtener una concesión, no una categoría operativa de procesamiento."
+        }
+      ],
+      "hint": "Es la etapa donde se le da un valor agregado al mineral extraído mediante procesos químicos."
+    },
+    {
+      "question": "¿Qué cambio procedimental post-pandemia se menciona respecto al trámite del petitorio minero?",
+      "answerOptions": [
+        {
+          "text": "Se maneja a través de una plantilla digital en Excel.",
+          "isCorrect": true,
+          "rationale": "Este cambio ha permitido modernizar el sector y aumentar la accesibilidad para los peticionarios."
+        },
+        {
+          "text": "Se ha eliminado el pago del derecho de vigencia inicial.",
+          "isCorrect": false,
+          "rationale": "El pago por adelantado del primer año de vigencia sigue siendo un requisito ineludible al presentar el petitorio."
+        },
+        {
+          "text": "Ahora se presenta exclusivamente ante el Ministerio del Ambiente.",
+          "isCorrect": false,
+          "rationale": "Se sigue presentando ante el INGEMMET o los gobiernos regionales, dependiendo del estrato minero."
+        },
+        {
+          "text": "No requiere de coordenadas UTM debido al uso de GPS satelital.",
+          "isCorrect": false,
+          "rationale": "El uso de coordenadas UTM es obligatorio para garantizar la seguridad jurídica del área solicitada."
+        }
+      ],
+      "hint": "Tiene que ver con una herramienta común de hojas de cálculo."
+    },
+    {
+      "question": "¿Cuál es la regla de oro respecto al momento de presentación del Plan de Cierre de Minas?",
+      "answerOptions": [
+        {
+          "text": "Es un requisito crítico que debe presentarse durante la tramitación de la concesión.",
+          "isCorrect": true,
+          "rationale": "Contrario a la creencia común, debe garantizarse financieramente desde el día 1 para asegurar la remediación futura."
+        },
+        {
+          "text": "Solo debe elaborarse cuando el yacimiento ha agotado el $80\\%$ de sus reservas.",
+          "isCorrect": false,
+          "rationale": "Esperar al final de la vida útil es un error conceptual peligroso; la ley exige previsión desde el inicio."
+        },
+        {
+          "text": "Es opcional si la empresa demuestra que no utiliza químicos tóxicos.",
+          "isCorrect": false,
+          "rationale": "Es una máxima garantía legal exigida a todos, independientemente de los procesos específicos utilizados."
+        },
+        {
+          "text": "Se presenta únicamente después de la primera fiscalización de la OEFA.",
+          "isCorrect": false,
+          "rationale": "Es un requisito procedimental previo a la operación plena, no una respuesta a una inspección posterior."
+        }
+      ],
+      "hint": "No es algo que se deja para el final de la vida de la mina."
+    },
+    {
+      "question": "¿En qué se diferencia el contrato de 'Opción Minera' del de 'Transferencia'?",
+      "answerOptions": [
+        {
+          "text": "La opción es un compromiso irrevocable a futuro, mientras que la transferencia es el cambio de dominio total inmediato.",
+          "isCorrect": true,
+          "rationale": "La opción funciona como una promesa blindada para celebrar la transferencia en un plazo determinado."
+        },
+        {
+          "text": "La opción permite explotar el mineral y la transferencia solo permite explorar.",
+          "isCorrect": false,
+          "rationale": "La transferencia otorga todos los derechos del titular original; la opción es solo el pacto para una venta futura."
+        },
+        {
+          "text": "En la opción no hay pago de por medio, mientras que en la transferencia sí.",
+          "isCorrect": false,
+          "rationale": "Ambos contratos suelen involucrar términos económicos, pero su naturaleza jurídica de entrega de propiedad varía."
+        },
+        {
+          "text": "La opción requiere la creación de una nueva persona jurídica tipo Joint Venture.",
+          "isCorrect": false,
+          "rationale": "El Joint Venture es un contrato de riesgo compartido diferente a la opción de compra de un derecho minero."
+        }
+      ],
+      "hint": "Uno es un hecho actual y el otro es una promesa vinculante."
+    },
+    {
+      "question": "En el conflicto entre la sociedad conyugal y Minera Don Eliseo, ¿por qué la Sunarp rechazó cancelar el contrato?",
+      "answerOptions": [
+        {
+          "text": "Debido a la existencia de una cláusula de arbitraje que prevalecía sobre la resolución unilateral.",
+          "isCorrect": true,
+          "rationale": "El pacto arbitral obliga a las partes a ir a una vía especializada, impidiendo que la Sunarp actúe sobre el registro por decisión de una sola parte."
+        },
+        {
+          "text": "Porque el monto adeudado de $\\$22,000$ dólares era considerado insuficiente para anular el trato.",
+          "isCorrect": false,
+          "rationale": "Aunque el monto era el origen del pleito, la razón legal del rechazo fue el escudo jurídico que representaba la cláusula de arbitraje."
+        },
+        {
+          "text": "Porque la sociedad conyugal no había presentado pruebas de laboratorio del daño ambiental.",
+          "isCorrect": false,
+          "rationale": "El conflicto era de naturaleza contractual y registral (pago del justo precio), no una denuncia por contaminación."
+        },
+        {
+          "text": "Porque el contrato ya había caducado por falta de pago del derecho de vigencia.",
+          "isCorrect": false,
+          "rationale": "El problema era el impago de parte del precio de venta (justo precio) entre privados, no un tema de vigencia ante el Estado."
+        }
+      ],
+      "hint": "Se refiere a un mecanismo de resolución de conflictos pactado en el documento original."
+    },
+    {
+      "question": "¿Cuál es la consecuencia de no pagar el Derecho de Vigencia por dos años consecutivos?",
+      "answerOptions": [
+        {
+          "text": "La caducidad total y automática de la concesión.",
+          "isCorrect": true,
+          "rationale": "El texto es categórico: el impago sostenido por dos años conduce inevitablemente a la pérdida del derecho."
+        },
+        {
+          "text": "Una multa ascendente a $1$ UIT por cada hectárea del petitorio.",
+          "isCorrect": false,
+          "rationale": "El valor de $1$ UIT por hectárea se relaciona con la penalidad por falta de producción mínima, no directamente con la caducidad por vigencia."
+        },
+        {
+          "text": "La obligación de asociarse en un Joint Venture con el Estado.",
+          "isCorrect": false,
+          "rationale": "El Estado no obliga a asociaciones por deudas; simplemente revierte el recurso a su dominio declarando la caducidad."
+        },
+        {
+          "text": "La suspensión temporal de las actividades hasta que se efectúe el pago.",
+          "isCorrect": false,
+          "rationale": "La norma no establece una suspensión, sino la extinción del derecho (caducidad) tras el segundo año de impago."
+        }
+      ],
+      "hint": "Es la sanción más severa que implica perder el derecho minero por completo."
+    },
+    {
+      "question": "¿A partir de qué año el titular de una concesión debe acreditar una producción mínima para evitar penalidades?",
+      "answerOptions": [
+        {
+          "text": "A partir del décimo año desde que se otorgó la concesión.",
+          "isCorrect": true,
+          "rationale": "El Estado exige justificar la tenencia del derecho forzando al titular a demostrar actividad extractiva real para evitar la especulación."
+        },
+        {
+          "text": "Inmediatamente después de aprobado el petitorio minero.",
+          "isCorrect": false,
+          "rationale": "Existe un periodo de gracia para exploración y desarrollo antes de que la obligación de producción mínima sea exigible."
+        },
+        {
+          "text": "Al cumplirse el segundo año de vigencia del título.",
+          "isCorrect": false,
+          "rationale": "A los dos años se vigila el pago de vigencia, pero la producción mínima tiene un plazo más largo de diez años."
+        },
+        {
+          "text": "Únicamente si la concesión supera las $1,000$ hectáreas.",
+          "isCorrect": false,
+          "rationale": "La obligación de producción mínima rige para los titulares según su régimen, no exclusivamente por el tamaño superior a esa cifra."
+        }
+      ],
+      "hint": "Es un plazo de una década otorgado por el Estado."
+    },
+    {
+      "question": "¿Cuál es el objetivo principal de exigir una producción mínima según el análisis realizado?",
+      "answerOptions": [
+        {
+          "text": "Evitar el acaparamiento de tierras por pura especulación financiera.",
+          "isCorrect": true,
+          "rationale": "Se busca que el titular demuestre que realmente está realizando actividad extractiva y no solo guardando el derecho para revenderlo."
+        },
+        {
+          "text": "Asegurar que el Estado reciba regalías suficientes para el presupuesto nacional.",
+          "isCorrect": false,
+          "rationale": "Aunque genera ingresos, el propósito legal específico de esta norma es combatir la especulación de derechos mineros inactivos."
+        },
+        {
+          "text": "Forzar la transición de pequeña minería a gran minería.",
+          "isCorrect": false,
+          "rationale": "La producción mínima se escala según el régimen; no busca cambiar el estrato del minero sino asegurar que trabaje la mina."
+        },
+        {
+          "text": "Garantizar que se cumpla con el Plan de Cierre de Minas anticipadamente.",
+          "isCorrect": false,
+          "rationale": "El plan de cierre es un requisito de seguridad ambiental, no una consecuencia del mandato de producción mínima."
+        }
+      ],
+      "hint": "Busca que los recursos de la nación no se queden 'congelados' en manos de alguien que no los explota."
+    }
+  ]
+}

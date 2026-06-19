@@ -1,0 +1,527 @@
+{
+  "nombre_curso": "DERECHO MINERO",
+  "numero_clase": 2,
+  "nombre_clase": "Entorno Normativo, Ambiental y Social de la Minería Contemporánea",
+  "quiz": [
+    {
+      "question": "¿Cuáles son los tres pilares fundamentales que la minería contemporánea debe equilibrar estratégicamente?",
+      "answerOptions": [
+        {
+          "text": "Estructura contractual, gestión operativa y rentabilidad neta.",
+          "isCorrect": false,
+          "rationale": "Aunque estos elementos son importantes para el negocio, el texto se enfoca en dimensiones más amplias que incluyen la regulación y el entorno."
+        },
+        {
+          "text": "Marco normativo, gestión ambiental y legitimidad social.",
+          "isCorrect": true,
+          "rationale": "El material enfatiza que la complejidad técnica y regulatoria actual exige un equilibrio entre la ley, el medio ambiente y la aceptación de la sociedad."
+        },
+        {
+          "text": "Seguridad jurídica, tecnología de punta y capital extranjero.",
+          "isCorrect": false,
+          "rationale": "Estos son facilitadores de la industria, pero no representan los tres pilares estratégicos de equilibrio mencionados al inicio de la clase."
+        },
+        {
+          "text": "Eficiencia técnica, capacidad burocrática y fiscalización estatal.",
+          "isCorrect": false,
+          "rationale": "Estos términos se refieren a la operatividad administrativa más que a los pilares de sostenibilidad del sector."
+        }
+      ],
+      "hint": "Piense en las tres dimensiones externas que determinan la viabilidad de un proyecto según el expositor."
+    },
+    {
+      "question": "En el contexto legal de la región, ¿qué caracteriza principalmente a la figura del 'joint venture'?",
+      "answerOptions": [
+        {
+          "text": "Es un contrato rígidamente legislado que establece pautas fijas para cada inversionista.",
+          "isCorrect": false,
+          "rationale": "El texto menciona explícitamente que no hay una ley cuadrada que encasille cada coma y cada punto de este contrato."
+        },
+        {
+          "text": "Obliga a la creación de una nueva empresa gigante desde cero con su propia burocracia.",
+          "isCorrect": false,
+          "rationale": "Una de las ventajas mencionadas es que permite evitar el dolor de cabeza burocrático de crear una entidad nueva."
+        },
+        {
+          "text": "Se define como un contrato sugéneris e innominado que otorga gran libertad contractual.",
+          "isCorrect": true,
+          "rationale": "Esta figura permite a los inversionistas juntar capital y tecnología de forma flexible y estratégica sin las rigideces de otros modelos societarios."
+        },
+        {
+          "text": "Es una estructura administrativa exclusiva para proyectos de minería artesanal y pequeña minería.",
+          "isCorrect": false,
+          "rationale": "El joint venture se asocia con proyectos que mueven muchísimo capital y nivel de riesgo, típicamente grandes proyectos."
+        }
+      ],
+      "hint": "Recuerde los términos técnicos latinos que describen su naturaleza no convencional."
+    },
+    {
+      "question": "¿Qué entidad tiene la competencia administrativa sobre los proyectos de minería pequeña y artesanal?",
+      "answerOptions": [
+        {
+          "text": "El INGEMMET.",
+          "isCorrect": false,
+          "rationale": "El INGEMMET se encarga específicamente de la gran y mediana minería a nivel nacional."
+        },
+        {
+          "text": "Los Gobiernos Regionales (Gore).",
+          "isCorrect": true,
+          "rationale": "El estado divide tareas y asigna a los Gore el manejo de la minería pequeña y artesanal para asegurar cercanía con la población local."
+        },
+        {
+          "text": "El SENACE.",
+          "isCorrect": false,
+          "rationale": "El SENACE es un organismo evaluador de estudios ambientales, no una entidad que otorga derechos mineros según el tamaño de la mina."
+        },
+        {
+          "text": "La Dirección General de Asuntos Mineros (DGAM).",
+          "isCorrect": false,
+          "rationale": "La DGAM tiene roles de supervisión técnica, pero la competencia directa sobre el estrato artesanal recae en las regiones."
+        }
+      ],
+      "hint": "Identifique la oficina que busca estar 'más cerca de la gente' por su ubicación territorial."
+    },
+    {
+      "question": "¿Cuál es el requisito ambiental para un proyecto clasificado en la Categoría 2 (impactos moderados)?",
+      "answerOptions": [
+        {
+          "text": "Declaración de Impacto Ambiental (DIA).",
+          "isCorrect": false,
+          "rationale": "La DIA corresponde exclusivamente a la Categoría 1, destinada a impactos leves."
+        },
+        {
+          "text": "Estudio de Impacto Ambiental Detallado (EIA-d).",
+          "isCorrect": false,
+          "rationale": "El EIA-d es el nivel más estricto y se reserva para la Categoría 3 de impactos altos."
+        },
+        {
+          "text": "Estudio de Impacto Ambiental Semidetallado (EIA-sd).",
+          "isCorrect": true,
+          "rationale": "Según la escala presentada, los impactos moderados requieren un nivel de análisis intermedio denominado semidetallado."
+        },
+        {
+          "text": "Certificación Global Integra Ambiente.",
+          "isCorrect": false,
+          "rationale": "Esta certificación no es un nivel de impacto, sino un mecanismo para integrar múltiples permisos en un solo proceso."
+        }
+      ],
+      "hint": "Busque el término que denota un estudio de profundidad intermedia."
+    },
+    {
+      "question": "¿Por qué un proyecto de gran o mediana minería es asignado automáticamente a la Categoría 3 del sistema ambiental?",
+      "answerOptions": [
+        {
+          "text": "Debido a una presunción legal basada en la escala y complejidad de sus posibles impactos.",
+          "isCorrect": true,
+          "rationale": "El sistema asume que las operaciones a gran escala generan impactos altísimos o difíciles de reparar, exigiendo el máximo rigor desde el inicio."
+        },
+        {
+          "text": "Porque el SENACE no tiene capacidad técnica para evaluar proyectos de menor categoría.",
+          "isCorrect": false,
+          "rationale": "La asignación no depende de la capacidad del SENACE, sino del riesgo inherente al tamaño del proyecto definido por ley."
+        },
+        {
+          "text": "Para obligar a las empresas a pagar la tasa de 72,605.50 soles de forma inmediata.",
+          "isCorrect": false,
+          "rationale": "El costo administrativo es una consecuencia del trámite, no la razón legal de la categorización por riesgo."
+        },
+        {
+          "text": "Porque son los únicos proyectos que requieren el uso de la certificación Integra Ambiente.",
+          "isCorrect": false,
+          "rationale": "Aunque los grandes proyectos pueden usarla, la categorización obligatoria se debe al impacto ambiental potencial."
+        }
+      ],
+      "hint": "Considere qué es lo que el sistema asume preventivamente sobre el riesgo de las operaciones a gran escala."
+    },
+    {
+      "question": "¿Qué función cumple el OEFA dentro del marco institucional minero?",
+      "answerOptions": [
+        {
+          "text": "Aprobar los estudios de impacto ambiental detallados antes de la operación.",
+          "isCorrect": false,
+          "rationale": "La aprobación de los EIA detallados es responsabilidad del SENACE, no del OEFA."
+        },
+        {
+          "text": "Actuar como fiscalizador ex-post para asegurar el cumplimiento de las normas durante la operación.",
+          "isCorrect": true,
+          "rationale": "El OEFA entra en acción una vez que la mina ya está operando, con facultad para imponer sanciones severas si hay incumplimientos."
+        },
+        {
+          "text": "Gestionar el mecanismo de Integra Ambiente para agilizar los permisos.",
+          "isCorrect": false,
+          "rationale": "Integra Ambiente es un mecanismo de ventanilla única para permisos, no una función de fiscalización sancionadora."
+        },
+        {
+          "text": "Representar al Estado en los tribunales internacionales de arbitraje.",
+          "isCorrect": false,
+          "rationale": "Aunque su labor previene conflictos, el OEFA no es el representante legal del Estado en arbitrajes internacionales."
+        }
+      ],
+      "hint": "Piense en la entidad que 'entra a la cancha' para vigilar que se cumpla lo prometido en el papel."
+    },
+    {
+      "question": "¿Cuál es la brecha temporal entre la teoría legal y la realidad operativa para la aprobación de un estudio ambiental complejo?",
+      "answerOptions": [
+        {
+          "text": "De 156 días a 240 días hábiles.",
+          "isCorrect": false,
+          "rationale": "El tiempo real mencionado en el texto supera ampliamente el rango de los meses sugerido en esta opción."
+        },
+        {
+          "text": "De 120 días a un máximo de 12 meses.",
+          "isCorrect": false,
+          "rationale": "Estos tiempos no coinciden con los hitos de 156 días teóricos y el límite superior de dos años mencionados en la fuente."
+        },
+        {
+          "text": "De 156 días a un rango de 18 a 24 meses.",
+          "isCorrect": true,
+          "rationale": "El expositor señala este 'abismo' temporal como un cuello de botella monumental que congela capital de inversión."
+        },
+        {
+          "text": "De un año a un periodo indefinido dependiendo de la región.",
+          "isCorrect": false,
+          "rationale": "Aunque hay variabilidad, el texto proporciona cifras específicas para ilustrar el retraso burocrático."
+        }
+      ],
+      "hint": "Identifique los dos números que representan el 'mundo ideal' versus la 'cruda realidad'."
+    },
+    {
+      "question": "Sobre el mecanismo de 'Integra Ambiente', ¿qué afirmación es correcta?",
+      "answerOptions": [
+        {
+          "text": "Es un trámite gratuito diseñado para compensar los retrasos de la administración pública.",
+          "isCorrect": false,
+          "rationale": "El texto menciona explícitamente que tiene un costo de entrada elevado de 72,605.50 soles."
+        },
+        {
+          "text": "Permite integrar hasta 14 permisos ambientales y de agua en un único proceso.",
+          "isCorrect": true,
+          "rationale": "Se describe como una 'licuadora' estratégica para desenredar la madeja burocrática y dar velocidad a los proyectos."
+        },
+        {
+          "text": "Es obligatorio para todos los mineros artesanales que deseen formalizarse.",
+          "isCorrect": false,
+          "rationale": "Debido a su alto costo y complejidad, está orientado a grandes proyectos que buscan optimizar tiempos financieros."
+        },
+        {
+          "text": "Sustituye la necesidad de presentar el Estudio de Impacto Ambiental Detallado.",
+          "isCorrect": false,
+          "rationale": "No sustituye el estudio, sino que integra los diversos permisos que derivan o acompañan a la certificación ambiental."
+        }
+      ],
+      "hint": "Considere cuántos permisos distintos intenta unificar este mecanismo estratégico."
+    },
+    {
+      "question": "De acuerdo con los criterios geográficos de restricción, ¿cuál es la distancia mínima innegociable a un nevado o área glaciar?",
+      "answerOptions": [
+        {
+          "text": "50 metros.",
+          "isCorrect": false,
+          "rationale": "La distancia de 50 metros se aplica específicamente a cuerpos de agua, bofedales o manantiales."
+        },
+        {
+          "text": "100 metros.",
+          "isCorrect": true,
+          "rationale": "La normativa establece una línea roja de 100 metros para nevados, glaciares, bosques primarios y áreas naturales protegidas."
+        },
+        {
+          "text": "200 metros.",
+          "isCorrect": false,
+          "rationale": "Aunque es una medida de seguridad común, el texto especifica que la barrera regulatoria obligatoria es de 100 metros."
+        },
+        {
+          "text": "500 metros.",
+          "isCorrect": false,
+          "rationale": "Esta distancia no figura en los límites geográficos críticos mencionados en la fuente proporcionada."
+        }
+      ],
+      "hint": "Es la misma distancia que se exige para los bosques primarios."
+    },
+    {
+      "question": "¿Cuáles son las tres características legales que blindan la propiedad de las comunidades campesinas y nativas?",
+      "answerOptions": [
+        {
+          "text": "Autónoma, privada y transferible.",
+          "isCorrect": false,
+          "rationale": "La propiedad comunal no se rige por las reglas del mercado libre ni es fácilmente transferible como la propiedad privada estándar."
+        },
+        {
+          "text": "Imprescriptible, inalienable e inembargable.",
+          "isCorrect": true,
+          "rationale": "Estos tres conceptos constituyen una 'fortaleza jurídica' que protege los territorios ancestrales de ser tomados o vendidos por medios convencionales."
+        },
+        {
+          "text": "Colectiva, rotativa y exenta de impuestos.",
+          "isCorrect": false,
+          "rationale": "Aunque es colectiva, los términos técnicos destacados en el texto para su protección legal son otros."
+        },
+        {
+          "text": "Soberana, ancestral y adjudicable por el Estado.",
+          "isCorrect": false,
+          "rationale": "El texto resalta su autonomía y protección contra embargos y prescripciones, no su adjudicación unilateral por el Estado."
+        }
+      ],
+      "hint": "Piense en los términos legales que significan que la tierra no se puede perder por el tiempo, no se puede vender y no se puede quitar por deudas."
+    },
+    {
+      "question": "¿Quién posee el derecho a voz y voto en las decisiones críticas de una asamblea comunal?",
+      "answerOptions": [
+        {
+          "text": "Cualquier persona que resida en la comunidad por más de un año.",
+          "isCorrect": false,
+          "rationale": "La residencia simple no otorga derechos de decisión; se requiere un estatus legal específico y mayor antigüedad."
+        },
+        {
+          "text": "El comunero integrado, tras ser aceptado por la asamblea.",
+          "isCorrect": false,
+          "rationale": "El comunero integrado tiene una participación mucho más limitada en comparación con el miembro de pleno derecho."
+        },
+        {
+          "text": "El comunero calificado con más de 5 años de residencia y empadronado.",
+          "isCorrect": true,
+          "rationale": "Solo los comuneros que cumplen con estos requisitos estrictos tienen el poder real de decisión en los acuerdos que importan al proyecto."
+        },
+        {
+          "text": "El representante legal designado por el Ministerio de Cultura.",
+          "isCorrect": false,
+          "rationale": "Las comunidades son personas jurídicas autónomas y sus decisiones las toman sus propios miembros calificados."
+        }
+      ],
+      "hint": "Busque el perfil del integrante que tiene el estatus de 'peso pesado' en la comunidad."
+    },
+    {
+      "question": "¿Qué mayoría específica exige la ley para que un acuerdo de disposición de tierras comunales sea válido?",
+      "answerOptions": [
+        {
+          "text": "Mayoría simple de los asistentes a la asamblea.",
+          "isCorrect": false,
+          "rationale": "La ley no acepta la mayoría de los que 'fueron tarde'; exige un quórum basado en el total oficial."
+        },
+        {
+          "text": "Dos tercios ($2/3$) del total absoluto de comuneros calificados empadronados.",
+          "isCorrect": true,
+          "rationale": "Se trata de un requisito inflexible; sin esta mayoría calificada sobre el padrón total, cualquier documento carece de validez legal."
+        },
+        {
+          "text": "El 50% más uno de todos los residentes registrados en el censo local.",
+          "isCorrect": false,
+          "rationale": "La métrica no es la mitad más uno, sino una proporción mayor debido a la protección especial del territorio."
+        },
+        {
+          "text": "Unanimidad de la junta directiva y el consejo de vigilancia.",
+          "isCorrect": false,
+          "rationale": "La decisión no recae solo en los dirigentes, sino en la asamblea de comuneros calificados en su conjunto."
+        }
+      ],
+      "hint": "Es una mayoría calificada que representa aproximadamente el $66\\%$ del padrón oficial."
+    },
+    {
+      "question": "¿Cuál es el tiempo máximo otorgado por ley para realizar todo el proceso de consulta previa?",
+      "answerOptions": [
+        {
+          "text": "60 días.",
+          "isCorrect": false,
+          "rationale": "Sesenta días es un tiempo insuficiente para las cinco etapas complejas que requiere este derecho colectivo."
+        },
+        {
+          "text": "120 días.",
+          "isCorrect": true,
+          "rationale": "Este plazo de 120 días es el 'reloj absoluto' que busca equilibrar la necesidad de avanzar con el respeto a los tiempos de reflexión comunal."
+        },
+        {
+          "text": "156 días.",
+          "isCorrect": false,
+          "rationale": "Cuidado, 156 días es el tiempo teórico para la aprobación de estudios ambientales por el SENACE, no para la consulta previa."
+        },
+        {
+          "text": "18 meses.",
+          "isCorrect": false,
+          "rationale": "Aunque los procesos pueden dilatarse en la práctica, el límite legal establecido específicamente para este trámite es mucho menor."
+        }
+      ],
+      "hint": "Relacione este número con el periodo de cuatro meses."
+    },
+    {
+      "question": "¿Cuál de las siguientes es una de las cinco etapas rigurosas de la consulta previa mencionadas en el texto?",
+      "answerOptions": [
+        {
+          "text": "Pago de indemnización preventiva.",
+          "isCorrect": false,
+          "rationale": "La consulta previa no es un proceso de pago, sino un mecanismo de diálogo y participación sobre derechos colectivos."
+        },
+        {
+          "text": "Suscripción del contrato de joint venture.",
+          "isCorrect": false,
+          "rationale": "Este es un acuerdo corporativo privado, totalmente distinto al proceso de consulta previa gestionado por el Estado."
+        },
+        {
+          "text": "Evaluación interna de la comunidad.",
+          "isCorrect": true,
+          "rationale": "Es la tercera etapa, donde se les da espacio para que debatan solos sin intervención externa antes del diálogo directo."
+        },
+        {
+          "text": "Votación secreta ante notario público.",
+          "isCorrect": false,
+          "rationale": "El proceso culmina con una etapa de diálogo y decisión, no necesariamente mediante una votación notarial individual."
+        }
+      ],
+      "hint": "Piense en el momento en que los miembros de la comunidad analizan la información de forma autónoma."
+    },
+    {
+      "question": "¿Cuál fue la consecuencia financiera para el Estado peruano en el caso Lupaca Gold en Puno?",
+      "answerOptions": [
+        {
+          "text": "Una multa administrativa de 200 UIT.",
+          "isCorrect": false,
+          "rationale": "Esa cifra corresponde a las garantías ambientales iniciales, no a la indemnización por arbitraje internacional."
+        },
+        {
+          "text": "Un laudo arbitral de 65 millones de dólares.",
+          "isCorrect": true,
+          "rationale": "Este fue el costo real que pagó el Estado por no garantizar la paz social y la operatividad de un proyecto al que ya le había dado derechos."
+        },
+        {
+          "text": "La suspensión de la certificación ambiental por 24 meses.",
+          "isCorrect": false,
+          "rationale": "El caso Lupaca Gold se cita como un ejemplo de pérdida económica masiva en tribunales internacionales, no solo de un retraso administrativo."
+        },
+        {
+          "text": "El pago de 72,605.50 soles por cada día de paralización.",
+          "isCorrect": false,
+          "rationale": "Esa cifra es el costo del trámite de Integra Ambiente, sin relación con las penalidades del arbitraje."
+        }
+      ],
+      "hint": "Busque la cifra millonaria en moneda extranjera que se menciona como una 'lección gigantesca'."
+    },
+    {
+      "question": "¿Cuándo debe presentarse el Plan de Cierre de Minas ante la autoridad competente?",
+      "answerOptions": [
+        {
+          "text": "Al finalizar la extracción del último gramo de mineral.",
+          "isCorrect": false,
+          "rationale": "La ley prohíbe improvisar al final; la planificación debe ser preventiva desde el inicio del proyecto."
+        },
+        {
+          "text": "Como máximo un año después de la aprobación del estudio de impacto ambiental.",
+          "isCorrect": true,
+          "rationale": "El plan de cierre no es opcional ni tardío; debe estar diseñado casi a la par con el dibujo técnico de la mina."
+        },
+        {
+          "text": "Justo antes de iniciar la etapa de post-cierre y monitoreo de aguas.",
+          "isCorrect": false,
+          "rationale": "El post-cierre es la etapa final del proceso, el plan debe existir mucho antes de llegar a ese punto."
+        },
+        {
+          "text": "Cada 156 días durante toda la vida útil de la operación.",
+          "isCorrect": false,
+          "rationale": "El plan se presenta al inicio y se ejecuta en etapas (progresivo, final), no se re-presenta en ese intervalo específico."
+        }
+      ],
+      "hint": "Recuerde el plazo máximo vinculado al hito de la certificación ambiental."
+    },
+    {
+      "question": "¿En qué consiste la etapa de 'cierre progresivo' de una unidad minera?",
+      "answerOptions": [
+        {
+          "text": "En el desmantelamiento total de la planta procesadora de mineral.",
+          "isCorrect": false,
+          "rationale": "El desmantelamiento de estructuras principales ocurre típicamente en la fase de cierre final, no durante la operación."
+        },
+        {
+          "text": "En la limpieza y recuperación del terreno al mismo tiempo que la mina sigue operando.",
+          "isCorrect": true,
+          "rationale": "Significa ir 'curando' áreas ya intervenidas año tras año, integrando la remediación en el ciclo de producción."
+        },
+        {
+          "text": "En el monitoreo a largo plazo del agua y las emisiones una vez que la empresa se retira.",
+          "isCorrect": false,
+          "rationale": "Esta descripción corresponde a la fase de post-cierre, la cual ocurre después de que la actividad ha cesado por completo."
+        },
+        {
+          "text": "En la transferencia de los campamentos a la comunidad local para uso turístico.",
+          "isCorrect": false,
+          "rationale": "Este es el concepto de 'uso alternativo', que es una opción al final de la vida útil, no un proceso continuo de cierre."
+        }
+      ],
+      "hint": "Es una actividad que ocurre de forma simultánea a la extracción."
+    },
+    {
+      "question": "¿Qué sucede si una empresa minera no presenta o no renueva su garantía financiera ambiental?",
+      "answerOptions": [
+        {
+          "text": "Se le impone una multa única de $72,605.50$ soles.",
+          "isCorrect": false,
+          "rationale": "Esa suma es un costo de trámite administrativo, no una sanción por falta de garantías ambientales."
+        },
+        {
+          "text": "Se le permite seguir operando bajo la promesa de pago en el próximo ejercicio fiscal.",
+          "isCorrect": false,
+          "rationale": "La ley tiene 'cero tolerancia' en este aspecto; sin garantía vigente, no se permite la continuidad de la operación."
+        },
+        {
+          "text": "Se suspende inmediatamente toda la validez operativa de la mina.",
+          "isCorrect": true,
+          "rationale": "Es la herramienta drástica del Estado para asegurar que siempre haya fondos disponibles para la remediación ambiental si la empresa falla."
+        },
+        {
+          "text": "El proyecto pasa automáticamente a ser administrado por el INGEMMET.",
+          "isCorrect": false,
+          "rationale": "El INGEMMET otorga concesiones, pero no asume la gestión operativa de minas por falta de garantías ambientales."
+        }
+      ],
+      "hint": "Busque la consecuencia que implica la paralización total del proyecto."
+    },
+    {
+      "question": "¿Cuál es el valor de la garantía ambiental requerida para obtener los permisos preliminares?",
+      "answerOptions": [
+        {
+          "text": "$156$ unidades impositivas tributarias.",
+          "isCorrect": false,
+          "rationale": "Este número se asocia con los días del proceso administrativo del SENACE, no con el valor de la garantía."
+        },
+        {
+          "text": "$200$ unidades impositivas tributarias (UIT).",
+          "isCorrect": true,
+          "rationale": "Es un filtro financiero estricto para demostrar que la empresa tiene el compromiso y la capacidad económica antes de mover la primera piedra."
+        },
+        {
+          "text": "$65$ millones de unidades impositivas tributarias.",
+          "isCorrect": false,
+          "rationale": "Esta cifra es una confusión con el monto en dólares del caso Lupaca Gold."
+        },
+        {
+          "text": "$72,605$ unidades impositivas tributarias.",
+          "isCorrect": false,
+          "rationale": "Este valor numérico corresponde al costo en soles del trámite Integra Ambiente, no a las UIT de la garantía."
+        }
+      ],
+      "hint": "Es un número redondo de tres dígitos que califica el 'músculo financiero' inicial."
+    },
+    {
+      "question": "¿Qué beneficio ofrece legalmente el concepto de 'uso alternativo' de la infraestructura minera?",
+      "answerOptions": [
+        {
+          "text": "Permite a la empresa vender la maquinaria vieja a otras mineras pequeñas.",
+          "isCorrect": false,
+          "rationale": "El uso alternativo se refiere a la infraestructura fija (campamentos, plantas) y su beneficio social o económico posterior, no a la venta de activos móviles."
+        },
+        {
+          "text": "Evita el costo de desmantelamiento para la empresa y crea un motor económico para la comunidad.",
+          "isCorrect": true,
+          "rationale": "Transformar campamentos en hoteles o escuelas es una jugada de 'ganar-ganar' que aprovecha inversiones millonarias en lugar de destruirlas."
+        },
+        {
+          "text": "Exime a la empresa de realizar el monitoreo de aguas en la fase de post-cierre.",
+          "isCorrect": false,
+          "rationale": "El monitoreo ambiental es una responsabilidad para toda la vida del proyecto y no se elimina por cambiar el uso de los edificios."
+        },
+        {
+          "text": "Obliga al Estado a nacionalizar las instalaciones para su uso educativo.",
+          "isCorrect": false,
+          "rationale": "No es una nacionalización obligatoria, sino un acuerdo voluntario entre la empresa, la municipalidad o la comunidad."
+        }
+      ],
+      "hint": "Piense en por qué destruir edificios costosos podría ser una mala idea si pueden servir para el turismo o la educación."
+    }
+  ]
+}
