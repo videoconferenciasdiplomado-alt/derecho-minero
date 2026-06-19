@@ -1,0 +1,540 @@
+
+{
+  "quiz": [
+    {
+      "question": "¿Cuáles son los tres criterios concurrentes que exige la Ley 27626 para que la intermediación laboral sea considerada legal en Perú?",
+      "answerOptions": [
+        {
+          "text": "Temporalidad, complementariedad y alta especialización.",
+          "isCorrect": true,
+          "rationale": "La normativa exige que el servicio sea transitorio, no forme parte del núcleo del negocio y requiera conocimientos técnicos que la empresa no posee en su planilla habitual."
+        },
+        {
+          "text": "Productividad, rentabilidad y autonomía financiera.",
+          "isCorrect": false,
+          "rationale": "Aunque estos son objetivos empresariales generales, no constituyen los requisitos legales específicos para validar la intermediación laboral."
+        },
+        {
+          "text": "Exclusividad, permanencia y subordinación directa.",
+          "isCorrect": false,
+          "rationale": "Estos elementos suelen ser indicadores de una relación laboral directa y no de una intermediación legal externa."
+        },
+        {
+          "text": "Sostenibilidad, transparencia y responsabilidad social.",
+          "isCorrect": false,
+          "rationale": "Estos son principios de gestión corporativa moderna, pero la ley se enfoca en criterios técnicos de contratación externa."
+        }
+      ],
+      "hint": "Recuerda que los servicios deben ser transitorios y estar fuera del 'core business'."
+    },
+    {
+      "question": "Según el análisis técnico del fraude laboral, ¿por qué las labores de extracción en minería no pueden ser legalmente tercerizadas?",
+      "answerOptions": [
+        {
+          "text": "Porque constituyen la actividad principal o núcleo del negocio.",
+          "isCorrect": true,
+          "rationale": "La ley prohíbe el uso de personal externo para realizar las tareas esenciales que definen el propósito de la empresa principal."
+        },
+        {
+          "text": "Debido a que el riesgo de accidentes es demasiado elevado para terceros.",
+          "isCorrect": false,
+          "rationale": "Si bien la seguridad es vital, el impedimento legal se basa en la naturaleza de la actividad principal, no solo en el nivel de riesgo."
+        },
+        {
+          "text": "Porque requieren una certificación ambiental que solo posee el titular.",
+          "isCorrect": false,
+          "rationale": "Las certificaciones ambientales son obligatorias, pero el fraude laboral se define por la estructura de la fuerza de trabajo, no por los permisos ambientales."
+        },
+        {
+          "text": "Porque el Estado prohíbe el uso de maquinaria pesada por empresas intermediarias.",
+          "isCorrect": false,
+          "rationale": "La prohibición no recae sobre el equipo utilizado, sino sobre la delegación de funciones que son inherentes al giro del negocio."
+        }
+      ],
+      "hint": "Considera qué significa el concepto de 'core business' en una operación extractiva."
+    },
+    {
+      "question": "En el caso de Leida Hobby Marín Mesa (2008), ¿cuál fue la razón principal por la que el Tribunal Constitucional determinó que hubo fraude laboral?",
+      "answerOptions": [
+        {
+          "text": "Realizó labores críticas y permanentes bajo un contrato supuestamente temporal durante 5 años.",
+          "isCorrect": true,
+          "rationale": "El fraude se configuró al desnaturalizar la temporalidad del contrato para cubrir una necesidad estructural y constante de la organización."
+        },
+        {
+          "text": "La trabajadora no contaba con los títulos profesionales requeridos para el puesto de nutricionista.",
+          "isCorrect": false,
+          "rationale": "El problema no era su competencia técnica, sino la simulación de un contrato temporal para una función permanente."
+        },
+        {
+          "text": "La empresa intermediaria quebró antes de finalizar el contrato de servicios.",
+          "isCorrect": false,
+          "rationale": "La solvencia de la intermediaria es independiente de la configuración legal de fraude por desnaturalización de funciones."
+        },
+        {
+          "text": "El hospital no pagó los seguros de salud correspondientes durante el periodo de prueba.",
+          "isCorrect": false,
+          "rationale": "El fallo se centró en la estabilidad laboral y la naturaleza de las funciones, no en el incumplimiento de pagos de seguros."
+        }
+      ],
+      "hint": "Observa el tiempo que la trabajadora permaneció en el puesto y la importancia de sus funciones."
+    },
+    {
+      "question": "¿Qué establece el artículo 66 de la Constitución Política del Perú respecto a los recursos naturales?",
+      "answerOptions": [
+        {
+          "text": "Los recursos naturales pertenecen al Estado.",
+          "isCorrect": true,
+          "rationale": "La Constitución establece la soberanía del Estado sobre los recursos, lo que fundamenta todo el sistema de concesiones."
+        },
+        {
+          "text": "La propiedad del suelo otorga automáticamente la propiedad del subsuelo.",
+          "isCorrect": false,
+          "rationale": "En el sistema jurídico peruano, la propiedad superficial es distinta del derecho sobre los recursos del subsuelo."
+        },
+        {
+          "text": "Las comunidades locales son las únicas dueñas de los recursos en su territorio.",
+          "isCorrect": false,
+          "rationale": "Aunque existen derechos de consulta, la titularidad legal de los recursos naturales recae sobre el Estado."
+        },
+        {
+          "text": "Los recursos naturales pueden ser enajenados permanentemente a empresas privadas.",
+          "isCorrect": false,
+          "rationale": "El Estado otorga derechos de uso o usufructo, pero mantiene la titularidad originaria según el mandato constitucional."
+        }
+      ],
+      "hint": "Piensa en quién posee la titularidad soberana de los recursos en el ecosistema extractivo."
+    },
+    {
+      "question": "¿Cuál es la naturaleza jurídica de una concesión minera según la explicación proporcionada?",
+      "answerOptions": [
+        {
+          "text": "Un usufructo condicionado.",
+          "isCorrect": true,
+          "rationale": "No es una propiedad absoluta; es un derecho de uso sujeto al cumplimiento continuo de obligaciones legales y ambientales."
+        },
+        {
+          "text": "Un título de propiedad privada sobre el suelo.",
+          "isCorrect": false,
+          "rationale": "La fuente es enfática en que tener una concesión no hace al titular dueño de la tierra o el suelo."
+        },
+        {
+          "text": "Un contrato de arrendamiento vitalicio e irrevocable.",
+          "isCorrect": false,
+          "rationale": "Es revocable si se incumplen las condiciones impuestas por el Estado, por lo que no es absoluto ni eterno."
+        },
+        {
+          "text": "Un permiso administrativo de duración indefinida sin costo.",
+          "isCorrect": false,
+          "rationale": "Requiere pagos de derechos de vigencia y está sujeto a evaluaciones periódicas de cumplimiento ambiental."
+        }
+      ],
+      "hint": "No es una propiedad absoluta, sino un derecho de uso sujeto a reglas estrictas."
+    },
+    {
+      "question": "¿Qué entidad es responsable de evaluar y aprobar los Estudios de Impacto Ambiental detallados (EIA-d)?",
+      "answerOptions": [
+        {
+          "text": "SENACE",
+          "isCorrect": true,
+          "rationale": "Es la entidad técnica especializada encargada de la revisión y aprobación de los estudios de impacto ambiental de mayor envergadura."
+        },
+        {
+          "text": "OSINERMIN",
+          "isCorrect": false,
+          "rationale": "Esta entidad se enfoca en la fiscalización de la seguridad física y las instalaciones técnicas, no en la aprobación de estudios ambientales."
+        },
+        {
+          "text": "OEFA",
+          "isCorrect": false,
+          "rationale": "Su función principal es la fiscalización del cumplimiento de los compromisos ya aprobados, no la aprobación inicial del estudio."
+        },
+        {
+          "text": "El Tribunal Constitucional",
+          "isCorrect": false,
+          "rationale": "Este órgano interpreta la Constitución, pero no realiza evaluaciones técnicas de impacto ambiental para proyectos mineros."
+        }
+      ],
+      "hint": "Es la autoridad ambiental especializada para las inversiones sostenibles."
+    },
+    {
+      "question": "¿En qué se diferencian los Estándares de Calidad Ambiental (ECA) de otros instrumentos de gestión?",
+      "answerOptions": [
+        {
+          "text": "Son métricas preventivas que definen niveles tolerables de elementos en el aire o agua.",
+          "isCorrect": true,
+          "rationale": "Funcionan como una 'línea roja' científica para evitar que el entorno se degrade más allá de lo que el ecosistema puede soportar."
+        },
+        {
+          "text": "Son planes específicos para remediar daños después de que ocurre un derrame.",
+          "isCorrect": false,
+          "rationale": "Su naturaleza es preventiva y normativa, no reactiva ni de remediación posterior al daño."
+        },
+        {
+          "text": "Son acuerdos voluntarios firmados entre la empresa y la comunidad local.",
+          "isCorrect": false,
+          "rationale": "Los ECA son establecidos por el Estado y su cumplimiento es obligatorio, no dependen de acuerdos bilaterales."
+        },
+        {
+          "text": "Son guías de comportamiento ético para el personal de la mina.",
+          "isCorrect": false,
+          "rationale": "Se trata de parámetros técnicos y científicos medibles, no de códigos de conducta ética personal."
+        }
+      ],
+      "hint": "Piense en términos de mediciones científicas en el entorno natural."
+    },
+    {
+      "question": "Para proyectos cuyos impactos negativos se consideran leves, ¿cuál es el instrumento de gestión ambiental requerido?",
+      "answerOptions": [
+        {
+          "text": "Declaración de Impacto Ambiental (DIA).",
+          "isCorrect": true,
+          "rationale": "La normativa aplica un criterio de proporcionalidad, exigiendo un documento más sencillo cuando el impacto previsto no es significativo."
+        },
+        {
+          "text": "Estudio de Impacto Ambiental detallado (EIA-d).",
+          "isCorrect": false,
+          "rationale": "Este instrumento se reserva para proyectos con impactos negativos significativos que requieren un análisis mucho más profundo."
+        },
+        {
+          "text": "Plan de Cierre de Minas anticipado.",
+          "isCorrect": false,
+          "rationale": "Aunque es un requisito, no es el documento que evalúa los impactos iniciales de una operación de bajo impacto."
+        },
+        {
+          "text": "Garantía Financiera Ambiental.",
+          "isCorrect": false,
+          "rationale": "La garantía es un mecanismo de respaldo económico, no un instrumento de evaluación técnica de impactos."
+        }
+      ],
+      "hint": "Es el trámite más básico dentro de la jerarquía de evaluación ambiental."
+    },
+    {
+      "question": "¿Cuál es el requisito indispensable que exige la ley actual respecto al Plan de Cierre de Minas?",
+      "answerOptions": [
+        {
+          "text": "Constituir una garantía financiera real y tangible.",
+          "isCorrect": true,
+          "rationale": "Esto asegura que existan fondos disponibles para la rehabilitación del ecosistema incluso si la empresa deja de operar."
+        },
+        {
+          "text": "Obtener el consentimiento unánime de todos los trabajadores.",
+          "isCorrect": false,
+          "rationale": "La viabilidad técnica y económica del cierre depende de la autoridad ambiental y financiera, no del voto de los empleados."
+        },
+        {
+          "text": "Publicar el plan en medios de comunicación internacionales.",
+          "isCorrect": false,
+          "rationale": "Aunque hay transparencia, el requisito legal crítico es el respaldo financiero ante el Estado peruano."
+        },
+        {
+          "text": "Realizar el cierre total en un plazo máximo de seis meses.",
+          "isCorrect": false,
+          "rationale": "El proceso de cierre y rehabilitación suele ser a largo plazo y depende de lo estipulado técnicamente en el plan aprobado."
+        }
+      ],
+      "hint": "Busca el mecanismo que asegura que habrá dinero para la recuperación ambiental."
+    },
+    {
+      "question": "Según la Casación 464 de Pasco, ¿qué implica el concepto de 'peligro abstracto' en el delito de minería ilegal?",
+      "answerOptions": [
+        {
+          "text": "No se requiere un daño consumado para procesar penalmente, basta con poner en riesgo el ecosistema.",
+          "isCorrect": true,
+          "rationale": "Acciones como remover tierra sin permiso ya constituyen delito, ya que la ley busca prevenir la desfiguración del paisaje."
+        },
+        {
+          "text": "Solo se puede procesar si hay un derrame químico visible y comprobado.",
+          "isCorrect": false,
+          "rationale": "Esta interpretación es incorrecta bajo la doctrina del peligro abstracto, que no exige la consumación del daño ambiental."
+        },
+        {
+          "text": "La responsabilidad penal se extingue si la empresa paga una multa administrativa.",
+          "isCorrect": false,
+          "rationale": "Las responsabilidades penal y administrativa son independientes; el pago de una no anula la persecución del delito."
+        },
+        {
+          "text": "El peligro abstracto solo aplica si el daño ocurre en una zona urbana.",
+          "isCorrect": false,
+          "rationale": "La protección del ecosistema es universal y no depende de la cercanía a centros poblados para configurar este tipo de peligro."
+        }
+      ],
+      "hint": "Se refiere a la mera posibilidad de daño o la alteración sin autorización."
+    },
+    {
+      "question": "¿Cuál es una diferencia fundamental entre la responsabilidad penal y la responsabilidad civil extracontractual en materia ambiental?",
+      "answerOptions": [
+        {
+          "text": "La vía civil exige demostrar un daño real, material y un nexo causal irrompible.",
+          "isCorrect": true,
+          "rationale": "A diferencia del peligro abstracto penal, la responsabilidad civil busca la reparación económica basada en hechos y daños probados."
+        },
+        {
+          "text": "La vía penal requiere que el demandante sea una comunidad indígena obligatoriamente.",
+          "isCorrect": false,
+          "rationale": "Cualquier persona o el Estado puede activar los mecanismos legales; la diferencia radica en la carga de la prueba del daño."
+        },
+        {
+          "text": "La responsabilidad civil no permite el uso de pruebas científicas.",
+          "isCorrect": false,
+          "rationale": "Al contrario, la vía civil es sumamente técnica y requiere peritajes para establecer la cuantía del daño y el nexo causal."
+        },
+        {
+          "text": "La responsabilidad penal solo aplica a gerentes extranjeros.",
+          "isCorrect": false,
+          "rationale": "La ley penal se aplica a cualquier persona (nacional o extranjera) que cometa el acto tipificado como delito."
+        }
+      ],
+      "hint": "Enfócate en la necesidad de probar una afectación económica o material tangible."
+    },
+    {
+      "question": "¿De qué se encarga específicamente el organismo fiscalizador OSINERMIN en la actividad minera?",
+      "answerOptions": [
+        {
+          "text": "Instalaciones técnicas y seguridad física de la infraestructura.",
+          "isCorrect": true,
+          "rationale": "Su enfoque está en la estabilidad mecánica, el mantenimiento de plantas y la prevención de riesgos operativos físicos."
+        },
+        {
+          "text": "Verificación de resultados ambientales y compromisos del EIA.",
+          "isCorrect": false,
+          "rationale": "Esta es la labor central del OEFA, no del OSINERMIN."
+        },
+        {
+          "text": "Gestión de contratos de trabajo y pago de beneficios sociales.",
+          "isCorrect": false,
+          "rationale": "La fiscalización laboral corresponde a otras autoridades (como SUNAFIL), no a los organismos de energía y minas."
+        },
+        {
+          "text": "Resolución de conflictos sociales en las comunidades.",
+          "isCorrect": false,
+          "rationale": "OSINERMIN es un organismo técnico; la gestión de conflictos suele recaer en el Ejecutivo o entidades de mediación."
+        }
+      ],
+      "hint": "Su trabajo tiene que ver con 'fierros', máquinas y estabilidad de estructuras."
+    },
+    {
+      "question": "Según el precedente del caso Condoraque, ¿cuál es la posición de la Corte Suprema sobre las paralizaciones por conflictos sociales?",
+      "answerOptions": [
+        {
+          "text": "La oposición de la comunidad no califica como fuerza mayor para suspender obligaciones.",
+          "isCorrect": true,
+          "rationale": "La doctrina sostiene que el inversionista asume el riesgo social de la zona al solicitar la concesión."
+        },
+        {
+          "text": "El Estado debe pagar los salarios de los mineros durante el conflicto.",
+          "isCorrect": false,
+          "rationale": "La responsabilidad del pago de planillas y derechos de vigencia sigue siendo del titular del proyecto minero."
+        },
+        {
+          "text": "Cualquier protesta social anula automáticamente la concesión minera.",
+          "isCorrect": false,
+          "rationale": "La concesión se mantiene, pero también las obligaciones legales del titular, a pesar de la paralización."
+        },
+        {
+          "text": "Las empresas pueden desvincular a todo su personal sin pagar beneficios en caso de bloqueos.",
+          "isCorrect": false,
+          "rationale": "El caso Condoraque refuerza la continuidad de las obligaciones del titular, no otorga exenciones laborales."
+        }
+      ],
+      "hint": "Considera si un conflicto social es un evento 'imprevisible' para el titular según la Corte."
+    },
+    {
+      "question": "¿Qué cambio introdujo el arbitraje internacional del caso Lupaca Gold en julio de 2024 respecto a la responsabilidad del Estado?",
+      "answerOptions": [
+        {
+          "text": "El Estado tiene responsabilidad si su inacción no garantiza las operaciones frente a bloqueos incontrolables.",
+          "isCorrect": true,
+          "rationale": "Este laudo establece que el Estado no puede ser un espectador pasivo cuando el orden público colapsa y perjudica la inversión."
+        },
+        {
+          "text": "Dictaminó que el Estado no debe intervenir nunca en conflictos mineros.",
+          "isCorrect": false,
+          "rationale": "Al contrario, el laudo señala que el Estado tiene obligaciones constitucionales de garantizar el estado de derecho para la operatividad."
+        },
+        {
+          "text": "Estableció que las empresas mineras deben crear su propia fuerza policial.",
+          "isCorrect": false,
+          "rationale": "El orden público es competencia exclusiva del Estado; el laudo reclama la efectividad de esa competencia estatal."
+        },
+        {
+          "text": "Prohibió totalmente el uso de arbitrajes para temas sociales.",
+          "isCorrect": false,
+          "rationale": "El caso en sí es un arbitraje que valida esta vía para proteger los derechos del inversionista frente a la inacción estatal."
+        }
+      ],
+      "hint": "El Estado dejó de ser visto como un simple observador en casos de colapso del orden público."
+    },
+    {
+      "question": "¿Por qué se afirma que la integridad laboral es un prerrequisito para el cumplimiento ambiental?",
+      "answerOptions": [
+        {
+          "text": "Una empresa ahogada en litigios laborales es estructuralmente incapaz de gestionar con seriedad compromisos ambientales.",
+          "isCorrect": true,
+          "rationale": "La transparencia y la paz laboral forman la base organizativa necesaria para ejecutar planes técnicos ambientales complejos."
+        },
+        {
+          "text": "Porque las multas ambientales son menores si el personal está sindicalizado.",
+          "isCorrect": false,
+          "rationale": "El sistema de sanciones ambientales es independiente de la afiliación sindical de los trabajadores."
+        },
+        {
+          "text": "Debido a que los obreros son los únicos encargados de firmar los estudios de impacto ambiental.",
+          "isCorrect": false,
+          "rationale": "Los estudios son firmados por profesionales técnicos autorizados y el titular, no por la fuerza laboral operativa."
+        },
+        {
+          "text": "Porque la ley exige que el 100% de los trabajadores sean especialistas en biología.",
+          "isCorrect": false,
+          "rationale": "No existe tal requisito; la relación es de integridad de gestión, no de formación profesional masiva en una sola área."
+        }
+      ],
+      "hint": "Piensa en la estabilidad de la organización para cumplir metas a largo plazo."
+    },
+    {
+      "question": "¿Cuál es la función de los Términos de Referencia (TDR) en la elaboración de un EIA-d?",
+      "answerOptions": [
+        {
+          "text": "Son instrucciones técnicas innegociables que marcan todo el alcance del estudio.",
+          "isCorrect": true,
+          "rationale": "Funcionan como la hoja de ruta obligatoria que el titular debe seguir para que su estudio sea admitido y evaluado adecuadamente."
+        },
+        {
+          "text": "Son sugerencias opcionales que la empresa puede o no seguir.",
+          "isCorrect": false,
+          "rationale": "La fuente indica que son 'instrucciones técnicas innegociables', lo que descarta su carácter opcional."
+        },
+        {
+          "text": "Es el glosario de términos legales que se usa solo en el juicio penal.",
+          "isCorrect": false,
+          "rationale": "Su aplicación es técnica y administrativa durante la fase de certificación, no se limitan al ámbito penal."
+        },
+        {
+          "text": "Son los requisitos para contratar personal extranjero en la mina.",
+          "isCorrect": false,
+          "rationale": "Los TDR se refieren al contenido del estudio ambiental, no a las políticas de recursos humanos."
+        }
+      ],
+      "hint": "Actúan como una guía técnica de cumplimiento obligatorio para la evaluación."
+    },
+    {
+      "question": "¿A qué se refiere el tercer elemento del fraude laboral denominado 'simulación de autonomía empresarial'?",
+      "answerOptions": [
+        {
+          "text": "Uso de empresas fachada que no dirigen a su propio personal, siendo controlados por la empresa principal.",
+          "isCorrect": true,
+          "rationale": "En la práctica, la empresa principal ejerce el mando directo, desvirtuando la supuesta independencia de la contratista."
+        },
+        {
+          "text": "Cuando una empresa decide cambiar su nombre comercial cada seis meses.",
+          "isCorrect": false,
+          "rationale": "El cambio de nombre no es fraude por sí mismo, el fraude radica en la falta de control real de la contratista sobre sus obreros."
+        },
+        {
+          "text": "La compra de uniformes de diferentes colores para distintos departamentos.",
+          "isCorrect": false,
+          "rationale": "La autonomía se refiere a la dirección y gestión técnica del personal, no a la vestimenta."
+        },
+        {
+          "text": "Cuando los gerentes trabajan de forma remota desde otro país.",
+          "isCorrect": false,
+          "rationale": "La ubicación física de la gerencia no determina la simulación de autonomía de una empresa intermediaria."
+        }
+      ],
+      "hint": "Es cuando la empresa principal 'manda' a los empleados de la supuesta empresa externa."
+    },
+    {
+      "question": "En el marco de la universalidad de la gestión ambiental, ¿cómo afecta la regulación a proyectos de minería no metálica, como la extracción de agregados en Chupapata?",
+      "answerOptions": [
+        {
+          "text": "Están sujetos a las mismas reglas y certificaciones obligatorias que la minería metálica.",
+          "isCorrect": true,
+          "rationale": "La legislación ambiental no hace excepciones por el tipo de recurso; la obligación de IGA es universal para toda actividad minera."
+        },
+        {
+          "text": "Solo requieren un permiso municipal simple sin evaluación ambiental.",
+          "isCorrect": false,
+          "rationale": "La fuente menciona explícitamente que no hay excepciones y que los procedimientos técnicos son obligatorios para todos."
+        },
+        {
+          "text": "Están exentos de presentar planes de cierre de minas por ser de bajo impacto.",
+          "isCorrect": false,
+          "rationale": "Toda actividad minera debe asegurar la rehabilitación del entorno mediante un plan de cierre y su garantía respectiva."
+        },
+        {
+          "text": "Solo deben cumplir con los ECA, pero no necesitan realizar evaluaciones de impacto ambiental.",
+          "isCorrect": false,
+          "rationale": "Deben cumplir con el andamiaje completo: ECA, evaluación de impacto (DIA o EIA) y plan de cierre."
+        }
+      ],
+      "hint": "La ley no discrimina entre grandes mineras de oro y pequeñas canteras de piedra."
+    },
+    {
+      "question": "¿Qué sucede con un derecho minero (concesión) si el titular no realiza el pago de los derechos de vigencia?",
+      "answerOptions": [
+        {
+          "text": "El Estado puede retirar el privilegio y extinguir el derecho de operar.",
+          "isCorrect": true,
+          "rationale": "Mantener el usufructo condicionado exige el cumplimiento riguroso de las obligaciones administrativas y económicas."
+        },
+        {
+          "text": "La deuda se acumula automáticamente con un interés del $0\\%$.",
+          "isCorrect": false,
+          "rationale": "El incumplimiento no genera solo una deuda, sino el riesgo inminente de perder el derecho minero otorgado."
+        },
+        {
+          "text": "El titular puede seguir operando normalmente mientras dure el juicio.",
+          "isCorrect": false,
+          "rationale": "El derecho está condicionado al cumplimiento; sin pago, la base legal que sostiene la operatividad desaparece."
+        },
+        {
+          "text": "La propiedad del suelo pasa automáticamente a la comunidad más cercana.",
+          "isCorrect": false,
+          "rationale": "La extinción de la concesión revierte el recurso al Estado, no transfiere la propiedad del suelo a terceros automáticamente."
+        }
+      ],
+      "hint": "Recuerda que la concesión no es un 'cheque en blanco' eterno."
+    },
+    {
+      "question": "¿Cuál es la conclusión definitiva sobre la minería moderna presentada en la sesión?",
+      "answerOptions": [
+        {
+          "text": "Exige alinear la excelencia técnica con un cumplimiento jurídico impecable y una visión holística.",
+          "isCorrect": true,
+          "rationale": "La viabilidad de los megaproyectos depende de integrar la gestión laboral, ambiental y legal de forma estratégica."
+        },
+        {
+          "text": "Se basa únicamente en extraer la mayor cantidad de mineral en el menor tiempo posible.",
+          "isCorrect": false,
+          "rationale": "Esta es la visión antigua que el orador señala que ha terminado, dando paso a una gestión integral."
+        },
+        {
+          "text": "La única prioridad debe ser evitar cualquier contacto con las comunidades locales.",
+          "isCorrect": false,
+          "rationale": "La gestión de la licencia social y el riesgo social son pilares fundamentales de la operatividad moderna."
+        },
+        {
+          "text": "El cumplimiento de la norma debe ser visto como un simple trámite administrativo aburrido.",
+          "isCorrect": false,
+          "rationale": "El texto aclara que esa perspectiva 'se acabó' y que hoy la gestión jurídica es el motor estratégico."
+        }
+      ],
+      "hint": "Busca la opción que resuma la integración de todos los pilares vistos."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Intermediación y Fraude Laboral (Ley 27626)",
+      "Marco Constitucional y Legal de la Minería en Perú",
+      "Instrumentos de Gestión Ambiental (IGA)",
+      "Sistema de Responsabilidad Triple (Penal, Civil, Administrativa)",
+      "Jurisprudencia y Licencia Social (Casos Condoraque y Lupaca Gold)"
+    ],
+    "followUp": [
+      "Procedimientos específicos ante el SENACE para minería metálica",
+      "Mecanismos de cálculo de garantías financieras para planes de cierre",
+      "Análisis comparativo entre multas de la OEFA y de OSINERMIN",
+      "Evolución de los convenios de estabilidad jurídica en el sector extractivo"
+    ]
+  }
+}
