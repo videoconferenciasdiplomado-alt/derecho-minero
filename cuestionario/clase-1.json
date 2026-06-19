@@ -523,5 +523,21 @@
       ],
       "hint": "Busca que los recursos de la nación no se queden 'congelados' en manos de alguien que no los explota."
     }
-  ]
+  ],
+  "topics": {
+    "covered": [
+      "Marco Constitucional del Derecho Ambiental Peruano",
+      "Arquitectura Institucional (MINAM, OEFA, ANA)",
+      "Principios de Fiscalización y Derecho Administrativo Sancionador",
+      "Naturaleza Jurídica y Tipos de Concesiones Mineras",
+      "Régimen Contractual y Obligaciones Económicas Mineras"
+    ],
+    "followUp": [
+      "Estándares de Calidad Ambiental (ECA) y Límites Máximos Permisibles (LMP)",
+      "Procedimientos de Formalización Minera y el impacto del REINFO",
+      "Garantías Financieras en los Planes de Cierre de Minas",
+      "Mecanismos de Arbitraje en Contratos de Inversión Minera",
+      "Legislación sobre el Desarrollo Sostenible de la Amazonía"
+    ]
+  }
 }

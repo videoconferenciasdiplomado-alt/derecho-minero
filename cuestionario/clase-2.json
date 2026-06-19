@@ -523,5 +523,23 @@
       ],
       "hint": "Piense en por qué destruir edificios costosos podría ser una mala idea si pueden servir para el turismo o la educación."
     }
-  ]
+  ],
+  "topics": {
+    "covered": [
+      "Marcos legales y estructuras contractuales (Joint Venture)",
+      "Competencias administrativas (INGEMMET y Gores)",
+      "Gestión y clasificación de impactos ambientales (DIA, EIA-sd, EIA-d)",
+      "Mecanismos de simplificación administrativa (Integra Ambiente)",
+      "Derechos colectivos y consulta previa en comunidades",
+      "Responsabilidad estatal y arbitrajes internacionales",
+      "Plan de cierre de minas y garantías ambientales"
+    ],
+    "followUp": [
+      "Procedimientos de fiscalización ambiental de la OEFA",
+      "Detalles técnicos del mecanismo Integra Ambiente",
+      "Jurisprudencia del Tribunal Constitucional sobre derechos indígenas",
+      "Estrategias de mediación en conflictos socioambientales",
+      "Normativa técnica para el monitoreo en la fase de post-cierre"
+    ]
+  }
 }
