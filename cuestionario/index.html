@@ -554,13 +554,12 @@
       const ARCHIVO_JSON = `${parametroClase}.json`; // ==========================================
 
       // Optimización: Iniciamos la descarga del archivo JSON inmediatamente para evitar esperas
-      const quizDataPromise = fetch(ARCHIVO_JSON)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`El archivo "${ARCHIVO_JSON}" no existe o no se pudo cargar.`);
-          }
-          return response.json();
-        });
+      const quizDataPromise = fetch(ARCHIVO_JSON).then((response) => {
+        if (!response.ok) {
+          throw new Error(`El archivo "${ARCHIVO_JSON}" no existe o no se pudo cargar.`);
+        }
+        return response.json();
+      });
 
       window.addEventListener("DOMContentLoaded", async () => {
         // Inicializar UI de silencio según estado persistido
@@ -613,7 +612,8 @@
           const startBtn = document.getElementById("start-quiz-button");
           if (startBtn) {
             startBtn.removeAttribute("disabled");
-            startBtn.className = "w-full sm:w-auto px-8 py-3 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 flex items-center justify-center gap-3 group";
+            startBtn.className =
+              "w-full sm:w-auto px-8 py-3 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 flex items-center justify-center gap-3 group";
             startBtn.innerHTML = `¡Empezar cuestionario! <i class="ph-bold ph-arrow-right text-lg transform group-hover:translate-x-1 transition-transform"></i>`;
           }
 
@@ -738,18 +738,18 @@
                 ? "text-emerald-950 font-bold"
                 : answeredIndex === index
                   ? "text-rose-950 font-bold"
-                  : "text-slate-600 font-medium"
+                  : "text-slate-700 font-medium"
               : "text-slate-700 font-medium";
 
           let cardContent = `<div class="flex items-start gap-2 w-full"><span class="font-extrabold ${letterClass} leading-normal select-none transition-colors shrink-0">${alphabet[index]}.</span><div class="flex-1 min-w-0"><p class="${textClass} leading-normal transition-colors">${option.text}</p>`;
 
           if (isAnswered || isReviewMode) {
             if (option.isCorrect) {
-              cardContent += `<div class="text-emerald-600 font-extrabold text-sm leading-normal mt-2 flex items-center gap-1.5 animate-fadeIn"><i class="ph-bold ph-check"></i> Respuesta correcta</div><p class="text-sm text-emerald-800/85 leading-normal mt-1.5 font-semibold animate-fadeIn">${option.rationale}</p>`;
+              cardContent += `<div class="text-emerald-600 font-extrabold text-sm leading-normal mt-1.5 flex items-center gap-1.5 animate-fadeIn"><i class="ph-bold ph-check"></i> Respuesta correcta</div><p class="text-sm text-emerald-800/85 leading-normal mt-1.5 font-semibold animate-fadeIn">${option.rationale}</p>`;
             } else if (answeredIndex === index && !option.isCorrect) {
-              cardContent += `<div class="text-rose-600 font-extrabold text-sm leading-normal mt-2 flex items-center gap-1.5 animate-fadeIn"><i class="ph-bold ph-x"></i> Respuesta incorrecta</div><p class="text-sm text-rose-800/85 leading-normal mt-1.5 font-semibold animate-fadeIn">${option.rationale}</p>`;
+              cardContent += `<div class="text-rose-600 font-extrabold text-sm leading-normal mt-1.5 flex items-center gap-1.5 animate-fadeIn"><i class="ph-bold ph-x"></i> Respuesta incorrecta</div><p class="text-sm text-rose-800/85 leading-normal mt-1.5 font-semibold animate-fadeIn">${option.rationale}</p>`;
             } else {
-              cardContent += `<p class="text-sm text-slate-500/80 leading-normal mt-1.5 font-normal animate-fadeIn">${option.rationale}</p>`;
+              cardContent += `<p class="text-sm text-slate-600 leading-normal mt-1.5 font-normal animate-fadeIn">${option.rationale}</p>`;
             }
           }
           cardContent += `</div></div>`;
