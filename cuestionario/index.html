@@ -7,7 +7,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -31,11 +33,11 @@
                 500: "#6366f1",
                 600: "#4f46e5",
                 700: "#4338ca",
-                accent: "#ff7e5f",
-              },
-            },
-          },
-        },
+                accent: "#ff7e5f"
+              }
+            }
+          }
+        }
       };
     </script>
 
@@ -120,98 +122,168 @@
       body:has(#welcome-screen:not(.hidden)) #header-home-button {
         display: none !important;
       }
+      body:has(#welcome-screen:not(.hidden)) #header-course-badge {
+        display: none !important;
+      }
     </style>
   </head>
-  <body class="bg-slate-50 min-h-screen flex items-center justify-center p-3 sm:p-6 pt-20 sm:pt-24 font-sans antialiased text-slate-800 selection:bg-brand-100">
-    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-slate-200/80 h-16 z-40 flex items-center justify-center px-6 md:px-8">
+  <body
+    class="bg-slate-50 min-h-screen flex items-start justify-center p-3 sm:p-6 pt-20 sm:pt-24 font-sans antialiased text-slate-800 selection:bg-brand-100">
+    <header
+      class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-slate-200/80 h-16 z-40 flex items-center justify-center px-6 md:px-8">
       <div class="w-full max-w-2xl flex justify-between items-center gap-4">
-        <a href="index.html" class="flex items-center shrink-0">
-          <img src="https://videoconferenciasdiplomado-alt.github.io/imagenes/logo%20negro%20edumin.png" alt="Logo EDUMIN" class="h-8 w-auto object-contain" />
-        </a>
-        <div class="flex items-center gap-2">
-          <span id="header-course-badge" class="text-xs font-black uppercase tracking-widest text-brand-600 px-3 py-1 bg-brand-50 rounded-full border border-brand-200/60 shadow-sm">
-            <span id="header-class-number"></span><span id="header-class-title" class="hidden sm:inline"></span>
-          </span>
-        </div>
+        <button onclick="goHome()" class="flex items-center shrink-0 focus:outline-none">
+          <img
+            src="https://videoconferenciasdiplomado-alt.github.io/imagenes/logo%20negro%20edumin.png"
+            alt="Logo EDUMIN"
+            class="h-8 w-auto object-contain" />
+        </button>
         <div class="flex items-center gap-3 shrink-0">
+          <span
+            id="header-course-badge"
+            class="text-xs font-black uppercase tracking-widest text-slate-500 px-3 py-1 bg-slate-100 rounded-full border border-slate-200/60 shadow-sm">
+            <span id="header-class-number"></span>
+          </span>
           <!-- Botón de Inicio (Home) -->
-          <button id="header-home-button" onclick="goHome()" class="flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-800 transition-colors focus:outline-none" title="Inicio">
+          <button
+            id="header-home-button"
+            onclick="goHome()"
+            class="flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-800 transition-colors focus:outline-none"
+            title="Inicio">
             <i class="ph-bold ph-house text-lg"></i>
           </button>
           <!-- Botón de Silenciar (Mute) -->
-          <button id="header-mute-button" onclick="toggleMute()" class="flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none" title="Silenciar sonido">
+          <button
+            id="header-mute-button"
+            onclick="toggleMute()"
+            class="flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none"
+            title="Silenciar sonido">
             <i class="mute-icon ph-bold ph-speaker-high text-lg"></i>
           </button>
         </div>
       </div>
     </header>
 
-    <div class="w-full max-w-2xl bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 overflow-hidden relative fade-in-up">
-      <div id="review-banner" class="hidden bg-amber-50 border-b border-amber-200/50 px-6 py-3.5 flex justify-between items-center text-amber-900">
-        <span class="flex items-center gap-2 text-sm font-bold"> <i class="ph-fill ph-eyeglasses text-xl text-amber-600"></i> Modo Revisión Activo </span>
-        <button onclick="exitReview()" class="text-xs font-extrabold uppercase tracking-wider bg-amber-600 text-white px-3 py-1.5 rounded-lg hover:bg-amber-700 active:scale-95 transition-all shadow-sm">Volver al Reporte</button>
+    <div
+      class="w-full max-w-2xl bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 overflow-hidden relative fade-in-up">
+      <div
+        id="review-banner"
+        class="hidden bg-amber-50 border-b border-amber-200/50 px-6 py-3.5 flex justify-between items-center text-amber-900">
+        <span class="flex items-center gap-2 text-sm font-bold">
+          <i class="ph-fill ph-eyeglasses text-xl text-amber-600"></i> Modo Revisión Activo
+        </span>
+        <button
+          onclick="exitReview()"
+          class="text-xs font-extrabold uppercase tracking-wider bg-amber-600 text-white px-3 py-1.5 rounded-lg hover:bg-amber-700 active:scale-95 transition-all shadow-sm">
+          Volver al Reporte
+        </button>
       </div>
 
       <!-- Pantalla de Error (si no se encuentra la clase) -->
       <div id="error-screen" class="hidden p-8 md:p-12 text-center relative animate-fadeIn">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-rose-50 text-rose-500 rounded-2xl shadow-lg shadow-rose-100 mb-6 transform transition-transform hover:scale-105 duration-300">
+        <div
+          class="inline-flex items-center justify-center w-20 h-20 bg-rose-50 text-rose-500 rounded-2xl shadow-lg shadow-rose-100 mb-6 transform transition-transform hover:scale-105 duration-300">
           <i class="ph-fill ph-x-circle text-4xl"></i>
         </div>
         <div class="mb-3">
-          <span class="text-xs font-black uppercase tracking-widest text-rose-600 px-3 py-1 bg-rose-50 rounded-full border border-rose-200/60 shadow-sm">Error</span>
+          <span
+            class="text-xs font-black uppercase tracking-widest text-rose-600 px-3 py-1 bg-rose-50 rounded-full border border-rose-200/60 shadow-sm"
+            >Error</span
+          >
         </div>
-        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-800 leading-tight text-balance mb-4 uppercase">Cuestionario no encontrado</h1>
-        <p id="error-message" class="text-slate-500 text-sm md:text-base max-w-md mx-auto leading-relaxed text-balance mb-8"></p>
-        <a href="index.html" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 inline-flex items-center justify-center gap-2 group mx-auto">
+        <h1
+          class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-800 leading-tight text-balance mb-4 uppercase">
+          Cuestionario no encontrado
+        </h1>
+        <p
+          id="error-message"
+          class="text-slate-500 text-sm md:text-base max-w-md mx-auto leading-relaxed text-balance mb-8"></p>
+        <a
+          href="index.html"
+          class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 inline-flex items-center justify-center gap-2 group mx-auto">
           <i class="ph-bold ph-arrow-left text-lg transform group-hover:-translate-x-1 transition-transform"></i>
           Volver a la Clase 1
         </a>
       </div>
 
       <div id="welcome-screen" class="p-8 pb-28 md:p-12 md:pb-32 text-center relative">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-tr from-brand-500 to-indigo-400 text-white rounded-2xl shadow-lg shadow-indigo-100 mb-6 transform transition-transform hover:scale-105 duration-300">
-          <i class="ph-fill ph-gavel text-4xl"></i>
+        <div class="mb-4 flex flex-col items-center gap-2">
+          <span
+            id="welcome-course-name"
+            class="text-xs font-black uppercase tracking-widest text-brand-600 px-3 py-1 bg-brand-50 rounded-full border border-brand-200/60 shadow-sm"></span>
+          <span
+            id="welcome-class-number"
+            class="text-xs font-black uppercase tracking-widest text-slate-500 px-3 py-1 bg-slate-100 rounded-full border border-slate-200/60 shadow-sm"></span>
         </div>
-        <div class="mb-3 flex items-center justify-center gap-2 flex-wrap">
-          <span id="welcome-course-name" class="text-xs font-black uppercase tracking-widest text-brand-600 px-3 py-1 bg-brand-50 rounded-full border border-brand-200/60 shadow-sm"></span>
-          <span id="welcome-class-number" class="text-xs font-black uppercase tracking-widest text-slate-500 px-3 py-1 bg-slate-100 rounded-full border border-slate-200/60 shadow-sm"></span>
-        </div>
-        <h1 id="welcome-class-title" class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-800 leading-tight text-balance mb-4 uppercase" style="text-wrap: balance;"></h1>
-        <p class="text-slate-500 text-sm md:text-base max-w-md mx-auto leading-relaxed text-balance">Pon a prueba tus competencias con este simulador avanzado interactivo.</p>
+        <h1
+          id="welcome-class-title"
+          class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-800 leading-tight text-balance mb-4 uppercase"
+          style="text-wrap: balance"></h1>
 
-        <div class="mt-8 text-left bg-slate-50 rounded-2xl p-6 border border-slate-100 transition-all hover:border-slate-200">
-          <h3 class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2"><i class="ph-bold ph-list-checks text-brand-500 text-lg"></i> Temas que vas a repasar:</h3>
-          <ul id="covered-topics-list" class="space-y-3 text-sm text-slate-600 font-semibold"></ul>
+        <div
+          class="mt-8 text-left bg-slate-50 rounded-2xl p-6 border border-slate-100 transition-all hover:border-slate-200">
+          <h3 class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2">
+            <i class="ph-bold ph-list-checks text-brand-500 text-lg"></i> Temas que vas a repasar:
+          </h3>
+          <ul id="covered-topics-list" class="space-y-3 text-sm text-slate-600 font-semibold">
+            <!-- Skeleton Loader (se limpia al cargar los temas del JSON) -->
+            <li class="flex items-center gap-3 animate-pulse">
+              <div class="w-5 h-5 bg-slate-200 rounded-full shrink-0"></div>
+              <div class="h-4 bg-slate-200 rounded-md w-2/3"></div>
+            </li>
+            <li class="flex items-center gap-3 animate-pulse">
+              <div class="w-5 h-5 bg-slate-200 rounded-full shrink-0"></div>
+              <div class="h-4 bg-slate-200 rounded-md w-5/6"></div>
+            </li>
+            <li class="flex items-center gap-3 animate-pulse">
+              <div class="w-5 h-5 bg-slate-200 rounded-full shrink-0"></div>
+              <div class="h-4 bg-slate-200 rounded-md w-3/4"></div>
+            </li>
+          </ul>
         </div>
       </div>
 
       <div id="quiz-screen" class="hidden">
-        <div id="progress-segments" class="flex gap-1 w-full px-6 pt-5 pb-3"></div>
+        <div id="progress-segments" class="flex gap-1 w-full p-6 md:p-8"></div>
         <div class="px-6 pb-28 md:px-8 md:pb-32">
           <div class="flex justify-between items-center mb-6">
-            <span id="question-index-badge" class="px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-extrabold uppercase tracking-wider rounded-full shadow-sm"></span>
+            <span
+              id="question-index-badge"
+              class="px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-extrabold uppercase tracking-wider rounded-full shadow-sm"></span>
             <div class="flex items-center gap-4">
-              <button onclick="toggleHint()" id="hint-button" class="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-amber-500 transition-colors group"><i class="ph-fill ph-lightbulb text-lg group-hover:animate-pulse"></i> Ver pista</button>
+              <button
+                onclick="toggleHint()"
+                id="hint-button"
+                class="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-amber-500 transition-colors group">
+                <i class="ph-fill ph-lightbulb text-lg group-hover:animate-pulse"></i> Ver pista
+              </button>
             </div>
           </div>
 
-          <div id="hint-box" class="expand-hint bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/60 rounded-2xl p-4 text-sm text-amber-900 flex gap-3 items-start shadow-sm">
-            <i class="ph-fill ph-magic-wand text-amber-500 text-xl mt-0.5 shrink-0"></i>
-            <div>
-              <span class="font-extrabold block mb-1 text-amber-700 text-xs uppercase tracking-wider">Pista sugerida</span>
-              <p id="hint-text" class="leading-relaxed opacity-95"></p>
+          <div id="hint-box" class="expand-hint">
+            <div
+              class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/60 rounded-2xl p-4 text-sm text-amber-900 flex gap-3 items-start shadow-sm">
+              <i class="ph-fill ph-magic-wand text-amber-500 text-xl mt-0.5 shrink-0"></i>
+              <div>
+                <span class="font-extrabold block mb-1 text-amber-700 text-xs leading-normal uppercase tracking-wider"
+                  >Pista sugerida</span
+                >
+                <p id="hint-text" class="leading-normal opacity-95"></p>
+              </div>
             </div>
           </div>
 
-          <h2 id="question-text" class="text-lg md:text-xl font-bold text-slate-800 leading-snug mb-6"></h2>
+          <h2 id="question-text" class="text-lg md:text-xl font-bold text-slate-800 leading-normal mb-6"></h2>
           <div id="options-container" class="space-y-4"></div>
         </div>
-
       </div>
 
-      <div id="result-screen" class="hidden p-8 pb-28 md:p-12 md:pb-32 text-center relative overflow-hidden animate-fadeIn">
+      <div
+        id="result-screen"
+        class="hidden p-8 pb-28 md:p-12 md:pb-32 text-center relative overflow-hidden animate-fadeIn">
         <div id="confeti-container" class="absolute inset-0 pointer-events-none z-50 hidden"></div>
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full mb-6 relative shadow-inner">
+        <div
+          class="inline-flex items-center justify-center w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full mb-6 relative shadow-inner">
           <i class="ph-fill ph-trophy text-4xl drop-shadow-md"></i>
         </div>
         <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight">¡Cuestionario completado!</h2>
@@ -221,15 +293,28 @@
           <div class="relative w-44 h-44 flex items-center justify-center shrink-0">
             <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
               <circle cx="50" cy="50" r="40" fill="none" class="stroke-slate-100" stroke-width="8"></circle>
-              <circle id="score-circle-path" cx="50" cy="50" r="40" fill="none" class="stroke-brand-500 progress-ring" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" stroke-linecap="round"></circle>
+              <circle
+                id="score-circle-path"
+                cx="50"
+                cy="50"
+                r="40"
+                fill="none"
+                class="stroke-brand-500 progress-ring"
+                stroke-width="8"
+                stroke-dasharray="251.2"
+                stroke-dashoffset="251.2"
+                stroke-linecap="round"></circle>
             </svg>
             <div class="absolute inset-0 flex flex-col items-center justify-center">
-              <span id="score-fraction" class="text-xs font-black text-slate-400 tracking-widest uppercase mb-0.5"></span>
+              <span
+                id="score-fraction"
+                class="text-xs font-black text-slate-400 tracking-widest uppercase mb-0.5"></span>
               <span id="final-score" class="text-3xl md:text-4xl font-black text-slate-800 tracking-tighter">0%</span>
             </div>
           </div>
 
-          <div class="flex flex-col gap-3 text-left border-t sm:border-t-0 sm:border-l border-slate-100 pt-5 sm:pt-0 sm:pl-8 w-full sm:w-auto">
+          <div
+            class="flex flex-col gap-3 text-left border-t sm:border-t-0 sm:border-l border-slate-100 pt-5 sm:pt-0 sm:pl-8 w-full sm:w-auto">
             <h4 class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-1">Resumen</h4>
             <div class="flex items-center gap-2.5 text-emerald-600 font-bold text-sm">
               <i class="ph-bold ph-check-circle text-lg"></i>
@@ -247,7 +332,9 @@
         </div>
 
         <div class="text-left bg-indigo-50/40 rounded-2xl p-5 border border-indigo-100/60 mb-8">
-          <h3 class="text-xs font-extrabold uppercase tracking-widest text-indigo-900/60 mb-3 flex items-center gap-2"><i class="ph-fill ph-graduation-cap text-indigo-500 text-xl"></i> Temas recomendados para seguir estudiando:</h3>
+          <h3 class="text-xs font-extrabold uppercase tracking-widest text-indigo-900/60 mb-3 flex items-center gap-2">
+            <i class="ph-fill ph-graduation-cap text-indigo-500 text-xl"></i> Temas recomendados para seguir estudiando:
+          </h3>
           <ul id="suggested-topics-list" class="space-y-2.5 text-sm text-indigo-950/80 font-semibold"></ul>
         </div>
       </div>
@@ -266,16 +353,18 @@
       };
 
       if (typeof TEXTO_CLASES !== "undefined") {
-        TEXTO_CLASES.trim().split("\n").forEach((line) => {
-          const trimmed = line.trim();
-          if (!trimmed) return;
-          const match = trimmed.match(/^(\d+)\s+(.+)$/);
-          if (match) {
-            const numero = parseInt(match[1], 10);
-            const titulo = match[2].trim();
-            CONFIG_CURSO.clases[numero] = titulo;
-          }
-        });
+        TEXTO_CLASES.trim()
+          .split("\n")
+          .forEach((line) => {
+            const trimmed = line.trim();
+            if (!trimmed) return;
+            const match = trimmed.match(/^(\d+)\s+(.+)$/);
+            if (match) {
+              const numero = parseInt(match[1], 10);
+              const titulo = match[2].trim();
+              CONFIG_CURSO.clases[numero] = titulo;
+            }
+          });
       }
 
       // --- KaTeX Auto-Render Helper ---
@@ -408,12 +497,12 @@
         const now = ctx.currentTime;
 
         const notes = [
-          { freq: 261.63, delay: 0.00, type: "sine" },     // C4
-          { freq: 329.63, delay: 0.10, type: "sine" },     // E4
-          { freq: 392.00, delay: 0.20, type: "sine" },     // G4
-          { freq: 523.25, delay: 0.30, type: "triangle" }, // C5
-          { freq: 659.25, delay: 0.40, type: "triangle" }, // E5
-          { freq: 783.99, delay: 0.50, type: "sine" }      // G5
+          { freq: 261.63, delay: 0.0, type: "sine" }, // C4
+          { freq: 329.63, delay: 0.1, type: "sine" }, // E4
+          { freq: 392.0, delay: 0.2, type: "sine" }, // G4
+          { freq: 523.25, delay: 0.3, type: "triangle" }, // C5
+          { freq: 659.25, delay: 0.4, type: "triangle" }, // E5
+          { freq: 783.99, delay: 0.5, type: "sine" } // G5
         ];
 
         notes.forEach((note) => {
@@ -464,40 +553,46 @@
       // 3. Le agregamos la extensión .json de forma automática
       const ARCHIVO_JSON = `${parametroClase}.json`; // ==========================================
 
+      // Optimización: Iniciamos la descarga del archivo JSON inmediatamente para evitar esperas
+      const quizDataPromise = fetch(ARCHIVO_JSON)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`El archivo "${ARCHIVO_JSON}" no existe o no se pudo cargar.`);
+          }
+          return response.json();
+        });
+
       window.addEventListener("DOMContentLoaded", async () => {
         // Inicializar UI de silencio según estado persistido
         updateMuteUI();
 
+        // Carga inmediata de la configuración local (cero lag visual en títulos)
+        const courseName = CONFIG_CURSO.nombre_curso || "DERECHO MINERO";
+        document.getElementById("welcome-course-name").innerText = courseName;
+
+        const classTitle = CONFIG_CURSO.clases[numeroClase] || "";
+        const headerNumber = document.getElementById("header-class-number");
+        const headerTitle = document.getElementById("header-class-title");
+        if (headerNumber) {
+          headerNumber.innerText = `CLASE ${numeroClase}`;
+        }
+        if (headerTitle) {
+          headerTitle.innerText = classTitle ? `: ${classTitle.toUpperCase()}` : "";
+        }
+
+        document.getElementById("welcome-class-number").innerText = `Clase ${numeroClase}`;
+        document.getElementById("welcome-class-title").innerText = classTitle.toUpperCase();
+
         try {
-          // Cargamos el archivo JSON de manera dinámica
-          const response = await fetch(ARCHIVO_JSON);
-          if (!response.ok) {
-            throw new Error(`El archivo "${ARCHIVO_JSON}" no existe o no se pudo cargar.`);
-          }
-          quizData = await response.json();
+          // Esperamos a que termine la promesa de descarga iniciada al principio
+          quizData = await quizDataPromise;
 
           // Inicializamos las respuestas vacías basadas en las preguntas cargadas
           userAnswers = Array(quizData.quiz.length).fill(null);
 
-          // Rellenamos los datos del curso y clase en la pantalla de bienvenida usando CONFIG_CURSO
-          const courseName = CONFIG_CURSO.nombre_curso || quizData.nombre_curso || "DERECHO MINERO";
-          document.getElementById("welcome-course-name").innerText = courseName;
-          
-          const classTitle = CONFIG_CURSO.clases[numeroClase] || quizData.nombre_clase || "";
-          const headerNumber = document.getElementById("header-class-number");
-          const headerTitle = document.getElementById("header-class-title");
-          if (headerNumber) {
-            headerNumber.innerText = `CLASE ${numeroClase}`;
-          }
-          if (headerTitle) {
-            headerTitle.innerText = classTitle ? `: ${classTitle.toUpperCase()}` : "";
-          }
-          
-          document.getElementById("welcome-class-number").innerText = `Clase ${numeroClase}`;
-          document.getElementById("welcome-class-title").innerText = (CONFIG_CURSO.clases[numeroClase] || quizData.nombre_clase || "").toUpperCase();
-
-          // Rellenamos los temas en la portada de bienvenida
+          // Rellenamos los temas en la portada de bienvenida (reemplaza el skeleton loader)
           const coveredList = document.getElementById("covered-topics-list");
+          coveredList.innerHTML = "";
           quizData.topics.covered.forEach((topic) => {
             const li = document.createElement("li");
             li.className = "flex items-center gap-3 text-slate-600";
@@ -506,6 +601,7 @@
           });
 
           const suggestedList = document.getElementById("suggested-topics-list");
+          suggestedList.innerHTML = "";
           quizData.topics.followUp.forEach((topic) => {
             const li = document.createElement("li");
             li.className = "flex items-center gap-3 text-indigo-950/80";
@@ -513,15 +609,23 @@
             suggestedList.appendChild(li);
           });
 
+          // Activamos el botón de empezar cuestionario
+          const startBtn = document.getElementById("start-quiz-button");
+          if (startBtn) {
+            startBtn.removeAttribute("disabled");
+            startBtn.className = "w-full sm:w-auto px-8 py-3 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 flex items-center justify-center gap-3 group";
+            startBtn.innerHTML = `¡Empezar cuestionario! <i class="ph-bold ph-arrow-right text-lg transform group-hover:translate-x-1 transition-transform"></i>`;
+          }
+
           renderMath();
         } catch (error) {
           console.error("Error al cargar el archivo de preguntas JSON:", error);
-          
+
           // Ocultamos la pantalla de bienvenida y mostramos la pantalla de error
           document.getElementById("welcome-screen").classList.add("hidden");
           const errorScreen = document.getElementById("error-screen");
           errorScreen.classList.remove("hidden");
-          
+
           const errorMsg = document.getElementById("error-message");
           errorMsg.innerText = `El archivo de preguntas "${ARCHIVO_JSON}" no existe o no se pudo cargar desde el servidor local.`;
         }
@@ -590,7 +694,8 @@
           hintBtn.classList.add("hidden");
         }
 
-        document.getElementById("question-index-badge").innerText = `Pregunta ${currentQuestionIndex + 1} de ${quizData.quiz.length}`;
+        document.getElementById("question-index-badge").innerText =
+          `Pregunta ${currentQuestionIndex + 1} de ${quizData.quiz.length}`;
         document.getElementById("question-text").innerText = currentQuestion.question;
         renderProgressBar();
 
@@ -602,7 +707,8 @@
 
         currentQuestion.answerOptions.forEach((option, index) => {
           const optionCard = document.createElement("div");
-          optionCard.className = "w-full text-left p-5 rounded-2xl border-2 transition-all flex flex-col relative duration-200 shadow-sm";
+          optionCard.className =
+            "w-full text-left p-4 rounded-2xl border-2 transition-all flex flex-col relative duration-200 shadow-sm";
 
           if (isAnswered || isReviewMode) {
             if (option.isCorrect) {
@@ -613,22 +719,37 @@
               optionCard.className += " border-slate-100 bg-slate-50/40 text-slate-500 opacity-90";
             }
           } else {
-            optionCard.className += " border-slate-100 bg-white hover:border-brand-200 hover:shadow-md hover:shadow-brand-50/40 cursor-pointer active:scale-[0.99] group";
+            optionCard.className +=
+              " border-slate-100 bg-white hover:border-brand-200 hover:shadow-md hover:shadow-brand-50/40 cursor-pointer active:scale-[0.99] group";
             optionCard.onclick = () => selectOption(index);
           }
 
-          const letterClass = isAnswered || isReviewMode ? (option.isCorrect ? "text-emerald-500" : answeredIndex === index ? "text-rose-400" : "text-slate-400") : "text-slate-400 group-hover:text-brand-500";
-          const textClass = isAnswered || isReviewMode ? (option.isCorrect ? "text-emerald-950 font-bold" : answeredIndex === index ? "text-rose-950 font-bold" : "text-slate-600 font-medium") : "text-slate-700 font-medium";
+          const letterClass =
+            isAnswered || isReviewMode
+              ? option.isCorrect
+                ? "text-emerald-500"
+                : answeredIndex === index
+                  ? "text-rose-400"
+                  : "text-slate-400"
+              : "text-slate-400 group-hover:text-brand-500";
+          const textClass =
+            isAnswered || isReviewMode
+              ? option.isCorrect
+                ? "text-emerald-950 font-bold"
+                : answeredIndex === index
+                  ? "text-rose-950 font-bold"
+                  : "text-slate-600 font-medium"
+              : "text-slate-700 font-medium";
 
-          let cardContent = `<div class="flex items-start gap-3 w-full"><span class="font-extrabold ${letterClass} select-none transition-colors shrink-0">${alphabet[index]}.</span><div class="flex-1 min-w-0"><p class="${textClass} leading-relaxed transition-colors">${option.text}</p>`;
+          let cardContent = `<div class="flex items-start gap-2 w-full"><span class="font-extrabold ${letterClass} leading-normal select-none transition-colors shrink-0">${alphabet[index]}.</span><div class="flex-1 min-w-0"><p class="${textClass} leading-normal transition-colors">${option.text}</p>`;
 
           if (isAnswered || isReviewMode) {
             if (option.isCorrect) {
-              cardContent += `<div class="text-emerald-600 font-extrabold text-sm mt-2 flex items-center gap-1.5 animate-fadeIn"><i class="ph-bold ph-check"></i> Respuesta correcta</div><p class="text-sm text-emerald-800/85 leading-relaxed mt-1.5 font-semibold animate-fadeIn">${option.rationale}</p>`;
+              cardContent += `<div class="text-emerald-600 font-extrabold text-sm leading-normal mt-2 flex items-center gap-1.5 animate-fadeIn"><i class="ph-bold ph-check"></i> Respuesta correcta</div><p class="text-sm text-emerald-800/85 leading-normal mt-1.5 font-semibold animate-fadeIn">${option.rationale}</p>`;
             } else if (answeredIndex === index && !option.isCorrect) {
-              cardContent += `<div class="text-rose-600 font-extrabold text-sm mt-2 flex items-center gap-1.5 animate-fadeIn"><i class="ph-bold ph-x"></i> Respuesta incorrecta</div><p class="text-sm text-rose-800/85 leading-relaxed mt-1.5 font-semibold animate-fadeIn">${option.rationale}</p>`;
+              cardContent += `<div class="text-rose-600 font-extrabold text-sm leading-normal mt-2 flex items-center gap-1.5 animate-fadeIn"><i class="ph-bold ph-x"></i> Respuesta incorrecta</div><p class="text-sm text-rose-800/85 leading-normal mt-1.5 font-semibold animate-fadeIn">${option.rationale}</p>`;
             } else {
-              cardContent += `<p class="text-xs text-slate-500/80 leading-relaxed mt-2.5 font-normal border-t border-slate-100/60 pt-2 animate-fadeIn">${option.rationale}</p>`;
+              cardContent += `<p class="text-sm text-slate-500/80 leading-normal mt-1.5 font-normal animate-fadeIn">${option.rationale}</p>`;
             }
           }
           cardContent += `</div></div>`;
@@ -645,19 +766,25 @@
 
         if (isReviewMode) {
           nextBtn.disabled = false;
-          nextBtn.className = "flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2 ml-auto";
-          nextBtn.innerHTML = currentQuestionIndex === quizData.quiz.length - 1 ? `Finalizar Revisión <i class="ph-bold ph-check text-lg"></i>` : `Siguiente <i class="ph-bold ph-caret-right text-lg"></i>`;
+          nextBtn.className =
+            "flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2 ml-auto";
+          nextBtn.innerHTML =
+            currentQuestionIndex === quizData.quiz.length - 1
+              ? `Finalizar Revisión <i class="ph-bold ph-check text-lg"></i>`
+              : `Siguiente <i class="ph-bold ph-caret-right text-lg"></i>`;
         } else {
           nextBtn.disabled = false;
           if (isAnswered) {
-            nextBtn.className = "flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 ml-auto group";
+            nextBtn.className =
+              "flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 ml-auto group";
             if (currentQuestionIndex === quizData.quiz.length - 1) {
               nextBtn.innerHTML = `Listo <i class="ph-bold ph-check text-lg transform group-hover:scale-110 transition-transform"></i>`;
             } else {
               nextBtn.innerHTML = `Siguiente <i class="ph-bold ph-caret-right text-lg transform group-hover:translate-x-1 transition-transform"></i>`;
             }
           } else {
-            nextBtn.className = "flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl border border-slate-200/60 shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 ml-auto group";
+            nextBtn.className =
+              "flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl border border-slate-200/60 shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 ml-auto group";
             nextBtn.innerHTML = `Omitir <i class="ph-bold ph-caret-right text-lg transform group-hover:translate-x-1 transition-transform"></i>`;
           }
         }
@@ -854,26 +981,48 @@
         goHome();
       }
     </script>
-    <div id="quiz-navigation-bar" class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200/80 px-6 py-4 md:px-8 z-40 flex justify-center">
+    <div
+      id="quiz-navigation-bar"
+      class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200/80 px-6 py-3 md:px-8 z-40 flex justify-center">
       <div class="w-full max-w-2xl">
         <!-- Botones de Bienvenida -->
         <div id="nav-welcome-buttons" class="hidden justify-center w-full">
-          <button onclick="startQuiz()" class="w-full sm:w-auto px-10 py-4 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 flex items-center justify-center gap-3 group">
-            ¡Empezar cuestionario!
-            <i class="ph-bold ph-arrow-right text-lg transform group-hover:translate-x-1 transition-transform"></i>
+          <button
+            id="start-quiz-button"
+            disabled
+            onclick="startQuiz()"
+            class="w-full sm:w-auto px-8 py-3 bg-slate-200 text-slate-400 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 cursor-not-allowed">
+            <span>Cargando cuestionario...</span>
+            <i class="ph-bold ph-circle-notch animate-spin text-lg"></i>
           </button>
         </div>
 
         <!-- Botones del Cuestionario -->
         <div id="nav-quiz-buttons" class="hidden justify-between items-center gap-4 w-full">
-          <button id="prev-button" onclick="prevQuestion()" class="hidden flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl border border-slate-200/60 shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"><i class="ph-bold ph-caret-left text-lg"></i> Anterior</button>
-          <button id="next-button" onclick="nextQuestion()" class="flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-400 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 ml-auto"></button>
+          <button
+            id="prev-button"
+            onclick="prevQuestion()"
+            class="hidden flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl border border-slate-200/60 shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
+            <i class="ph-bold ph-caret-left text-lg"></i> Anterior
+          </button>
+          <button
+            id="next-button"
+            onclick="nextQuestion()"
+            class="flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3 bg-slate-100 text-slate-400 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 ml-auto"></button>
         </div>
 
         <!-- Botones de Resultados -->
         <div id="nav-result-buttons" class="hidden flex-col sm:flex-row gap-4 justify-center items-center w-full">
-          <button onclick="enterReviewMode()" class="flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3.5 bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 shadow-sm border border-brand-200"><i class="ph-bold ph-eyeglasses text-xl"></i> Revisar cuestionario</button>
-          <button onclick="restartQuiz()" class="flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3.5 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 shadow-sm"><i class="ph-bold ph-arrow-counter-clockwise text-xl"></i> Intentar de nuevo</button>
+          <button
+            onclick="enterReviewMode()"
+            class="flex-1 sm:flex-initial w-full sm:w-auto px-6 py-2.5 bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 shadow-sm border border-brand-200">
+            <i class="ph-bold ph-eyeglasses text-xl"></i> Revisar cuestionario
+          </button>
+          <button
+            onclick="restartQuiz()"
+            class="flex-1 sm:flex-initial w-full sm:w-auto px-6 py-2.5 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 shadow-sm">
+            <i class="ph-bold ph-arrow-counter-clockwise text-xl"></i> Intentar de nuevo
+          </button>
         </div>
       </div>
     </div>
