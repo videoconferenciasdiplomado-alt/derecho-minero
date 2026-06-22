@@ -1,0 +1,542 @@
+
+{
+  "quiz": [
+    {
+      "question": "¿Cuál es la función estratégica de la seguridad jurídica en el sector minero según el material?",
+      "answerOptions": [
+        {
+          "text": "Garantizar inversiones de gran envergadura a largo plazo.",
+          "isCorrect": true,
+          "rationale": "La seguridad jurídica actúa como la pieza clave que protege el capital invertido en proyectos que requieren mucho tiempo para madurar."
+        },
+        {
+          "text": "Eliminar la necesidad de fiscalización por parte del Estado.",
+          "isCorrect": false,
+          "rationale": "El Estado mantiene siempre la propiedad de los recursos y la potestad de supervisión a través de organismos como el INEMED."
+        },
+        {
+          "text": "Permitir que los particulares sean dueños de los recursos bajo tierra.",
+          "isCorrect": false,
+          "rationale": "La propiedad absoluta de los recursos bajo tierra siempre pertenece al Estado, incluso con seguridad jurídica."
+        },
+        {
+          "text": "Reducir los costos operativos de exploración mediante beneficios tributarios.",
+          "isCorrect": false,
+          "rationale": "El texto se enfoca en la estabilidad contractual y legal para proteger la inversión, no en incentivos fiscales específicos."
+        }
+      ],
+      "hint": "Se menciona como una pieza estratégica para proyectos que demandan un capital masivo."
+    },
+    {
+      "question": "¿Cómo se describe la relación normativa entre la Ley General de Minería y el Código Civil?",
+      "answerOptions": [
+        {
+          "text": "La Ley General de Minería es la norma principal y el Código Civil actúa de forma supletoria o de respaldo.",
+          "isCorrect": true,
+          "rationale": "Se utiliza el concepto de 'completitud normativa' donde la ley minera lleva la batuta y el código civil solo entra si no hay contradicción."
+        },
+        {
+          "text": "El Código Civil tiene prioridad sobre la Ley General de Minería en contratos de transferencia.",
+          "isCorrect": false,
+          "rationale": "La ley minera es hiperestricta y siempre prevalece sobre las normas civiles comunes en este sector."
+        },
+        {
+          "text": "Ambas leyes tienen la misma jerarquía y se aplican simultáneamente sin orden de prelación.",
+          "isCorrect": false,
+          "rationale": "Existe una jerarquía clara donde el derecho minero opera como un 'universo paralelo' con sus propias reglas técnicas."
+        },
+        {
+          "text": "La Ley General de Minería solo regula la parte técnica, mientras que el Código Civil regula todos los contratos.",
+          "isCorrect": false,
+          "rationale": "La Ley General de Minería define formalidades contractuales específicas que el Código Civil no puede ignorar."
+        }
+      ],
+      "hint": "Considere qué ley es el 'jefe absoluto' y cuál es el 'actor de reparto'."
+    },
+    {
+      "question": "¿Qué dos pasos son obligatorios para que un contrato minero tenga validez y protección legal?",
+      "answerOptions": [
+        {
+          "text": "Elevar el contrato a escritura pública e inscribirlo en el registro de minería de la Sunarp.",
+          "isCorrect": true,
+          "rationale": "Estos pasos constituyen el circuito legal obligatorio para lograr prioridad y protección frente al Estado y terceros."
+        },
+        {
+          "text": "Firmar un contrato privado legalizado ante notario y presentarlo al INEMED.",
+          "isCorrect": false,
+          "rationale": "Los tratos privados no bastan; se requiere elevar el documento a escritura pública e inscripción registral."
+        },
+        {
+          "text": "Obtener la aprobación del gobierno regional y publicar el acuerdo en el diario oficial.",
+          "isCorrect": false,
+          "rationale": "Aunque existen niveles de supervisión, la validez contractual depende de la formalidad notarial y registral."
+        },
+        {
+          "text": "Registrar el contrato en el catastro minero y pagar la prima de suscripción anual.",
+          "isCorrect": false,
+          "rationale": "El registro fundamental es el de minería en la Sunarp para otorgar fe pública registral al derecho."
+        }
+      ],
+      "hint": "No bastan los tratos de palabra; se requiere un notario y un registro público."
+    },
+    {
+      "question": "¿Cuál es una consecuencia de no inscribir un contrato minero en el registro correspondiente?",
+      "answerOptions": [
+        {
+          "text": "El contrato se considera inexistente para el Estado y no permite defensa administrativa.",
+          "isCorrect": true,
+          "rationale": "Un contrato no inscrito es un 'fantasma' que no otorga derechos oponibles ni protección ante intentos de anulación."
+        },
+        {
+          "text": "Se aplica una multa automática equivalente al $10\\%$ del valor del contrato.",
+          "isCorrect": false,
+          "rationale": "La sanción no es pecuniaria inicial, sino la nulidad de efectos frente a terceros y al Estado."
+        },
+        {
+          "text": "El titular pierde automáticamente la concesión a favor del Estado.",
+          "isCorrect": false,
+          "rationale": "No causa la pérdida inmediata de la concesión, sino que el contrato específico sobre ella es 'papel mojado'."
+        },
+        {
+          "text": "El Código Civil sustituye automáticamente las cláusulas faltantes por mandato legal.",
+          "isCorrect": false,
+          "rationale": "El Código Civil no puede subsanar la falta de formalidad registral requerida por la ley minera."
+        }
+      ],
+      "hint": "Piense en la invisibilidad legal del documento ante las autoridades."
+    },
+    {
+      "question": "En un contrato de transferencia minera, ¿qué figura del derecho civil queda expresamente excluida para garantizar la estabilidad del negocio?",
+      "answerOptions": [
+        {
+          "text": "La rescisión por lesión.",
+          "isCorrect": true,
+          "rationale": "Se elimina esta posibilidad para evitar que los vendedores intenten anular el trato alegando un precio muy bajo posteriormente."
+        },
+        {
+          "text": "La cláusula de arbitraje.",
+          "isCorrect": false,
+          "rationale": "El arbitraje es común y no está prohibido; lo que se busca es blindar la transacción frente a reclamos tardíos de valor."
+        },
+        {
+          "text": "La responsabilidad por vicios ocultos.",
+          "isCorrect": false,
+          "rationale": "El material resalta la exclusión de la lesión y el retracto, no menciona la eliminación de vicios ocultos."
+        },
+        {
+          "text": "La capacidad legal de los herederos para intervenir.",
+          "isCorrect": false,
+          "rationale": "Los herederos pueden intervenir, pero bajo las reglas de la SMRL si hay multiplicidad."
+        }
+      ],
+      "hint": "Se trata de un mecanismo civil que permite quejarse por haber vendido 'muy barato'."
+    },
+    {
+      "question": "¿Cuál es el plazo de caducidad tajante para cualquier reclamo relacionado con un contrato de transferencia minera?",
+      "answerOptions": [
+        {
+          "text": "10 años.",
+          "isCorrect": true,
+          "rationale": "Este plazo es absoluto y sin excepciones, diseñado para otorgar seguridad total al comprador tras una década."
+        },
+        {
+          "text": "5 años.",
+          "isCorrect": false,
+          "rationale": "5 años es el plazo máximo para los contratos de opción, no para la caducidad de reclamos en transferencias."
+        },
+        {
+          "text": "20 años.",
+          "isCorrect": false,
+          "rationale": "El sistema minero prefiere plazos más cortos que el máximo civil para agilizar la rotación de activos."
+        },
+        {
+          "text": "60 días.",
+          "isCorrect": false,
+          "rationale": "60 días es el plazo para reconstituir la pluralidad de socios en una SMRL."
+        }
+      ],
+      "hint": "Es un número de dos dígitos que representa una década."
+    },
+    {
+      "question": "¿Qué diferencia fundamental existe entre la propiedad civil de un terreno y la propiedad en una concesión minera?",
+      "answerOptions": [
+        {
+          "text": "En minería, el comprador solo adquiere el derecho de explotar y extraer el mineral, no el recurso 'in situ'.",
+          "isCorrect": true,
+          "rationale": "El Estado retiene la propiedad del mineral mientras esté en la roca; la concesión otorga el derecho de hacerlo suyo al extraerlo."
+        },
+        {
+          "text": "La propiedad minera es perpetua mientras se pague el impuesto, a diferencia de la civil.",
+          "isCorrect": false,
+          "rationale": "Ambas pueden ser duraderas, pero la distinción clave es quién es el dueño del recurso enterrado."
+        },
+        {
+          "text": "La propiedad civil requiere registro en Sunarp, mientras que la minera es automática por descubrimiento.",
+          "isCorrect": false,
+          "rationale": "Ambas requieren registro para seguridad jurídica; el descubrimiento por sí solo no otorga propiedad."
+        },
+        {
+          "text": "El titular minero es dueño absoluto del suelo y del subsuelo sin restricciones.",
+          "isCorrect": false,
+          "rationale": "El titular solo tiene derechos sobre la actividad minera; el Estado es el dueño originario del recurso."
+        }
+      ],
+      "hint": "Piense en quién es el dueño del tesoro mientras sigue bajo tierra."
+    },
+    {
+      "question": "En un contrato de sesión minera, ¿qué sucede con la responsabilidad del titular original (cedente) ante desastres ambientales?",
+      "answerOptions": [
+        {
+          "text": "Mantiene una responsabilidad solidaria o subsidiaria frente al Estado.",
+          "isCorrect": true,
+          "rationale": "Firmar una sesión no exime al dueño registral de los riesgos normativos y las acciones de entes como la OEFA."
+        },
+        {
+          "text": "La responsabilidad se traslada íntegramente al cesionario desde la firma del contrato.",
+          "isCorrect": false,
+          "rationale": "Este es un error común; el titular original sigue vinculado administrativamente ante el regulador."
+        },
+        {
+          "text": "Queda libre de responsabilidad si el contrato fue elevado a escritura pública.",
+          "isCorrect": false,
+          "rationale": "La formalidad del contrato no elimina la responsabilidad solidaria impuesta por la ley ambiental y minera."
+        },
+        {
+          "text": "Solo responde económicamente si el operador se declara en quiebra.",
+          "isCorrect": false,
+          "rationale": "La responsabilidad es más amplia y puede ser directa o solidaria independientemente de la solvencia del operador."
+        }
+      ],
+      "hint": "El dueño registral no puede simplemente 'lavarse las manos' tras alquilar la mina."
+    },
+    {
+      "question": "¿Cuál es la función de la cláusula de 'reversión expresa' en un contrato de sesión?",
+      "answerOptions": [
+        {
+          "text": "Permitir que el dueño recupere el control total de la mina inmediatamente ante fallas del operador.",
+          "isCorrect": true,
+          "rationale": "Es una herramienta de supervivencia corporativa que rompe el contrato ante infracciones antes de que el Estado intervenga la concesión."
+        },
+        {
+          "text": "Obligar al operador a pagar todas las multas impuestas por el Estado.",
+          "isCorrect": false,
+          "rationale": "Esa es la función de la cláusula de indemnidad, no de la reversión."
+        },
+        {
+          "text": "Garantizar que el mineral extraído regrese al titular si no se paga la retribución.",
+          "isCorrect": false,
+          "rationale": "La reversión se refiere a la recuperación del derecho de operación y control de la concesión misma."
+        },
+        {
+          "text": "Transferir automáticamente la propiedad al operador tras un periodo de 5 años.",
+          "isCorrect": false,
+          "rationale": "La reversión busca lo contrario: que el control regrese al dueño original."
+        }
+      ],
+      "hint": "Es un mecanismo para recuperar las 'llaves' de la mina ante el primer error grave."
+    },
+    {
+      "question": "En el contrato de opción minera, ¿cuál es el plazo máximo permitido por ley?",
+      "answerOptions": [
+        {
+          "text": "5 años.",
+          "isCorrect": true,
+          "rationale": "La ley busca evitar que los recursos queden congelados indefinidamente esperando una decisión."
+        },
+        {
+          "text": "10 años.",
+          "isCorrect": false,
+          "rationale": "10 años es el plazo de caducidad para reclamos en transferencias, no el límite de una opción."
+        },
+        {
+          "text": "2 años.",
+          "isCorrect": false,
+          "rationale": "Aunque se pueden pactar dos años, la ley permite un techo máximo superior."
+        },
+        {
+          "text": "Indefinido, mientras las partes estén de acuerdo.",
+          "isCorrect": false,
+          "rationale": "El sector minero prohíbe los plazos indefinidos para asegurar la puesta en producción del recurso."
+        }
+      ],
+      "hint": "Es el mismo número de años que suele durar un periodo presidencial en varios países."
+    },
+    {
+      "question": "¿Qué ocurre si las partes omiten el plazo en un contrato de opción minera?",
+      "answerOptions": [
+        {
+          "text": "La ley asume automáticamente el plazo máximo de 5 años.",
+          "isCorrect": true,
+          "rationale": "La normativa minera es tajante y suple la omisión con el tope legal permitido."
+        },
+        {
+          "text": "El contrato se declara nulo por falta de un elemento esencial.",
+          "isCorrect": false,
+          "rationale": "A diferencia de otros elementos, la ley rescata el contrato aplicando el plazo supletorio legal."
+        },
+        {
+          "text": "Se debe acudir a un juez para que determine un plazo razonable.",
+          "isCorrect": false,
+          "rationale": "La ley minera evita la discrecionalidad judicial estableciendo un plazo automático."
+        },
+        {
+          "text": "El contrato se convierte en una transferencia definitiva inmediata.",
+          "isCorrect": false,
+          "rationale": "Una opción no puede transformarse en venta sin la manifestación de voluntad del optante."
+        }
+      ],
+      "hint": "La ley llena el vacío aplicando el límite superior permitido."
+    },
+    {
+      "question": "¿Por qué es fundamental pactar una 'prima' en el contrato de opción?",
+      "answerOptions": [
+        {
+          "text": "Para evitar que el contrato sea calificado como un acto gratuito o donación, lo que lo haría vulnerable.",
+          "isCorrect": true,
+          "rationale": "La prima otorga el carácter oneroso necesario para validar legalmente el compromiso del titular."
+        },
+        {
+          "text": "Para cubrir los impuestos de transferencia antes de que ocurra la venta.",
+          "isCorrect": false,
+          "rationale": "Los impuestos se pagan sobre el contrato definitivo; la prima es una compensación por la exclusividad de la opción."
+        },
+        {
+          "text": "Es un requisito exigido por la Sunafil para proteger a los trabajadores.",
+          "isCorrect": false,
+          "rationale": "La Sunafil se encarga de temas laborales, no de la validez estructural de los contratos de opción."
+        },
+        {
+          "text": "Para financiar los estudios de viabilidad que realiza el titular.",
+          "isCorrect": false,
+          "rationale": "Generalmente, los estudios los realiza el optante; la prima es para el titular por 'atarse las manos'."
+        }
+      ],
+      "hint": "Piense en qué hace que un contrato sea 'oneroso' y no un simple regalo."
+    },
+    {
+      "question": "¿Sobre qué tipo de activos está terminantemente prohibido constituir una hipoteca minera?",
+      "answerOptions": [
+        {
+          "text": "Bienes futuros o petitorios que aún están en trámite administrativo.",
+          "isCorrect": true,
+          "rationale": "La hipoteca requiere certeza jurídica absoluta, la cual solo se tiene con una resolución de concesión firme."
+        },
+        {
+          "text": "Concesiones que ya tienen una resolución firme.",
+          "isCorrect": false,
+          "rationale": "Estas son precisamente las únicas sobre las que sí se puede constituir la hipoteca."
+        },
+        {
+          "text": "Maquinaria pesada ubicada dentro de la mina.",
+          "isCorrect": false,
+          "rationale": "El texto se enfoca en la prohibición sobre el derecho minero en trámite, no excluye otras garantías mobiliarias."
+        },
+        {
+          "text": "Concesiones de minería pequeña supervisadas por regiones.",
+          "isCorrect": false,
+          "rationale": "La prohibición es general por el estado del derecho (trámite vs. firme), no por el tamaño de la minería."
+        }
+      ],
+      "hint": "La ley no permite hipotecar algo que todavía no 'existe' formalmente o es solo una solicitud."
+    },
+    {
+      "question": "¿Qué elemento es indispensable para que una hipoteca minera tenga rango de prioridad frente a otros acreedores?",
+      "answerOptions": [
+        {
+          "text": "La inscripción registral.",
+          "isCorrect": true,
+          "rationale": "Sin inscripción, la hipoteca no existe en el mundo jurídico y no puede oponerse a otros."
+        },
+        {
+          "text": "La aprobación del INEMED mediante resolución directoral.",
+          "isCorrect": false,
+          "rationale": "Aunque el INEMED maneja concesiones, la hipoteca es un acto registral en la Sunarp."
+        },
+        {
+          "text": "El depósito del monto del préstamo en el Banco de la Nación.",
+          "isCorrect": false,
+          "rationale": "El flujo del dinero es privado; la validez de la garantía es lo que depende del registro."
+        },
+        {
+          "text": "La certificación de reservas probadas por un ingeniero colegiado.",
+          "isCorrect": false,
+          "rationale": "Las reservas son un dato comercial; la garantía legal se basa en la identificación de la concesión y su registro."
+        }
+      ],
+      "hint": "Es el mismo paso crítico necesario para los contratos de transferencia y sesión."
+    },
+    {
+      "question": "¿Cuál es una característica clave del contrato de riesgo compartido (Joint Venture) frente al Estado?",
+      "answerOptions": [
+        {
+          "text": "Los miembros asumen responsabilidad solidaria ante cualquier infracción o desastre.",
+          "isCorrect": true,
+          "rationale": "A pesar de mantener autonomía interna, para el Estado todos responden por el total de las obligaciones comunes."
+        },
+        {
+          "text": "Se crea una nueva persona jurídica con patrimonio independiente.",
+          "isCorrect": false,
+          "rationale": "El Joint Venture es puramente contractual y no crea una empresa nueva separada de sus socios."
+        },
+        {
+          "text": "Cada socio solo responde por el porcentaje de su participación en el contrato.",
+          "isCorrect": false,
+          "rationale": "Esto aplicaría internamente, pero ante el Estado la responsabilidad es solidaria (por el todo)."
+        },
+        {
+          "text": "Requiere obligatoriamente un administrador nombrado por el gobierno regional.",
+          "isCorrect": false,
+          "rationale": "La administración es privada y decidida por los consorciados en el contrato."
+        }
+      ],
+      "hint": "Internamente son independientes, pero externamente el Estado los ve como un solo frente responsable."
+    },
+    {
+      "question": "¿En qué situación se crea de forma automática una Sociedad Minera de Responsabilidad Limitada (SMRL)?",
+      "answerOptions": [
+        {
+          "text": "Cuando existen múltiples peticionarios simultáneos o varios herederos de una concesión.",
+          "isCorrect": true,
+          "rationale": "La SMRL surge por 'imperio de la ley' para organizar la copropiedad involuntaria o múltiple."
+        },
+        {
+          "text": "Cuando una empresa minera decide cotizar en la bolsa de valores.",
+          "isCorrect": false,
+          "rationale": "La salida a bolsa es un acto voluntario y generalmente bajo otras formas societarias como la S.A."
+        },
+        {
+          "text": "Cuando el Estado decide nacionalizar parcialmente un recurso estratégico.",
+          "isCorrect": false,
+          "rationale": "La SMRL es una figura para particulares que se encuentran compartiendo un derecho por ley."
+        },
+        {
+          "text": "Tras 5 años de operación exitosa bajo un contrato de Joint Venture.",
+          "isCorrect": false,
+          "rationale": "El Joint Venture no se convierte automáticamente en SMRL; son figuras distintas."
+        }
+      ],
+      "hint": "Ocurre cuando la ley impone la sociedad porque hay varios dueños 'juntos' de repente."
+    },
+    {
+      "question": "¿Cómo se decide la administración de una SMRL si los socios no logran ponerse de acuerdo?",
+      "answerOptions": [
+        {
+          "text": "Recae en los socios siguiendo el orden alfabético de sus apellidos.",
+          "isCorrect": true,
+          "rationale": "Es un mecanismo pragmático de la ley minera para evitar la parálisis de la operación por falta de consenso."
+        },
+        {
+          "text": "El socio con mayor porcentaje de alícuotas asume el control total.",
+          "isCorrect": false,
+          "rationale": "La ley establece el orden alfabético como regla supletoria de desempate, no el porcentaje de capital."
+        },
+        {
+          "text": "El INEMED nombra a un interventor externo con cargo a las utilidades.",
+          "isCorrect": false,
+          "rationale": "La administración sigue siendo responsabilidad de los socios bajo la regla alfabética antes que una intervención estatal."
+        },
+        {
+          "text": "La sociedad se disuelve inmediatamente por falta de órganos de gobierno.",
+          "isCorrect": false,
+          "rationale": "La ley busca precisamente evitar la disolución mediante reglas automáticas de administración."
+        }
+      ],
+      "hint": "Es un sistema curioso que utiliza las letras del abecedario."
+    },
+    {
+      "question": "¿Qué sucede en una SMRL si un solo socio adquiere el $100\\%$ de las participaciones?",
+      "answerOptions": [
+        {
+          "text": "Tiene 60 días para transferir una fracción a un tercero o la sociedad se extingue.",
+          "isCorrect": true,
+          "rationale": "El régimen de SMRL no permite sociedades unipersonales y exige pluralidad de socios bajo pena de extinción."
+        },
+        {
+          "text": "La sociedad se transforma automáticamente en una empresa unipersonal de responsabilidad limitada.",
+          "isCorrect": false,
+          "rationale": "La SMRL tiene reglas rígidas; si no se reconstituye la pluralidad en el plazo legal, desaparece."
+        },
+        {
+          "text": "Se le otorga un año de plazo para encontrar nuevos inversionistas antes de ser multado.",
+          "isCorrect": false,
+          "rationale": "El plazo es mucho más corto y drástico: solo 60 días."
+        },
+        {
+          "text": "El Estado adquiere el $1\\%$ de las acciones para mantener la pluralidad forzosa.",
+          "isCorrect": false,
+          "rationale": "Es responsabilidad del titular privado realizar la transferencia para salvar la sociedad."
+        }
+      ],
+      "hint": "Hay un 'reloj de arena' de aproximadamente dos meses."
+    },
+    {
+      "question": "¿Cuál es la recomendación final del material para proteger los activos mineros?",
+      "answerOptions": [
+        {
+          "text": "Realizar auditorías periódicas de vigencia de garantías e inscripciones.",
+          "isCorrect": true,
+          "rationale": "Esto previene la pérdida de concesiones valiosas por simples fallas o descuidos administrativos."
+        },
+        {
+          "text": "Mantener todos los contratos en secreto para evitar la competencia.",
+          "isCorrect": false,
+          "rationale": "El secreto es contraproducente; sin registro (publicidad) el derecho es vulnerable."
+        },
+        {
+          "text": "Utilizar siempre el Código Civil como norma principal en los contratos.",
+          "isCorrect": false,
+          "rationale": "El material enfatiza que la Ley General de Minería debe mandar y el Código Civil solo apoyar."
+        },
+        {
+          "text": "Delegar toda la responsabilidad ambiental al operador mediante contratos privados.",
+          "isCorrect": false,
+          "rationale": "Esto no protege al titular, ya que el Estado mantiene la responsabilidad solidaria registral."
+        }
+      ],
+      "hint": "Se trata de un control preventivo sobre la documentación y los registros."
+    },
+    {
+      "question": "¿Cómo se dividen los derechos de propiedad dentro de una Sociedad Minera de Responsabilidad Limitada?",
+      "answerOptions": [
+        {
+          "text": "En participaciones medidas por alícuotas según el aporte o cuota de herencia.",
+          "isCorrect": true,
+          "rationale": "A diferencia de las sociedades anónimas, aquí se usan alícuotas calculadas matemáticamente sobre el total."
+        },
+        {
+          "text": "En acciones nominativas que se pueden vender libremente en la bolsa.",
+          "isCorrect": false,
+          "rationale": "Las SMRL son estructuras más cerradas y técnicas que no operan mediante acciones de mercado abierto."
+        },
+        {
+          "text": "En derechos de explotación por hectáreas geográficas específicas.",
+          "isCorrect": false,
+          "rationale": "La sociedad es dueña de la concesión como un todo; los socios tienen cuotas (alícuotas) del derecho social."
+        },
+        {
+          "text": "En bonos de producción pagaderos al final del ejercicio fiscal.",
+          "isCorrect": false,
+          "rationale": "Las alícuotas representan propiedad sobre la sociedad, no simplemente un derecho a cobro de bonos."
+        }
+      ],
+      "hint": "No se llaman acciones, sino una palabra que empieza con 'a' y suena a matemáticas."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Régimen de contratación minera",
+      "Contratos de transferencia y sesión",
+      "Garantías mineras (hipoteca)",
+      "Contratos de opción minera",
+      "Sociedades Mineras de Responsabilidad Limitada (SMRL)",
+      "Formalidad registral y seguridad jurídica"
+    ],
+    "followUp": [
+      "Procedimiento de titulación minera ante el INEMED",
+      "Marco sancionador ambiental de la OEFA en minería",
+      "Derecho registral aplicado a recursos naturales",
+      "Financiamiento de proyectos mineros mediante Project Finance",
+      "Responsabilidad social y consulta previa en el sector extractivo"
+    ]
+  }
+}

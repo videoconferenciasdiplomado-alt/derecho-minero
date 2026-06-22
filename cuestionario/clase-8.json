@@ -1,0 +1,546 @@
+
+{
+  "quiz": [
+    {
+      "question": "¿Cuál es la base constitucional que establece que los recursos minerales son patrimonio de la nación en el Perú?",
+      "answerOptions": [
+        {
+          "text": "El artículo 66 de la Constitución Política.",
+          "isCorrect": true,
+          "rationale": "Este artículo fundamenta el dominio estatal sobre los recursos naturales y es el cimiento de todo el derecho minero peruano."
+        },
+        {
+          "text": "El Decreto Legislativo 708.",
+          "isCorrect": false,
+          "rationale": "Este decreto se enfoca en la competitividad y seguridad jurídica, no es la base constitucional primordial."
+        },
+        {
+          "text": "La Ley Orgánica 26821.",
+          "isCorrect": false,
+          "rationale": "Esta ley regula el aprovechamiento sostenible, pero se encuentra un escalón debajo del mandato constitucional."
+        },
+        {
+          "text": "El Texto Único Ordenado (TUO).",
+          "isCorrect": false,
+          "rationale": "El TUO dicta las reglas operativas específicas del día a día, no el principio de soberanía nacional."
+        }
+      ],
+      "hint": "Se trata del 'gran ecualizador' mencionado como la raíz de todo el tablero de juego legal."
+    },
+    {
+      "question": "Según el marco legal peruano, ¿en qué estado el Estado mantiene el dominio absoluto e inalienable sobre los minerales?",
+      "answerOptions": [
+        {
+          "text": "Cuando los minerales están in situ (enterrados en su estado natural).",
+          "isCorrect": true,
+          "rationale": "La ley establece que el dominio estatal es total mientras el recurso no haya sido extraído del yacimiento."
+        },
+        {
+          "text": "Una vez que el mineral ha sido extraído y procesado.",
+          "isCorrect": false,
+          "rationale": "Al ser extraídos, los minerales entran en una dinámica distinta de propiedad permitida por la concesión."
+        },
+        {
+          "text": "Únicamente cuando se encuentran en áreas naturales protegidas.",
+          "isCorrect": false,
+          "rationale": "El dominio estatal sobre los yacimientos es general en todo el territorio, no se limita a zonas protegidas."
+        },
+        {
+          "text": "Cuando son transportados fuera de la concesión minera.",
+          "isCorrect": false,
+          "rationale": "El transporte es una actividad concesionable, pero el dominio inalienable se refiere al estado natural del recurso."
+        }
+      ],
+      "hint": "Considere la distinción entre el recurso enterrado y el recurso ya extraído para el comercio."
+    },
+    {
+      "question": "¿Cuál es la implicancia directa de que los minerales sean recursos no renovables en la planificación minera?",
+      "answerOptions": [
+        {
+          "text": "La obligación de planificar el cierre de mina desde el primer día de operaciones.",
+          "isCorrect": true,
+          "rationale": "Debido a la finitud del recurso, el sistema exige garantizar la estabilidad física y química del área al agotarse el yacimiento."
+        },
+        {
+          "text": "La posibilidad de extender indefinidamente la extracción sin permisos adicionales.",
+          "isCorrect": false,
+          "rationale": "La naturaleza finita del recurso hace que la extracción conduzca inevitablemente al agotamiento y cese de la actividad."
+        },
+        {
+          "text": "La exoneración de impuestos debido al agotamiento progresivo del capital.",
+          "isCorrect": false,
+          "rationale": "El agotamiento no exonera de responsabilidades; al contrario, impone obligaciones ambientales estrictas."
+        },
+        {
+          "text": "La transferencia automática de la propiedad del suelo al minero.",
+          "isCorrect": false,
+          "rationale": "La finitud del mineral no altera la separación legal entre la propiedad de la superficie y la del subsuelo."
+        }
+      ],
+      "hint": "Piense en qué sucede con el entorno físico una vez que se extrae la última onza de mineral."
+    },
+    {
+      "question": "¿Qué norma se encuentra en la punta de la pirámide legislativa para marcar el ritmo del uso sostenible de los recursos?",
+      "answerOptions": [
+        {
+          "text": "La Ley Orgánica 26821.",
+          "isCorrect": true,
+          "rationale": "Esta ley es el pilar superior que rige el aprovechamiento sostenible de los recursos naturales en general."
+        },
+        {
+          "text": "El Texto Único Ordenado (TUO).",
+          "isCorrect": false,
+          "rationale": "El TUO se sitúa en la base de la pirámide para regular los aspectos operativos cotidianos."
+        },
+        {
+          "text": "El Decreto Legislativo 708.",
+          "isCorrect": false,
+          "rationale": "Este decreto es el nivel intermedio enfocado en la competitividad e inversión."
+        },
+        {
+          "text": "La Ley de Formalización Minera.",
+          "isCorrect": false,
+          "rationale": "Esta es una norma específica para un régimen, no la norma de cabecera para el uso sostenible general."
+        }
+      ],
+      "hint": "Es la norma que está por encima de los decretos legislativos y los textos ordenados."
+    },
+    {
+      "question": "¿Cuál es un error estratégico común al interpretar el alcance de la normativa minera (TUO)?",
+      "answerOptions": [
+        {
+          "text": "Pensar que las normas solo aplican en tierra firme e ignorar el dominio marítimo.",
+          "isCorrect": true,
+          "rationale": "El marco legal se extiende a la plataforma continental, regulando actividades de minería e hidrocarburos en el mar."
+        },
+        {
+          "text": "Creer que el TUO no regula la pequeña minería.",
+          "isCorrect": false,
+          "rationale": "El TUO establece las reglas generales que sirven de base para toda la jerarquía operativa minera."
+        },
+        {
+          "text": "Asumir que el estado tiene dominio sobre los minerales procesados.",
+          "isCorrect": false,
+          "rationale": "El estado tiene dominio sobre los minerales in situ; procesados entran en la esfera del concesionario."
+        },
+        {
+          "text": "Considerar que la comercialización requiere una concesión.",
+          "isCorrect": false,
+          "rationale": "La comercialización es de libre ejercicio, aunque está bajo vigilancia estricta de organismos reguladores."
+        }
+      ],
+      "hint": "Recuerde que el potencial extractivo del Perú no se detiene en la orilla de la playa."
+    },
+    {
+      "question": "¿Qué actividades se clasifican dentro del 'libre ejercicio' por su bajo impacto ambiental?",
+      "answerOptions": [
+        {
+          "text": "Cateo, prospección y comercialización.",
+          "isCorrect": true,
+          "rationale": "Estas actividades no son invasivas (como usar un pico y pala) y por tanto no requieren un título de concesión formal."
+        },
+        {
+          "text": "Exploración y beneficio.",
+          "isCorrect": false,
+          "rationale": "La exploración moderna es altamente invasiva y el beneficio requiere infraestructura compleja, por lo que necesitan concesión."
+        },
+        {
+          "text": "Labor general y transporte minero.",
+          "isCorrect": false,
+          "rationale": "Ambas son actividades que requieren concesión obligatoria debido a su impacto y naturaleza técnica."
+        },
+        {
+          "text": "Muestreo en zonas arqueológicas.",
+          "isCorrect": false,
+          "rationale": "Aunque sea libre ejercicio, está prohibido realizar prospección o cateo en sitios arqueológicos o zonas urbanas."
+        }
+      ],
+      "hint": "Son tareas que no alteran significativamente el entorno y pueden realizarse con herramientas manuales básicas."
+    },
+    {
+      "question": "¿Por qué la exploración moderna requiere obligatoriamente una concesión minera?",
+      "answerOptions": [
+        {
+          "text": "Porque utiliza perforaciones diamantinas y explosivos, siendo altamente invasiva.",
+          "isCorrect": true,
+          "rationale": "A diferencia del cateo, la exploración técnica compromete la estabilidad ambiental y remueve tierra significativamente."
+        },
+        {
+          "text": "Porque es la única forma de asegurar que el mineral sea de alta pureza.",
+          "isCorrect": false,
+          "rationale": "La calidad del mineral es un factor geológico, la concesión es un requisito basado en el impacto ambiental y legal."
+        },
+        {
+          "text": "Porque garantiza que el inversor sea dueño perpetuo del yacimiento.",
+          "isCorrect": false,
+          "rationale": "La concesión es siempre temporal y condicional, nunca otorga propiedad perpetua sobre los recursos."
+        },
+        {
+          "text": "Porque permite realizar actividades en zonas urbanas sin restricciones.",
+          "isCorrect": false,
+          "rationale": "Incluso con concesión, existen limitaciones geográficas estrictas en áreas urbanas o protegidas."
+        }
+      ],
+      "hint": "Considere la diferencia de escala y herramientas entre el libre ejercicio y la minería industrial."
+    },
+    {
+      "question": "Desde una perspectiva legal, ¿cómo se define la naturaleza de una concesión minera?",
+      "answerOptions": [
+        {
+          "text": "Como un acto jurídico administrativo unilateral del Estado.",
+          "isCorrect": true,
+          "rationale": "No es un contrato privado entre iguales, sino una decisión del Estado que impone sus propias reglas de derecho público."
+        },
+        {
+          "text": "Como un contrato privado de compraventa de recursos.",
+          "isCorrect": false,
+          "rationale": "El Estado no vende el yacimiento, solo concede el derecho temporal de aprovechamiento bajo condiciones específicas."
+        },
+        {
+          "text": "Como un acuerdo de libre mercado negociable entre partes.",
+          "isCorrect": false,
+          "rationale": "Las reglas de la concesión están regidas por el derecho público y no están sujetas a la negociación de mercado."
+        },
+        {
+          "text": "Como una cesión de soberanía territorial definitiva.",
+          "isCorrect": false,
+          "rationale": "La soberanía del Estado es inalienable y la concesión es solo un permiso de uso temporal y técnico."
+        }
+      ],
+      "hint": "Piense en quién tiene el poder de dictar las reglas de forma predominante en este vínculo legal."
+    },
+    {
+      "question": "¿En qué consiste el concepto técnico del 'sólido de profundidad'?",
+      "answerOptions": [
+        {
+          "text": "Un volumen tridimensional que se proyecta desde un polígono superficial hacia el centro de la Tierra.",
+          "isCorrect": true,
+          "rationale": "La concesión no es un plano; es un objeto geométrico que se extiende indefinidamente hacia abajo en planos verticales."
+        },
+        {
+          "text": "Un mapa bidimensional anclado a coordenadas UTM.",
+          "isCorrect": false,
+          "rationale": "El mapa es solo la representación superficial; el sólido implica una extensión volumétrica profunda."
+        },
+        {
+          "text": "La distancia máxima de 1000 metros que una mina puede profundizar.",
+          "isCorrect": false,
+          "rationale": "No existe un límite métrico específico de 1000 metros; la ley habla de una proyección hacia el centro terrestre."
+        },
+        {
+          "text": "El área de seguridad que rodea a un tajo abierto.",
+          "isCorrect": false,
+          "rationale": "Esto se refiere a perímetros operativos, no a la definición legal de la extensión del derecho minero."
+        }
+      ],
+      "hint": "Visualice la concesión no como una hoja de papel, sino como una figura geométrica gigante bajo tierra."
+    },
+    {
+      "question": "¿Cuál es la consecuencia legal de la separación entre la propiedad del predio superficial y la concesión minera?",
+      "answerOptions": [
+        {
+          "text": "El concesionario debe negociar servidumbres o acuerdos con el dueño del terreno para acceder al subsuelo.",
+          "isCorrect": true,
+          "rationale": "Tener el título del subsuelo no da derecho automático a usar o transitar por la superficie ajena."
+        },
+        {
+          "text": "El dueño del terreno agrícola se convierte automáticamente en socio de la mina.",
+          "isCorrect": false,
+          "rationale": "Son inmuebles distintos y separados; la propiedad del suelo no otorga derechos sobre los minerales ni viceversa."
+        },
+        {
+          "text": "La concesión minera anula inmediatamente el título de propiedad del agricultor.",
+          "isCorrect": false,
+          "rationale": "Ambas propiedades coexisten legalmente, lo que obliga a mecanismos de negociación para su convivencia."
+        },
+        {
+          "text": "El Estado expropia la superficie sin compensación al otorgar la concesión.",
+          "isCorrect": false,
+          "rationale": "La ley exige acuerdos previos, como servidumbres, respetando el derecho del propietario superficial."
+        }
+      ],
+      "hint": "Recuerde que el subsuelo y la superficie son considerados inmuebles totalmente distintos por el sistema legal."
+    },
+    {
+      "question": "¿Cuáles son los límites de producción y extensión para ser categorizado como Minería Artesanal (PMA)?",
+      "answerOptions": [
+        {
+          "text": "Hasta 1000 hectáreas y 25 toneladas métricas por día.",
+          "isCorrect": true,
+          "rationale": "Estas son las restricciones máximas para el escalón más bajo de la escala de producción minera."
+        },
+        {
+          "text": "Hasta 2000 hectáreas y 350 toneladas métricas por día.",
+          "isCorrect": false,
+          "rationale": "Estas cifras corresponden a la categoría de Pequeño Productor Minero (PPM), no a la artesanal."
+        },
+        {
+          "text": "Más de 2000 hectáreas y producción ilimitada.",
+          "isCorrect": false,
+          "rationale": "Este es el perfil de la Mediana y Gran Minería bajo el régimen general."
+        },
+        {
+          "text": "500 hectáreas y métodos de extracción química avanzada.",
+          "isCorrect": false,
+          "rationale": "La minería artesanal se caracteriza generalmente por métodos manuales y límites de área específicos."
+        }
+      ],
+      "hint": "Es el primer escalón de la escalera productiva, con los límites más reducidos del sistema."
+    },
+    {
+      "question": "¿Por qué las empresas del régimen general suelen utilizar la tercerización o contratistas para la operación de campo?",
+      "answerOptions": [
+        {
+          "text": "Para optimizar costos, evitar múltiples sindicatos y aligerar la carga del reparto de utilidades.",
+          "isCorrect": true,
+          "rationale": "Es una estrategia financiera y administrativa agresiva para manejar la gran masa laboral operativa."
+        },
+        {
+          "text": "Porque el titular de la mina no tiene permitido legalmente contratar personal obrero.",
+          "isCorrect": false,
+          "rationale": "No es una prohibición legal, sino una elección de estructura corporativa para mejorar la rentabilidad."
+        },
+        {
+          "text": "Para transferir toda la responsabilidad por accidentes laborales al contratista.",
+          "isCorrect": false,
+          "rationale": "La ley establece que el titular minero mantiene la responsabilidad ineludible sobre los riesgos laborales (SCTR)."
+        },
+        {
+          "text": "Porque los contratistas son los únicos que poseen la maquinaria pesada.",
+          "isCorrect": false,
+          "rationale": "Las mineras podrían comprar maquinaria, pero prefieren tercerizar el servicio por flexibilidad operativa y económica."
+        }
+      ],
+      "hint": "Considere las ventajas económicas y de gestión de recursos humanos que busca una gran empresa."
+    },
+    {
+      "question": "Según la jurisprudencia de la Corte Suprema, ¿quiénes tienen derecho a una pensión vitalicia por riesgos laborales en una mina?",
+      "answerOptions": [
+        {
+          "text": "Tanto los mineros del socavón como el personal administrativo del campamento expuesto al entorno.",
+          "isCorrect": true,
+          "rationale": "La protección cubre a cualquier trabajador que respire el aire de la operación y desarrolle patologías degenerativas."
+        },
+        {
+          "text": "Únicamente los trabajadores que operan directamente maquinaria pesada o explosivos.",
+          "isCorrect": false,
+          "rationale": "La norma es más amplia y reconoce que enfermedades como la neumoconiosis afectan a quienes comparten el entorno laboral."
+        },
+        {
+          "text": "Solo los empleados directos de la 'planilla dorada'.",
+          "isCorrect": false,
+          "rationale": "El paraguas de protección alcanza también a empleados de contratistas y personal de apoyo en el campamento."
+        },
+        {
+          "text": "Personal administrativo que trabaje exclusivamente en oficinas fuera del campamento minero.",
+          "isCorrect": false,
+          "rationale": "El derecho está ligado a la exposición física al entorno de riesgo de la operación minera real."
+        }
+      ],
+      "hint": "Piense en el alcance del aire y las partículas de polvo en toda el área de la operación minera."
+    },
+    {
+      "question": "¿Cuál es la función principal del REINFO (Registro Integral de Formalización Minera)?",
+      "answerOptions": [
+        {
+          "text": "Funcionar como un salvavidas legal que suspende la persecución penal por minería ilegal.",
+          "isCorrect": true,
+          "rationale": "Es un instrumento excepcional para quienes transitan hacia la formalidad bajo reglas estrictas."
+        },
+        {
+          "text": "Otorgar la propiedad definitiva de los yacimientos a mineros artesanales.",
+          "isCorrect": false,
+          "rationale": "El REINFO es un registro de formalización, no un título de propiedad sobre el patrimonio de la nación."
+        },
+        {
+          "text": "Permitir la minería en áreas naturales protegidas de forma temporal.",
+          "isCorrect": false,
+          "rationale": "Está terminantemente prohibido usar el REINFO para operar en áreas naturales protegidas."
+        },
+        {
+          "text": "Exonerar del pago de regalías y derechos de vigencia para siempre.",
+          "isCorrect": false,
+          "rationale": "El proceso de formalización implica cumplir eventualmente con todas las obligaciones económicas del sector."
+        }
+      ],
+      "hint": "Es una herramienta legal de excepción diseñada para evitar la cárcel mientras se formalizan."
+    },
+    {
+      "question": "¿Qué requisito es indispensable para mantener vigente el beneficio del REINFO?",
+      "answerOptions": [
+        {
+          "text": "Tener el RUC activo y poseer permisos formales para el uso de explosivos.",
+          "isCorrect": true,
+          "rationale": "Estas son reglas de acero mencionadas para evitar que el beneficio se convierta en un cheque en blanco."
+        },
+        {
+          "text": "Demostrar una producción superior a las 350 toneladas diarias.",
+          "isCorrect": false,
+          "rationale": "El REINFO está enfocado en pequeña minería y minería artesanal, que tienen topes de producción menores."
+        },
+        {
+          "text": "Operar exclusivamente en la plataforma continental marítima.",
+          "isCorrect": false,
+          "rationale": "El REINFO se aplica principalmente en terrenos continentales donde ocurre la minería informal tradicional."
+        },
+        {
+          "text": "Contar con la aprobación de una consulta previa vinculante.",
+          "isCorrect": false,
+          "rationale": "La consulta previa es un proceso para proyectos mayores; el REINFO tiene requisitos administrativos y operativos específicos."
+        }
+      ],
+      "hint": "Piense en los controles administrativos básicos y de seguridad que exige el Estado a cualquier operador."
+    },
+    {
+      "question": "¿Qué sucede si un titular minero incumple el pago del derecho de vigencia por dos años consecutivos?",
+      "answerOptions": [
+        {
+          "text": "Se produce la caducidad automática e irreversible del derecho minero.",
+          "isCorrect": true,
+          "rationale": "El pago anual es una obligación económica crítica cuya falta conlleva la pérdida de la concesión."
+        },
+        {
+          "text": "Se le otorga una prórroga de 30 años para ponerse al día.",
+          "isCorrect": false,
+          "rationale": "La ley es tajante con los plazos de pago y no otorga prórrogas automáticas por décadas."
+        },
+        {
+          "text": "El Estado asume la operación de la mina como socio mayoritario.",
+          "isCorrect": false,
+          "rationale": "El Estado recupera el área para volver a otorgarla, no se convierte en operador comercial automático."
+        },
+        {
+          "text": "La deuda se transfiere automáticamente al dueño del predio superficial.",
+          "isCorrect": false,
+          "rationale": "Las obligaciones del concesionario son personales y ligadas a su título, no afectan al dueño del suelo."
+        }
+      ],
+      "hint": "Es una de las sanciones más temidas y definitivas mencionadas en el bloque de obligaciones."
+    },
+    {
+      "question": "¿Cuál es el plazo máximo que otorga la ley para alcanzar los niveles de producción exigidos antes de que el área revierta al Estado?",
+      "answerOptions": [
+        {
+          "text": "30 años.",
+          "isCorrect": true,
+          "rationale": "Existe un reloj implacable que da este límite máximo para que la concesión sea productiva según la norma."
+        },
+        {
+          "text": "10 años.",
+          "isCorrect": false,
+          "rationale": "Aunque hay hitos intermedios, el plazo definitivo mencionado para la reversión por falta de producción es más largo."
+        },
+        {
+          "text": "50 años.",
+          "isCorrect": false,
+          "rationale": "El sistema busca un aprovechamiento dinámico y no permite retener áreas improductivas por medio siglo."
+        },
+        {
+          "text": "Indefinido, mientras se pague el derecho de vigencia.",
+          "isCorrect": false,
+          "rationale": "Pagar la vigencia no es suficiente; la ley exige eventualmente niveles reales de inversión y producción."
+        }
+      ],
+      "hint": "Considere el tiempo generacional que el Estado permite antes de considerar que el recurso está siendo desperdiciado."
+    },
+    {
+      "question": "¿Qué establece el marco legal peruano sobre el carácter del resultado de la consulta previa?",
+      "answerOptions": [
+        {
+          "text": "No constituye un derecho a veto por parte de las comunidades.",
+          "isCorrect": true,
+          "rationale": "Es un proceso de diálogo para alcanzar acuerdos, pero la decisión final sobre el recurso sigue siendo estatal."
+        },
+        {
+          "text": "Es una decisión vinculante que puede prohibir el proyecto definitivamente.",
+          "isCorrect": false,
+          "rationale": "Legalmente no es un veto, aunque en la práctica su ausencia puede paralizar proyectos por falta de legitimidad."
+        },
+        {
+          "text": "Es un trámite opcional que solo se realiza si la empresa lo desea.",
+          "isCorrect": false,
+          "rationale": "Es una obligación legal para proyectos que afectan comunidades, fundamental para la licencia social."
+        },
+        {
+          "text": "Otorga a la comunidad el 50% de las acciones de la empresa minera.",
+          "isCorrect": false,
+          "rationale": "La consulta previa busca diálogo e impactos positivos, no una transferencia forzosa de propiedad accionaria."
+        }
+      ],
+      "hint": "Diferencie entre la búsqueda de consenso y la capacidad de impedir unilateralmente una decisión soberana."
+    },
+    {
+      "question": "¿Por qué el caso de la Mina San Román se considera una 'clase magistral' de gestión comunitaria?",
+      "answerOptions": [
+        {
+          "text": "Porque integraron infraestructura crítica como escuelas y cunas para resolver problemas reales de las familias.",
+          "isCorrect": true,
+          "rationale": "Pasaron de la filantropía a una integración orgánica que permitió a las madres trabajar y aseguró la continuidad operativa."
+        },
+        {
+          "text": "Porque pagaron el derecho de vigencia por adelantado durante 20 años.",
+          "isCorrect": false,
+          "rationale": "El éxito mencionado se basa en la relación social, no solo en el cumplimiento de pagos administrativos."
+        },
+        {
+          "text": "Porque operaron sin necesidad de utilizar el sólido de profundidad.",
+          "isCorrect": false,
+          "rationale": "Toda operación minera formal se basa en el sólido de profundidad; el éxito de San Román fue su modelo social."
+        },
+        {
+          "text": "Porque lograron que el Estado les otorgara la propiedad privada del yacimiento.",
+          "isCorrect": false,
+          "rationale": "Los yacimientos son inalienables; San Román operó bajo el sistema de concesiones como cualquier otra mina."
+        }
+      ],
+      "hint": "Piense en cómo la empresa transformó la percepción social a través de beneficios genuinamente compartidos."
+    },
+    {
+      "question": "¿Qué documento deben presentar anualmente las empresas para reportar sus inversiones y producción?",
+      "answerOptions": [
+        {
+          "text": "La DAC (Declaración Anual Consolidada).",
+          "isCorrect": true,
+          "rationale": "Es una de las tres obligaciones administrativas y económicas principales mencionadas para mantener la concesión."
+        },
+        {
+          "text": "El plan de cierre de mina definitivo.",
+          "isCorrect": false,
+          "rationale": "El plan de cierre se presenta al inicio y se actualiza, pero el reporte anual de inversión es la DAC."
+        },
+        {
+          "text": "El certificado de vigencia de poder.",
+          "isCorrect": false,
+          "rationale": "Este es un documento societario general, no el reporte técnico-económico específico del sector minero."
+        },
+        {
+          "text": "La solicitud de prórroga de exploración.",
+          "isCorrect": false,
+          "rationale": "La exploración tiene sus propios permisos, pero la DAC es el reporte integral obligatorio para todos."
+        }
+      ],
+      "hint": "Son las siglas de un informe que consolida toda la actividad del año."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Marco Constitucional y Art. 66",
+      "Jerarquía Normativa Minera",
+      "Clasificación de Actividades Mineras",
+      "Naturaleza Jurídica de la Concesión",
+      "Sólido de Profundidad y Propiedad del Suelo",
+      "Categorías de Productores Mineros",
+      "Responsabilidad Laboral y Salud Ocupacional",
+      "Formalización Minera (REINFO)",
+      "Obligaciones y Caducidad",
+      "Licencia Social y Consulta Previa"
+    ],
+    "followUp": [
+      "Procedimientos de fiscalización ambiental de la OEFA",
+      "Impacto técnico de las perforaciones diamantinas en exploración",
+      "Gestión de pasivos ambientales en el cierre de minas",
+      "Mecanismos de resolución de conflictos en servidumbres mineras",
+      "Evolución de la refinación y beneficio especializado en Perú"
+    ]
+  }
+}

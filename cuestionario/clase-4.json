@@ -1,0 +1,542 @@
+
+{
+  "quiz": [
+    {
+      "question": "¿Cómo se define la gestión minera moderna según el material de estudio?",
+      "answerOptions": [
+        {
+          "text": "Como una regulación extractiva simple basada en la riqueza del yacimiento.",
+          "isCorrect": false,
+          "rationale": "Esta visión es la que el material sugiere olvidar, ya que las reglas del juego han cambiado hacia un enfoque más complejo."
+        },
+        {
+          "text": "Como una disciplina jurídica multidisciplinaria y estratégica.",
+          "isCorrect": true,
+          "rationale": "La gestión moderna exige armonizar la capacidad legal con principios de sostenibilidad y estándares internacionales para asegurar la viabilidad."
+        },
+        {
+          "text": "Como un proceso puramente técnico enfocado en la optimización de maquinaria.",
+          "isCorrect": false,
+          "rationale": "Aunque la técnica es importante, el texto enfatiza que el cumplimiento legal y social es lo que realmente garantiza la seguridad jurídica."
+        },
+        {
+          "text": "Como una práctica de filantropía corporativa para ganar apoyo social.",
+          "isCorrect": false,
+          "rationale": "El material rechaza explícitamente que la responsabilidad social sea caridad, definiéndola como una obligación jurídica vinculante."
+        }
+      ],
+      "hint": "Piense en cómo el texto describe el cambio de las reglas del juego y la necesidad de ir un paso adelante."
+    },
+    {
+      "question": "¿Cuál es la relación jerárquica entre la regulación minera local y los acuerdos globales?",
+      "answerOptions": [
+        {
+          "text": "La regulación local dicta todas las reglas de forma aislada.",
+          "isCorrect": false,
+          "rationale": "El texto menciona que es un error común asumir que el sistema local es aislado e independiente de los acuerdos globales."
+        },
+        {
+          "text": "Existe una relación de estricta subordinación con los acuerdos internacionales.",
+          "isCorrect": true,
+          "rationale": "La base operativa de cualquier proyecto moderno depende de la alineación con tratados globales de debida diligencia."
+        },
+        {
+          "text": "Los acuerdos globales son solo sugerencias éticas sin peso legal.",
+          "isCorrect": false,
+          "rationale": "El material enfatiza que no son sugerencias amables, sino directrices legales de cumplimiento obligatorio."
+        },
+        {
+          "text": "La normativa local tiene supremacía absoluta sobre el Convenio sobre la Diversidad Biológica.",
+          "isCorrect": false,
+          "rationale": "El convenio mencionado actúa como un 'código de construcción' que impone restricciones técnicas severas al Estado y a las empresas."
+        }
+      ],
+      "hint": "Considere el concepto de la jerarquía internacional como el primer gran pilar del sector."
+    },
+    {
+      "question": "¿Qué obligación impone el Convenio sobre la Diversidad Biológica ($CDB$) a las operaciones mineras?",
+      "answerOptions": [
+        {
+          "text": "Garantizar el acceso gratuito de las comunidades a los recursos genéticos.",
+          "isCorrect": false,
+          "rationale": "El enfoque del $CDB$ en el texto es la protección de especies y recursos, no la gestión de acceso comunitario."
+        },
+        {
+          "text": "Adaptar la ingeniería del proyecto al ecosistema para prevenir desfiguraciones irreversibles.",
+          "isCorrect": true,
+          "rationale": "El $CDB$ impone restricciones técnicas severas que funcionan como un código de protección para entornos frágiles."
+        },
+        {
+          "text": "Permitir la remoción de paredes maestras de la naturaleza bajo supervisión estatal.",
+          "isCorrect": false,
+          "rationale": "El texto usa la analogía de las paredes maestras para indicar que estas NO se pueden derribar a la fuerza."
+        },
+        {
+          "text": "Priorizar la extracción de recursos genéticos sobre la protección de especies.",
+          "isCorrect": false,
+          "rationale": "El objetivo primordial del convenio es precisamente la protección de la biodiversidad y los recursos genéticos."
+        }
+      ],
+      "hint": "Recuerde la analogía del código de construcción de la naturaleza mencionada en la clase."
+    },
+    {
+      "question": "¿Qué hito regulatorio ocurrió en el año $2005$ que afectó los Estudios de Impacto Ambiental ($EIA$)?",
+      "answerOptions": [
+        {
+          "text": "La creación de la primera ley de minería artesanal.",
+          "isCorrect": false,
+          "rationale": "El hito del $2005$ mencionado se refiere específicamente a compromisos climáticos internacionales."
+        },
+        {
+          "text": "La ratificación del Protocolo de Kioto.",
+          "isCorrect": true,
+          "rationale": "Esta ratificación convirtió la mitigación del calentamiento global en un requisito técnico medible dentro de los $EIA$."
+        },
+        {
+          "text": "La implementación obligatoria de la Declaración Anual Consolidada ($DAC$).",
+          "text": "La eliminación de los requisitos de medición de gases de efecto invernadero.",
+          "isCorrect": false,
+          "rationale": "Al contrario, el Protocolo de Kioto hizo que estas mediciones fueran estrictamente obligatorias."
+        }
+      ],
+      "hint": "Piense en la transición de una meta abstracta a un requisito técnico medible sobre el clima."
+    },
+    {
+      "question": "Dentro de los riesgos químicos, ¿cómo se describe el fenómeno del drenaje ácido?",
+      "answerOptions": [
+        {
+          "text": "Como la degradación de los horizontes orgánicos del suelo agrícola.",
+          "isCorrect": false,
+          "rationale": "Esta descripción corresponde a la degradación de suelos, no al fenómeno químico del drenaje ácido."
+        },
+        {
+          "text": "Como una reacción corrosiva al contacto del agua con minerales sulfurados.",
+          "isCorrect": true,
+          "rationale": "El texto compara este proceso con la apertura de una batería gigantesca en medio de la tierra."
+        },
+        {
+          "text": "Como la filtración inofensiva de metales pesados en cuencas hidrográficas.",
+          "isCorrect": false,
+          "rationale": "La contaminación por metales pesados es un riesgo distinto y el drenaje ácido se define específicamente por su naturaleza corrosiva."
+        },
+        {
+          "text": "Como la eliminación voluntaria de la piel viva del ecosistema.",
+          "isCorrect": false,
+          "rationale": "Dicha analogía se utiliza para describir la remoción de suelos orgánicos, no la reacción química del agua y minerales."
+        }
+      ],
+      "hint": "Relacione este riesgo con la analogía de una batería abierta en la tierra."
+    },
+    {
+      "question": "¿Cuál es el cimiento crítico para lograr la convivencia y legitimidad social a nivel local?",
+      "answerOptions": [
+        {
+          "text": "La entrega de donaciones y caridad corporativa.",
+          "isCorrect": false,
+          "rationale": "El texto rechaza este enfoque filantrópico como base de la responsabilidad social moderna."
+        },
+        {
+          "text": "El cumplimiento estricto de las obligaciones ambientales internacionales.",
+          "isCorrect": true,
+          "rationale": "El rigor técnico en la protección del agua y suelo es el mecanismo que otorga legitimidad social frente a las comunidades."
+        },
+        {
+          "text": "La eliminación de los Estudios de Impacto Ambiental para agilizar procesos.",
+          "isCorrect": false,
+          "rationale": "Sin el rigor ambiental, la coexistencia pacífica con las poblaciones locales sería insostenible."
+        },
+        {
+          "text": "El uso exclusivo del Anexo 4 para declarar compromisos comunitarios.",
+          "isCorrect": false,
+          "rationale": "El uso de declaraciones juradas (Anexo 4) se describe como un factor que disparó el riesgo social por falta de solidez."
+        }
+      ],
+      "hint": "Considere por qué las mitigaciones técnicas del suelo y agua son tan importantes para los vecinos."
+    },
+    {
+      "question": "¿Qué cambio fundamental introdujo la modificatoria del año $2010$ al Decreto Supremo $042$ del $2003$?",
+      "answerOptions": [
+        {
+          "text": "La exigencia de contratos formales firmados ante asamblea.",
+          "isCorrect": false,
+          "rationale": "Esto era lo que exigía la norma original del $2003$, no la modificatoria del $2010$."
+        },
+        {
+          "text": "La implementación de una flexibilización documental basada en declaraciones juradas.",
+          "isCorrect": true,
+          "rationale": "Se pasó de pruebas estrictas a un enfoque declarativo (Anexo $4$), lo cual redujo la carga administrativa pero aumentó el riesgo social."
+        },
+        {
+          "text": "La prohibición absoluta de la minería artesanal en zonas agrícolas.",
+          "isCorrect": false,
+          "rationale": "La modificatoria se centró en la forma de validar los compromisos comunitarios, no en la prohibición de tipos de minería."
+        },
+        {
+          "text": "El aumento de la trazabilidad de los acuerdos con las directivas comunales.",
+          "isCorrect": false,
+          "rationale": "Al contrario, el cambio a declaraciones juradas provocó una dramática pérdida de trazabilidad."
+        }
+      ],
+      "hint": "Recuerde el término 'saludo a la bandera' mencionado en la clase."
+    },
+    {
+      "question": "¿Por qué el uso del Anexo $4$ representa un peligro para la gestión de riesgos sociales?",
+      "answerOptions": [
+        {
+          "text": "Porque aumenta el costo operativo de las empresas multinacionales.",
+          "isCorrect": false,
+          "rationale": "El texto indica que reduce la carga administrativa, lo que suele abaratar el proceso inicial, no encarecerlo."
+        },
+        {
+          "text": "Porque genera una pérdida de trazabilidad y seguridad jurídica ante cambios de directiva en las comunidades.",
+          "isCorrect": true,
+          "rationale": "Sin contratos vinculantes, los nuevos líderes comunales pueden desconocer acuerdos previos al no haber un peso probatorio sólido."
+        },
+        {
+          "text": "Porque obliga al Estado a intervenir militarmente en las zonas de conflicto.",
+          "isCorrect": false,
+          "rationale": "El texto asocia el Anexo $4$ con la vulnerabilidad legal, no con una obligación de intervención militar inmediata."
+        },
+        {
+          "text": "Porque garantiza que todos los compromisos se cumplan sin necesidad de fiscalización.",
+          "isCorrect": false,
+          "rationale": "Al ser meramente declarativo, los compromisos suelen percibirse como promesas vacías o papel mojado."
+        }
+      ],
+      "hint": "Piense en lo que sucede cuando entra un nuevo líder comunal y no existe un contrato formal firmado."
+    },
+    {
+      "question": "Respecto a la Declaración Anual Consolidada ($DAC$), ¿cuándo vencen usualmente los plazos de presentación?",
+      "answerOptions": [
+        {
+          "text": "El $31$ de diciembre de cada año fiscal.",
+          "isCorrect": false,
+          "rationale": "El texto advierte que los plazos no son estáticos y no existe una fecha inamovible en la ley."
+        },
+        {
+          "text": "En fechas publicadas anualmente por resolución directoral, generalmente en julio.",
+          "isCorrect": true,
+          "rationale": "Los cronogramas se organizan según el último dígito del $RUC$ y se publican cada año mediante una resolución."
+        },
+        {
+          "text": "Siempre el primer lunes de cada semestre académico.",
+          "isCorrect": false,
+          "rationale": "La fecha depende de una resolución directoral específica emitida por el Ministerio de Energía y Minas."
+        },
+        {
+          "text": "Treinta días después de la aprobación del Estudio de Impacto Ambiental.",
+          "isCorrect": false,
+          "rationale": "La $DAC$ es un reporte anual consolidado que sigue un cronograma de vencimiento según el $RUC$."
+        }
+      ],
+      "hint": "Recuerde que el cronograma depende del número de identificación tributaria ($RUC$)."
+    },
+    {
+      "question": "¿Cuál es la sanción máxima establecida en la Ley General de Minería para la gran y mediana minería por omitir la $DAC$?",
+      "answerOptions": [
+        {
+          "text": "$100$ Unidades Impositivas Tributarias ($UIT$).",
+          "isCorrect": false,
+          "rationale": "Aunque es una multa alta, el tope legal mencionado en el material para este estrato es menor."
+        },
+        {
+          "text": "$15$ Unidades Impositivas Tributarias ($UIT$).",
+          "isCorrect": true,
+          "rationale": "El artículo $50$ de la ley escala las multas por tamaño, siendo $15$ $UIT$ el máximo para la gran y mediana minería."
+        },
+        {
+          "text": "$2$ Unidades Impositivas Tributarias ($UIT$).",
+          "isCorrect": false,
+          "rationale": "Esta es la sanción máxima asignada para los pequeños productores mineros, no para la gran minería."
+        },
+        {
+          "text": "$1$ Unidad Impositiva Tributaria ($UIT$).",
+          "isCorrect": false,
+          "rationale": "Este monto corresponde a la sanción máxima para la minería artesanal."
+        }
+      ],
+      "hint": "Piense en la jerarquía financiera de las sanciones y el estrato de mayor escala."
+    },
+    {
+      "question": "¿Cuál es la sanción mínima absoluta por cualquier infracción administrativa en el sistema minero?",
+      "answerOptions": [
+        {
+          "text": "No existe un mínimo; depende totalmente del criterio del fiscalizador.",
+          "isCorrect": false,
+          "rationale": "La ley establece un piso innegociable para evitar cualquier tipo de impunidad administrativa."
+        },
+        {
+          "text": "$0.1\\%$ de la $UIT$ vigente.",
+          "isCorrect": true,
+          "rationale": "La ley garantiza que ninguna infracción administrativa quede sin sanción económica, estableciendo este porcentaje como base."
+        },
+        {
+          "text": "$1\\%$ de la $UIT$ vigente.",
+          "isCorrect": false,
+          "rationale": "Aunque es una cifra común, el mínimo legal exacto especificado en el material es diez veces menor."
+        },
+        {
+          "text": "$100$ soles, independientemente del valor de la $UIT$.",
+          "isCorrect": false,
+          "rationale": "La sanción está indexada al valor de la $UIT$, no fijada en una moneda de curso legal estática."
+        }
+      ],
+      "hint": "Es un recordatorio de que el sistema no deja huecos para la impunidad, incluso en infracciones menores."
+    },
+    {
+      "question": "¿Cuál es el eje de intervención estratégico que reconoce a las cuencas hidrográficas como el sistema nervioso del área?",
+      "answerOptions": [
+        {
+          "text": "Enfoque de Derechos Humanos.",
+          "isCorrect": false,
+          "rationale": "Si bien es fundamental, el enfoque de derechos humanos no se define específicamente por el análisis de cuencas hidrográficas."
+        },
+        {
+          "text": "Enfoque Territorial.",
+          "isCorrect": true,
+          "rationale": "Este enfoque reconoce a la cuenca como el eje de interconexión absoluto entre la operación y el ecosistema social."
+        },
+        {
+          "text": "Enfoque de Interculturalidad.",
+          "isCorrect": false,
+          "rationale": "Este enfoque trata sobre las diferencias culturales, pero no utiliza la cuenca hidrográfica como su métrica principal."
+        },
+        {
+          "text": "Enfoque Transformativo.",
+          "isCorrect": false,
+          "rationale": "El enfoque transformativo busca cambiar la dinámica del conflicto, pero no es el eje que dicta el pulso del sistema hídrico."
+        }
+      ],
+      "hint": "Considere el enfoque que analiza el espacio físico y el agua como centro de la vida social."
+    },
+    {
+      "question": "¿Cuál es la prioridad absoluta dentro de las tres etapas de intervención del Estado en conflictos?",
+      "answerOptions": [
+        {
+          "text": "Las acciones humanitarias para mitigar la violencia.",
+          "isCorrect": false,
+          "rationale": "Las acciones humanitarias son el último recurso y su necesidad indica que la gestión previa fracasó."
+        },
+        {
+          "text": "La supervisión preventiva.",
+          "isCorrect": true,
+          "rationale": "Su misión es detectar alertas tempranas antes de que el diálogo se quiebre, siendo el corazón de la gestión de crisis."
+        },
+        {
+          "text": "La mediación en mesas de diálogo una vez paralizada la obra.",
+          "isCorrect": false,
+          "rationale": "La mediación ocurre después de la prevención; la prioridad es no llegar al punto de paralización."
+        },
+        {
+          "text": "La resolución judicial de los conflictos territoriales.",
+          "isCorrect": false,
+          "rationale": "La intervención estatal prioriza la prevención operativa sobre la judicialización de largo plazo."
+        }
+      ],
+      "hint": "Piense en el paso número uno que busca evitar que el diálogo se quiebre por completo."
+    },
+    {
+      "question": "¿Qué ocurre si un formato de capacitación de seguridad (Anexos $1, 2, 3$) tiene una variación mínima según SUNAFIL?",
+      "answerOptions": [
+        {
+          "text": "La empresa recibe una amonestación verbal sin multa.",
+          "isCorrect": false,
+          "rationale": "SUNAFIL aplica una rigidez legal extrema y no contempla amonestaciones verbales por fallos documentales."
+        },
+        {
+          "text": "Se declara automáticamente inválido, dejando a la empresa en indefensión legal.",
+          "isCorrect": true,
+          "rationale": "Cualquier desviación en horas, temas o formatos anula la validez del cumplimiento, lo que es crítico ante accidentes."
+        },
+        {
+          "text": "Se otorga un plazo de $90$ días para subsanar el error sin consecuencias.",
+          "isCorrect": false,
+          "rationale": "El texto menciona que en esta materia la flexibilidad sencillamente no existe."
+        },
+        {
+          "text": "El error se ignora si la empresa demuestra que no hubo accidentes reales.",
+          "isCorrect": false,
+          "rationale": "La invalidez del formato opera independientemente de si ocurrió un accidente en ese momento."
+        }
+      ],
+      "hint": "Recuerde que en seguridad y salud en el trabajo la flexibilidad no existe para la autoridad."
+    },
+    {
+      "question": "¿Por qué el caso de la hipoacusia (sordera ocupacional) es un riesgo legal tan complejo para las mineras?",
+      "answerOptions": [
+        {
+          "text": "Porque requiere la detención inmediata de toda la maquinaria pesada.",
+          "isCorrect": false,
+          "rationale": "El problema no es la detención operativa, sino las disputas legales que surgen mucho tiempo después."
+        },
+        {
+          "text": "Porque las disputas legales suelen explotar años o décadas después, cuando el trabajador se jubila.",
+          "isCorrect": true,
+          "rationale": "Un error documental del pasado puede costar millones en el presente debido a la naturaleza progresiva de la enfermedad."
+        },
+        {
+          "text": "Porque es una enfermedad que se cura fácilmente con el pago de la reparación civil.",
+          "isCorrect": false,
+          "rationale": "La hipoacusia es una patología crónica que desencadena disputas previsionales y laborales muy complejas."
+        },
+        {
+          "text": "Porque el Estado asume todos los costos médicos sin responsabilidad de la empresa.",
+          "isCorrect": false,
+          "rationale": "Al contrario, la falta de documentos válidos deja a la empresa sin defensa ante las demandas de los trabajadores."
+        }
+      ],
+      "hint": "Considere el factor tiempo y el momento en que se presentan las reclamaciones laborales."
+    },
+    {
+      "question": "¿Qué derecho otorga una concesión minera sobre los minerales del yacimiento?",
+      "answerOptions": [
+        {
+          "text": "Otorga la propiedad absoluta y perpetua de los minerales extraídos.",
+          "isCorrect": false,
+          "rationale": "Los minerales son y siempre serán propiedad del Estado, según la naturaleza del derecho minero."
+        },
+        {
+          "text": "Ninguno; los minerales siempre son propiedad del Estado.",
+          "isCorrect": true,
+          "rationale": "La concesión es un bien inmueble que permite la explotación, pero no confiere propiedad sobre la sustancia mineral en sí."
+        },
+        {
+          "text": "Otorga el derecho de propiedad solo si el concesionario es también dueño del suelo superficial.",
+          "isCorrect": false,
+          "rationale": "Incluso siendo dueño del suelo, el subsuelo y sus minerales pertenecen al Estado."
+        },
+        {
+          "text": "Otorga la propiedad de los minerales solo si son de tipo no metálico.",
+          "isCorrect": false,
+          "rationale": "Tanto los recursos metálicos como los no metálicos en el subsuelo son de propiedad estatal."
+        }
+      ],
+      "hint": "Diferencie entre el derecho a explotar (concesión) y el derecho de propiedad sobre el recurso."
+    },
+    {
+      "question": "En el caso judicial de Cuzco mencionado, ¿cuál fue la condena impuesta por minería ilegal de oro?",
+      "answerOptions": [
+        {
+          "text": "$4$ años de pena suspendida.",
+          "isCorrect": false,
+          "rationale": "Esta condena corresponde al caso de Junín por extracción no metálica, no al caso de Cuzco."
+        },
+        {
+          "text": "$6$ años de prisión efectiva.",
+          "isCorrect": true,
+          "rationale": "La gravedad del daño ambiental y la ilegalidad de la extracción de oro resultaron en una pena de cárcel real."
+        },
+        {
+          "text": "Solo una multa administrativa de $70,000$ soles sin prisión.",
+          "isCorrect": false,
+          "rationale": "Además de la reparación civil, hubo una condena penal de prisión efectiva."
+        },
+        {
+          "text": "$20$ años de prisión por daño irreversible a la Amazonía.",
+          "isCorrect": false,
+          "rationale": "Aunque el daño es grave, la sentencia específica mencionada en el texto fue de $6$ años."
+        }
+      ],
+      "hint": "Piense en la sentencia más severa entre los dos casos penales analizados."
+    },
+    {
+      "question": "¿Qué precedente importante sentó la sentencia del caso Cuzco respecto a la reparación civil?",
+      "answerOptions": [
+        {
+          "text": "Que solo se debe pagar por el valor comercial del mineral extraído.",
+          "isCorrect": false,
+          "rationale": "El fallo demostró que el daño va mucho más allá del simple valor de la cantidad de mineral."
+        },
+        {
+          "text": "Que el Estado puede proteger jurídicamente la flora y fauna frente a la remoción ilegal de tierras.",
+          "isCorrect": true,
+          "rationale": "La base de la sanción incluyó la protección amplia de la biodiversidad, no solo el recurso mineral."
+        },
+        {
+          "text": "Que la reparación civil debe ser pagada directamente a las comunidades y no al Estado.",
+          "isCorrect": false,
+          "rationale": "En este caso, la reparación de $70,000$ soles fue a favor del Estado a través de la Procuraduría del Ministerio del Ambiente."
+        },
+        {
+          "text": "Que las empresas multinacionales están exentas de reparaciones civiles ambientales.",
+          "isCorrect": false,
+          "rationale": "El texto muestra el poder punitivo del Estado para proteger el medio ambiente frente a cualquier infractor."
+        }
+      ],
+      "hint": "Piense en qué elementos del ecosistema, además de la tierra, fueron protegidos por la sentencia."
+    },
+    {
+      "question": "¿Cuál fue la razón principal de la sanción económica de más de $268,000$ soles en el caso Junín?",
+      "answerOptions": [
+        {
+          "text": "Extraer oro en una reserva nacional protegida.",
+          "isCorrect": false,
+          "rationale": "El caso Junín se trató de extracción no metálica (piedra y arena) en terrenos agrícolas."
+        },
+        {
+          "text": "Extraer minerales del subsuelo sin título de concesión, aun siendo dueños del terreno superficial.",
+          "isCorrect": true,
+          "rationale": "La falta del título de concesión convierte la actividad en ilegal automáticamente, sin importar la propiedad del suelo."
+        },
+        {
+          "text": "No presentar la Declaración Anual Consolidada durante cinco años seguidos.",
+          "isCorrect": false,
+          "rationale": "La sanción fue de naturaleza penal por extracción ilegal, no una multa administrativa por omisión de la $DAC$."
+        },
+        {
+          "text": "Contaminar una cuenca hidrográfica con metales pesados como el mercurio.",
+          "isCorrect": false,
+          "rationale": "Aunque es un riesgo, el caso Junín se centró en la falta de título para explotar materiales no metálicos."
+        }
+      ],
+      "hint": "Considere el error conceptual sobre la propiedad de la tierra frente a los derechos sobre el subsuelo."
+    },
+    {
+      "question": "¿Qué pilares innegociables cierran la síntesis de una operación minera legal y exitosa?",
+      "answerOptions": [
+        {
+          "text": "La maximización de beneficios y la reducción de costos de seguridad.",
+          "isCorrect": false,
+          "rationale": "El texto enfatiza que reducir estándares de seguridad genera riesgos penales y financieros devastadores."
+        },
+        {
+          "text": "La integración de estándares de debida diligencia, cumplimiento de la $DAC$, enfoque territorial, seguridad laboral y claridad en la concesión.",
+          "isCorrect": true,
+          "rationale": "Estos cinco pilares aseguran el equilibrio entre la eficiencia operativa y el estricto cumplimiento normativo."
+        },
+        {
+          "text": "El uso de la fuerza estatal y la eliminación de los tratados internacionales.",
+          "isCorrect": false,
+          "rationale": "La viabilidad depende de armonizar con estándares internacionales, no de eliminarlos."
+        },
+        {
+          "text": "La sustitución de todos los contratos vinculantes por declaraciones juradas simples.",
+          "isCorrect": false,
+          "rationale": "El material advierte que sustituir contratos por declaraciones juradas (Anexo $4$) es una trampa de vulnerabilidad."
+        }
+      ],
+      "hint": "Piense en el resumen de los cinco pilares mencionados al final de la clase."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Gestión Minera Moderna y Estratégica",
+      "Jerarquía Normativa e Internacional en Minería",
+      "Derecho Ambiental Internacional (CDB y Protocolo de Kioto)",
+      "Riesgos Ambientales y Mitigación Técnica",
+      "Responsabilidad Social Empresarial y DS 042-2003",
+      "Declaración Anual Consolidada (DAC) y Sanciones Administrativas",
+      "Gestión de Conflictos Socioambientales y Enfoque Territorial",
+      "Seguridad y Salud en el Trabajo (SST)",
+      "Derecho de Concesión vs Propiedad Superficial",
+      "Jurisprudencia sobre Minería Ilegal (Casos Cuzco y Junín)"
+    ],
+    "followUp": [
+      "Procedimientos Sancionadores de SUNAFIL en Minería",
+      "Análisis Detallado de los Anexos de Seguridad Minera",
+      "Mecanismos de Protección de Recursos Genéticos según el CDB",
+      "Impacto de la Flexibilización Documental en la Seguridad Jurídica",
+      "Tratados Internacionales de Debida Diligencia para la Inversión Extranjera"
+    ]
+  }
+}

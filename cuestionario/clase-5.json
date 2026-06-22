@@ -1,0 +1,541 @@
+
+{
+  "quiz": [
+    {
+      "question": "¿Cuál es el marco normativo principal que rige actualmente la gestión estratégica de seguridad y salud ocupacional en el sector minero peruano?",
+      "answerOptions": [
+        {
+          "text": "Decreto Supremo 024/2016",
+          "isCorrect": true,
+          "rationale": "Este decreto constituye el marco operativo estricto bajo el cual se rige la seguridad y salud ocupacional en minería."
+        },
+        {
+          "text": "Ley General de Minería 055/2010",
+          "isCorrect": false,
+          "rationale": "Aunque existen otras normas, el material especifica que el marco directriz actual es el decreto del 2016."
+        },
+        {
+          "text": "Resolución Ministerial 015/2020",
+          "isCorrect": false,
+          "rationale": "Esta norma no es mencionada como el eje estructural de la gestión preventiva en el material proporcionado."
+        },
+        {
+          "text": "Código de Ética y Sostenibilidad Minera",
+          "isCorrect": false,
+          "rationale": "La sostenibilidad es un objetivo, pero el marco operativo legal es un decreto supremo específico."
+        }
+      ],
+      "hint": "Se trata de un decreto supremo emitido en el año 2016."
+    },
+    {
+      "question": "En el sistema de fiscalización minera, ¿cuál es el enfoque principal de OSINERGMIN frente a una inspección?",
+      "answerOptions": [
+        {
+          "text": "La ingeniería e infraestructura de la mina",
+          "isCorrect": true,
+          "rationale": "OSINERGMIN se especializa en la seguridad de las estructuras y la parte técnica de la ingeniería minera."
+        },
+        {
+          "text": "La legalidad de los contratos laborales",
+          "isCorrect": false,
+          "rationale": "Los temas de legalidad contractual y derechos laborales son competencia de SUNAFIL."
+        },
+        {
+          "text": "La entrega de equipos de protección personal",
+          "isCorrect": false,
+          "rationale": "La verificación del factor humano y la entrega de EPP corresponde a la esfera de SUNAFIL."
+        },
+        {
+          "text": "La gestión de seguros de salud y pensiones",
+          "isCorrect": false,
+          "rationale": "Estos aspectos administrativos laborales no forman parte del enfoque de ingeniería de OSINERGMIN."
+        }
+      ],
+      "hint": "Piense en quién revisa la seguridad estructural de una viga de anclaje."
+    },
+    {
+      "question": "Dentro del Procedimiento Administrativo Sancionador (PAS), ¿cuántos días hábiles tiene la empresa para presentar descargos en la fase instructora?",
+      "answerOptions": [
+        {
+          "text": "5 días hábiles",
+          "isCorrect": true,
+          "rationale": "La fase instructora abre una ventana crítica de solo 5 días hábiles para los descargos iniciales."
+        },
+        {
+          "text": "15 días hábiles",
+          "isCorrect": false,
+          "rationale": "Este plazo corresponde generalmente a la ventana para presentar recursos de defensa legal tras la multa."
+        },
+        {
+          "text": "10 días hábiles",
+          "isCorrect": false,
+          "rationale": "Aunque es un plazo común en trámites, el PAS especifica un tiempo más reducido para los descargos de instrucción."
+        },
+        {
+          "text": "30 días hábiles",
+          "isCorrect": false,
+          "rationale": "Un plazo de un mes sería excesivo para el rigor preclusivo que caracteriza a este procedimiento."
+        }
+      ],
+      "hint": "Es una ventana de tiempo muy corta que el material describe como algo que 'se esfuma en un parpadeo'."
+    },
+    {
+      "question": "¿Qué requisito es indispensable para que un recurso de apelación ante el Tribunal de la SUNAFIL pueda prosperar?",
+      "answerOptions": [
+        {
+          "text": "La presentación de una prueba nueva",
+          "isCorrect": true,
+          "rationale": "Sin evidencia inédita, el recurso de apelación se considera 'muerto' o condenado al fracaso automático."
+        },
+        {
+          "text": "El pago inmediato de la multa impuesta",
+          "isCorrect": false,
+          "rationale": "El pago no es el requisito técnico que hace que los argumentos del recurso sean válidos para su revisión."
+        },
+        {
+          "text": "Una carta de disculpas de la gerencia general",
+          "isCorrect": false,
+          "rationale": "Las disculpas no constituyen un argumento legal o técnico dentro del rigor administrativo."
+        },
+        {
+          "text": "La firma de conformidad de los trabajadores",
+          "isCorrect": false,
+          "rationale": "La validez del recurso depende de la carga probatoria técnica, no solo del acuerdo con el personal."
+        }
+      ],
+      "hint": "No basta con repetir los mismos argumentos con mejores palabras."
+    },
+    {
+      "question": "¿Por qué el desistimiento de un trabajador ante una queja de seguridad es jurídicamente nulo en el ámbito de SUNAFIL?",
+      "answerOptions": [
+        {
+          "text": "Porque los derechos de seguridad y laborales son irrenunciables",
+          "isCorrect": true,
+          "rationale": "El Estado investiga de oficio para proteger al trabajador de posibles coacciones, sin importar acuerdos privados."
+        },
+        {
+          "text": "Porque el trámite administrativo ya fue pagado",
+          "isCorrect": false,
+          "rationale": "La continuidad del proceso se basa en principios de derechos fundamentales, no en costos de tramitación."
+        },
+        {
+          "text": "Porque SUNAFIL requiere recaudar multas obligatoriamente",
+          "isCorrect": false,
+          "rationale": "Aunque el sistema es punitivo, la lógica legal es la protección del derecho, no la mera recaudación."
+        },
+        {
+          "text": "Porque el trabajador no tiene facultades legales",
+          "isCorrect": false,
+          "rationale": "El trabajador tiene facultades, pero la ley limita su capacidad de renunciar a su propia seguridad."
+        }
+      ],
+      "hint": "Considere la naturaleza de los derechos básicos que el Estado protege incluso contra la voluntad del titular."
+    },
+    {
+      "question": "De acuerdo con la normativa minera, ¿cuándo es obligatorio revisar de forma inmediata la política de seguridad y salud en el trabajo?",
+      "answerOptions": [
+        {
+          "text": "Ante la ocurrencia de un accidente mortal",
+          "isCorrect": true,
+          "rationale": "La ley exige esta revisión para cerrar brechas o puntos ciegos que el accidente puso en evidencia."
+        },
+        {
+          "text": "Cada vez que se contrata a un nuevo gerente",
+          "isCorrect": false,
+          "rationale": "Los cambios de personal administrativo no disparan automáticamente la revisión obligatoria de la política legal."
+        },
+        {
+          "text": "Únicamente al finalizar el año fiscal",
+          "isCorrect": false,
+          "rationale": "Aunque debe ser dinámica, el accidente mortal es un detonante de revisión inmediata por mandato legal."
+        },
+        {
+          "text": "Solo cuando OSINERGMIN lo solicita por escrito",
+          "isCorrect": false,
+          "rationale": "La obligación nace directamente del evento (accidente) y de la ley, no requiere una orden externa previa."
+        }
+      ],
+      "hint": "Piense en el evento más grave posible que demuestra que el sistema preventivo falló."
+    },
+    {
+      "question": "¿Cuál es el principal 'punto débil' o talón de Aquiles del Reglamento Interno de Seguridad y Salud en el Trabajo (RIST) ante un auditor?",
+      "answerOptions": [
+        {
+          "text": "La trazabilidad de la entrega al personal",
+          "isCorrect": true,
+          "rationale": "Sin el cargo de recepción firmado por cada trabajador, el documento pierde su valor como escudo legal."
+        },
+        {
+          "text": "La falta de un sello del Ministerio de Trabajo",
+          "isCorrect": false,
+          "rationale": "El material indica que el RIST tiene autonomía y no requiere sellos de autoridades externas para ser válido."
+        },
+        {
+          "text": "El diseño gráfico y los colores utilizados",
+          "isCorrect": false,
+          "rationale": "Al auditor no le importa la estética del manual, sino la evidencia de que fue comunicado efectivamente."
+        },
+        {
+          "text": "La extensión total de páginas del manual",
+          "isCorrect": false,
+          "rationale": "La validez no depende del volumen de información, sino de la prueba de que el trabajador la recibió."
+        }
+      ],
+      "hint": "Se refiere a la capacidad de demostrar físicamente que el trabajador leyó las reglas."
+    },
+    {
+      "question": "¿Qué característica debe cumplir el Mapa de Riesgos para ser legalmente válido en una operación minera?",
+      "answerOptions": [
+        {
+          "text": "Debe actualizarse anualmente y ser visualmente accesible",
+          "isCorrect": true,
+          "rationale": "La ley exige actualización anual y que esté a la vista de todos para una respuesta rápida en emergencias."
+        },
+        {
+          "text": "Debe estar guardado en la oficina de gerencia",
+          "isCorrect": false,
+          "rationale": "Un mapa guardado no cumple su función de comunicación instantánea durante una crisis."
+        },
+        {
+          "text": "Debe ser redactado únicamente en lenguaje técnico",
+          "isCorrect": false,
+          "rationale": "La comunicación debe ser visual e instantánea para que cualquier persona pueda entenderla rápidamente."
+        },
+        {
+          "text": "Debe ser aprobado por el sindicato mayoritario",
+          "isCorrect": false,
+          "rationale": "Su validez depende del cumplimiento técnico de actualización y visibilidad, no del consenso sindical."
+        }
+      ],
+      "hint": "Piense en la frecuencia de actualización y en quién debe poder verlo."
+    },
+    {
+      "question": "¿Por qué el uso del 'Anexo 2' es considerado sagrado e imperativo para el Comité de Seguridad?",
+      "answerOptions": [
+        {
+          "text": "Porque su uso incorrecto anula la validez legal del comité",
+          "isCorrect": true,
+          "rationale": "Intentar usar formatos propios en lugar del Anexo 2 borra el sustento legal de la formación del órgano preventivo."
+        },
+        {
+          "text": "Porque contiene las firmas de los accionistas",
+          "isCorrect": false,
+          "rationale": "El anexo se utiliza para la votación e instalación de la directiva, no para temas de accionariado."
+        },
+        {
+          "text": "Porque es el único documento que permite cobrar dietas",
+          "isCorrect": false,
+          "rationale": "El propósito del anexo es la validez normativa de la instalación, no aspectos económicos de los miembros."
+        },
+        {
+          "text": "Porque define el presupuesto anual de seguridad",
+          "isCorrect": false,
+          "rationale": "La función del anexo es puramente formal y procedimental para la constitución legal del comité."
+        }
+      ],
+      "hint": "Tiene que ver con evitar la 'creatividad' administrativa en los formatos oficiales."
+    },
+    {
+      "question": "En la gestión operativa, ¿cómo se define técnicamente el concepto de 'Peligro' según el material?",
+      "answerOptions": [
+        {
+          "text": "La fuente física o elemento tangible",
+          "isCorrect": true,
+          "rationale": "El peligro se identifica como el objeto o situación real, como un frente de tajo o un cable expuesto."
+        },
+        {
+          "text": "La probabilidad de que ocurra una tragedia",
+          "isCorrect": false,
+          "rationale": "La probabilidad o chance de ocurrencia corresponde a la definición de 'Riesgo'."
+        },
+        {
+          "text": "El costo económico de un accidente",
+          "isCorrect": false,
+          "rationale": "El costo es una consecuencia, no la definición técnica de la fuente del problema."
+        },
+        {
+          "text": "La negligencia de un trabajador específico",
+          "isCorrect": false,
+          "rationale": "El peligro es una condición del entorno, no se define por el comportamiento humano individual."
+        }
+      ],
+      "hint": "Considere la diferencia entre un objeto real y la posibilidad de que cause daño."
+    },
+    {
+      "question": "¿Cuál es la estrategia realista sugerida para manejar peligros que no se pueden eliminar, como la presencia de una montaña?",
+      "answerOptions": [
+        {
+          "text": "Mitigación técnica impecable y control de interacción",
+          "isCorrect": true,
+          "rationale": "Al no poder borrar el peligro, se debe enfocar en fortificación, EPP y capacitación rigurosa."
+        },
+        {
+          "text": "Suspensión total de la actividad extractiva",
+          "isCorrect": false,
+          "rationale": "La minería requiere interactuar con el entorno; la suspensión no es una estrategia de gestión operativa."
+        },
+        {
+          "text": "Ignorar el peligro hasta que se manifieste",
+          "isCorrect": false,
+          "rationale": "La improvisación y la reactividad son justamente lo que el nuevo modelo busca erradicar."
+        },
+        {
+          "text": "Delegar la responsabilidad al Estado",
+          "isCorrect": false,
+          "rationale": "La responsabilidad de la gestión operativa es del titular minero, no es delegable."
+        }
+      ],
+      "hint": "Como no podemos hacer magia con la geografía, debemos controlar cómo nos relacionamos con ella."
+    },
+    {
+      "question": "¿Qué riesgos emergentes debe cubrir un IPERC moderno e inclusivo para el personal de oficina?",
+      "answerOptions": [
+        {
+          "text": "Ojo seco y desviaciones de columna disergonómicas",
+          "isCorrect": true,
+          "rationale": "Estos son considerados enfermedades ocupacionales modernas que deben prevenirse con el mismo rigor que los riesgos de campo."
+        },
+        {
+          "text": "Caídas de rocas en áreas administrativas",
+          "isCorrect": false,
+          "rationale": "Este es un riesgo específico de interior de mina o tajo, no es característico de una oficina estándar."
+        },
+        {
+          "text": "Atropellos por maquinaria pesada en los cubículos",
+          "isCorrect": false,
+          "rationale": "Los riesgos deben ser coherentes con el entorno; la maquinaria pesada no circula habitualmente en oficinas."
+        },
+        {
+          "text": "Exposición a gases tóxicos en el campamento",
+          "isCorrect": false,
+          "rationale": "Aunque es posible en el campamento, el material enfatiza afecciones silenciosas ligadas a estaciones de trabajo."
+        }
+      ],
+      "hint": "Piense en problemas de salud relacionados con el uso de pantallas y posturas sentadas."
+    },
+    {
+      "question": "¿Cuál es el requisito indispensable para que una capacitación práctica sobre el uso de extintores sea válida legalmente?",
+      "answerOptions": [
+        {
+          "text": "Debe ser 100% presencial",
+          "isCorrect": true,
+          "rationale": "El uso de videos para sesiones prácticas invalida el proceso por completo a nivel legal."
+        },
+        {
+          "text": "Puede realizarse mediante un simulador virtual",
+          "isCorrect": false,
+          "rationale": "El material es estricto en que las sesiones prácticas no admiten sustitutos digitales para ser válidas."
+        },
+        {
+          "text": "Debe ser dictada por un bombero extranjero",
+          "isCorrect": false,
+          "rationale": "La nacionalidad del instructor no es el factor que determina la validez legal del formato de capacitación."
+        },
+        {
+          "text": "Debe durar un mínimo de 8 horas continuas",
+          "isCorrect": false,
+          "rationale": "El punto crítico mencionado es la modalidad presencial, no una duración específica de 8 horas."
+        }
+      ],
+      "hint": "Se prohíbe el uso de material audiovisual como reemplazo de la experiencia física."
+    },
+    {
+      "question": "¿Qué tiempo mínimo de inducción deben recibir los visitantes antes de ingresar a una operación minera?",
+      "answerOptions": [
+        {
+          "text": "30 minutos",
+          "isCorrect": true,
+          "rationale": "Todo visitante o estudiante debe pasar por una inducción mínima de este tiempo por seguridad."
+        },
+        {
+          "text": "15 minutos",
+          "isCorrect": false,
+          "rationale": "Este tiempo es insuficiente según los estándares de control establecidos en el material."
+        },
+        {
+          "text": "60 minutos",
+          "isCorrect": false,
+          "rationale": "Aunque una inducción más larga es posible, el mínimo legal mencionado es de media hora."
+        },
+        {
+          "text": "2 horas",
+          "isCorrect": false,
+          "rationale": "El requisito de 2 horas no es el estándar mínimo citado para visitantes externos."
+        }
+      ],
+      "hint": "Es la mitad de una hora."
+    },
+    {
+      "question": "¿Cuál es el plazo máximo absoluto para presentar el formato de notificación ante ESSALUD tras un accidente?",
+      "answerOptions": [
+        {
+          "text": "10 días",
+          "isCorrect": true,
+          "rationale": "Este es el plazo innegociable establecido para completar el trámite ante la seguridad social."
+        },
+        {
+          "text": "24 horas",
+          "isCorrect": false,
+          "rationale": "El reporte inmediato es para SUNAFIL/SAT, pero ESSALUD permite una ventana un poco más amplia de 10 días."
+        },
+        {
+          "text": "48 horas",
+          "isCorrect": false,
+          "rationale": "Aunque es un plazo común para reportes internos, el plazo legal para ESSALUD es mayor."
+        },
+        {
+          "text": "15 días hábiles",
+          "isCorrect": false,
+          "rationale": "El plazo es de 10 días, no de 15, lo que exige una gestión rápida en medio de la crisis."
+        }
+      ],
+      "hint": "Es un número redondo de días que no llega a las dos semanas."
+    },
+    {
+      "question": "¿Quién tiene la responsabilidad total y obligatoria de investigar un accidente de trabajo dentro de la empresa?",
+      "answerOptions": [
+        {
+          "text": "El Comité de Seguridad y Salud en el Trabajo",
+          "isCorrect": true,
+          "rationale": "Este órgano paritario es el encargado legal de realizar el análisis técnico de los eventos."
+        },
+        {
+          "text": "El Gerente de Recursos Humanos",
+          "isCorrect": false,
+          "rationale": "Aunque RRHH participa en la gestión, la responsabilidad de investigación científica recae en el Comité."
+        },
+        {
+          "text": "El sindicato de trabajadores",
+          "isCorrect": false,
+          "rationale": "El sindicato puede observar, pero la obligación legal de investigar es del Comité paritario."
+        },
+        {
+          "text": "Una empresa auditora externa",
+          "isCorrect": false,
+          "rationale": "La investigación es una responsabilidad interna obligatoria del Comité de la propia operación."
+        }
+      ],
+      "hint": "Se trata del órgano interno más complejo y paritario de la operación."
+    },
+    {
+      "question": "Según el material, ¿cuál es el objetivo final de investigar científicamente la causa raíz de un accidente?",
+      "answerOptions": [
+        {
+          "text": "Actualizar el IPERC para evitar la repetición del evento",
+          "isCorrect": true,
+          "rationale": "La investigación busca blindar la operación mediante la actualización del documento maestro de riesgos."
+        },
+        {
+          "text": "Identificar a quién se debe despedir",
+          "isCorrect": false,
+          "rationale": "El material aclara explícitamente que el objetivo no es armar una 'cacería de brujas'."
+        },
+        {
+          "text": "Reducir el pago de la póliza de seguros",
+          "isCorrect": false,
+          "rationale": "Aunque puede ser un beneficio secundario, la misión legal es 100% técnica y preventiva."
+        },
+        {
+          "text": "Cumplir con un requisito para obtener un premio",
+          "isCorrect": false,
+          "rationale": "La gestión se basa en la sostenibilidad y protección de la vida, no en galardones corporativos."
+        }
+      ],
+      "hint": "Busca mejorar el documento que sirve como columna vertebral de la prevención."
+    },
+    {
+      "question": "¿Cuál es el dilema estratégico o 'problema perverso' mencionado respecto a los trabajadores no registrados en planilla?",
+      "answerOptions": [
+        {
+          "text": "La multa por regularizar voluntariamente es más cara que la multa de una inspección",
+          "isCorrect": true,
+          "rationale": "Este choque financiero crea un dilema donde cumplir la ley tras un error sale más costoso que esperar una sanción."
+        },
+        {
+          "text": "No se les puede brindar atención médica de emergencia",
+          "isCorrect": false,
+          "rationale": "El deber ético y humano de ayudar existe, el dilema es de cumplimiento y costos financieros."
+        },
+        {
+          "text": "El sindicato no permite su ingreso a la mina",
+          "isCorrect": false,
+          "rationale": "El problema no es de carácter sindical, sino de discrepancia entre costos de regularización y multas."
+        },
+        {
+          "text": "No pueden usar equipos de protección personal",
+          "isCorrect": false,
+          "rationale": "Todos deben usar EPP; el dilema es estrictamente logístico, legal y financiero para la gerencia."
+        }
+      ],
+      "hint": "Se refiere a una ironía dolorosa del sistema entre los costos de la SUNAT y los de SUNAFIL."
+    },
+    {
+      "question": "¿Qué representa el liderazgo visible de la alta gerencia según las conclusiones de la clase?",
+      "answerOptions": [
+        {
+          "text": "Una responsabilidad indelegable",
+          "isCorrect": true,
+          "rationale": "El liderazgo en seguridad es una tarea que la gerencia jamás puede transferir a terceros."
+        },
+        {
+          "text": "Un gasto operativo adicional",
+          "isCorrect": false,
+          "rationale": "Lejos de ser un gasto, se considera una inversión vital para la sostenibilidad y protección legal."
+        },
+        {
+          "text": "Una sugerencia opcional del sector",
+          "isCorrect": false,
+          "rationale": "El material establece que es un requisito absoluto y un pilar de la gestión moderna."
+        },
+        {
+          "text": "Una función exclusiva del jefe de seguridad",
+          "isCorrect": false,
+          "rationale": "Aunque hay jefes de área, el liderazgo superior recae directamente en la alta gerencia."
+        }
+      ],
+      "hint": "Es algo que no se puede encargar a otra persona."
+    },
+    {
+      "question": "¿Cuál es el fin último de cumplir con los marcos preventivos y mantener registros auditables sólidos?",
+      "answerOptions": [
+        {
+          "text": "Proteger vidas humanas y asegurar la intangibilidad legal",
+          "isCorrect": true,
+          "rationale": "Estos son los dos objetivos no negociables que garantizan la continuidad y ética de la operación."
+        },
+        {
+          "text": "Incrementar la velocidad de extracción de mineral",
+          "isCorrect": false,
+          "rationale": "La seguridad puede hacer los procesos más rigurosos, su fin no es la velocidad, sino la protección."
+        },
+        {
+          "text": "Evitar cualquier contacto con los fiscalizadores del Estado",
+          "isCorrect": false,
+          "rationale": "El objetivo no es evadir, sino estar preparado para enfrentar las inspecciones con éxito."
+        },
+        {
+          "text": "Eliminar la necesidad de un Comité de Seguridad",
+          "isCorrect": false,
+          "rationale": "El cumplimiento refuerza al Comité, no busca eliminarlo, ya que es una pieza clave de la armadura legal."
+        }
+      ],
+      "hint": "Combine el valor más preciado (la fuerza laboral) con la protección de la empresa ante la ley."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Marco Legal Minero (DS 024/2016)",
+      "Fiscalización SUNAFIL vs OSINERGMIN",
+      "Procedimiento Administrativo Sancionador (PAS)",
+      "Instrumentos Preventivos: Política, RIST, Mapa de Riesgos y Comité",
+      "Gestión Operativa de Riesgos (IPERC)",
+      "Capacitación y Respuesta ante Incidentes"
+    ],
+    "followUp": [
+      "Análisis detallado de los 50 anexos técnicos del Comité de Seguridad",
+      "Protocolos específicos de fortificación de rocas en minería subterránea",
+      "Gestión de enfermedades ocupacionales por ergonomía en entornos mineros",
+      "Estrategias de defensa legal ante el Tribunal de Fiscalización Laboral"
+    ]
+  }
+}

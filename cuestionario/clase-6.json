@@ -1,0 +1,539 @@
+
+{
+  "quiz": [
+    {
+      "question": "¿Cuál es la principal consecuencia legal de no verificar la fecha de caducidad de los certificados de calidad de los EPP, aunque el equipo esté físicamente impecable?",
+      "answerOptions": [
+        {
+          "text": "El equipo se considera legalmente como no entregado ante una inspección.",
+          "isCorrect": true,
+          "rationale": "La normativa establece que un certificado vencido invalida automáticamente la validez legal del equipo frente a la autoridad."
+        },
+        {
+          "text": "Se otorga un plazo de 30 días para renovar la certificación sin multa.",
+          "isCorrect": false,
+          "rationale": "La falta de vigencia en la certificación se considera una infracción inmediata y no un periodo de gracia automático."
+        },
+        {
+          "text": "Solo se aplica una amonestación verbal si el equipo es nuevo.",
+          "isCorrect": false,
+          "rationale": "La autoridad laboral es rígida y la falta de sustento documental anula la protección legal independientemente del estado físico."
+        },
+        {
+          "text": "El inspector debe realizar una prueba técnica de resistencia en el campo.",
+          "isCorrect": false,
+          "rationale": "El inspector se basa en la validez de los certificados presentados y no está obligado a realizar pruebas técnicas para validar documentos vencidos."
+        }
+    ],
+      "hint": "Recuerda lo que sucede con la validez probatoria cuando el documento de respaldo ha expirado."
+    },
+    {
+      "question": "Para que la matriz de Identificación de Peligros y Evaluación de Riesgos y Controles (IPERC) tenga peso legal, ¿a qué estándar específico debe ceñirse?",
+      "answerOptions": [
+        {
+          "text": "Al estándar establecido en el Anexo 7.",
+          "isCorrect": true,
+          "rationale": "El cumplimiento milimétrico del Anexo 7 es lo que brinda el escudo legal necesario ante la autoridad inspectiva."
+        },
+        {
+          "text": "Al criterio discrecional del jefe de seguridad de la mina.",
+          "isCorrect": false,
+          "rationale": "La gestión de seguridad no admite vacíos ni interpretaciones subjetivas fuera de la normativa sectorial."
+        },
+        {
+          "text": "A las normas ISO 45001 exclusivamente.",
+          "isCorrect": false,
+          "rationale": "Aunque las normas internacionales son útiles, la normativa sectorial peruana exige específicamente el cumplimiento de sus propios anexos."
+        },
+        {
+          "text": "Al manual interno de procedimientos de la casa matriz.",
+          "isCorrect": false,
+          "rationale": "Los reglamentos internos deben subordinarse a la norma nacional, específicamente al formato oficial exigido."
+        }
+      ],
+      "hint": "Busca el número de anexo mencionado como el estándar técnico indispensable."
+    },
+    {
+      "question": "En la minería subterránea, ¿cuál es un requisito obligatorio respecto a la vestimenta de trabajo para garantizar la visibilidad?",
+      "answerOptions": [
+        {
+          "text": "Uso de mamelucos con bandas luminosas.",
+          "isCorrect": true,
+          "rationale": "La oscuridad extrema del socavón exige elementos de alta visibilidad para prevenir accidentes operativos."
+        },
+        {
+          "text": "Uso de chalecos de malla simple de color naranja.",
+          "isCorrect": false,
+          "rationale": "En minería subterránea se requiere un nivel de protección y visibilidad mayor que un chaleco simple, optando por mamelucos completos."
+        },
+        {
+          "text": "Ropa de algodón de colores claros únicamente.",
+          "isCorrect": false,
+          "rationale": "Los colores claros no sustituyen la obligatoriedad de las bandas luminosas para la detección visual en la oscuridad."
+        },
+        {
+          "text": "Uniformes con logotipos reflectantes pequeños en el pecho.",
+          "isCorrect": false,
+          "rationale": "La norma exige bandas luminosas que garanticen una visibilidad integral del trabajador, no solo detalles pequeños."
+        }
+      ],
+      "hint": "Considera las condiciones de oscuridad extrema en las labores de socavón."
+    },
+    {
+      "question": "Al documentar la entrega de EPP, ¿por qué es peligroso usar frases como 'Entrega de EPP del trimestre'?",
+      "answerOptions": [
+        {
+          "text": "Porque borra el valor probatorio al no detallar específicamente cada implemento.",
+          "isCorrect": true,
+          "rationale": "Para los inspectores, si el equipo (marca, tipo, cantidad) no está detallado minuciosamente, se asume que jamás se entregó."
+        },
+        {
+          "text": "Porque confunde al área de contabilidad en el cálculo de costos.",
+          "isCorrect": false,
+          "rationale": "Aunque afecta la contabilidad, el riesgo crítico mencionado es la pérdida de capacidad de defensa legal ante Sunafil."
+        },
+        {
+          "text": "Porque el trabajador puede olvidar qué recibió.",
+          "isCorrect": false,
+          "rationale": "El problema central es la falta de evidencia detallada frente a la autoridad, no la memoria del empleado."
+        },
+        {
+          "text": "Porque la ley exige que el registro sea diario y no trimestral.",
+          "isCorrect": false,
+          "rationale": "El error no radica solo en la periodicidad, sino en la falta de especificidad técnica de los elementos entregados."
+        }
+      ],
+      "hint": "Piensa en la regla del inspector: 'si no está detallado, no existe'."
+    },
+    {
+      "question": "¿Qué consecuencia tiene la práctica de 'reciclar' equipos de protección (como botas o cascos) de trabajadores cesados?",
+      "answerOptions": [
+        {
+          "text": "Anula cualquier papel firmado y acarrea sanciones severísimas tras entrevistas con el personal.",
+          "isCorrect": true,
+          "rationale": "Las autoridades utilizan entrevistas confidenciales para detectar el reciclaje, lo que invalida los registros documentales de la empresa."
+        },
+        {
+          "text": "Está permitido siempre que el equipo pase una limpieza profunda.",
+          "isCorrect": false,
+          "rationale": "La seguridad personal es individual y el reciclaje de EPP se considera una vulneración a la integridad del nuevo trabajador."
+        },
+        {
+          "text": "Solo es legal si el trabajador firma una declaración de conformidad.",
+          "isCorrect": false,
+          "rationale": "Un documento firmado no valida una práctica que pone en riesgo la seguridad técnica y legal del trabajador."
+        },
+        {
+          "text": "Reduce los costos operativos sin generar riesgos legales si el equipo está nuevo.",
+          "isCorrect": false,
+          "rationale": "El texto enfatiza que el reciclaje es una 'bomba de tiempo' legal y operativa."
+        }
+      ],
+      "hint": "Recuerda el papel de las entrevistas confidenciales que realiza Sunafil."
+    },
+    {
+      "question": "Dentro de la estructura de Sunafil, ¿cuál es la función del 'Instructor'?",
+      "answerOptions": [
+        {
+          "text": "Evaluar los descargos de la empresa y proponer la sanción final.",
+          "isCorrect": true,
+          "rationale": "El sistema separa funciones para garantizar el debido proceso: uno investiga (inspector) y otro evalúa y propone la sanción (instructor)."
+        },
+        {
+          "text": "Realizar el trabajo de campo y tomar fotografías de las infracciones.",
+          "isCorrect": false,
+          "rationale": "Esta es la labor del inspector de campo, no del instructor en la fase de instrucción."
+        },
+        {
+          "text": "Representar legalmente al trabajador ante el Poder Judicial.",
+          "isCorrect": false,
+          "rationale": "El instructor es un funcionario administrativo de la autoridad laboral, no un abogado defensor de particulares."
+        },
+        {
+          "text": "Cobrar las multas impuestas a las empresas mineras.",
+          "isCorrect": false,
+          "rationale": "La labor del instructor es procedimental y de evaluación de pruebas, no de recaudación coactiva."
+        }
+      ],
+      "hint": "Diferencia entre quien detecta la infracción en el campo y quien decide sobre los argumentos de defensa."
+    },
+    {
+      "question": "En el caso 'Trapitos', ¿por qué la autoridad rechazó el argumento de que 'el año aún no ha terminado' para realizar las capacitaciones?",
+      "answerOptions": [
+        {
+          "text": "Porque la capacitación debe realizarse en el momento exacto de la exposición al riesgo.",
+          "isCorrect": true,
+          "rationale": "La lógica legal exige que la formación preventiva sea contemporánea al peligro, no acumulativa al final del año."
+        },
+        {
+          "text": "Porque las capacitaciones solo pueden realizarse en el primer trimestre.",
+          "isCorrect": false,
+          "rationale": "No existe una restricción de meses, sino un requisito de oportunidad frente a la exposición real del trabajador."
+        },
+        {
+          "text": "Porque la empresa no tenía presupuesto aprobado para diciembre.",
+          "isCorrect": false,
+          "rationale": "La falta de presupuesto no es una defensa válida frente a la seguridad de la vida humana."
+        },
+        {
+          "text": "Porque el plan anual debe ser aprobado por el Ministerio de Energía y Minas.",
+          "isCorrect": false,
+          "rationale": "El rechazo se basó en la falta de sincronía entre el riesgo presente y la capacitación ausente."
+        }
+      ],
+      "hint": "Considera la relación temporal entre estar en peligro y saber cómo protegerse."
+    },
+    {
+      "question": "¿Qué sucede si una empresa ignora una 'medida de requerimiento' emitida por un inspector?",
+      "answerOptions": [
+        {
+          "text": "La falta original se agrava automáticamente a una infracción muy grave contra la labor inspectiva.",
+          "isCorrect": true,
+          "rationale": "Ignorar un ultimátum del Estado se considera un desafío directo a la autoridad, lo que genera una sanción independiente y más severa."
+        },
+        {
+          "text": "Se le otorga automáticamente un nuevo plazo de 15 días hábiles.",
+          "isCorrect": false,
+          "rationale": "La medida de requerimiento es un punto de no retorno y su incumplimiento cierra la etapa de subsanación voluntaria."
+        },
+        {
+          "text": "El inspector debe solicitar permiso al Poder Judicial para insistir.",
+          "isCorrect": false,
+          "rationale": "La autoridad administrativa tiene potestad propia para sancionar el incumplimiento sin recurrir a un juez en esa etapa."
+        },
+        {
+          "text": "La multa se reduce a la mitad por colaboración posterior.",
+          "isCorrect": false,
+          "rationale": "El desacato a la autoridad nunca genera reducciones, sino agravantes en el proceso sancionador."
+        }
+      ],
+      "hint": "Piensa en las consecuencias de desafiar abiertamente un mandato del Estado."
+    },
+    {
+      "question": "¿Qué herramienta legal permite sancionar el desorden general en la gestión preventiva cuando no hay un peligro de muerte inminente?",
+      "answerOptions": [
+        {
+          "text": "El numeral 26.4 del Reglamento de la Ley General de Inspecciones.",
+          "isCorrect": true,
+          "rationale": "Este artículo permite castigar fallas genéricas que demuestran una vulnerabilidad sistémica en la estructura de seguridad."
+        },
+        {
+          "text": "El Código Penal bajo el delito de peligro común.",
+          "isCorrect": false,
+          "rationale": "El texto se refiere a herramientas administrativas dentro del reglamento de inspecciones, no a procesos penales."
+        },
+        {
+          "text": "La Ley de Bases de la Descentralización.",
+          "isCorrect": false,
+          "rationale": "Dicha ley organiza el Estado, pero no especifica sanciones por fallas documentales en seguridad industrial."
+        },
+        {
+          "text": "El Anexo 7 de la matriz IPERC.",
+          "isCorrect": false,
+          "rationale": "El Anexo 7 es un estándar técnico de planificación, no el fundamento legal para tipificar sanciones por fallas genéricas."
+        }
+      ],
+      "hint": "Busca la referencia numérica específica del reglamento que castiga la 'vulnerabilidad sistémica'."
+    },
+    {
+      "question": "¿Por qué es un error crítico documentar en el libro de actas que la elección del Comité de Seguridad fue a 'mano alzada'?",
+      "answerOptions": [
+        {
+          "text": "Porque la ley exige estrictamente el voto secreto y el acta se vuelve una prueba irrefutable de la infracción.",
+          "isCorrect": true,
+          "rationale": "La formalidad del voto secreto es imperativa; dejar constancia escrita de lo contrario facilita la multa al inspector."
+        },
+        {
+          "text": "Porque el voto a mano alzada solo es válido para la pequeña minería.",
+          "isCorrect": false,
+          "rationale": "La norma del voto secreto es general para la conformación del comité de seguridad, sin distinción de estrato."
+        },
+        {
+          "text": "Porque las actas deben escribirse únicamente en formato digital.",
+          "isCorrect": false,
+          "rationale": "El problema no es el formato del libro (físico o digital), sino el contenido que describe un procedimiento ilegal."
+        },
+        {
+          "text": "Porque demora más tiempo el conteo de los votos.",
+          "isCorrect": false,
+          "rationale": "Aunque pueda ser ineficiente, la gravedad reside en la violación de la norma de confidencialidad del voto."
+        }
+      ],
+      "hint": "Enfócate en la formalidad requerida para el acto de votación según la ley."
+    },
+    {
+      "question": "En una comparecencia ante Sunafil, ¿cuál es el tiempo de tolerancia exacto antes de que se considere inasistencia?",
+      "answerOptions": [
+        {
+          "text": "Exactamente 10 minutos.",
+          "isCorrect": true,
+          "rationale": "La autoridad maneja una puntualidad rígida donde llegar al minuto 11 ya se computa legalmente como inasistencia."
+        },
+        {
+          "text": "No hay tolerancia, se debe estar 15 minutos antes.",
+          "isCorrect": false,
+          "rationale": "Aunque es recomendable llegar antes, la norma otorga una ventana específica de 10 minutos."
+        },
+        {
+          "text": "30 minutos si se justifica el tráfico.",
+          "isCorrect": false,
+          "rationale": "La tolerancia de 10 minutos es cronometrada y no admite justificaciones externas comunes para ampliarla."
+        },
+        {
+          "text": "Una hora, siempre que el inspector siga en su oficina.",
+          "isCorrect": false,
+          "rationale": "El procedimiento es estricto y no depende de la disposición personal del inspector en ese momento."
+        }
+      ],
+      "hint": "Es el número que el ponente describió como una de las reglas más inflexibles."
+    },
+    {
+      "question": "¿Qué condición permite acceder a una reducción del 90% de la multa por inasistencia a una comparecencia?",
+      "answerOptions": [
+        {
+          "text": "Que la empresa haya subsanado las infracciones de fondo que originaron la inspección.",
+          "isCorrect": true,
+          "rationale": "La norma premia la corrección del problema de seguridad real por encima de la falta de puntualidad administrativa."
+        },
+        {
+          "text": "Que el representante legal presente una disculpa formal por escrito.",
+          "isCorrect": false,
+          "rationale": "Las disculpas no tienen efectos pecuniarios en la reducción de multas sin la corrección de las infracciones."
+        },
+        {
+          "text": "Que sea la primera vez que la empresa comete esa falta.",
+          "isCorrect": false,
+          "rationale": "La reincidencia es un factor, pero el beneficio del 90% está atado específicamente a la subsanación de fondo."
+        },
+        {
+          "text": "Que la empresa esté inscrita en el registro de buenos contribuyentes.",
+          "isCorrect": false,
+          "rationale": "El estatus ante la autoridad tributaria no condiciona las reducciones específicas por subsanación laboral."
+        }
+      ],
+      "hint": "Piensa en el mecanismo que 'premia' arreglar el peligro real detectado."
+    },
+    {
+      "question": "¿Qué ventaja ofrece la 'acreditación tardía' en el REMIPE durante un proceso de inspección?",
+      "answerOptions": [
+        {
+          "text": "Obliga a la autoridad a recalcular las multas bajo los topes de micro o pequeña empresa.",
+          "isCorrect": true,
+          "rationale": "Permite reducir el impacto financiero de la sanción incluso si la inscripción se hizo después de iniciada la inspección."
+        },
+        {
+          "text": "Anula automáticamente todas las infracciones detectadas.",
+          "isCorrect": false,
+          "rationale": "La acreditación en el REMIPE reduce el monto de la multa, pero no desaparece la responsabilidad por la falta cometida."
+        },
+        {
+          "text": "Permite que la empresa no pague ninguna multa por un año.",
+          "isCorrect": false,
+          "rationale": "No es una exoneración de pago, sino una aplicación de escalas de multas más favorables."
+        },
+        {
+          "text": "Evita que el inspector regrese a la planta por 24 meses.",
+          "isCorrect": false,
+          "rationale": "La inscripción en el REMIPE no limita las facultades de fiscalización de la autoridad laboral."
+        }
+      ],
+      "hint": "Considera cómo afecta esto al 'golpe financiero' de la sanción."
+    },
+    {
+      "question": "¿Cuál de las siguientes se considera una infracción 'insubsanable' según el texto?",
+      "answerOptions": [
+        {
+          "text": "La entrega tardía de equipos de protección personal.",
+          "isCorrect": true,
+          "rationale": "El hecho de haber expuesto al trabajador al riesgo sin protección durante un tiempo pasado no se puede borrar."
+        },
+        {
+          "text": "Una deuda salarial pendiente con un ex-trabajador.",
+          "isCorrect": false,
+          "rationale": "Las deudas económicas se pueden subsanar mediante el pago total, incluso por consignación bancaria."
+        },
+        {
+          "text": "La falta de un cartel de seguridad en la entrada.",
+          "isCorrect": false,
+          "rationale": "Colocar el cartel solicitado corrige la omisión y permite que la falta sea subsanable antes del cierre del acta."
+        },
+        {
+          "text": "No tener el libro de actas legalizado al momento de la visita.",
+          "isCorrect": false,
+          "rationale": "Muchos aspectos formales documentales pueden subsanarse si se realizan dentro del plazo otorgado por el inspector."
+        }
+      ],
+      "hint": "Piensa en situaciones donde el paso del tiempo hace imposible revertir el peligro ya vivido."
+    },
+    {
+      "question": "Para detener un proceso administrativo en Sunafil mediante el principio de 'abocamiento indebido', ¿qué documento es indispensable presentar?",
+      "answerOptions": [
+        {
+          "text": "El auto admisorio emitido por el Poder Judicial.",
+          "isCorrect": true,
+          "rationale": "No basta con presentar la demanda; se requiere la resolución del juez donde admite a trámite el proceso para frenar a Sunafil."
+        },
+        {
+          "text": "El cargo de recepción de la demanda judicial.",
+          "isCorrect": false,
+          "rationale": "El simple ingreso de documentos no garantiza que el juez vaya a conocer el caso; por ello, Sunafil no se detiene solo con el cargo."
+        },
+        {
+          "text": "Una carta notarial dirigida al inspector jefe.",
+          "isCorrect": false,
+          "rationale": "Las comunicaciones notariales no tienen poder para suspender procesos administrativos regulados por ley."
+        },
+        {
+          "text": "La copia del contrato del abogado litigante.",
+          "isCorrect": false,
+          "rationale": "Los documentos contractuales privados son irrelevantes para los plazos y la jurisdicción de la autoridad inspectiva."
+        }
+      ],
+      "hint": "Es el documento donde el juez dice formalmente que el caso ha sido aceptado para trámite."
+    },
+    {
+      "question": "Bajo el sistema descentralizado actual en Perú, ¿qué entidad otorga los derechos mineros para la mediana y gran minería?",
+      "answerOptions": [
+        {
+          "text": "El INGEMMET.",
+          "isCorrect": true,
+          "rationale": "Es la autoridad técnica exclusiva encargada de los títulos mineros de mayor escala a nivel nacional."
+        },
+        {
+          "text": "Los Gobiernos Regionales (GORES).",
+          "isCorrect": false,
+          "rationale": "Los GORES tienen competencia sobre la pequeña minería y la minería artesanal, no sobre la mediana o gran minería."
+        },
+        {
+          "text": "El Ministerio de Trabajo.",
+          "isCorrect": false,
+          "rationale": "Esta entidad se encarga de la fiscalización laboral, pero no tiene competencias para otorgar títulos de concesión minera."
+        },
+        {
+          "text": "La Superintendencia Nacional de Registros Públicos (SUNARP).",
+          "isCorrect": false,
+          "rationale": "SUNARP inscribe los títulos para darles seguridad jurídica, pero no es la entidad que los otorga o concede."
+        }
+      ],
+      "hint": "Es el organismo técnico especializado que maneja el catastro minero nacional."
+    },
+    {
+      "question": "¿En qué se diferencia el modelo de concesión minera peruano del modelo chileno según la clase?",
+      "answerOptions": [
+        {
+          "text": "En Perú es un acto administrativo del Ejecutivo, mientras que en Chile es un proceso judicial.",
+          "isCorrect": true,
+          "rationale": "El sistema peruano depende de la autoridad administrativa (INGEMMET/GORES) y el chileno de la decisión de un juez."
+        },
+        {
+          "text": "En Perú es puramente contractual y en Chile es administrativo.",
+          "isCorrect": false,
+          "rationale": "El modelo contractual es el que se mencionó para Colombia, no para Perú."
+        },
+        {
+          "text": "En Chile las concesiones son otorgadas por el Ministerio de Energía.",
+          "isCorrect": false,
+          "rationale": "El texto especifica que en Chile el sistema es judicial, diferenciándolo del administrativo peruano."
+        },
+        {
+          "text": "No hay diferencia, ambos siguen el modelo de la corona española.",
+          "isCorrect": false,
+          "rationale": "El ponente resalta justamente la particularidad y diferencia de los modelos entre los países de la región."
+        }
+      ],
+      "hint": "Recuerda quién tiene la última palabra para dar la concesión en cada país: ¿un funcionario o un juez?"
+    },
+    {
+      "question": "A nivel institucional en el sector minero, ¿cuál es el órgano que constituye la última instancia administrativa para agotar la vía?",
+      "answerOptions": [
+        {
+          "text": "El Consejo de Minería.",
+          "isCorrect": true,
+          "rationale": "Sus resoluciones son definitivas dentro del sector y abren la puerta para acudir al Poder Judicial."
+        },
+        {
+          "text": "La Alta Dirección del INGEMMET.",
+          "isCorrect": false,
+          "rationale": "INGEMMET es la primera instancia; sus decisiones pueden ser apeladas ante órganos superiores como el Consejo de Minería."
+        },
+        {
+          "text": "El Tribunal Constitucional.",
+          "isCorrect": false,
+          "rationale": "El Tribunal Constitucional es una instancia judicial de control constitucional, no un órgano de la vía administrativa minera."
+        },
+        {
+          "text": "La Asamblea General de Gobiernos Regionales.",
+          "isCorrect": false,
+          "rationale": "Dicha asamblea es un órgano de coordinación política, sin funciones resolutivas en expedientes mineros individuales."
+        }
+      ],
+      "hint": "Se describe como la 'cima de la pirámide resolutiva' en el Ministerio."
+    },
+    {
+      "question": "¿Qué lección fundamental dejó el conflicto de Yanacocha y la comunidad San Andrés de Negritos respecto al título minero?",
+      "answerOptions": [
+        {
+          "text": "Que un título administrativo perfecto no garantiza la paz operativa si no se gestionan los derechos superficiales y la licencia social.",
+          "isCorrect": true,
+          "rationale": "El derecho minero debe convivir con la propiedad física del terreno y la aceptación de la comunidad para ser viable."
+        },
+        {
+          "text": "Que las comunidades no tienen derecho a oponerse si el Estado ya otorgó la concesión.",
+          "isCorrect": false,
+          "rationale": "El caso demuestra precisamente lo contrario: la oposición comunitaria puede paralizar proyectos a pesar del título estatal."
+        },
+        {
+          "text": "Que el título minero incluye automáticamente la propiedad de la superficie.",
+          "isCorrect": false,
+          "rationale": "Legalmente, la concesión minera es distinta a la propiedad del terreno superficial, lo que genera la necesidad de acuerdos adicionales."
+        },
+        {
+          "text": "Que la Sunafil también tiene competencia para resolver conflictos de tierras.",
+          "isCorrect": false,
+          "rationale": "Sunafil se encarga exclusivamente de temas laborales, no de la propiedad de la tierra o derechos reales mineros."
+        }
+      ],
+      "hint": "Considera la diferencia entre el 'papel' administrativo y la realidad del terreno físico."
+    },
+    {
+      "question": "¿Cuál es el objetivo principal del sistema de seguridad según lo expuesto, antes de recurrir a los EPP?",
+      "answerOptions": [
+        {
+          "text": "Eliminar o sustituir el riesgo desde la raíz.",
+          "isCorrect": true,
+          "rationale": "Los EPP son la última barrera; la prioridad siempre debe ser la gestión técnica para desaparecer el peligro en su origen."
+        },
+        {
+          "text": "Comprar el equipo más caro y tecnológico disponible.",
+          "isCorrect": false,
+          "rationale": "La tecnología es un apoyo, pero el objetivo prioritario es la eliminación del riesgo, no solo su mitigación física."
+        },
+        {
+          "text": "Cumplir con el papeleo para evitar multas de Sunafil.",
+          "isCorrect": false,
+          "rationale": "Aunque es necesario, el objetivo real de un sistema de seguridad es proteger la vida, no solo el cumplimiento burocrático."
+        },
+        {
+          "text": "Delegar la responsabilidad de la seguridad en el propio trabajador.",
+          "isCorrect": false,
+          "rationale": "La responsabilidad es del operador; el sistema busca controlar el entorno para proteger al personal de forma sistémica."
+        }
+      ],
+      "hint": "Busca el concepto de atacar el peligro en su origen."
+    }
+  ],
+  "topics": {
+    "covered": [
+      "Gestión de Equipos de Protección Personal (EPP)",
+      "Marco Normativo y Sancionador de SUNAFIL",
+      "Jurisdicción y Estructura del Sector Minero en Perú",
+      "Estrategias de Mitigación Legal y Administrativa"
+    ],
+    "followUp": [
+      "Procedimientos específicos de impugnación ante el Consejo de Minería",
+      "Implementación técnica del Anexo 7 en la matriz IPERC",
+      "Gestión de Relaciones Comunitarias y Licencia Social en Proyectos Extractivos",
+      "Análisis comparado de sistemas de concesión minera en Latinoamérica"
+    ]
+  }
+}

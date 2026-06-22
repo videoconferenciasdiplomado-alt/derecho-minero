@@ -97,19 +97,78 @@
       .progress-ring {
         transition: stroke-dashoffset 1.8s cubic-bezier(0.16, 1, 0.3, 1);
       }
+      #quiz-navigation-bar {
+        display: flex;
+      }
+      body:has(#error-screen:not(.hidden)) #quiz-navigation-bar {
+        display: none;
+      }
+      #nav-welcome-buttons,
+      #nav-quiz-buttons,
+      #nav-result-buttons {
+        display: none !important;
+      }
+      body:has(#welcome-screen:not(.hidden)) #nav-welcome-buttons {
+        display: flex !important;
+      }
+      body:has(#quiz-screen:not(.hidden)) #nav-quiz-buttons {
+        display: flex !important;
+      }
+      body:has(#result-screen:not(.hidden)) #nav-result-buttons {
+        display: flex !important;
+      }
+      body:has(#welcome-screen:not(.hidden)) #header-home-button {
+        display: none !important;
+      }
     </style>
   </head>
-  <body class="bg-slate-50 min-h-screen flex items-center justify-center p-3 sm:p-6 font-sans antialiased text-slate-800 selection:bg-brand-100">
+  <body class="bg-slate-50 min-h-screen flex items-center justify-center p-3 sm:p-6 pt-20 sm:pt-24 font-sans antialiased text-slate-800 selection:bg-brand-100">
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-slate-200/80 h-16 z-40 flex items-center justify-center px-6 md:px-8">
+      <div class="w-full max-w-2xl flex justify-between items-center gap-4">
+        <a href="index.html" class="flex items-center shrink-0">
+          <img src="https://videoconferenciasdiplomado-alt.github.io/imagenes/logo%20negro%20edumin.png" alt="Logo EDUMIN" class="h-8 w-auto object-contain" />
+        </a>
+        <div class="flex items-center gap-2">
+          <span id="header-course-badge" class="text-xs font-black uppercase tracking-widest text-brand-600 px-3 py-1 bg-brand-50 rounded-full border border-brand-200/60 shadow-sm">
+            <span id="header-class-number"></span><span id="header-class-title" class="hidden sm:inline"></span>
+          </span>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <!-- Botón de Inicio (Home) -->
+          <button id="header-home-button" onclick="goHome()" class="flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-800 transition-colors focus:outline-none" title="Inicio">
+            <i class="ph-bold ph-house text-lg"></i>
+          </button>
+          <!-- Botón de Silenciar (Mute) -->
+          <button id="header-mute-button" onclick="toggleMute()" class="flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none" title="Silenciar sonido">
+            <i class="mute-icon ph-bold ph-speaker-high text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
     <div class="w-full max-w-2xl bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 overflow-hidden relative fade-in-up">
       <div id="review-banner" class="hidden bg-amber-50 border-b border-amber-200/50 px-6 py-3.5 flex justify-between items-center text-amber-900">
         <span class="flex items-center gap-2 text-sm font-bold"> <i class="ph-fill ph-eyeglasses text-xl text-amber-600"></i> Modo Revisión Activo </span>
         <button onclick="exitReview()" class="text-xs font-extrabold uppercase tracking-wider bg-amber-600 text-white px-3 py-1.5 rounded-lg hover:bg-amber-700 active:scale-95 transition-all shadow-sm">Volver al Reporte</button>
       </div>
 
-      <div id="welcome-screen" class="p-8 md:p-12 text-center relative">
-        <button id="mute-button-welcome" onclick="toggleMute()" class="absolute top-4 right-4 flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none" title="Silenciar sonido">
-          <i class="mute-icon ph-bold ph-speaker-high text-lg"></i>
-        </button>
+      <!-- Pantalla de Error (si no se encuentra la clase) -->
+      <div id="error-screen" class="hidden p-8 md:p-12 text-center relative animate-fadeIn">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-rose-50 text-rose-500 rounded-2xl shadow-lg shadow-rose-100 mb-6 transform transition-transform hover:scale-105 duration-300">
+          <i class="ph-fill ph-x-circle text-4xl"></i>
+        </div>
+        <div class="mb-3">
+          <span class="text-xs font-black uppercase tracking-widest text-rose-600 px-3 py-1 bg-rose-50 rounded-full border border-rose-200/60 shadow-sm">Error</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-800 leading-tight text-balance mb-4 uppercase">Cuestionario no encontrado</h1>
+        <p id="error-message" class="text-slate-500 text-sm md:text-base max-w-md mx-auto leading-relaxed text-balance mb-8"></p>
+        <a href="index.html" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 inline-flex items-center justify-center gap-2 group mx-auto">
+          <i class="ph-bold ph-arrow-left text-lg transform group-hover:-translate-x-1 transition-transform"></i>
+          Volver a la Clase 1
+        </a>
+      </div>
+
+      <div id="welcome-screen" class="p-8 pb-28 md:p-12 md:pb-32 text-center relative">
         <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-tr from-brand-500 to-indigo-400 text-white rounded-2xl shadow-lg shadow-indigo-100 mb-6 transform transition-transform hover:scale-105 duration-300">
           <i class="ph-fill ph-gavel text-4xl"></i>
         </div>
@@ -124,26 +183,15 @@
           <h3 class="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4 flex items-center gap-2"><i class="ph-bold ph-list-checks text-brand-500 text-lg"></i> Temas que vas a repasar:</h3>
           <ul id="covered-topics-list" class="space-y-3 text-sm text-slate-600 font-semibold"></ul>
         </div>
-
-        <button onclick="startQuiz()" class="mt-10 w-full sm:w-auto px-10 py-4 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 flex items-center justify-center gap-3 mx-auto group">
-          ¡Empezar cuestionario!
-          <i class="ph-bold ph-arrow-right text-lg transform group-hover:translate-x-1 transition-transform"></i>
-        </button>
       </div>
 
       <div id="quiz-screen" class="hidden">
         <div id="progress-segments" class="flex gap-1 w-full px-6 pt-5 pb-3"></div>
-        <div class="px-6 pb-6 md:px-8 md:pb-8">
+        <div class="px-6 pb-28 md:px-8 md:pb-32">
           <div class="flex justify-between items-center mb-6">
             <span id="question-index-badge" class="px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-extrabold uppercase tracking-wider rounded-full shadow-sm"></span>
             <div class="flex items-center gap-4">
               <button onclick="toggleHint()" id="hint-button" class="flex items-center gap-2 text-sm font-bold text-slate-400 hover:text-amber-500 transition-colors group"><i class="ph-fill ph-lightbulb text-lg group-hover:animate-pulse"></i> Ver pista</button>
-              <button onclick="goHome()" class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-800 transition-colors focus:outline-none" title="Inicio">
-                <i class="ph-bold ph-house text-base"></i>
-              </button>
-              <button id="mute-button-quiz" onclick="toggleMute()" class="flex items-center justify-center w-8 h-8 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none" title="Silenciar sonido">
-                <i class="mute-icon ph-bold ph-speaker-high text-base"></i>
-              </button>
             </div>
           </div>
 
@@ -157,21 +205,11 @@
 
           <h2 id="question-text" class="text-lg md:text-xl font-bold text-slate-800 leading-snug mb-6"></h2>
           <div id="options-container" class="space-y-4"></div>
-
-          <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center gap-4">
-            <button id="prev-button" onclick="prevQuestion()" class="hidden w-full sm:w-auto px-8 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl border border-slate-200/60 shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"><i class="ph-bold ph-caret-left text-lg"></i> Anterior</button>
-            <button id="next-button" onclick="nextQuestion()" class="w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-400 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 ml-auto"></button>
-          </div>
         </div>
+
       </div>
 
-      <div id="result-screen" class="hidden p-8 md:p-12 text-center relative overflow-hidden animate-fadeIn">
-        <button onclick="goHome()" class="absolute top-4 right-16 flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-800 transition-colors focus:outline-none z-50" title="Inicio">
-          <i class="ph-bold ph-house text-lg"></i>
-        </button>
-        <button id="mute-button-result" onclick="toggleMute()" class="absolute top-4 right-4 flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200/60 text-slate-400 hover:text-slate-600 transition-colors focus:outline-none z-50" title="Silenciar sonido">
-          <i class="mute-icon ph-bold ph-speaker-high text-lg"></i>
-        </button>
+      <div id="result-screen" class="hidden p-8 pb-28 md:p-12 md:pb-32 text-center relative overflow-hidden animate-fadeIn">
         <div id="confeti-container" class="absolute inset-0 pointer-events-none z-50 hidden"></div>
         <div class="inline-flex items-center justify-center w-20 h-20 bg-emerald-50 text-emerald-500 rounded-full mb-6 relative shadow-inner">
           <i class="ph-fill ph-trophy text-4xl drop-shadow-md"></i>
@@ -211,11 +249,6 @@
         <div class="text-left bg-indigo-50/40 rounded-2xl p-5 border border-indigo-100/60 mb-8">
           <h3 class="text-xs font-extrabold uppercase tracking-widest text-indigo-900/60 mb-3 flex items-center gap-2"><i class="ph-fill ph-graduation-cap text-indigo-500 text-xl"></i> Temas recomendados para seguir estudiando:</h3>
           <ul id="suggested-topics-list" class="space-y-2.5 text-sm text-indigo-950/80 font-semibold"></ul>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button onclick="enterReviewMode()" class="w-full sm:w-auto px-6 py-3.5 bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 shadow-sm border border-brand-200"><i class="ph-bold ph-eyeglasses text-xl"></i> Revisar cuestionario</button>
-          <button onclick="restartQuiz()" class="w-full sm:w-auto px-6 py-3.5 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 shadow-sm"><i class="ph-bold ph-arrow-counter-clockwise text-xl"></i> Intentar de nuevo</button>
         </div>
       </div>
     </div>
@@ -421,15 +454,15 @@
       }
 
       // ==========================================
-      // 1. Leemos los parámetros de la URL
-      const urlParams = new URLSearchParams(window.location.search);
+      // 1. Leemos el parámetro directamente de la query string (lo que sigue al "?")
+      const parametroClase = window.location.search.substring(1) || "clase-1";
 
-      // 2. Buscamos únicamente el parámetro "clase" (ej. clase=4)
-      const claseParam = urlParams.get("clase");
-      const numeroClase = /^\d+$/.test(claseParam) ? parseInt(claseParam, 10) : 1;
+      // 2. Extraemos el número de la clase para mostrar la información correcta del curso
+      const matchNumero = parametroClase.match(/\d+/);
+      const numeroClase = matchNumero ? parseInt(matchNumero[0], 10) : 1;
 
       // 3. Le agregamos la extensión .json de forma automática
-      const ARCHIVO_JSON = `clase-${numeroClase}.json`; // ==========================================
+      const ARCHIVO_JSON = `${parametroClase}.json`; // ==========================================
 
       window.addEventListener("DOMContentLoaded", async () => {
         // Inicializar UI de silencio según estado persistido
@@ -438,13 +471,28 @@
         try {
           // Cargamos el archivo JSON de manera dinámica
           const response = await fetch(ARCHIVO_JSON);
+          if (!response.ok) {
+            throw new Error(`El archivo "${ARCHIVO_JSON}" no existe o no se pudo cargar.`);
+          }
           quizData = await response.json();
 
           // Inicializamos las respuestas vacías basadas en las preguntas cargadas
           userAnswers = Array(quizData.quiz.length).fill(null);
 
           // Rellenamos los datos del curso y clase en la pantalla de bienvenida usando CONFIG_CURSO
-          document.getElementById("welcome-course-name").innerText = CONFIG_CURSO.nombre_curso || quizData.nombre_curso || "DERECHO MINERO";
+          const courseName = CONFIG_CURSO.nombre_curso || quizData.nombre_curso || "DERECHO MINERO";
+          document.getElementById("welcome-course-name").innerText = courseName;
+          
+          const classTitle = CONFIG_CURSO.clases[numeroClase] || quizData.nombre_clase || "";
+          const headerNumber = document.getElementById("header-class-number");
+          const headerTitle = document.getElementById("header-class-title");
+          if (headerNumber) {
+            headerNumber.innerText = `CLASE ${numeroClase}`;
+          }
+          if (headerTitle) {
+            headerTitle.innerText = classTitle ? `: ${classTitle.toUpperCase()}` : "";
+          }
+          
           document.getElementById("welcome-class-number").innerText = `Clase ${numeroClase}`;
           document.getElementById("welcome-class-title").innerText = (CONFIG_CURSO.clases[numeroClase] || quizData.nombre_clase || "").toUpperCase();
 
@@ -468,7 +516,14 @@
           renderMath();
         } catch (error) {
           console.error("Error al cargar el archivo de preguntas JSON:", error);
-          alert("Asegúrate de ejecutar este archivo desde un servidor local (ej. Live Server de VS Code) para que pueda leer el JSON.");
+          
+          // Ocultamos la pantalla de bienvenida y mostramos la pantalla de error
+          document.getElementById("welcome-screen").classList.add("hidden");
+          const errorScreen = document.getElementById("error-screen");
+          errorScreen.classList.remove("hidden");
+          
+          const errorMsg = document.getElementById("error-message");
+          errorMsg.innerText = `El archivo de preguntas "${ARCHIVO_JSON}" no existe o no se pudo cargar desde el servidor local.`;
         }
       });
 
@@ -590,19 +645,19 @@
 
         if (isReviewMode) {
           nextBtn.disabled = false;
-          nextBtn.className = "w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2 ml-auto";
+          nextBtn.className = "flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all flex items-center justify-center gap-2 ml-auto";
           nextBtn.innerHTML = currentQuestionIndex === quizData.quiz.length - 1 ? `Finalizar Revisión <i class="ph-bold ph-check text-lg"></i>` : `Siguiente <i class="ph-bold ph-caret-right text-lg"></i>`;
         } else {
           nextBtn.disabled = false;
           if (isAnswered) {
-            nextBtn.className = "w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 ml-auto group";
+            nextBtn.className = "flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 ml-auto group";
             if (currentQuestionIndex === quizData.quiz.length - 1) {
               nextBtn.innerHTML = `Listo <i class="ph-bold ph-check text-lg transform group-hover:scale-110 transition-transform"></i>`;
             } else {
               nextBtn.innerHTML = `Siguiente <i class="ph-bold ph-caret-right text-lg transform group-hover:translate-x-1 transition-transform"></i>`;
             }
           } else {
-            nextBtn.className = "w-full sm:w-auto px-8 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl border border-slate-200/60 shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 ml-auto group";
+            nextBtn.className = "flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl border border-slate-200/60 shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 ml-auto group";
             nextBtn.innerHTML = `Omitir <i class="ph-bold ph-caret-right text-lg transform group-hover:translate-x-1 transition-transform"></i>`;
           }
         }
@@ -799,5 +854,28 @@
         goHome();
       }
     </script>
+    <div id="quiz-navigation-bar" class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200/80 px-6 py-4 md:px-8 z-40 flex justify-center">
+      <div class="w-full max-w-2xl">
+        <!-- Botones de Bienvenida -->
+        <div id="nav-welcome-buttons" class="hidden justify-center w-full">
+          <button onclick="startQuiz()" class="w-full sm:w-auto px-10 py-4 bg-brand-600 hover:bg-brand-700 active:scale-95 text-white font-bold rounded-2xl shadow-lg shadow-brand-200 transition-all duration-300 flex items-center justify-center gap-3 group">
+            ¡Empezar cuestionario!
+            <i class="ph-bold ph-arrow-right text-lg transform group-hover:translate-x-1 transition-transform"></i>
+          </button>
+        </div>
+
+        <!-- Botones del Cuestionario -->
+        <div id="nav-quiz-buttons" class="hidden justify-between items-center gap-4 w-full">
+          <button id="prev-button" onclick="prevQuestion()" class="hidden flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-2xl border border-slate-200/60 shadow-sm active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"><i class="ph-bold ph-caret-left text-lg"></i> Anterior</button>
+          <button id="next-button" onclick="nextQuestion()" class="flex-1 sm:flex-initial w-full sm:w-auto px-8 py-4 bg-slate-100 text-slate-400 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 ml-auto"></button>
+        </div>
+
+        <!-- Botones de Resultados -->
+        <div id="nav-result-buttons" class="hidden flex-col sm:flex-row gap-4 justify-center items-center w-full">
+          <button onclick="enterReviewMode()" class="flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3.5 bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 shadow-sm border border-brand-200"><i class="ph-bold ph-eyeglasses text-xl"></i> Revisar cuestionario</button>
+          <button onclick="restartQuiz()" class="flex-1 sm:flex-initial w-full sm:w-auto px-6 py-3.5 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 shadow-sm"><i class="ph-bold ph-arrow-counter-clockwise text-xl"></i> Intentar de nuevo</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
